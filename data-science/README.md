@@ -3,13 +3,13 @@
 **Disciplina:** Data Science & Statistical Computing · **Entrega:** arquivos e links no Teams até 19/11, 23h55
 
 ## Conceito
-Usar dados reais ligados ao problema para **testar uma hipótese** e **apoiar uma decisão** do Caminho Livre: definir os pesos de risco por horário e categoria.
+Usar dados reais ligados ao tema do Caminho Livre para **testar uma hipótese** sobre segurança e acessibilidade de pedestres. **Entrega isolada**, sem conexão com o app.
 
 ## Entregáveis
 - [ ] Base de dados + **fonte** citada
 - [ ] Notebook ou script (`analise.ipynb`)
 - [ ] Visualizações
-- [ ] Conclusão curta: resultados, limitações e uso na solução
+- [ ] Conclusão curta: resultados, limitações e possível uso futuro na solução
 
 ## Avaliação
 | Critério | Peso |
@@ -32,13 +32,8 @@ Usar dados reais ligados ao problema para **testar uma hipótese** e **apoiar um
 
 > Nada de dados pessoais. Anonimizar e citar a fonte.
 
-## Saída usada pela solução
-Uma tabela de pesos que alimenta `CATEGORIA_OCORRENCIA.PESO_NOTURNO` (banco do Caio) e as penalidades do Dijkstra:
-
-| Categoria | peso_base | peso_noturno |
-|---|---|---|
-| Rua sem iluminação | *x* | *y* |
-| Assalto | *x* | *y* |
+## Escopo: entrega isolada
+Esta análise **não se conecta ao app** (banco, API e rota não dependem dela). Ela usa o mesmo tema do Caminho Livre e, na conclusão, descreve como **poderia** apoiar a solução no futuro, por exemplo calibrando os pesos de risco por horário.
 
 ## Estrutura sugerida
 ```

@@ -40,9 +40,10 @@ O mapa da cidade que mostra o que o GPS não vê: **calçadas intransitáveis, r
             └──────────────┘        └──────────┬───────────┘
                                                │ GET /trechos/pesos
                                     ┌──────────▼───────────┐
-                                    │ Python — Dijkstra/PD │◀── pesos ── Data Science
+                                    │ Python — Dijkstra/PD │
                                     └──────────────────────┘
    Rede física do "Posto Caminho Livre" → Packet Tracer   ·   Experiência 3D → AR/VR
+   Data Science → análise isolada do tema (não integra o app)
 ```
 
 | Pasta | Disciplina | Responsável | O que entrega |
@@ -52,7 +53,7 @@ O mapa da cidade que mostra o que o GPS não vê: **calçadas intransitáveis, r
 | [`agile/`](agile/) | Agile Methodology With Squad Framework | **Rickk** | Documentação de design (personas, casos de uso, backlog, protótipo, pitch) |
 | [`front-next/`](front-next/) | *(apoio: protótipo e pitch)* | **Rickk** | Interface web em Next.js consumindo a API |
 | [`dynamic-programming/`](dynamic-programming/) | Dynamic Programming | **Dudu** | Algoritmo de rota (grafos, memoização, tabulação) |
-| [`data-science/`](data-science/) | Data Science & Statistical Computing | **Dudu** | Análise de dados que define os pesos de risco |
+| [`data-science/`](data-science/) | Data Science & Statistical Computing | **Dudu** | Análise de dados do tema (entrega isolada, sem conexão com o app) |
 | [`network/`](network/) | Network Architect Solutions | **Lau** | Rede do posto físico no Packet Tracer |
 | [`ar-vr/`](ar-vr/) | AR-VR Modelling And Simulation | **Lau** | Vídeo 3D de 30–60 s |
 | [`docs/`](docs/) | Comum | Todos | Entrevista, fotos, ficha, materiais do pitch |
@@ -69,8 +70,7 @@ Estes pontos precisam ser combinados **antes** de cada um codar:
    ```json
    [{ "origem": 1, "destino": 2, "distanciaM": 120, "peso": 3.5 }]
    ```
-4. **Pesos noturnos (Dudu → Caio):** o resultado do Data Science define `PESO_NOTURNO` na carga de `CATEGORIA_OCORRENCIA`.
-5. **URL do deploy (Ulisses → todos):** o front aponta para o Render, e a rede usa o nome no DNS do servidor.
+4. **URL do deploy (Ulisses → todos):** o front aponta para o Render, e a rede usa o nome no DNS do servidor.
 
 ### Modelo de domínio compartilhado
 | Entidade | Papel |
@@ -92,11 +92,12 @@ Tarefas detalhadas (cards do Trello): [`TAREFAS.md`](TAREFAS.md)
 
 | Data | Marco |
 |---|---|
-| **10/11** | Entrevista com pessoa real, fotos, ficha preenchida, **DER congelado** |
-| **12/11** | Banco criado e populado no Oracle da FIAP |
-| **15/11** | **API no Render** conectada ao Oracle · todas as partes funcionando de forma isolada (com mocks) |
-| **18/11** | **Integração** (front + API + rota), pitch gravado e todos os PDFs prontos |
-| **19/11** | Revisão cruzada de manhã e envio até 18h. Um integrante envia cada disciplina. |
+| **09–11/11** | Fase 1: pesquisa de campo, Ficha, personas, casos de uso e **backlog do MVP** |
+| **11–12/11** | Fase 2: **DER congelado**, banco criado e populado no Oracle |
+| **12–15/11** | Fase 3: **API** (no Render até 15/11) e **front** em paralelo, com mocks |
+| **16–18/11** | Fase 4: **integração** front + API + rota e PDFs técnicos |
+| **18–19/11** | Fase 5: **vídeo pitch** com o app integrado, revisão cruzada e envio até 18h |
+| **09–18/11** | Em paralelo: Network, AR/VR, Dynamic Programming e Data Science (isolada) |
 
 ---
 

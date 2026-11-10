@@ -43,8 +43,8 @@ Projetar a base relacional que registra e consulta as informações do Caminho L
 6. Usuários que mais contribuíram (ocorrências + confirmações)
 
 ## Integrações
-- ➡️ **Ulisses (Java):** o DER é o contrato, então congelar os nomes até **10/11**. O mesmo DER entra no PDF de Java.
-- ⬅️ **Dudu (Data Science):** define os valores de `peso_noturno` na carga das categorias.
+- ➡️ **Ulisses (Java):** o DER é o contrato, então congelar os nomes até **11/11** (depois do backlog do MVP). O mesmo DER entra no PDF de Java.
+- Pesos das categorias (`peso_base`, `peso_noturno`) são definidos pela equipe na carga. O Data Science é uma entrega isolada.
 - Rodar os scripts no **Oracle da FIAP** antes da conexão da API.
 
 ## Estrutura

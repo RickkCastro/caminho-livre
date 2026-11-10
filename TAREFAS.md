@@ -1,19 +1,33 @@
 # 📌 Tarefas — Caminho Livre (cards do Trello)
 
 > Base para criar os cards do quadro. Cada card tem **título**, **responsável**, **prazo**, **etiquetas** e **checklist**.
-> Entrega final: **19/11 às 23h55**. Hoje: 09/11.
+> Entrega final: **19/11 às 23h55** (meta interna: enviar até 18h). Hoje: 09/11.
 
 ---
 
-## 🗓️ Marcos
+## 🧭 Ordem de execução
 
-| Data | Marco |
-|---|---|
-| **10/11 (seg)** | Pesquisa de campo feita, Ficha preenchida, **DER congelado**, contratos de integração combinados |
-| **12/11 (qua)** | Banco criado e populado no Oracle da FIAP |
-| **15/11 (sáb)** | **API Java no Render** conectada ao Oracle · todas as partes funcionando de forma isolada (com mocks) |
-| **18/11 (ter)** | **Integração** (front + API + rota) · pitch gravado · todos os PDFs prontos |
-| **19/11 (qua)** | Revisão cruzada de manhã e **envio até 18h** (margem de segurança) |
+```
+FASE 1  Descoberta + Backlog        09–11/11   ──┐
+FASE 2  Tabelas (banco)             11–12/11     │  caminho crítico do app
+FASE 3  API ║ Front (em paralelo)   12–15/11     │
+FASE 4  Integração                  16–18/11   ──┘
+FASE 5  Vídeo pitch + envio         18–19/11
+
+EM PARALELO (09–18/11, sem depender do app até a integração):
+  Network · AR/VR · Dynamic Programming · Data Science (isolada)
+```
+
+| Fase | Período | O que sai | Cards |
+|---|---|---|---|
+| **1. Descoberta + Backlog** | 09–11/11 | Campo, Ficha, personas, casos de uso, **backlog priorizado (MVP)** | G1, G2, A1, A2, A3, A4 |
+| **2. Tabelas** | 11–12/11 | DER congelado a partir do backlog, banco criado e populado no Oracle | G3, DB1, DB2, DB3 |
+| **3. API ║ Front** | 12–15/11 | **API no Render (15/11)** e front com mocks, em paralelo | J1–J6, F1–F4 |
+| **4. Integração** | 16–18/11 | Front ligado à API, rota do Python no front, PDFs técnicos | F5, F6, DP5, J7, A5, DB4, DB5 |
+| **5. Pitch + envio** | 18–19/11 | Vídeo pitch gravado com o app integrado, PDF de Agile, revisão e envio | A6, A7, G5 |
+| **Paralelo** | 09–18/11 | Entregas independentes | N1–N5, AR1–AR3, DP1–DP4, DS1–DS4 |
+
+> **Por que essa ordem:** o backlog define o escopo do MVP → o MVP define as tabelas → as tabelas definem as classes da API e os mocks do front → com a API no ar o front é integrado → só então o pitch mostra a solução funcionando.
 
 ---
 
@@ -32,13 +46,22 @@
 | `AR/VR` | 🟤 lima |
 | `Geral` | ⚫ preto |
 
+### Fase
+| Etiqueta | Cor |
+|---|---|
+| `Fase 1 · Backlog` | ⚪ cinza |
+| `Fase 2 · Tabelas` | ⚪ cinza |
+| `Fase 3 · API/Front` | ⚪ cinza |
+| `Fase 4 · Integração` | ⚪ cinza |
+| `Fase 5 · Pitch` | ⚪ cinza |
+| `Paralelo` | ⚪ cinza |
+
 ### Tipo / estado
 | Etiqueta | Cor | Quando usar |
 |---|---|---|
 | `Entrega` | 🔴 vermelho | Card que gera um arquivo enviado no Teams/Portal |
-| `Integração` | 🟠 laranja | Depende de outra parte ou é dependência de outra parte |
-| `Documentação` | ⚪ cinza | PDF, README, diagramas |
 | `MVP` | 🔵 azul | Funcionalidade obrigatória do MVP |
+| `Documentação` | ⚪ cinza | PDF, README, diagramas |
 | `Bloqueado` | 🔴 vermelho | Esperando outra pessoa (comentar o motivo) |
 
 ### Listas sugeridas
@@ -46,305 +69,308 @@
 
 ---
 
-## 👥 Geral (todos)
+# FASE 1 · Descoberta + Backlog (09–11/11)
 
 ### G1 · Pesquisa de campo e entrevista
-- **Responsável:** todos (coordenação: Rickk) · **Prazo:** 10/11 · **Etiquetas:** `Geral`
+- **Responsável:** todos (coordenação: Rickk) · **Prazo:** 10/11 · **Etiquetas:** `Geral` `Fase 1 · Backlog`
 - [ ] Escolher o bairro/trajeto real
 - [ ] Fotografar 15 a 30 obstáculos e ruas escuras, anotando endereço e horário
 - [ ] Entrevistar pelo menos 1 pessoa real (roteiro em `docs/README.md`)
 - [ ] Registrar em `docs/entrevista.md` e `docs/campo/`
 
 ### G2 · Ficha da CitizenTech e equipe
-- **Responsável:** Rickk · **Prazo:** 10/11 · **Etiquetas:** `Geral` `Documentação`
+- **Responsável:** Rickk · **Prazo:** 10/11 · **Etiquetas:** `Geral` `Fase 1 · Backlog` `Documentação`
 - [ ] Ajustar cidade/bairro e o problema em uma frase na Ficha do README
 - [ ] Preencher nomes completos e RMs de todos
 - [ ] Adicionar todos como colaboradores no GitHub
 
-### G3 · Contratos de integração
-- **Responsável:** Caio + Ulisses + Rickk + Dudu · **Prazo:** 10/11 · **Etiquetas:** `Geral` `Integração`
-- [ ] DER congelado (nomes de tabelas e colunas)
-- [ ] Tabela de endpoints e formato JSON fechados
-- [ ] Formato de `/trechos/pesos` combinado com o Dudu
-- [ ] Mocks JSON criados para o front e o Python
+### A1 · Apresentação descritiva da ideia (10 pts)
+- **Responsável:** Rickk · **Prazo:** 10/11 · **Etiquetas:** `Agile` `Fase 1 · Backlog` `Documentação`
+- [ ] Problema, foco, público-alvo, solução e justificativas das escolhas
+- [ ] Usar a entrevista e as fotos de campo
 
-### G4 · Registro de prompts
-- **Responsável:** todos · **Prazo:** contínuo até 19/11 · **Etiquetas:** `Geral` `Documentação`
-- [ ] Cada um registra em `prompts.md` os prompts que usou
+### A2 · Personas (10 pts)
+- **Responsável:** Rickk · **Prazo:** 10/11 · **Etiquetas:** `Agile` `Fase 1 · Backlog`
+- [ ] Dona Marta, Júlia e Sr. Roberto (gestor), com narrativa, dores, objetivos e contexto
 
-### G5 · Revisão cruzada e envio
-- **Responsável:** todos · **Prazo:** 19/11 · **Etiquetas:** `Geral` `Entrega`
-- [ ] Cada um revisa o PDF de outra pessoa (nomes, RMs, links funcionando)
-- [ ] Testar o link do YouTube em aba anônima
-- [ ] Testar o deploy da API e do front
-- [ ] Último commit antes das 23h55 de 19/11 (ideal: até 18h)
-- [ ] Enviar cada disciplina (1 integrante por envio) e marcar como `Enviado ✅`
+### A3 · Diagrama de casos de uso (20 pts)
+- **Responsável:** Rickk · **Prazo:** 11/11 · **Etiquetas:** `Agile` `Fase 1 · Backlog`
+- [ ] Todos os atores (Cidadão, PMR, Gestor, Contato de confiança, Sistema)
+- [ ] Escopo total (MVP e além)
+- [ ] Exportar a imagem
+
+### A4 · Backlog do produto (20 pts) 🔑 *libera a Fase 2*
+- **Responsável:** Rickk (Planning Poker com todos) · **Prazo:** 11/11 · **Etiquetas:** `Agile` `Fase 1 · Backlog` `MVP`
+- [ ] Histórias coerentes com o diagrama de casos de uso
+- [ ] Priorizar com MoSCoW
+- [ ] Sessão de Planning Poker com o grupo (registrar com print ou foto)
+- [ ] **Fechar o escopo do MVP** e repassar ao Caio, ao Ulisses e ao Dudu
 
 ---
 
-## 🗄️ Database — Caio
+# FASE 2 · Tabelas (11–12/11)
 
-### DB1 · Modelo conceitual e lógico
-- **Prazo:** 10/11 · **Etiquetas:** `Database` `Integração`
-- [ ] Conceitual com as 8 entidades e cardinalidades
+### G3 · Contratos de integração
+- **Responsável:** Caio + Ulisses + Rickk + Dudu · **Prazo:** 11/11 · **Etiquetas:** `Geral` `Fase 2 · Tabelas`
+- [ ] Tabela de endpoints e formato JSON fechados (a partir do DER)
+- [ ] Formato de `/trechos/pesos` combinado com o Dudu
+- [ ] Mocks JSON criados para o front e o Python
+
+### DB1 · Modelo conceitual e lógico (DER congelado)
+- **Responsável:** Caio · **Prazo:** 11/11 · **Etiquetas:** `Database` `Fase 2 · Tabelas` `MVP`
+- [ ] Conceitual com as entidades do MVP e cardinalidades (partindo do backlog A4)
 - [ ] Lógico com PKs, FKs e tipos
-- [ ] Validar com Ulisses (DER congelado)
+- [ ] Validar com Ulisses e **congelar os nomes**
 
 ### DB2 · Modelo físico e script de criação
-- **Prazo:** 12/11 · **Etiquetas:** `Database`
+- **Responsável:** Caio · **Prazo:** 12/11 · **Etiquetas:** `Database` `Fase 2 · Tabelas`
 - [ ] `scripts/01_create.sql` com PK, FK, CHECK, UNIQUE e sequences/identity
 - [ ] Executar no Oracle da FIAP
 - [ ] Exportar a imagem do modelo físico
 
 ### DB3 · Carga de dados
-- **Prazo:** 12/11 · **Etiquetas:** `Database`
+- **Responsável:** Caio · **Prazo:** 12/11 · **Etiquetas:** `Database` `Fase 2 · Tabelas`
 - [ ] `scripts/02_insert.sql` com cerca de 10 linhas por tabela
 - [ ] Usar os locais reais fotografados (G1)
-- [ ] Atualizar `peso_noturno` com o resultado do Data Science (DS3) até 15/11
-
-### DB4 · Consultas do projeto
-- **Prazo:** 14/11 · **Etiquetas:** `Database`
-- [ ] 6 consultas em `scripts/03_consultas.sql` (GROUP BY, JOIN, HAVING, subquery, UPDATE de expiração)
-- [ ] Comentar o objetivo de cada consulta
-
-### DB5 · Dicionário de dados e entrega
-- **Prazo:** 18/11 · **Etiquetas:** `Database` `Documentação` `Entrega`
-- [ ] Dicionário (tabela, coluna, tipo, restrição, descrição)
-- [ ] Justificativa da normalização (3FN)
-- [ ] Juntar modelos + dicionário + scripts e enviar no Teams
+- [ ] Pesos das categorias definidos pela equipe (valores simples, ex.: degrau = 10, rua escura = 3 de dia / 8 à noite)
 
 ---
 
-## ☕ Java — Ulisses
+# FASE 3 · API ║ Front em paralelo (12–15/11)
+
+## ☕ API Java — Ulisses
 
 ### J1 · Setup do projeto Spring Boot
-- **Prazo:** 11/11 · **Etiquetas:** `Java`
-- [ ] Projeto Spring Boot (JDK 21) em `api-java/`
+- **Prazo:** 12/11 · **Etiquetas:** `Java` `Fase 3 · API/Front`
+- [ ] Projeto Spring Boot (JDK 21) em `api-java/` *(pode começar já na Fase 2)*
 - [ ] Conexão com o Oracle da FIAP via variáveis de ambiente
 - [ ] Estrutura de pacotes: model, dao, bo, controller, exception, config
 
 ### J2 · Camada model
-- **Prazo:** 12/11 · **Etiquetas:** `Java` `MVP`
-- [ ] 8 classes de acordo com o DER
+- **Prazo:** 13/11 · **Etiquetas:** `Java` `Fase 3 · API/Front` `MVP`
+- [ ] Classes de acordo com o DER
 
 ### J3 · Camadas DAO e BO
-- **Prazo:** 13/11 · **Etiquetas:** `Java` `MVP`
+- **Prazo:** 14/11 · **Etiquetas:** `Java` `Fase 3 · API/Front` `MVP`
 - [ ] DAO por entidade
 - [ ] BO com as regras: expiração (15 dias), 3 confirmações → CONFIRMADA, não confirmar a própria, só GESTOR resolve
 - [ ] Cálculo de peso do trecho por perfil e horário
 
 ### J4 · Controllers (GET/POST/PUT/DELETE)
-- **Prazo:** 14/11 · **Etiquetas:** `Java` `MVP` `Integração`
+- **Prazo:** 14/11 · **Etiquetas:** `Java` `Fase 3 · API/Front` `MVP`
 - [ ] CRUD de todas as entidades
 - [ ] `POST /ocorrencias/{id}/confirmacoes`, `PUT /ocorrencias/{id}/resolver`, `GET /trechos/pesos`
 - [ ] Filtros em `GET /ocorrencias`
 - [ ] CORS para o front
 
 ### J5 · Tratamento de exceções
-- **Prazo:** 14/11 · **Etiquetas:** `Java`
+- **Prazo:** 15/11 · **Etiquetas:** `Java` `Fase 3 · API/Front`
 - [ ] `@ControllerAdvice` com o JSON de erro padrão
 - [ ] `RecursoNaoEncontradoException` (404) e `RegraNegocioException` (400/422)
 
 ### J6 · Deploy no Render ⚠️ 30 pts
-- **Prazo:** 15/11 · **Etiquetas:** `Java` `Entrega` `Integração`
-- [ ] Dockerfile ou build do Render configurado
+- **Prazo:** 15/11 · **Etiquetas:** `Java` `Fase 3 · API/Front` `Entrega`
+- [ ] Dockerfile ou build do Render configurado *(dica: subir um hello world já no J1)*
 - [ ] Variáveis de ambiente do Oracle no Render
 - [ ] Testar todos os endpoints na URL pública
 - [ ] Passar a URL para o Rickk, o Dudu e a Lau
 
-### J7 · Documentação PDF (30 pts)
-- **Prazo:** 18/11 · **Etiquetas:** `Java` `Documentação` `Entrega`
-- [ ] Capa (nome do projeto, nomes completos, RMs), índice, descrição, justificativa, objetivos
-- [ ] Diagrama de classes gerado a partir do código final
-- [ ] Protótipos de tela (prints do front), tabela de endpoints e DER
-- [ ] Instruções de execução (ferramentas, versões, links do GitHub e do deploy, passo a passo)
-- [ ] ZIP com PDF + link do GitHub + link do deploy → **Portal do Aluno**
-
----
-
-## 🧭 Agile — Rickk
-
-### A1 · Apresentação descritiva da ideia (10 pts)
-- **Prazo:** 12/11 · **Etiquetas:** `Agile` `Documentação`
-- [ ] Problema, foco, público-alvo, solução e justificativas das escolhas
-- [ ] Usar a entrevista e as fotos de campo
-
-### A2 · Personas (10 pts)
-- **Prazo:** 12/11 · **Etiquetas:** `Agile`
-- [ ] Dona Marta, Júlia e Sr. Roberto (gestor), com narrativa, dores, objetivos e contexto
-
-### A3 · Diagrama de casos de uso (20 pts)
-- **Prazo:** 13/11 · **Etiquetas:** `Agile` `Integração`
-- [ ] Todos os atores (Cidadão, PMR, Gestor, Contato de confiança, Sistema)
-- [ ] Escopo total (MVP e além)
-- [ ] Exportar a imagem
-
-### A4 · Backlog do produto (20 pts)
-- **Prazo:** 14/11 · **Etiquetas:** `Agile` `MVP`
-- [ ] Histórias coerentes com o diagrama de casos de uso
-- [ ] Priorizar com MoSCoW
-- [ ] Sessão de Planning Poker com o grupo (registrar com print ou foto)
-- [ ] Destacar o MVP
-- [ ] Matriz de rastreabilidade (caso de uso → história → endpoint → tabela)
-
-### A5 · Protótipo de 3+ telas (20 pts)
-- **Prazo:** 16/11 · **Etiquetas:** `Agile` `Front`
-- [ ] Mapa, Registrar ocorrência, Rota sugerida (+ painel do gestor)
-- [ ] Comentários de UX em cada tela (acessibilidade, contraste, número de toques)
-
-### A6 · Vídeo pitch de 3 min (20 pts)
-- **Prazo:** 18/11 · **Etiquetas:** `Agile` `Geral` `Integração`
-- [ ] Roteiro (`docs/pitch.md`)
-- [ ] Gravar a narração com integrantes do grupo
-- [ ] Mostrar a solução integrada funcionando
-- [ ] Upload no YouTube como **não listado** e testar o link
-- [ ] Enviar o link também em Testing
-
-### A7 · PDF único e entrega
-- **Prazo:** 18/11 · **Etiquetas:** `Agile` `Entrega`
-- [ ] Juntar A1 a A6 em **um único PDF**, com todos os integrantes identificados
-- [ ] Enviar no Teams
-
----
-
 ## 🎨 Front (Next.js) — Rickk
 
 ### F1 · Setup do projeto
-- **Prazo:** 11/11 · **Etiquetas:** `Front`
+- **Prazo:** 12/11 · **Etiquetas:** `Front` `Fase 3 · API/Front`
 - [ ] Next.js + TypeScript + Tailwind em `front-next/`
-- [ ] Mocks em `src/mocks/` no formato da tabela de endpoints
+- [ ] Mocks em `src/mocks/` no formato da tabela de endpoints (G3)
 - [ ] Deploy inicial na Vercel
 
 ### F2 · Tela do mapa
-- **Prazo:** 13/11 · **Etiquetas:** `Front` `MVP`
+- **Prazo:** 13/11 · **Etiquetas:** `Front` `Fase 3 · API/Front` `MVP`
 - [ ] React Leaflet + OSM
 - [ ] Marcadores por tipo (cor + ícone)
 - [ ] Filtros Acessibilidade/Segurança e status
 
 ### F3 · Registrar e confirmar ocorrência
-- **Prazo:** 14/11 · **Etiquetas:** `Front` `MVP`
+- **Prazo:** 14/11 · **Etiquetas:** `Front` `Fase 3 · API/Front` `MVP`
 - [ ] Formulário (foto, categoria, local no mapa, anônimo)
 - [ ] Tela de detalhe com confirmar/negar
 
 ### F4 · Tela de rota sugerida
-- **Prazo:** 16/11 · **Etiquetas:** `Front` `MVP` `Integração`
+- **Prazo:** 15/11 · **Etiquetas:** `Front` `Fase 3 · API/Front` `MVP`
 - [ ] Origem, destino e perfil
-- [ ] Comparação rota comum × Caminho Livre (com o resultado do algoritmo do Dudu, pré-calculado em JSON se preciso)
-
-### F5 · Painel do gestor *(Should)*
-- **Prazo:** 17/11 · **Etiquetas:** `Front`
-- [ ] Lista por bairro e botão "resolver"
-
-### F6 · Integração com a API
-- **Prazo:** 18/11 · **Etiquetas:** `Front` `Integração`
-- [ ] Trocar os mocks por `NEXT_PUBLIC_API_URL` (Render)
-- [ ] Testar o fluxo completo: registrar → confirmar → mapa → rota
-- [ ] Prints das telas para Agile e Java
+- [ ] Comparação rota comum × Caminho Livre (com JSON mockado no formato do DP5)
 
 ---
 
+# FASE 4 · Integração (16–18/11)
+
+### F5 · Painel do gestor *(Should: cortar se apertar)*
+- **Responsável:** Rickk · **Prazo:** 16/11 · **Etiquetas:** `Front` `Fase 4 · Integração`
+- [ ] Lista por bairro e botão "resolver"
+
+### F6 · Integração front ↔ API
+- **Responsável:** Rickk + Ulisses · **Prazo:** 17/11 · **Etiquetas:** `Front` `Java` `Fase 4 · Integração` `MVP`
+- [ ] Trocar os mocks por `NEXT_PUBLIC_API_URL` (Render)
+- [ ] Testar o fluxo completo: registrar → confirmar → mapa → rota
+- [ ] Corrigir divergências de contrato com o Ulisses
+- [ ] Prints das telas para Agile (A5) e Java (J7)
+
+### DP5 · Integração da rota, README e entrega
+- **Responsável:** Dudu · **Prazo:** 18/11 · **Etiquetas:** `Dynamic Programming` `Fase 4 · Integração` `Entrega`
+- [ ] Ler de `GET /trechos/pesos` (com fallback para o mock)
+- [ ] Gerar o JSON de rota consumido pela tela F4
+- [ ] README com RMs, nomes, algoritmos e funcionalidades
+- [ ] ZIP único no Teams
+
+### A5 · Protótipo de 3+ telas (20 pts)
+- **Responsável:** Rickk · **Prazo:** 17/11 · **Etiquetas:** `Agile` `Fase 4 · Integração`
+- [ ] Mapa, Registrar ocorrência, Rota sugerida (+ painel do gestor), a partir dos prints do F6
+- [ ] Comentários de UX em cada tela (acessibilidade, contraste, número de toques)
+- [ ] Matriz de rastreabilidade (caso de uso → história → endpoint → tabela)
+
+### DB4 · Consultas do projeto
+- **Responsável:** Caio · **Prazo:** 16/11 · **Etiquetas:** `Database` `Fase 4 · Integração`
+- [ ] 6 consultas em `scripts/03_consultas.sql` (GROUP BY, JOIN, HAVING, subquery, UPDATE de expiração)
+- [ ] Comentar o objetivo de cada consulta
+- [ ] Conferir que batem com os dados gerados pela API
+
+### DB5 · Dicionário de dados e entrega
+- **Responsável:** Caio · **Prazo:** 18/11 · **Etiquetas:** `Database` `Fase 4 · Integração` `Documentação` `Entrega`
+- [ ] Dicionário (tabela, coluna, tipo, restrição, descrição)
+- [ ] Justificativa da normalização (3FN)
+- [ ] Juntar modelos + dicionário + scripts e enviar no Teams
+
+### J7 · Documentação PDF de Java (30 pts)
+- **Responsável:** Ulisses · **Prazo:** 18/11 · **Etiquetas:** `Java` `Fase 4 · Integração` `Documentação` `Entrega`
+- [ ] Capa (nome do projeto, nomes completos, RMs), índice, descrição, justificativa, objetivos
+- [ ] Diagrama de classes gerado a partir do código final
+- [ ] Protótipos de tela (prints do F6), tabela de endpoints e DER
+- [ ] Instruções de execução (ferramentas, versões, links do GitHub e do deploy, passo a passo)
+- [ ] ZIP com PDF + link do GitHub + link do deploy → **Portal do Aluno**
+
+---
+
+# FASE 5 · Vídeo pitch + envio (18–19/11)
+
+### A6 · Vídeo pitch de 3 min (20 pts)
+- **Responsável:** Rickk (narração com o grupo) · **Prazo:** 19/11 (manhã) · **Etiquetas:** `Agile` `Fase 5 · Pitch` `Entrega`
+- [ ] Roteiro (`docs/pitch.md`): problema → solução funcionando → impacto → ODS
+- [ ] Gravar a tela do app **integrado** (fluxo do F6)
+- [ ] Usar trechos do vídeo 3D (AR3) e da entrevista
+- [ ] Narração feita por integrantes do grupo
+- [ ] Upload no YouTube como **não listado** e testar o link em aba anônima
+- [ ] Enviar o link também em Testing
+
+### A7 · PDF único de Agile e entrega
+- **Responsável:** Rickk · **Prazo:** 19/11 · **Etiquetas:** `Agile` `Fase 5 · Pitch` `Entrega`
+- [ ] Juntar A1 a A5 + link do pitch em **um único PDF**, com todos os integrantes identificados
+- [ ] Enviar no Teams
+
+### G5 · Revisão cruzada e envio
+- **Responsável:** todos · **Prazo:** 19/11 (até 18h) · **Etiquetas:** `Geral` `Fase 5 · Pitch` `Entrega`
+- [ ] Cada um revisa o PDF de outra pessoa (nomes, RMs, links funcionando)
+- [ ] Testar o deploy da API e do front
+- [ ] Último commit antes das 23h55 (ideal: até 18h)
+- [ ] Conferir que todas as 7 disciplinas foram enviadas (1 integrante por envio) e mover para `Enviado ✅`
+
+### G4 · Registro de prompts
+- **Responsável:** todos · **Prazo:** contínuo até 19/11 · **Etiquetas:** `Geral` `Documentação`
+- [ ] Cada um registra em `prompts.md` os prompts que usou
+
+---
+
+# EM PARALELO (09–18/11)
+
 ## 🧮 Dynamic Programming — Dudu
+*Começa com o mock e só encosta no app na Fase 4 (DP5).*
 
 ### DP1 · Grafo e mock de dados
-- **Prazo:** 12/11 · **Etiquetas:** `Dynamic Programming` `Integração`
-- [ ] `dados/grafo_mock.json` no formato combinado (com os locais reais do G1)
+- **Prazo:** 12/11 · **Etiquetas:** `Dynamic Programming` `Paralelo`
+- [ ] `dados/grafo_mock.json` no formato combinado no G3 (com os locais reais do G1)
 - [ ] Lista de adjacência em `grafo.py`
 
 ### DP2 · Dijkstra com pesos por perfil e horário
-- **Prazo:** 14/11 · **Etiquetas:** `Dynamic Programming` `MVP`
+- **Prazo:** 14/11 · **Etiquetas:** `Dynamic Programming` `Paralelo` `MVP`
 - [ ] Rota comum (só distância) × rota Caminho Livre
 - [ ] Perfil PMR: degrau intransponível
 - [ ] Penalidade noturna (19h–6h)
 
 ### DP3 · Memoização
-- **Prazo:** 15/11 · **Etiquetas:** `Dynamic Programming`
+- **Prazo:** 15/11 · **Etiquetas:** `Dynamic Programming` `Paralelo`
 - [ ] Cache por (origem, destino, perfil, faixa horária)
 - [ ] Medir o tempo com e sem cache
 
 ### DP4 · Tabulação
-- **Prazo:** 16/11 · **Etiquetas:** `Dynamic Programming`
+- **Prazo:** 16/11 · **Etiquetas:** `Dynamic Programming` `Paralelo`
 - [ ] Rota de menor risco com no máximo X metros a mais (tabela de PD)
 
-### DP5 · Integração, README e entrega
-- **Prazo:** 18/11 · **Etiquetas:** `Dynamic Programming` `Integração` `Entrega`
-- [ ] Ler de `GET /trechos/pesos` (com fallback para o mock)
-- [ ] Gerar JSON de rota para o front (F4)
-- [ ] README com RMs, nomes, algoritmos e funcionalidades
-- [ ] ZIP único no Teams
-
----
-
-## 📊 Data Science — Dudu
+## 📊 Data Science — Dudu *(isolada: sem conexão com o app)*
+*Usa o mesmo tema (segurança e acessibilidade de pedestres), mas é uma entrega independente. Não alimenta o banco, a API nem a rota.*
 
 ### DS1 · Coleta e preparo dos dados
-- **Prazo:** 12/11 · **Etiquetas:** `Data Science`
+- **Prazo:** 12/11 · **Etiquetas:** `Data Science` `Paralelo`
 - [ ] Baixar a base (SSP-SP, SP156 ou GeoSampa) e registrar a fonte
 - [ ] Limpeza: datas, horários, bairros, nulos
 
 ### DS2 · Análise e teste de hipótese
-- **Prazo:** 14/11 · **Etiquetas:** `Data Science`
+- **Prazo:** 14/11 · **Etiquetas:** `Data Science` `Paralelo`
 - [ ] Análise exploratória
 - [ ] Teste estatístico (ex.: qui-quadrado por faixa horária) ou modelo simples
 - [ ] Gráficos (barras por hora, mapa de calor por bairro)
 
-### DS3 · Pesos de risco para a solução
-- **Prazo:** 15/11 · **Etiquetas:** `Data Science` `Integração`
-- [ ] Tabela `peso_base` / `peso_noturno` por categoria
-- [ ] Repassar ao Caio (DB3) e usar no Dijkstra (DP2)
+### DS3 · Interpretação
+- **Prazo:** 16/11 · **Etiquetas:** `Data Science` `Paralelo`
+- [ ] Responder à hipótese com os resultados
+- [ ] Descrever como a análise **poderia** ser usada no Caminho Livre no futuro (exigido em "possível uso na solução")
 
 ### DS4 · Conclusão e entrega
-- **Prazo:** 18/11 · **Etiquetas:** `Data Science` `Documentação` `Entrega`
-- [ ] Conclusão curta: resultados, limitações e uso na solução
+- **Prazo:** 18/11 · **Etiquetas:** `Data Science` `Paralelo` `Documentação` `Entrega`
+- [ ] Conclusão curta: resultados, limitações e possível uso na solução
 - [ ] Base, notebook, gráficos e links no Teams
-
----
 
 ## 🌐 Network — Lau
 
 ### N1 · Plano de endereçamento
-- **Prazo:** 11/11 · **Etiquetas:** `Network`
+- **Prazo:** 11/11 · **Etiquetas:** `Network` `Paralelo`
 - [ ] Confirmar o número X da equipe
 - [ ] Sub-redes de `192.168.X.0/24` para Equipe, Cidadão e Servidores/Sensores (+ gateways)
 
 ### N2 · Topologia, VLANs e roteamento
-- **Prazo:** 13/11 · **Etiquetas:** `Network`
+- **Prazo:** 13/11 · **Etiquetas:** `Network` `Paralelo`
 - [ ] Switch com VLANs 10/20/30 e trunk 802.1Q
 - [ ] Router-on-a-stick com subinterfaces
 
 ### N3 · Serviços
-- **Prazo:** 14/11 · **Etiquetas:** `Network`
+- **Prazo:** 14/11 · **Etiquetas:** `Network` `Paralelo`
 - [ ] DHCP com um pool por VLAN (exclusões)
 - [ ] NAT/PAT até o roteador provedor + servidor "internet"
 - [ ] Servidor com DNS e HTTP (página com a Ficha da CitizenTech)
 
 ### N4 · Segurança
-- **Prazo:** 15/11 · **Etiquetas:** `Network`
+- **Prazo:** 15/11 · **Etiquetas:** `Network` `Paralelo`
 - [ ] ACL estendida: o Wi-Fi do cidadão acessa só HTTP/DNS do servidor e a internet
 - [ ] SSH, senhas e `enable secret`
 - [ ] Wi-Fi WPA2
 
 ### N5 · Testes e PDF
-- **Prazo:** 17/11 · **Etiquetas:** `Network` `Documentação` `Entrega`
+- **Prazo:** 17/11 · **Etiquetas:** `Network` `Paralelo` `Documentação` `Entrega`
 - [ ] Prints: ping entre VLANs, DHCP, página por nome, `show ip nat translations`, acesso bloqueado pela ACL
 - [ ] PDF: Ficha, topologia, plano de endereçamento, trechos de `show running-config`, testes
 - [ ] Enviar `.pkt` + PDF
 
----
-
 ## 🥽 AR/VR — Lau
 
 ### AR1 · Roteiro e storyboard
-- **Prazo:** 13/11 · **Etiquetas:** `AR/VR`
+- **Prazo:** 13/11 · **Etiquetas:** `AR/VR` `Paralelo`
 - [ ] Roteiro de 50 s (`ar-vr/README.md`)
 - [ ] Escolher a ferramenta (Blender, Unity, Spline...)
 
 ### AR2 · Modelagem da cena 3D
-- **Prazo:** 16/11 · **Etiquetas:** `AR/VR`
+- **Prazo:** 16/11 · **Etiquetas:** `AR/VR` `Paralelo`
 - [ ] Rua noturna, calçada com degrau, poste apagado, personagens
 - [ ] Rota comum × rota Caminho Livre
 
 ### AR3 · Vídeo e entrega
-- **Prazo:** 18/11 · **Etiquetas:** `AR/VR` `Entrega`
+- **Prazo:** 18/11 · **Etiquetas:** `AR/VR` `Paralelo` `Entrega`
 - [ ] Renderizar e editar (30–60 s)
 - [ ] Upload no YouTube e testar o link
 - [ ] PDF com nomes e link → Teams
@@ -356,20 +382,21 @@
 
 | Card | Depende de | Libera |
 |---|---|---|
-| DB1 (DER) | — | J2, A4 (rastreabilidade) |
+| A4 (backlog/MVP) | G1, A1–A3 | DB1, G3 |
+| DB1 (DER) | A4 | DB2, J2, G3 |
 | DB2/DB3 (banco no Oracle) | DB1 | J6 (deploy) |
-| DS3 (pesos) | DS2 | DB3, DP2 |
-| J6 (deploy) | J1–J5, DB2 | F6, DP5, N3 (referência no DNS) |
-| DP5 (JSON de rota) | DP2 | F4 |
-| F6 (front integrado) | J6 | A5, A6, J7 (prints) |
-| AR3 (vídeo) | AR2 | A6 (trechos no pitch) |
-| A6 (pitch) | F6, AR3 | G5 |
+| G3 (contratos/mocks) | DB1 | F1, DP1 |
+| J6 (API no Render) | J1–J5, DB2 | F6, DP5 |
+| F6 (front integrado) | J6, F1–F4 | A5, J7, A6 |
+| AR3 (vídeo 3D) | AR2 | A6 |
+| A6 (pitch) | F6, AR3 | A7, G5 |
+| Data Science | — | — *(isolada)* |
 
 ## 📊 Carga por pessoa
 | Pessoa | Cards | Entregas |
 |---|---|---|
 | Caio | 5 | Database |
-| Ulisses | 7 | Java (Portal do Aluno) |
-| Rickk | 13 + G1/G2 | Agile, pitch |
+| Ulisses | 7 (+F6 junto) | Java (Portal do Aluno) |
+| Rickk | 12 + G1/G2 | Agile, pitch |
 | Dudu | 9 | Dynamic Programming, Data Science |
 | Lau | 8 | Network, AR/VR |

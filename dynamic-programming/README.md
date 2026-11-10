@@ -42,4 +42,3 @@ dynamic-programming/
 
 ## Integrações
 - ⬅️ **Ulisses:** endpoint `/trechos/pesos` (até lá, usar o mock)
-- ⬅️ **Data Science (você mesmo):** pesos por horário
