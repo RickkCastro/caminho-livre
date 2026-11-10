@@ -7,7 +7,7 @@ Interface web simples e acessível que consome a API Java e exibe o mapa, as oco
 
 ## Telas
 - [ ] **Mapa** (`/`): Leaflet + OpenStreetMap, com camadas Acessibilidade e Segurança e filtros
-- [ ] **Registrar ocorrência** (`/ocorrencias/nova`): foto, categoria, local no mapa, anônimo (S/N)
+- [ ] **Registrar ocorrência** (`/ocorrencias/nova`): foto, categoria, local no mapa (inclui alagamento)
 - [ ] **Detalhe da ocorrência** (`/ocorrencias/[id]`): confirmar ou negar
 - [ ] **Rota sugerida** (`/rota`): origem/destino, perfil e comparação rota comum × Caminho Livre
 - [ ] **Login / criar conta** (`/login`, `/cadastro`)
