@@ -88,6 +88,8 @@ Estes pontos precisam ser combinados **antes** de cada um codar:
 
 ## 📅 Cronograma
 
+Tarefas detalhadas (cards do Trello): [`TAREFAS.md`](TAREFAS.md)
+
 | Data | Marco |
 |---|---|
 | **10/11** | Entrevista com pessoa real, fotos, ficha preenchida, **DER congelado** |
