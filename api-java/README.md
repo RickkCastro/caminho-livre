@@ -35,32 +35,39 @@ src/main/java/br/com/fiap/caminholivre/
 ```
 
 ## Regras de negócio (BO)
-- Uma ocorrência nasce `ABERTA`, com `dt_expiracao` = registro + 15 dias.
-- Com **3 confirmações positivas** ela passa para `CONFIRMADA`.
-- Um usuário só confirma uma vez cada ocorrência e não confirma a própria.
-- Apenas o perfil `GESTOR` pode marcar como `RESOLVIDA`.
-- Ocorrências vencidas e não confirmadas passam para `EXPIRADA`.
-- O peso do trecho é `distância × (1 + Σ pesos das ocorrências ativas próximas)`, usando `peso_noturno` entre 19h e 6h e multiplicador por perfil.
+Alinhadas ao [backlog MoSCoW](../agile/backlog.md):
+- Uma ocorrência nasce `ABERTA`, com `dt_expiracao` = registro + 15 dias (US09).
+- Com **3 confirmações positivas (👍)** ela passa para `CONFIRMADA` (US08).
+- Com **3 negações (👎)** ela passa para `RESOLVIDA` ("o problema não existe mais"). Não há painel de gestor (US21 é Won't).
+- Um usuário só avalia uma vez cada ocorrência e não avalia a própria.
+- Ocorrências vencidas e não confirmadas passam para `EXPIRADA` (US09).
+- O peso do trecho é `distância × (1 + Σ pesos das ocorrências ativas próximas)`, usando `peso_noturno` entre 19h e 6h, ignorando as categorias que o usuário desligou em `PREFERENCIA_ROTA` (US12). Para o perfil `MOBILIDADE_REDUZIDA`, um degrau bloqueia o trecho.
+- *(Could)* +10 pontos ao enviar um alerta e +2 ao avaliar (US17, US18).
+- Login simples: `POST /auth/login` valida email + senha (hash) e devolve os dados do usuário. JWT é opcional.
 
 ## Tabela de endpoints (contrato com o front)
-| Método | Rota | Descrição |
-|---|---|---|
-| GET / POST | `/usuarios` | Listar / cadastrar |
-| GET / PUT / DELETE | `/usuarios/{id}` | Buscar / atualizar / remover |
-| GET / POST | `/categorias` | Listar / cadastrar |
-| GET / PUT / DELETE | `/categorias/{id}` | |
-| GET / POST | `/localizacoes` | |
-| GET / PUT / DELETE | `/localizacoes/{id}` | |
-| GET | `/ocorrencias?bairro=&tipo=&status=` | Listar com filtros (mapa) |
-| POST | `/ocorrencias` | Registrar ocorrência |
-| GET / PUT / DELETE | `/ocorrencias/{id}` | |
-| POST | `/ocorrencias/{id}/confirmacoes` | Confirmar ou negar |
-| PUT | `/ocorrencias/{id}/resolver` | Gestor resolve |
-| GET / POST | `/trechos` | |
-| GET / PUT / DELETE | `/trechos/{id}` | |
-| GET | `/trechos/pesos?perfil=&hora=` | Grafo com pesos (consumido pelo Python) |
-| GET / POST | `/rotas-salvas` | |
-| DELETE | `/rotas-salvas/{id}` | |
+| Método | Rota | Descrição | História |
+|---|---|---|---|
+| POST | `/auth/login` | Login | US02 |
+| GET / POST | `/usuarios` | Listar / criar conta | US01 |
+| GET / PUT / DELETE | `/usuarios/{id}` | Buscar / atualizar perfil (nome, foto, perfil) / remover | US13, US14 |
+| GET | `/usuarios/{id}/ocorrencias` | Minhas ocorrências | US11 |
+| GET / PUT | `/usuarios/{id}/preferencias` | Categorias que a rota considera | US12 |
+| GET / POST | `/categorias` | Listar / cadastrar | US03–05 |
+| GET / PUT / DELETE | `/categorias/{id}` | | |
+| GET / POST | `/localizacoes` | | |
+| GET / PUT / DELETE | `/localizacoes/{id}` | | |
+| GET | `/ocorrencias?bairro=&tipo=&status=` | Listar com filtros (mapa) | US04 |
+| POST | `/ocorrencias` | Enviar alerta (inclui alagamento) | US03, US05 |
+| GET / PUT / DELETE | `/ocorrencias/{id}` | Detalhe / editar / remover | US10 |
+| POST | `/ocorrencias/{id}/confirmacoes` | Avaliar 👍/👎 | US08 |
+| GET / POST | `/trechos` | | |
+| GET / PUT / DELETE | `/trechos/{id}` | | |
+| GET | `/trechos/pesos?idUsuario=&hora=` | Grafo com pesos (consumido pelo Python) | US06, US12 |
+| GET | `/ranking/bairros` | Melhores e piores bairros | US15 |
+| GET | `/ranking/usuarios` | *(Could)* maiores contribuidores | US19 |
+| GET / POST | `/rotas-favoritas` | *(Could)* | US16 |
+| DELETE | `/rotas-favoritas/{id}` | *(Could)* | US16 |
 
 Formato de erro padrão:
 ```json

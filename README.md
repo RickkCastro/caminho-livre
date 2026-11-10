@@ -15,7 +15,7 @@ O mapa da cidade que mostra o que o GPS não vê: **calçadas intransitáveis, r
 | **Cidade e bairro** | São Paulo — entorno da FIAP Paulista *(ajustar após a observação de campo)* |
 | **Cidadão beneficiado** | Pessoas com mobilidade reduzida (cadeirantes, idosos, pais com carrinho de bebê) e pedestres que voltam a pé à noite |
 | **Problema, em uma frase** | Quem anda a pé não sabe quais calçadas são intransitáveis nem quais ruas estão escuras ou perigosas, e os apps de rota ignoram isso. |
-| **Como funciona** | Cidadãos registram ocorrências (foto + categoria + local). A comunidade confirma; relatos sem confirmação expiram. O sistema calcula rotas que evitam obstáculos e trechos inseguros, com pesos que variam pelo perfil do usuário e pelo horário. Gestores públicos acompanham e resolvem as ocorrências. |
+| **Como funciona** | Cidadãos registram ocorrências (foto + categoria + local). A comunidade confirma; relatos sem confirmação expiram. O sistema calcula rotas que evitam obstáculos e trechos inseguros, com pesos que variam pelo perfil do usuário e pelo horário. Alertas negados pela comunidade são marcados como resolvidos. |
 | **O que cada parte faz** | Ver [Partes da solução](#-partes-da-solução) |
 | **Link do repositório** | *(preencher)* |
 | **Indicador de impacto** | % de obstáculos/trechos escuros evitados por rota · ocorrências resolvidas por mês · tempo médio até a resolução |
@@ -66,7 +66,7 @@ Estes pontos precisam ser combinados **antes** de cada um codar:
 
 1. **DER congelado (Caio → Ulisses):** nomes de tabelas e colunas definidos em `database/`. As classes Java seguem 1:1.
 2. **Tabela de endpoints (Ulisses ↔ Rickk):** mantida em `api-java/README.md`. O front consome exatamente esse contrato.
-3. **Formato do grafo (Ulisses ↔ Dudu):** `GET /trechos/pesos?perfil=&hora=` retorna
+3. **Formato do grafo (Ulisses ↔ Dudu):** `GET /trechos/pesos?idUsuario=&hora=` retorna
    ```json
    [{ "origem": 1, "destino": 2, "distanciaM": 120, "peso": 3.5 }]
    ```
@@ -75,14 +75,16 @@ Estes pontos precisam ser combinados **antes** de cada um codar:
 ### Modelo de domínio compartilhado
 | Entidade | Papel |
 |---|---|
-| `USUARIO` | Cidadão, pessoa com mobilidade reduzida ou gestor |
-| `CATEGORIA_OCORRENCIA` | Tipo de problema (acessibilidade/segurança) com peso base e noturno |
+| `USUARIO` | Pedestre ou pessoa com mobilidade reduzida, com foto e pontos |
+| `CATEGORIA_OCORRENCIA` | Tipo de problema (acessibilidade, segurança ou clima/alagamento) com peso base e noturno |
 | `LOCALIZACAO` | Ponto geográfico (lat/long, logradouro, bairro) |
 | `OCORRENCIA` | Relato do cidadão, com status `ABERTA → CONFIRMADA → RESOLVIDA` ou `EXPIRADA` |
 | `CONFIRMACAO` | Usuário confirma ou nega uma ocorrência (único por usuário/ocorrência) |
 | `TRECHO` | Aresta do grafo entre duas localizações, com distância e iluminação |
-| `ROTA_SALVA` | Rotas frequentes do usuário |
-| `CONTATO_CONFIANCA` | Contato que acompanha o trajeto (dados simulados) |
+| `PREFERENCIA_ROTA` | Quais categorias de alerta a rota de cada usuário considera |
+| `ROTA_FAVORITA` | *(Could)* Rotas favoritas do usuário |
+
+Backlog priorizado (MoSCoW): [`agile/backlog.md`](agile/backlog.md)
 
 ---
 

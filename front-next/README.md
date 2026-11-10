@@ -10,7 +10,10 @@ Interface web simples e acessível que consome a API Java e exibe o mapa, as oco
 - [ ] **Registrar ocorrência** (`/ocorrencias/nova`): foto, categoria, local no mapa, anônimo (S/N)
 - [ ] **Detalhe da ocorrência** (`/ocorrencias/[id]`): confirmar ou negar
 - [ ] **Rota sugerida** (`/rota`): origem/destino, perfil e comparação rota comum × Caminho Livre
-- [ ] *(Should)* **Painel do gestor** (`/gestor`): lista por bairro e botão "resolver"
+- [ ] **Login / criar conta** (`/login`, `/cadastro`)
+- [ ] *(Should)* **Perfil + onboarding** (`/perfil`), **Minhas ocorrências** (`/minhas`), **Ranking de bairros** (`/ranking`)
+
+> Prioridades no [backlog](../agile/backlog.md). O painel de administrador é Won't.
 
 ## Diretrizes de UX (vão para os comentários do protótipo)
 - Fonte mínima de 16px, alto contraste (WCAG AA) e botões grandes

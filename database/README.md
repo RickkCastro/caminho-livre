@@ -23,24 +23,29 @@ Projetar a base relacional que registra e consulta as informações do Caminho L
 | Documentação | 1 |
 
 ## Tabelas
-| Tabela | Colunas principais |
-|---|---|
-| `USUARIO` | id, nome, email (UNIQUE), senha_hash, perfil (CHECK: MOBILIDADE_REDUZIDA, PEDESTRE, GESTOR), dt_cadastro |
-| `CATEGORIA_OCORRENCIA` | id, nome, tipo (CHECK: ACESSIBILIDADE, SEGURANCA), peso_base, peso_noturno |
-| `LOCALIZACAO` | id, latitude, longitude, logradouro, bairro |
-| `OCORRENCIA` | id, id_usuario (FK), id_categoria (FK), id_localizacao (FK), descricao, foto_url, status (CHECK: ABERTA, CONFIRMADA, RESOLVIDA, EXPIRADA), anonima (S/N), dt_registro, dt_expiracao |
-| `CONFIRMACAO` | id, id_ocorrencia (FK), id_usuario (FK), confirma (S/N), dt_confirmacao, UNIQUE(id_ocorrencia, id_usuario) |
-| `TRECHO` | id, id_origem (FK LOCALIZACAO), id_destino (FK LOCALIZACAO), distancia_m, iluminado (S/N) |
-| `ROTA_SALVA` | id, id_usuario (FK), id_origem (FK), id_destino (FK), perfil_usado, dt_criacao |
-| `CONTATO_CONFIANCA` | id, id_usuario (FK), nome, telefone *(simulado)* |
+Alinhadas ao [backlog MoSCoW](../agile/backlog.md). A coluna "Histórias" mostra de onde cada tabela vem.
+
+| Tabela | Colunas principais | Histórias |
+|---|---|---|
+| `USUARIO` | id, nome, email (UNIQUE), senha_hash, perfil (CHECK: PEDESTRE, MOBILIDADE_REDUZIDA), foto_url, pontos (DEFAULT 0), dt_cadastro | US01, US02, US13, US14, US17–19 |
+| `CATEGORIA_OCORRENCIA` | id, nome, tipo (CHECK: ACESSIBILIDADE, SEGURANCA, CLIMA), peso_base, peso_noturno | US03–US05 |
+| `LOCALIZACAO` | id, latitude, longitude, logradouro, bairro | US03, US06, US15 |
+| `OCORRENCIA` | id, id_usuario (FK), id_categoria (FK), id_localizacao (FK), descricao, foto_url, status (CHECK: ABERTA, CONFIRMADA, EXPIRADA, RESOLVIDA), dt_registro, dt_expiracao | US03–US05, US09–US11 |
+| `CONFIRMACAO` | id, id_ocorrencia (FK), id_usuario (FK), confirma (S/N), dt_confirmacao, UNIQUE(id_ocorrencia, id_usuario) | US08 |
+| `PREFERENCIA_ROTA` | id_usuario (FK), id_categoria (FK), considerar (S/N), PK(id_usuario, id_categoria) | US12 |
+| `TRECHO` | id, id_origem (FK LOCALIZACAO), id_destino (FK LOCALIZACAO), distancia_m, iluminado (S/N) | US06 |
+| `ROTA_FAVORITA` *(Could)* | id, id_usuario (FK), id_origem (FK), id_destino (FK), apelido, dt_criacao | US16 |
+
+> Categorias da carga inicial: Degrau, Buraco, Calçada quebrada, Obra (ACESSIBILIDADE); Rua escura, Assalto (SEGURANCA); **Alagamento** (CLIMA).
+> `CONTATO_CONFIANCA` saiu do modelo: o "acompanhar trajeto" (US20) é Could e depende de tempo real, fora do escopo do banco.
 
 ## Consultas sugeridas
-1. Ocorrências abertas por bairro e tipo (`GROUP BY`)
-2. As 5 ruas com mais relatos de segurança entre 19h e 23h
-3. Ocorrências com 3 ou mais confirmações positivas (`JOIN` + `HAVING`)
-4. Ocorrências vencidas que devem passar para `EXPIRADA` (`UPDATE` com subquery)
-5. Tempo médio até a resolução por categoria
-6. Usuários que mais contribuíram (ocorrências + confirmações)
+1. Ocorrências ativas por bairro e tipo (`GROUP BY`) → mapa (US04)
+2. **Ranking dos melhores e piores bairros** por ocorrências ativas ponderadas pelo peso (US15)
+3. Ocorrências com 3 ou mais confirmações positivas (`JOIN` + `HAVING`) (US08)
+4. Ocorrências vencidas sem confirmação que devem passar para `EXPIRADA` (`UPDATE` com subquery) (US09)
+5. Histórico de ocorrências de um usuário com o total de 👍/👎 (US11)
+6. Ranking de usuários por pontos (US19)
 
 ## Integrações
 - ➡️ **Ulisses (Java):** o DER é o contrato, então congelar os nomes até **11/11** (depois do backlog do MVP). O mesmo DER entra no PDF de Java.

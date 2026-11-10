@@ -91,20 +91,21 @@ EM PARALELO (09–18/11, sem depender do app até a integração):
 
 ### A2 · Personas (10 pts)
 - **Responsável:** Rickk · **Prazo:** 10/11 · **Etiquetas:** `Agile` `Fase 1 · Backlog`
-- [ ] Dona Marta, Júlia e Sr. Roberto (gestor), com narrativa, dores, objetivos e contexto
+- [ ] Dona Marta, Júlia e Seu Antônio, com narrativa, dores, objetivos e contexto
 
 ### A3 · Diagrama de casos de uso (20 pts)
 - **Responsável:** Rickk · **Prazo:** 11/11 · **Etiquetas:** `Agile` `Fase 1 · Backlog`
-- [ ] Todos os atores (Cidadão, PMR, Gestor, Contato de confiança, Sistema)
+- [ ] Todos os atores (Pedestre, PMR, Sistema, Administrador como Won't)
 - [ ] Escopo total (MVP e além)
 - [ ] Exportar a imagem
 
 ### A4 · Backlog do produto (20 pts) 🔑 *libera a Fase 2*
 - **Responsável:** Rickk (Planning Poker com todos) · **Prazo:** 11/11 · **Etiquetas:** `Agile` `Fase 1 · Backlog` `MVP`
 - [ ] Histórias coerentes com o diagrama de casos de uso
-- [ ] Priorizar com MoSCoW
+- [x] Priorizar com MoSCoW (quadro da equipe → `agile/backlog.md`)
 - [ ] Sessão de Planning Poker com o grupo (registrar com print ou foto)
-- [ ] **Fechar o escopo do MVP** e repassar ao Caio, ao Ulisses e ao Dudu
+- [x] **Fechar o escopo do MVP** (US01–US07) e repassar ao Caio, ao Ulisses e ao Dudu
+- [ ] Exportar a imagem do quadro MoSCoW para o PDF
 
 ---
 
@@ -118,7 +119,7 @@ EM PARALELO (09–18/11, sem depender do app até a integração):
 
 ### DB1 · Modelo conceitual e lógico (DER congelado)
 - **Responsável:** Caio · **Prazo:** 11/11 · **Etiquetas:** `Database` `Fase 2 · Tabelas` `MVP`
-- [ ] Conceitual com as entidades do MVP e cardinalidades (partindo do backlog A4)
+- [ ] Conceitual com as entidades e cardinalidades (tabelas já mapeadas em `database/README.md` a partir do backlog)
 - [ ] Lógico com PKs, FKs e tipos
 - [ ] Validar com Ulisses e **congelar os nomes**
 
@@ -153,13 +154,15 @@ EM PARALELO (09–18/11, sem depender do app até a integração):
 ### J3 · Camadas DAO e BO
 - **Prazo:** 14/11 · **Etiquetas:** `Java` `Fase 3 · API/Front` `MVP`
 - [ ] DAO por entidade
-- [ ] BO com as regras: expiração (15 dias), 3 confirmações → CONFIRMADA, não confirmar a própria, só GESTOR resolve
-- [ ] Cálculo de peso do trecho por perfil e horário
+- [ ] BO com as regras: expiração (15 dias), 3 👍 → CONFIRMADA, 3 👎 → RESOLVIDA, não avaliar a própria
+- [ ] Cálculo de peso do trecho por perfil, horário e preferências do usuário
+- [ ] Login simples (email + senha com hash)
 
 ### J4 · Controllers (GET/POST/PUT/DELETE)
 - **Prazo:** 14/11 · **Etiquetas:** `Java` `Fase 3 · API/Front` `MVP`
 - [ ] CRUD de todas as entidades
-- [ ] `POST /ocorrencias/{id}/confirmacoes`, `PUT /ocorrencias/{id}/resolver`, `GET /trechos/pesos`
+- [ ] Must: `POST /auth/login`, `POST /usuarios`, `POST/GET /ocorrencias`, `GET /trechos/pesos`
+- [ ] Should: `/ocorrencias/{id}/confirmacoes`, `/usuarios/{id}/ocorrencias`, `/usuarios/{id}/preferencias`, `/ranking/bairros`
 - [ ] Filtros em `GET /ocorrencias`
 - [ ] CORS para o front
 
@@ -183,34 +186,39 @@ EM PARALELO (09–18/11, sem depender do app até a integração):
 - [ ] Mocks em `src/mocks/` no formato da tabela de endpoints (G3)
 - [ ] Deploy inicial na Vercel
 
-### F2 · Tela do mapa
+### F2 · Login, criar conta e mapa
 - **Prazo:** 13/11 · **Etiquetas:** `Front` `Fase 3 · API/Front` `MVP`
-- [ ] React Leaflet + OSM
-- [ ] Marcadores por tipo (cor + ícone)
-- [ ] Filtros Acessibilidade/Segurança e status
+- [ ] Telas de login e criar conta (US01, US02)
+- [ ] React Leaflet + OSM com os alertas (US04)
+- [ ] Marcadores por tipo (cor + ícone), incluindo alagamento (US05)
+- [ ] Filtros Acessibilidade / Segurança / Alagamento
+- [ ] Interface acessível em todas as telas (US07)
 
-### F3 · Registrar e confirmar ocorrência
+### F3 · Enviar alerta e detalhe
 - **Prazo:** 14/11 · **Etiquetas:** `Front` `Fase 3 · API/Front` `MVP`
-- [ ] Formulário (foto, categoria, local no mapa, anônimo)
-- [ ] Tela de detalhe com confirmar/negar
+- [ ] Formulário (foto, categoria, local no mapa) (US03, US05)
+- [ ] *(Should)* Detalhe da ocorrência com 👍/👎 (US08, US10)
 
 ### F4 · Tela de rota sugerida
 - **Prazo:** 15/11 · **Etiquetas:** `Front` `Fase 3 · API/Front` `MVP`
-- [ ] Origem, destino e perfil
+- [ ] Origem, destino e perfil (US06)
+- [ ] *(Should)* Escolher quais tipos de alerta a rota considera (US12)
 - [ ] Comparação rota comum × Caminho Livre (com JSON mockado no formato do DP5)
 
 ---
 
 # FASE 4 · Integração (16–18/11)
 
-### F5 · Painel do gestor *(Should: cortar se apertar)*
+### F5 · Perfil, histórico e ranking *(Should: cortar se apertar)*
 - **Responsável:** Rickk · **Prazo:** 16/11 · **Etiquetas:** `Front` `Fase 4 · Integração`
-- [ ] Lista por bairro e botão "resolver"
+- [ ] Onboarding de perfil e editar perfil com foto e nome (US13, US14)
+- [ ] Minhas ocorrências (US11)
+- [ ] Ranking de bairros (US15)
 
 ### F6 · Integração front ↔ API
 - **Responsável:** Rickk + Ulisses · **Prazo:** 17/11 · **Etiquetas:** `Front` `Java` `Fase 4 · Integração` `MVP`
 - [ ] Trocar os mocks por `NEXT_PUBLIC_API_URL` (Render)
-- [ ] Testar o fluxo completo: registrar → confirmar → mapa → rota
+- [ ] Testar o fluxo completo: criar conta → login → enviar alerta → mapa → rota
 - [ ] Corrigir divergências de contrato com o Ulisses
 - [ ] Prints das telas para Agile (A5) e Java (J7)
 
@@ -223,9 +231,9 @@ EM PARALELO (09–18/11, sem depender do app até a integração):
 
 ### A5 · Protótipo de 3+ telas (20 pts)
 - **Responsável:** Rickk · **Prazo:** 17/11 · **Etiquetas:** `Agile` `Fase 4 · Integração`
-- [ ] Mapa, Registrar ocorrência, Rota sugerida (+ painel do gestor), a partir dos prints do F6
-- [ ] Comentários de UX em cada tela (acessibilidade, contraste, número de toques)
-- [ ] Matriz de rastreabilidade (caso de uso → história → endpoint → tabela)
+- [ ] Login/onboarding, Mapa, Enviar alerta, Rota acessível (+ detalhe 👍/👎), a partir dos prints do F6
+- [ ] Comentários de UX em cada tela (acessibilidade, contraste, número de toques), ligados à US07
+- [ ] Matriz de rastreabilidade (já em `agile/backlog.md`)
 
 ### DB4 · Consultas do projeto
 - **Responsável:** Caio · **Prazo:** 16/11 · **Etiquetas:** `Database` `Fase 4 · Integração`

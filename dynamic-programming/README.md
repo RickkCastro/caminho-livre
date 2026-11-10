@@ -18,7 +18,7 @@ Algoritmo em Python que calcula a **rota mais acessível e segura** do Caminho L
 | **Tabulação** | Tabela PD para "rota de **menor risco** com no máximo X metros a mais" (custo restrito, estilo mochila sobre caminhos) |
 
 ## Funcionalidades sugeridas
-1. Carregar o grafo de um JSON (mock) ou de `GET /trechos/pesos?perfil=&hora=`
+1. Carregar o grafo de um JSON (mock) ou de `GET /trechos/pesos?idUsuario=&hora=`
 2. Calcular a rota mais curta (comum) × a rota Caminho Livre e comparar distância e risco
 3. Perfis: `PEDESTRE`, `MOBILIDADE_REDUZIDA` (degrau = intransponível)
 4. Horário: penalidade de segurança maior entre 19h e 6h
