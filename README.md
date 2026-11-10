@@ -91,11 +91,10 @@ Estes pontos precisam ser combinados **antes** de cada um codar:
 | Data | Marco |
 |---|---|
 | **10/11** | Entrevista com pessoa real, fotos, ficha preenchida, **DER congelado** |
-| **12/11** | API no Render conectada ao Oracle (*hello world* já vale) |
-| **15/11** | Todas as partes funcionando de forma isolada |
-| **17/11** | Integração (front + API + rota) e gravação do pitch |
-| **18/11** | PDFs prontos e revisão cruzada (cada um revisa o PDF de outro) |
-| **19/11** | Envio cedo. Um integrante envia cada disciplina. |
+| **12/11** | Banco criado e populado no Oracle da FIAP |
+| **15/11** | **API no Render** conectada ao Oracle · todas as partes funcionando de forma isolada (com mocks) |
+| **18/11** | **Integração** (front + API + rota), pitch gravado e todos os PDFs prontos |
+| **19/11** | Revisão cruzada de manhã e envio até 18h. Um integrante envia cada disciplina. |
 
 ---
 

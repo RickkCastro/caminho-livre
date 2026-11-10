@@ -19,7 +19,7 @@ O `.zip` contém o **PDF da documentação**, o **link do GitHub** e o **link do
 - [ ] Camadas **DAO** e **BO** (10)
 - [ ] **Controller** com GET, POST, PUT e DELETE (10)
 - [ ] **Tratamento de exceções** (10)
-- [ ] **Deploy no Render** (30) ⚠️ *fazer até 12/11*
+- [ ] **Deploy no Render** (30) ⚠️ *fazer até 15/11*
 
 > ⚠️ Commits feitos após a data de entrega **zeram toda a parte técnica**.
 
