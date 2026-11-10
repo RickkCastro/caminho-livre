@@ -1,0 +1,17 @@
+# Java
+target/
+*.class
+.idea/
+*.iml
+# Node / Next
+node_modules/
+.next/
+.env*
+!.env.example
+# Python
+__pycache__/
+.venv/
+.ipynb_checkpoints/
+# Sistema
+.DS_Store
+Thumbs.db
