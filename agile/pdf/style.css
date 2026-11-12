@@ -1,0 +1,54 @@
+/* Estilo do PDF de Agile (Caminho Livre) */
+@page { size: A4; margin: 20mm 18mm 20mm 18mm; }
+
+html { font-size: 10pt; }
+body {
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: #1f2733;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4 { color: #0b3f52; line-height: 1.25; }
+h2 { font-size: 1.6em; border-bottom: 2px solid #0b6f86; padding-bottom: 0.2em; margin: 0 0 0.7em; }
+h3 { font-size: 1.2em; margin: 1.2em 0 0.5em; }
+
+/* Título nunca fica sozinho no fim da página */
+h1, h2, h3, h4 { break-after: avoid; page-break-after: avoid; break-inside: avoid; }
+/* Reserva ~3 linhas de tabela abaixo de títulos e rótulos (classe aplicada pelo build.js):
+   se não couberem na página, o título vai junto para a próxima. */
+.keep { break-inside: avoid; }
+.keep::after { content: ""; display: block; height: 110px; margin-bottom: -110px; }
+.keep-group { break-inside: avoid; page-break-inside: avoid; }
+/* Parágrafo curto que apresenta uma tabela ou lista fica junto dela */
+p { orphans: 3; widows: 3; }
+
+a { color: #0b6f86; text-decoration: none; }
+code { font-family: Consolas, monospace; font-size: 0.9em; background: #eef2f6; padding: 0 3px; border-radius: 3px; }
+
+table { width: 100%; border-collapse: collapse; margin: 0.5em 0 1.1em; font-size: 0.92em; }
+thead { display: table-header-group; }          /* repete o cabeçalho ao quebrar */
+tr, td, th { break-inside: avoid; page-break-inside: avoid; }
+th { background: #0b6f86; color: #fff; text-align: left; padding: 6px 8px; font-weight: 600; }
+td { padding: 5px 8px; border-bottom: 1px solid #dde4ec; vertical-align: top; }
+tbody tr:nth-child(even) td { background: #f6f9fb; }
+
+/* Tabelas da capa (sem cabeçalho visível) */
+div[align="center"] table { width: auto; margin: 0.5em auto; }
+div[align="center"] th:empty { display: none; }
+
+ul { padding-left: 1.3em; }
+li { margin: 0.1em 0; }
+hr { border: 0; border-top: 1px solid #dde4ec; }
+
+/* Quebras de página manuais do .md (convertidas pelo build.js) */
+.pb { display: none; }
+.pb + * { break-before: page; page-break-before: always; }
+
+/* Diagramas ocupam a largura útil da página */
+img { display: block; max-width: 100%; max-height: 235mm; margin: 0.5em auto; }
+
+/* Página em paisagem para diagramas grandes */
+@page landscape { size: A4 landscape; margin: 14mm 16mm 16mm 16mm; }
+.landscape { page: landscape; break-before: page; break-after: page; }
+.landscape img { max-height: 160mm; width: auto; max-width: 100%; }
+.landscape h3 { margin-top: 0; }

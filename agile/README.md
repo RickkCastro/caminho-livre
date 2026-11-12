@@ -21,42 +21,44 @@ Documentação completa do design da solução Caminho Livre, aplicando as técn
 ## Personas (rascunho)
 - **Dona Marta, 68 anos:** usa andador e mora a 600 m do posto de saúde. Desiste de sair quando a calçada está quebrada.
 - **Júlia, 21 anos:** estudante que sai da faculdade às 23h e caminha até o metrô. Muda de rota "no feeling" quando a rua está escura.
-- **Seu Antônio, 74 anos:** mora em rua que alaga. Usa pouco o celular e precisa de botões grandes e textos simples (US07).
+- **Seu Antônio, 74 anos:** mora em rua que alaga. Usa pouco o celular e precisa de botões grandes e textos simples (US05).
 
 ## Atores e casos de uso
-**Atores:** Pedestre, Pessoa com mobilidade reduzida (PMR), Sistema, Administrador *(Won't, aparece só no escopo total)*
+**Atores:** Usuário (inclui quem tem mobilidade reduzida, informado no perfil), Sistema, Google (autenticação), Administrador *(Won't, aparece só no escopo total)*
 
 | Caso de uso | Atores | Prioridade |
 |---|---|---|
-| Criar conta / fazer login | Pedestre, PMR | Must |
-| Enviar alerta (inclui alagamento) | Pedestre, PMR | Must |
-| Consultar alertas no mapa | Pedestre, PMR | Must |
-| Calcular rota acessível | Pedestre, PMR, Sistema | Must |
-| Avaliar alerta (👍/👎) | Pedestre, PMR | Should |
-| Ver detalhe da ocorrência | Pedestre, PMR | Should |
-| Ver minhas ocorrências | Pedestre, PMR | Should |
-| Personalizar rota e perfil (onboarding) | Pedestre, PMR | Should |
-| Ver ranking de bairros | Pedestre, PMR | Should |
+| Entrar com Google | Usuário, Google | Must |
+| Sair da conta | Usuário | Must |
+| Excluir conta | Usuário | Should |
+| Enviar alerta (inclui alagamento) | Usuário | Must |
+| Consultar alertas no mapa | Usuário | Must |
+| Calcular rota acessível | Usuário, Sistema | Must |
+| Avaliar alerta (👍/👎) | Usuário | Should |
+| Ver detalhe da ocorrência | Usuário | Should |
+| Ver minhas ocorrências | Usuário | Should |
+| Personalizar rota e perfil (onboarding) | Usuário | Should |
+| Ver ranking de bairros | Usuário | Should |
 | Expirar alertas não confirmados | Sistema | Should |
-| Favoritar rota · pontuar · ranking de usuários · acompanhar trajeto | Pedestre, PMR | Could |
+| Favoritar rota · pontuar · ranking de usuários · acompanhar trajeto | Usuário | Could |
 | Painel de indicadores | Administrador | Won't |
-| Conectar-se a outros usuários | Pedestre | Won't |
+| Conectar-se a outros usuários | Usuário | Won't |
 
 ## Backlog
-👉 **Backlog completo em [`backlog.md`](backlog.md)**, a partir do quadro MoSCoW da equipe: 22 histórias (7 Must, 8 Should, 5 Could, 2 Won't), com rastreabilidade para endpoints e tabelas.
+👉 **Backlog completo em [`backlog.md`](backlog.md)**, a partir do quadro MoSCoW da equipe: 22 histórias (6 Must, 9 Should, 5 Could, 2 Won't), 25 requisitos funcionais, 12 não funcionais e rastreabilidade para endpoints e tabelas.
 
-**MVP (Must):** criar conta, login, enviar alerta, ver alertas no mapa, alerta de alagamento, rota acessível conforme alertas e interface acessível.
+**MVP (Must):** entrar com Google, sair da conta, enviar alerta (incluindo alagamento), ver alertas no mapa, rota acessível conforme alertas e interface acessível.
 
 Pendente: **story points** via Planning Poker.
 
 ## Protótipo (telas)
-1. **Login / criar conta + onboarding de perfil** (US01, US02, US13)
-2. **Mapa de alertas** com filtros Acessibilidade, Segurança e Alagamento (US04, US05)
-3. **Enviar alerta** (foto → categoria → local → enviar) (US03)
-4. **Rota acessível** (rota comum × rota Caminho Livre) (US06)
-5. *(extra)* **Detalhe da ocorrência com 👍/👎** (US08, US10)
+1. **Entrar com Google + onboarding de perfil** (US01, US12)
+2. **Mapa de alertas** com filtros Acessibilidade, Segurança e Alagamento (US03)
+3. **Enviar alerta** (foto → categoria → local → enviar) (US02)
+4. **Rota acessível** (rota comum × rota Caminho Livre) (US04)
+5. *(extra)* **Detalhe da ocorrência com 👍/👎** (US07, US09)
 
-As telas reais do [`front-next/`](../front-next/) podem ser usadas como protótipo, com os comentários de UX (contraste, fonte grande, poucos toques, linguagem simples), que atendem à US07.
+As telas reais do [`front-next/`](../front-next/) podem ser usadas como protótipo, com os comentários de UX (contraste, fonte grande, poucos toques, linguagem simples), que atendem à US05.
 
 ## Matriz de rastreabilidade (diferencial)
 Ver a seção "Rastreabilidade" em [`backlog.md`](backlog.md).
@@ -64,7 +66,7 @@ Ver a seção "Rastreabilidade" em [`backlog.md`](backlog.md).
 ## Pitch (3 min)
 | Tempo | Conteúdo |
 |---|---|
-| 0:00–0:30 | Problema, com a fala da pessoa entrevistada |
+| 0:00–0:30 | Problema, contado pelas personas |
 | 0:30–2:00 | Solução funcionando (front + API + rota) |
 | 2:00–2:40 | Ecossistema e impacto (indicadores) |
 | 2:40–3:00 | ODS e encerramento |
