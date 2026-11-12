@@ -1,0 +1,200 @@
+{
+  "agile/pdf/build.js": {
+    "mtime": 1794522215.7623432,
+    "seen": 1794525623.029061,
+    "ast_hash": "15cf581b6748f11a2ec606af4fef8285",
+    "semantic_hash": "15cf581b6748f11a2ec606af4fef8285"
+  },
+  "agile/pdf/package.json": {
+    "mtime": 1794521656.570336,
+    "seen": 1794525623.0290616,
+    "ast_hash": "844cbbbceab477ef358abadce2ea2e70",
+    "semantic_hash": "844cbbbceab477ef358abadce2ea2e70"
+  },
+  "agile/pdf/usecase.js": {
+    "mtime": 1794522118.2853558,
+    "seen": 1794525623.0290625,
+    "ast_hash": "5d528cc17145e9f8796bc4b5f00302d5",
+    "semantic_hash": "5d528cc17145e9f8796bc4b5f00302d5"
+  },
+  ".specify/memory/constitution.md": {
+    "mtime": 1794524998.2143638,
+    "seen": 1794525623.0290701,
+    "ast_hash": "e27b6c8e48794025f3150f5df41b7a19",
+    "semantic_hash": "e27b6c8e48794025f3150f5df41b7a19"
+  },
+  "README.md": {
+    "mtime": 1794525262.8916278,
+    "seen": 1794525623.0290744,
+    "ast_hash": "1cc9477165b14c6db759777c969d0bad",
+    "semantic_hash": "1cc9477165b14c6db759777c969d0bad"
+  },
+  "agile/Agile_GS_CaminhoLivre.md": {
+    "mtime": 1794525002.9105499,
+    "seen": 1794525623.029075,
+    "ast_hash": "d52fac255a1cfcf02171d4a943c6f654",
+    "semantic_hash": "d52fac255a1cfcf02171d4a943c6f654"
+  },
+  "agile/README.md": {
+    "mtime": 1794521313.4662025,
+    "seen": 1794525623.0290756,
+    "ast_hash": "660575edc706db4a2f2ea8242b904958",
+    "semantic_hash": "660575edc706db4a2f2ea8242b904958"
+  },
+  "agile/backlog.md": {
+    "mtime": 1794524998.213361,
+    "seen": 1794525623.0290766,
+    "ast_hash": "e4bf5025809234554b08c7fbb5828db1",
+    "semantic_hash": "e4bf5025809234554b08c7fbb5828db1"
+  },
+  "api-java/README.md": {
+    "mtime": 1794524998.2184486,
+    "seen": 1794525623.0290773,
+    "ast_hash": "5b4258c6d83c2236ae548e70b23224f1",
+    "semantic_hash": "5b4258c6d83c2236ae548e70b23224f1"
+  },
+  "ar-vr/README.md": {
+    "mtime": 1794273053.2502167,
+    "seen": 1794525623.029078,
+    "ast_hash": "8162e0fd8a2aa42870699d29ad46b45a",
+    "semantic_hash": "8162e0fd8a2aa42870699d29ad46b45a"
+  },
+  "data-science/README.md": {
+    "mtime": 1794273807.6170735,
+    "seen": 1794525623.0290787,
+    "ast_hash": "faa24b908a8b5801cdc7c58ee659fee1",
+    "semantic_hash": "faa24b908a8b5801cdc7c58ee659fee1"
+  },
+  "database/README.md": {
+    "mtime": 1794524699.6603932,
+    "seen": 1794525623.0290792,
+    "ast_hash": "dc2ea35d0b9344c253b278df3b36df53",
+    "semantic_hash": "dc2ea35d0b9344c253b278df3b36df53"
+  },
+  "front-next/README.md": {
+    "mtime": 1794520161.869545,
+    "seen": 1794525623.029081,
+    "ast_hash": "b6b58091f4fef60354009af85322aabd",
+    "semantic_hash": "b6b58091f4fef60354009af85322aabd"
+  },
+  "network/README.md": {
+    "mtime": 1794273053.2073567,
+    "seen": 1794525623.029082,
+    "ast_hash": "e8656d4ad3343df8674cb6c54ab3ceb6",
+    "semantic_hash": "e8656d4ad3343df8674cb6c54ab3ceb6"
+  },
+  "specs/001-api-rest-java/checklists/requirements.md": {
+    "mtime": 1794523946.0569758,
+    "seen": 1794525623.0290825,
+    "ast_hash": "ad1d610c9cb993f88fe1406d77990b89",
+    "semantic_hash": "ad1d610c9cb993f88fe1406d77990b89"
+  },
+  "specs/001-api-rest-java/contracts/api.md": {
+    "mtime": 1794524998.216444,
+    "seen": 1794525623.0290835,
+    "ast_hash": "fc04eb14fad4ef072c9924b0e6481ba2",
+    "semantic_hash": "fc04eb14fad4ef072c9924b0e6481ba2"
+  },
+  "specs/001-api-rest-java/data-model.md": {
+    "mtime": 1794524998.216444,
+    "seen": 1794525623.029084,
+    "ast_hash": "6c83b7836491e8e7622c628b32a0ee9e",
+    "semantic_hash": "6c83b7836491e8e7622c628b32a0ee9e"
+  },
+  "specs/001-api-rest-java/plan.md": {
+    "mtime": 1794524998.2154393,
+    "seen": 1794525623.0290847,
+    "ast_hash": "276cd2f87f4d357ade62c4fac29bed23",
+    "semantic_hash": "276cd2f87f4d357ade62c4fac29bed23"
+  },
+  "specs/001-api-rest-java/quickstart.md": {
+    "mtime": 1794524998.2174497,
+    "seen": 1794525623.0290852,
+    "ast_hash": "dffe7a5315f24fbedfa58c027a27ae02",
+    "semantic_hash": "dffe7a5315f24fbedfa58c027a27ae02"
+  },
+  "specs/001-api-rest-java/research.md": {
+    "mtime": 1794524998.216444,
+    "seen": 1794525623.0290859,
+    "ast_hash": "4807fd68f520403c74474a17339c1724",
+    "semantic_hash": "4807fd68f520403c74474a17339c1724"
+  },
+  "specs/001-api-rest-java/spec.md": {
+    "mtime": 1794524998.2154393,
+    "seen": 1794525623.0290868,
+    "ast_hash": "6891deb4abda95d3adb328eb34eb68b9",
+    "semantic_hash": "6891deb4abda95d3adb328eb34eb68b9"
+  },
+  "specs/001-api-rest-java/tasks.md": {
+    "mtime": 1794524998.2174497,
+    "seen": 1794525623.0290873,
+    "ast_hash": "ab9b8b18e5cd2d923362b7a99adbe7a2",
+    "semantic_hash": "ab9b8b18e5cd2d923362b7a99adbe7a2"
+  },
+  "specs/002-front-next-web/checklists/requirements.md": {
+    "mtime": 1794525831.3695006,
+    "seen": 1794526734.9032433,
+    "ast_hash": "29f01bafa712412258f199a3b470423f",
+    "semantic_hash": "29f01bafa712412258f199a3b470423f"
+  },
+  "specs/002-front-next-web/spec.md": {
+    "mtime": 1794526535.9677305,
+    "seen": 1794526734.9032488,
+    "ast_hash": "4ec8660df2a96a8f658f1c6a989aacaf",
+    "semantic_hash": "4ec8660df2a96a8f658f1c6a989aacaf"
+  },
+  "docs/GS - 2o Semestre de 2026.pdf": {
+    "mtime": 1794271213.905293,
+    "seen": 1794525623.0290892,
+    "ast_hash": "cbfcdee32c2be6f2c7b15205199c90d0",
+    "semantic_hash": "cbfcdee32c2be6f2c7b15205199c90d0"
+  },
+  "docs/GS CitizenTech - 2ES Fev - FIAP 2026.pdf": {
+    "mtime": 1794272447.21933,
+    "seen": 1794525623.0290897,
+    "ast_hash": "6ae6e64940d38e917b42eb982340277d",
+    "semantic_hash": "6ae6e64940d38e917b42eb982340277d"
+  },
+  "agile/assets/diagrama-casos-de-uso.svg": {
+    "mtime": 1794522118.6069305,
+    "seen": 1794525623.0290906,
+    "ast_hash": "9009e516aff07775061ddd2706e3af18",
+    "semantic_hash": "9009e516aff07775061ddd2706e3af18"
+  },
+  "specs/002-front-next-web/contracts/telas.md": {
+    "mtime": 1794526535.9677305,
+    "seen": 1794526734.9032447,
+    "ast_hash": "0d56f063a83f532e6853e5fad73ad11e",
+    "semantic_hash": "0d56f063a83f532e6853e5fad73ad11e"
+  },
+  "specs/002-front-next-web/data-model.md": {
+    "mtime": 1794526278.795671,
+    "seen": 1794526734.903246,
+    "ast_hash": "ee545c201491e3041e9c1b2bd7c7ccc0",
+    "semantic_hash": "ee545c201491e3041e9c1b2bd7c7ccc0"
+  },
+  "specs/002-front-next-web/plan.md": {
+    "mtime": 1794526539.2902713,
+    "seen": 1794526734.9032466,
+    "ast_hash": "ee04ef684df94ff06257c9908bd7382b",
+    "semantic_hash": "ee04ef684df94ff06257c9908bd7382b"
+  },
+  "specs/002-front-next-web/quickstart.md": {
+    "mtime": 1794526278.8908348,
+    "seen": 1794526734.9032474,
+    "ast_hash": "ff9d5c5ae1bc91a191d48906a7cf712a",
+    "semantic_hash": "ff9d5c5ae1bc91a191d48906a7cf712a"
+  },
+  "specs/002-front-next-web/research.md": {
+    "mtime": 1794526535.9687357,
+    "seen": 1794526734.9032478,
+    "ast_hash": "90c57098784d5e140a3d8551d65bf37e",
+    "semantic_hash": "90c57098784d5e140a3d8551d65bf37e"
+  },
+  "specs/002-front-next-web/tasks.md": {
+    "mtime": 1794526535.9671898,
+    "seen": 1794526734.9032497,
+    "ast_hash": "3724e5930fd7ef17f44428254a99a92e",
+    "semantic_hash": "3724e5930fd7ef17f44428254a99a92e"
+  }
+}

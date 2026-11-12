@@ -1,0 +1,11 @@
+{
+  "name": "agile-pdf",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "watch": "node build.js --watch"
+  },
+  "dependencies": {
+    "md-to-pdf": "5.2.4"
+  }
+}
