@@ -6,13 +6,11 @@
 Projetar a base relacional que registra e consulta as informações do Caminho Livre: usuários, ocorrências, confirmações, localizações e trechos de rota.
 
 ## Entregáveis
-- [ ] Modelo **conceitual** (`modelos/conceitual.png`)
-- [ ] Modelo **lógico** (`modelos/logico.png`)
-- [ ] Modelo **físico** (`modelos/fisico.png`)
-- [ ] **Dicionário de dados** (`dicionario-dados.md` ou `.pdf`)
-- [ ] Script de **criação** (`scripts/01_create.sql`): PK, FK, CHECK, UNIQUE, sequences/identity
-- [ ] Script de **carga** (`scripts/02_insert.sql`): cerca de 10 linhas por tabela, com os pontos reais fotografados pela equipe
-- [ ] **Consultas** do projeto (`scripts/03_consultas.sql`)
+- [x] Modelos **conceitual**, **lógico** e **físico** em [`modelos/modelos.md`](modelos/modelos.md) (Mermaid; exportar PNG para o PDF)
+- [x] **Dicionário de dados** ([`dicionario-dados.md`](dicionario-dados.md))
+- [x] Script de **criação** (`scripts/01_create.sql`): PK, FK, CHECK, UNIQUE, sequences/identity
+- [x] Script de **carga** (`scripts/02_insert.sql`): cerca de 10 linhas por tabela, com os pontos reais fotografados pela equipe
+- [x] **Consultas** do projeto (`scripts/03_consultas.sql`)
 
 ## Avaliação
 | Critério | Peso |
@@ -47,6 +45,9 @@ Alinhadas ao [backlog MoSCoW](../agile/backlog.md). A coluna "Histórias" mostra
 5. Histórico de ocorrências de um usuário com o total de 👍/👎 (US10)
 6. Ranking de usuários por pontos (US19)
 
+## Como executar
+No Oracle da FIAP (SQL Developer, F5 "Executar script"), nesta ordem: `scripts/01_create.sql` → `scripts/02_insert.sql` → `scripts/03_consultas.sql`. O 01 apaga e recria tudo, então pode ser rodado de novo.
+
 ## Integrações
 - ➡️ **Ulisses (Java):** o DER é o contrato, então congelar os nomes até **11/11** (depois do backlog do MVP). O mesmo DER entra no PDF de Java.
 - Pesos das categorias (`peso_base`, `peso_noturno`) são definidos pela equipe na carga. O Data Science é uma entrega isolada.
@@ -55,7 +56,7 @@ Alinhadas ao [backlog MoSCoW](../agile/backlog.md). A coluna "Histórias" mostra
 ## Estrutura
 ```
 database/
-├── modelos/        conceitual, lógico e físico (imagens + arquivo da ferramenta)
+├── modelos/        modelos.md: conceitual, lógico e físico (Mermaid)
 ├── scripts/        01_create.sql, 02_insert.sql, 03_consultas.sql
 └── dicionario-dados.md
 ```
