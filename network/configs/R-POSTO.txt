@@ -1,0 +1,103 @@
+! R-POSTO (Cisco 2911) - Posto Caminho Livre
+! Trocar X pelo numero da equipe antes de colar.
+! Senhas de laboratorio, validas so no Packet Tracer.
+enable
+configure terminal
+hostname R-POSTO
+no ip domain-lookup
+ip domain-name caminholivre.local
+enable secret CLenable2026
+service password-encryption
+banner motd # Acesso restrito - Posto Caminho Livre #
+username admin privilege 15 secret CLadmin2026
+login block-for 120 attempts 3 within 60
+!
+! ---------- DHCP: um pool por VLAN ----------
+ip dhcp excluded-address 192.168.X.1 192.168.X.5
+ip dhcp excluded-address 192.168.X.129 192.168.X.133
+ip dhcp excluded-address 192.168.X.161 192.168.X.170
+ip dhcp pool CIDADAO
+ network 192.168.X.0 255.255.255.128
+ default-router 192.168.X.1
+ dns-server 192.168.X.162
+ip dhcp pool EQUIPE
+ network 192.168.X.128 255.255.255.224
+ default-router 192.168.X.129
+ dns-server 192.168.X.162
+ip dhcp pool SERVIDORES
+ network 192.168.X.160 255.255.255.224
+ default-router 192.168.X.161
+ dns-server 192.168.X.162
+!
+! ---------- Router-on-a-stick ----------
+interface GigabitEthernet0/0
+ description TRUNK para SW-POSTO
+ no ip address
+ no shutdown
+interface GigabitEthernet0/0.10
+ description VLAN 10 EQUIPE
+ encapsulation dot1Q 10
+ ip address 192.168.X.129 255.255.255.224
+ ip nat inside
+interface GigabitEthernet0/0.20
+ description VLAN 20 CIDADAO WI-FI
+ encapsulation dot1Q 20
+ ip address 192.168.X.1 255.255.255.128
+ ip nat inside
+ ip access-group ACL_CIDADAO in
+interface GigabitEthernet0/0.30
+ description VLAN 30 SERVIDORES E SENSORES
+ encapsulation dot1Q 30
+ ip address 192.168.X.161 255.255.255.224
+ ip nat inside
+interface GigabitEthernet0/0.99
+ description VLAN 99 GERENCIA
+ encapsulation dot1Q 99
+ ip address 192.168.X.193 255.255.255.240
+interface GigabitEthernet0/0.999
+ description VLAN NATIVA SEM USO
+ encapsulation dot1Q 999 native
+!
+! ---------- WAN ----------
+interface GigabitEthernet0/1
+ description WAN para R-ISP
+ ip address 203.0.113.2 255.255.255.252
+ ip nat outside
+ no shutdown
+ip route 0.0.0.0 0.0.0.0 203.0.113.1
+!
+! ---------- NAT/PAT ----------
+access-list 1 permit 192.168.X.0 0.0.0.255
+ip nat inside source list 1 interface GigabitEthernet0/1 overload
+!
+! ---------- ACL do Wi-Fi do cidadao (entrada na G0/0.20) ----------
+ip access-list extended ACL_CIDADAO
+ remark DHCP do proprio roteador
+ permit udp any any eq bootps
+ remark DNS e HTTP do servidor da solucao
+ permit udp 192.168.X.0 0.0.0.127 host 192.168.X.162 eq domain
+ permit tcp 192.168.X.0 0.0.0.127 host 192.168.X.162 eq www
+ remark Nada da rede interna (Equipe, Servidores, Gerencia)
+ deny ip any 192.168.X.0 0.0.0.255
+ remark Nada do proprio roteador pela WAN
+ deny ip any host 203.0.113.2
+ remark Internet liberada
+ permit ip 192.168.X.0 0.0.0.127 any
+exit
+!
+! ---------- SSH so a partir de Equipe e Gerencia ----------
+access-list 10 permit 192.168.X.128 0.0.0.31
+access-list 10 permit 192.168.X.192 0.0.0.15
+crypto key generate rsa general-keys modulus 1024
+ip ssh version 2
+line console 0
+ password CLconsole2026
+ login
+ exec-timeout 5 0
+line vty 0 4
+ login local
+ transport input ssh
+ access-class 10 in
+ exec-timeout 5 0
+end
+write memory

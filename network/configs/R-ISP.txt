@@ -1,0 +1,22 @@
+! R-ISP (Cisco 2911) - roteador do provedor
+! Nao precisa de rota para 192.168.X.0/24: o R-POSTO faz NAT/PAT.
+enable
+configure terminal
+hostname R-ISP
+no ip domain-lookup
+enable secret CLenable2026
+service password-encryption
+banner motd # Provedor simulado #
+interface GigabitEthernet0/0
+ description WAN para R-POSTO
+ ip address 203.0.113.1 255.255.255.252
+ no shutdown
+interface GigabitEthernet0/1
+ description INTERNET SIMULADA
+ ip address 198.51.100.1 255.255.255.0
+ no shutdown
+line console 0
+ password CLconsole2026
+ login
+end
+write memory
