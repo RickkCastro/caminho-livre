@@ -202,6 +202,7 @@ As configurações completas estão em `network/configs/` no repositório. Abaix
 | Decisão | Alternativa considerada | Por que escolhemos |
 |---|---|---|
 | Um switch central (SW-CORE) e três de acesso, ligados por fibra | Switches em cascata | Cada setor fica fisicamente separado, os uplinks não dependem uns dos outros e dá para crescer adicionando um switch de acesso numa porta de fibra |
+| Fibra multimodo entre os switches | Fibra monomodo | Os switches ficam no mesmo prédio, a poucos metros uns dos outros. A multimodo atende distâncias curtas e custa menos; a monomodo só compensa em longas distâncias, entre prédios ou bairros |
 | Router-on-a-stick no R-POSTO | Switch multicamada fazendo o inter-VLAN | Um único ponto onde ficam o roteamento, o NAT e a ACL; mais simples de configurar e de auditar |
 | VLSM em `192.168.10.0/24` | Um /24 para cada VLAN | Mostra o cálculo das sub-redes, usa só o necessário e ainda sobram blocos para expansão |
 | Rota estática padrão | OSPF entre os roteadores | O posto tem um único link de saída e o NAT esconde as redes internas; um protocolo dinâmico não traria ganho |

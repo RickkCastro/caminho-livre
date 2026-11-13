@@ -40,14 +40,18 @@ Sempre **desligue** o equipamento no botão de energia, arraste o módulo e **li
 | R-ISP | Se0/0/0 | R-POSTO | Se0/0/0 | **Serial DCE**: clique **primeiro no R-ISP** (o lado DCE fica nele) |
 | R-ISP | G0/0 | SRV-NUVEM | FastEthernet0 | Copper Cross-Over |
 | R-POSTO | G0/0 | SW-CORE | Fa0/1 | Copper Straight-Through |
-| SW-CORE | Gi1/1 | SW-EQUIPE | Gi1/1 | **Fiber** |
-| SW-CORE | Gi2/1 | SW-SERVIDORES | Gi1/1 | **Fiber** |
-| SW-CORE | Gi3/1 | SW-CIDADAO | Gi1/1 | **Fiber** |
+| SW-CORE | Gi1/1 | SW-EQUIPE | Gi1/1 | **Fibra multimodo** |
+| SW-CORE | Gi2/1 | SW-SERVIDORES | Gi1/1 | **Fibra multimodo** |
+| SW-CORE | Gi3/1 | SW-CIDADAO | Gi1/1 | **Fibra multimodo** |
 | SW-EQUIPE | Fa0/1, Fa2/1, Fa3/1 | PC-EQUIPE-01, 02, 03 | FastEthernet0 | Copper Straight-Through |
 | SW-SERVIDORES | Fa0/1 | SRV-POSTO | FastEthernet0 | Copper Straight-Through |
 | SW-SERVIDORES | Fa2/1 | SRV-EMAIL | FastEthernet0 | Copper Straight-Through |
 | SW-CIDADAO | Fa0/1 | AP-CIDADAO | Port 0 | Copper Straight-Through |
 | AP-CIDADAO | — | Laptops e smartphones | Wireless0 | Wireless (associa sozinho depois do passo 7) |
+
+**Nomes das portas:** `Fa` = FastEthernet (cobre, 100 Mbps), `Gi` = GigabitEthernet (1 Gbps; nos switches, as portas dos módulos de fibra), `Se` = Serial. O número segue o formato slot/porta: `Fa0/1` é a porta 1 do slot 0, e `Gi1/1` é a porta 1 do módulo no slot 1.
+
+**Fibra:** use **multimodo**, que é o tipo usado em distâncias curtas dentro de um prédio. Se a porta não aparecer na lista ao ligar o cabo, o módulo é monomodo: troque para fibra monomodo.
 
 Para conferir o lado DCE: no R-ISP, rode `show controllers serial0/0/0`. Precisa aparecer `DCE`. Se aparecer `DTE`, refaça o cabo clicando primeiro no R-ISP.
 
