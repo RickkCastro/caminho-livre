@@ -127,19 +127,19 @@ O R-POSTO distribui endereços para a Equipe (pool `EQUIPE`) e para o Wi-Fi do c
 Toda a rede `192.168.10.0/24` sai para o provedor com o IP da serial (203.0.113.2), usando sobrecarga de portas (`overload`). O provedor não precisa conhecer as redes internas, e os endereços privados ficam escondidos.
 
 ### 6.5 DNS
-O SRV-POSTO responde pela zona `caminholivre.local`:
+O SRV-POSTO responde pela zona `caminholivre.lan`:
 
 | Nome | Endereço | Serviço |
 |---|---|---|
-| www.caminholivre.local | 192.168.10.162 | Página do posto com a Ficha |
-| mail.caminholivre.local | 192.168.10.163 | E-mail da equipe |
-| app.caminholivre.local | 198.51.100.10 | App na nuvem |
+| www.caminholivre.lan | 192.168.10.162 | Página do posto com a Ficha |
+| mail.caminholivre.lan | 192.168.10.163 | E-mail da equipe |
+| app.caminholivre.lan | 198.51.100.10 | App na nuvem |
 
 ### 6.6 Web
 Os três servidores têm páginas próprias: o SRV-POSTO mostra a Ficha da CitizenTech, o SRV-EMAIL explica o e-mail da equipe e o SRV-NUVEM simula o app Caminho Livre hospedado na nuvem.
 
 ### 6.7 E-mail
-O SRV-EMAIL roda SMTP (envio) e POP3 (recebimento) no domínio `caminholivre.local`, com as contas `equipe1`, `equipe2` e `equipe3`. Cada PC da equipe tem o cliente de e-mail configurado com o servidor `mail.caminholivre.local`.
+O SRV-EMAIL roda SMTP (envio) e POP3 (recebimento) no domínio `caminholivre.lan`, com as contas `equipe1`, `equipe2` e `equipe3`. Cada PC da equipe tem o cliente de e-mail configurado com o servidor `mail.caminholivre.lan`.
 
 ### 6.8 Wi-Fi público
 O AP-CIDADAO publica a rede `CaminhoLivre-Publico` com **WPA2-PSK (AES)**. Ele funciona como ponte (bridge) para a VLAN 20: quem roteia, entrega IP e aplica a ACL é o R-POSTO.
@@ -189,10 +189,10 @@ As configurações completas estão em `network/configs/` no repositório. Abaix
 | 5 | Wi-Fi com WPA2 | Laptops e smartphones associados ao `CaminhoLivre-Publico` | Seis dispositivos com IP da VLAN 20 |
 | 6 | Ping entre VLANs | PC-EQUIPE-01: `ping 192.168.10.162` | Respostas (VLAN 10 → VLAN 30) |
 | 7 | Roteamento até a nuvem | PC-EQUIPE-01: `tracert 198.51.100.10`; R-POSTO: `show ip route` | Saltos 192.168.10.129 → 203.0.113.1 → 198.51.100.10; rota `S*` padrão |
-| 8 | DNS e web | NB-CIDADAO-01: `http://www.caminholivre.local`; CEL-CIDADAO-01: `http://app.caminholivre.local`; PC-EQUIPE-01: `http://mail.caminholivre.local` | As três páginas abrem pelo nome |
-| 9 | E-mail | PC-EQUIPE-01 envia para `equipe2@caminholivre.local`; PC-EQUIPE-02 clica em Receive | Mensagem recebida |
+| 8 | DNS e web | NB-CIDADAO-01: `http://www.caminholivre.lan`; CEL-CIDADAO-01: `http://app.caminholivre.lan`; PC-EQUIPE-01: `http://mail.caminholivre.lan` | As três páginas abrem pelo nome |
+| 9 | E-mail | PC-EQUIPE-01 envia para `equipe2@caminholivre.lan`; PC-EQUIPE-02 clica em Receive | Mensagem recebida |
 | 10 | NAT | Depois do teste 8, R-POSTO: `show ip nat translations` | Traduções 192.168.10.x → 203.0.113.2 |
-| 11 | ACL bloqueando | NB-CIDADAO-01: `ping` no PC-EQUIPE-01 e abrir `http://mail.caminholivre.local`; R-POSTO: `show access-lists` | Ping e página falham; contadores do `deny` sobem |
+| 11 | ACL bloqueando | NB-CIDADAO-01: `ping` no PC-EQUIPE-01 e abrir `http://mail.caminholivre.lan`; R-POSTO: `show access-lists` | Ping e página falham; contadores do `deny` sobem |
 | 12 | Só SSH | PC-EQUIPE-01: `ssh -l admin 192.168.10.129` funciona e `telnet 192.168.10.129` é recusado; NB-CIDADAO-01: `ssh -l admin 192.168.10.1` não conecta | Acesso remoto só por SSH e só a partir da equipe |
 
 > 📷 **Print:** um print por teste, na ordem da tabela.
@@ -211,6 +211,7 @@ As configurações completas estão em `network/configs/` no repositório. Abaix
 | PPP com CHAP na serial | HDLC (padrão Cisco) | Autentica o link com o provedor sem custo de configuração relevante |
 | Servidor do app na "nuvem", atrás do provedor | Servidor do app dentro do posto | Reflete a solução real: o Caminho Livre roda na nuvem, e o posto só oferece acesso |
 | Faixas RFC 5737 nas redes externas | IPs públicos quaisquer | Não colidem com endereços reais |
+| Domínio interno `caminholivre.lan` | `caminholivre.local` | O cliente de e-mail do Packet Tracer só aceita endereços que terminam com 2 a 4 letras, e `.local` tem 5. `.lan` é uma terminação usada em redes internas e não existe na internet |
 
 ## 11. Expansão
 

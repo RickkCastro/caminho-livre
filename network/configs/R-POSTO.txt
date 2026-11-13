@@ -5,7 +5,7 @@ enable
 configure terminal
 hostname R-POSTO
 no ip domain-lookup
-ip domain-name caminholivre.local
+ip domain-name caminholivre.lan
 enable secret CLenable2026
 service password-encryption
 banner motd # Acesso restrito - Posto Caminho Livre #

@@ -40,12 +40,12 @@
 > "O roteamento entre VLANs é feito no R-POSTO com router-on-a-stick: o PC da equipe, na VLAN 10, alcança o servidor na VLAN 30. Para sair do posto, o roteador tem uma rota padrão para o provedor. O traceroute mostra o caminho até a nuvem: gateway do posto, roteador do provedor e servidor do app."
 
 ### Cena 6 — DNS e páginas web (3:05–3:45)
-**Tela:** NB-CIDADAO-01 → navegador em `www.caminholivre.local`; CEL-CIDADAO-01 → `app.caminholivre.local`; PC-EQUIPE-01 → `mail.caminholivre.local`.
+**Tela:** NB-CIDADAO-01 → navegador em `www.caminholivre.lan`; CEL-CIDADAO-01 → `app.caminholivre.lan`; PC-EQUIPE-01 → `mail.caminholivre.lan`.
 **Narração:**
-> "O servidor do posto faz o DNS da zona caminholivre.local. Todos os servidores têm página própria: pelo nome, o cidadão abre a página do posto com a Ficha da CitizenTech e, pelo celular, abre o app na nuvem. A equipe abre a página do servidor de e-mail."
+> "O servidor do posto faz o DNS da zona caminholivre.lan. Todos os servidores têm página própria: pelo nome, o cidadão abre a página do posto com a Ficha da CitizenTech e, pelo celular, abre o app na nuvem. A equipe abre a página do servidor de e-mail."
 
 ### Cena 7 — E-mail (3:45–4:15)
-**Tela:** PC-EQUIPE-01 → Email → Compose para `equipe2@caminholivre.local` → Send; PC-EQUIPE-02 → Email → Receive.
+**Tela:** PC-EQUIPE-01 → Email → Compose para `equipe2@caminholivre.lan` → Send; PC-EQUIPE-02 → Email → Receive.
 **Narração:**
 > "O servidor de e-mail roda SMTP e POP3. Vou enviar uma mensagem do PC da equipe 1 para a equipe 2... e no PC da equipe 2 a mensagem chegou."
 
@@ -58,7 +58,7 @@
 
 ### Cena 9 — Segurança (4:35–5:35)
 **Tela, em sequência:**
-1. NB-CIDADAO-01 → `ping` no IP do PC-EQUIPE-01 (falha) e navegador em `mail.caminholivre.local` (falha).
+1. NB-CIDADAO-01 → `ping` no IP do PC-EQUIPE-01 (falha) e navegador em `mail.caminholivre.lan` (falha).
 2. R-POSTO → `show access-lists` (contadores do `deny`).
 3. PC-EQUIPE-01 → `telnet 192.168.10.129` (recusado) e `ssh -l admin 192.168.10.129` (entra).
 4. R-POSTO → `show interfaces serial0/0/0` (PPP, LCP Open).

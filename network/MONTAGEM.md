@@ -79,16 +79,16 @@ Confira o link serial no R-POSTO com `show ip interface brief`: a `Serial0/0/0` 
 
 | Name | Address |
 |---|---|
-| www.caminholivre.local | 192.168.10.162 |
-| mail.caminholivre.local | 192.168.10.163 |
-| app.caminholivre.local | 198.51.100.10 |
+| www.caminholivre.lan | 192.168.10.162 |
+| mail.caminholivre.lan | 192.168.10.163 |
+| app.caminholivre.lan | 198.51.100.10 |
 
 4. Desligue (Off) os serviços que não usamos: DHCP, TFTP, FTP, EMAIL, SYSLOG, AAA, NTP e IoT.
 
 ### SRV-EMAIL (e-mail + página da equipe)
 1. **IP Configuration → Static:** IP `192.168.10.163`, máscara `255.255.255.224`, gateway `192.168.10.161`, DNS `192.168.10.162`.
 2. **Services → HTTP:** Edit no `index.html` e colar `servidores/email.html`.
-3. **Services → EMAIL:** SMTP e POP3 em On. Domain Name: `caminholivre.local` → Set. Usuários (User Setup): `equipe1`, `equipe2` e `equipe3`, todos com senha `CLmail2026`.
+3. **Services → EMAIL:** SMTP e POP3 em On. Domain Name: `caminholivre.lan` → Set. Usuários (User Setup): `equipe1`, `equipe2` e `equipe3`, todos com senha `CLmail2026`.
 4. Desligue DHCP, TFTP, FTP, DNS, SYSLOG, AAA, NTP e IoT.
 
 ### SRV-NUVEM (app na nuvem)
@@ -119,9 +119,9 @@ Uma linha tracejada entre o dispositivo e o AP indica que ele se associou. Cada 
 
 | PC | Your Name | Email Address | Incoming e Outgoing Mail Server | User Name | Password |
 |---|---|---|---|---|---|
-| PC-EQUIPE-01 | Equipe 1 | equipe1@caminholivre.local | mail.caminholivre.local | equipe1 | CLmail2026 |
-| PC-EQUIPE-02 | Equipe 2 | equipe2@caminholivre.local | mail.caminholivre.local | equipe2 | CLmail2026 |
-| PC-EQUIPE-03 | Equipe 3 | equipe3@caminholivre.local | mail.caminholivre.local | equipe3 | CLmail2026 |
+| PC-EQUIPE-01 | Equipe 1 | equipe1@caminholivre.lan | mail.caminholivre.lan | equipe1 | CLmail2026 |
+| PC-EQUIPE-02 | Equipe 2 | equipe2@caminholivre.lan | mail.caminholivre.lan | equipe2 | CLmail2026 |
+| PC-EQUIPE-03 | Equipe 3 | equipe3@caminholivre.lan | mail.caminholivre.lan | equipe3 | CLmail2026 |
 
 ## 9. Notas na topologia
 
