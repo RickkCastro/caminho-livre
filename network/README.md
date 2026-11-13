@@ -15,30 +15,29 @@ Projetar a infraestrutura de rede que permitiria à CitizenTech operar em um cen
 | Testes | 2 |
 
 ## Requisitos mínimos do `.pkt`
-- [ ] 2 roteadores com conexão serial
-- [ ] 4 switches com módulo de fibra óptica
-- [ ] 3 PCs
-- [ ] 3 servidores
-- [ ] 3 laptops com placa de rede wireless
-- [ ] 3 smartphones conectados via wireless
-- [ ] 1 Access Point (AP, e não roteador wireless)
-- [ ] Conexões com cabos UTP, fibra óptica e wireless
-- [ ] Página web personalizada em todos os servidores
-- [ ] E-mail enviado de um dispositivo para outro
-- [ ] DHCP funcionando em algum dispositivo
-- [ ] VLANs
-- [ ] Roteamento configurado
+- [x] 2 roteadores com conexão serial
+- [x] 4 switches com módulo de fibra óptica
+- [x] 3 PCs
+- [x] 3 servidores
+- [x] 3 laptops com placa de rede wireless
+- [x] 3 smartphones conectados via wireless
+- [x] 1 Access Point (AP, e não roteador wireless)
+- [x] Conexões com cabos UTP, fibra óptica e wireless
+- [x] Página web personalizada em todos os servidores
+- [x] E-mail enviado de um dispositivo para outro
+- [x] DHCP funcionando em algum dispositivo
+- [x] VLANs
+- [x] Roteamento configurado
 
 ## Entregáveis
-- [ ] `caminho-livre-rede.pkt`: topologia no Packet Tracer
-- [ ] Relatório em PDF (`RELATORIO.md` com os prints): plano de endereçamento, configurações essenciais, explicação de cada serviço, testes de comunicação e registro das decisões
-- [ ] Vídeo mostrando os serviços funcionando (`ROTEIRO-VIDEO.md`)
+- [x] [`caminho-livre-rede.pkt`](caminho-livre-rede.pkt): topologia no Packet Tracer 9.0.1
+- [x] [`Network_GS_CaminhoLivre.pdf`](Network_GS_CaminhoLivre.pdf): relatório com plano de endereçamento, configurações essenciais, explicação de cada serviço, testes de comunicação e registro das decisões
+- [ ] Vídeo mostrando os serviços funcionando (link no relatório)
 
 ## Arquivos desta pasta
 | Arquivo | Para que serve |
 |---|---|
-| [`MONTAGEM.md`](MONTAGEM.md) | Passo a passo para montar a rede no Packet Tracer 9.0.1 |
-| [`configs/`](configs/) | Comandos de cada roteador e switch, prontos para colar no CLI |
+| [`RELATORIO.md`](RELATORIO.md) | Fonte do PDF do relatório |
+| [`prints/`](prints/) | Prints dos testes usados no relatório |
+| [`configs/`](configs/) | Configuração completa de cada roteador e switch |
 | [`servidores/`](servidores/) | Páginas web dos três servidores |
-| [`RELATORIO.md`](RELATORIO.md) | Relatório da entrega (vira o PDF) |
-| [`ROTEIRO-VIDEO.md`](ROTEIRO-VIDEO.md) | Roteiro e narração do vídeo |

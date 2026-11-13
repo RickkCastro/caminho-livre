@@ -1,8 +1,18 @@
 # Network Architect Solutions — Relatório da rede do Posto Caminho Livre
 
 **Global Solution 2026.2 · CitizenTech · FIAP · Engenharia de Software · 2ESPV**
-**Grupo OctoFlow:** Henrique Castro de Matos (RM 564560) · Caio Nascimento Caminha (RM 564789) · Eduardo Ulisses Pereira da Silva (RM 566339) · Eduardo Duran Del Ciel (RM 562017) · Laura Tigre Amaral (RM 565281)
+
+| Grupo OctoFlow | RM |
+|---|---|
+| Henrique Castro de Matos | 564560 |
+| Caio Nascimento Caminha | 564789 |
+| Eduardo Ulisses Pereira da Silva | 566339 |
+| Eduardo Duran Del Ciel | 562017 |
+| Laura Tigre Amaral | 565281 |
+
 **Arquivo do simulador:** `caminho-livre-rede.pkt` (Cisco Packet Tracer 9.0.1)
+
+**Vídeo dos serviços funcionando:** LINK_DO_VIDEO
 
 ---
 
@@ -24,35 +34,35 @@ O app do Caminho Livre roda na nuvem. Por isso o posto depende de **um link com 
 
 ## 3. Topologia
 
-```
-                      SRV-NUVEM 198.51.100.10  (app Caminho Livre)
-                                │ UTP
-                          G0/0 198.51.100.1
-                           ┌─────────┐
-                           │  R-ISP  │  roteador do provedor
-                           └─────────┘
-                          Se0/0/0 203.0.113.1  (DCE)
-                                ║ serial PPP/CHAP · 203.0.113.0/30
-                          Se0/0/0 203.0.113.2
-                           ┌─────────┐
-                           │ R-POSTO │  inter-VLAN, DHCP, NAT/PAT, ACL, SSH
-                           └─────────┘
-                          G0/0 trunk 802.1Q (.10 .20 .30 .99)
-                                │ UTP
-                           ┌─────────┐
-                           │ SW-CORE │
-                           └─────────┘
-            fibra ╱ Gi1/1        │ fibra Gi2/1       ╲ fibra Gi3/1
-       ┌──────────┐       ┌──────────────┐       ┌────────────┐
-       │SW-EQUIPE │       │SW-SERVIDORES │       │ SW-CIDADAO │
-       └──────────┘       └──────────────┘       └────────────┘
-        UTP │ VLAN 10        UTP │ VLAN 30          UTP │ VLAN 20
-   PC-EQUIPE-01/02/03    SRV-POSTO .162           AP-CIDADAO (WPA2)
-                         SRV-EMAIL .163         ))) NB-CIDADAO-01/02/03
-                                                ))) CEL-CIDADAO-01/02/03
-```
+<div class="topo"><img src="prints/topologia.png" alt="Topologia no Packet Tracer"></div>
 
-> 📷 **Print:** topologia completa no Packet Tracer, com as notas de VLAN e sub-rede.
+```
+                    SRV-NUVEM 198.51.100.10 (app Caminho Livre)
+                              | UTP
+                        G0/0 198.51.100.1
+                        +-----------+
+                        |   R-ISP   |  roteador do provedor
+                        +-----------+
+                        Se0/0/0 203.0.113.1 (DCE)
+                              | serial PPP/CHAP - 203.0.113.0/30
+                        Se0/0/0 203.0.113.2
+                        +-----------+
+                        |  R-POSTO  |  inter-VLAN, DHCP, NAT/PAT, ACL, SSH
+                        +-----------+
+                        G0/0 trunk 802.1Q (.10 .20 .30 .99)
+                              | UTP
+                        +-----------+
+                        |  SW-CORE  |
+                        +-----------+
+           fibra Gi1/1 /      | fibra Gi2/1   \ fibra Gi3/1
+      +-----------+   +---------------+   +------------+
+      | SW-EQUIPE |   | SW-SERVIDORES |   | SW-CIDADAO |
+      +-----------+   +---------------+   +------------+
+        UTP | VLAN 10     UTP | VLAN 30      UTP | VLAN 20
+   PC-EQUIPE-01/02/03   SRV-POSTO .162     AP-CIDADAO (WPA2)
+                        SRV-EMAIL .163      ))) NB-CIDADAO-01/02/03
+                                            ))) CEL-CIDADAO-01/02/03
+```
 
 A rede segue um modelo hierárquico de dois níveis. O **SW-CORE** concentra os uplinks de fibra e o trunk com o roteador. Os **switches de acesso** separam fisicamente cada setor. Cada setor tem a sua VLAN, e o tráfego entre setores sempre passa pelo R-POSTO, onde ficam as regras de segurança.
 
@@ -172,30 +182,178 @@ permit ip 192.168.10.0 0.0.0.127 any                             ! internet e ap
 
 ## 8. Configurações essenciais
 
-As configurações completas estão em `network/configs/` no repositório. Abaixo, os trechos principais do `show running-config`.
+As configurações completas de cada equipamento estão em `network/configs/` no repositório. Abaixo estão os trechos principais (as linhas de senha foram omitidas).
 
-> 📷 **Print:** `show running-config` do R-POSTO, nas partes de subinterfaces, DHCP, NAT e ACL.
-> 📷 **Print:** `show running-config` do SW-CORE, nas partes de VLANs e trunks.
-> 📷 **Print:** `show running-config` do R-ISP, na parte da serial.
+**R-POSTO: inter-VLAN (router-on-a-stick)**
+```
+interface GigabitEthernet0/0.10
+ encapsulation dot1Q 10
+ ip address 192.168.10.129 255.255.255.224
+ ip nat inside
+interface GigabitEthernet0/0.20
+ encapsulation dot1Q 20
+ ip address 192.168.10.1 255.255.255.128
+ ip nat inside
+ ip access-group ACL_CIDADAO in
+interface GigabitEthernet0/0.30
+ encapsulation dot1Q 30
+ ip address 192.168.10.161 255.255.255.224
+ ip nat inside
+interface GigabitEthernet0/0.99
+ encapsulation dot1Q 99
+ ip address 192.168.10.193 255.255.255.240
+interface GigabitEthernet0/0.999
+ encapsulation dot1Q 999 native
+```
+
+**R-POSTO: DHCP**
+```
+ip dhcp excluded-address 192.168.10.1 192.168.10.10
+ip dhcp excluded-address 192.168.10.129 192.168.10.133
+ip dhcp pool CIDADAO
+ network 192.168.10.0 255.255.255.128
+ default-router 192.168.10.1
+ dns-server 192.168.10.162
+ip dhcp pool EQUIPE
+ network 192.168.10.128 255.255.255.224
+ default-router 192.168.10.129
+ dns-server 192.168.10.162
+```
+
+**R-POSTO: serial, rota padrão e NAT/PAT**
+```
+interface Serial0/0/0
+ ip address 203.0.113.2 255.255.255.252
+ encapsulation ppp
+ ppp authentication chap
+ ip nat outside
+ip route 0.0.0.0 0.0.0.0 203.0.113.1
+access-list 1 permit 192.168.10.0 0.0.0.255
+ip nat inside source list 1 interface Serial0/0/0 overload
+```
+
+**R-POSTO: acesso remoto**
+```
+ip domain-name caminholivre.lan
+crypto key generate rsa general-keys modulus 1024
+ip ssh version 2
+login block-for 120 attempts 3 within 60
+access-list 10 permit 192.168.10.128 0.0.0.31
+access-list 10 permit 192.168.10.192 0.0.0.15
+line vty 0 4
+ login local
+ transport input ssh
+ access-class 10 in
+```
+
+**R-ISP: serial (lado DCE)**
+```
+interface Serial0/0/0
+ ip address 203.0.113.1 255.255.255.252
+ encapsulation ppp
+ ppp authentication chap
+ clock rate 64000
+interface GigabitEthernet0/0
+ ip address 198.51.100.1 255.255.255.0
+```
+
+**SW-CORE: trunks de fibra com VLANs permitidas**
+```
+interface FastEthernet0/1
+ switchport mode trunk
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,99,999
+interface GigabitEthernet1/1
+ switchport mode trunk
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,99,999
+interface GigabitEthernet2/1
+ switchport mode trunk
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 30,99,999
+interface GigabitEthernet3/1
+ switchport mode trunk
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 20,99,999
+interface FastEthernet4/1
+ switchport access vlan 999
+ shutdown
+```
+
+**SW-EQUIPE: portas de acesso (o mesmo modelo vale para SW-SERVIDORES e SW-CIDADAO)**
+```
+interface FastEthernet0/1
+ switchport mode access
+ switchport access vlan 10
+interface FastEthernet4/1
+ switchport access vlan 999
+ shutdown
+interface Vlan99
+ ip address 192.168.10.195 255.255.255.240
+ip default-gateway 192.168.10.193
+```
 
 ## 9. Testes de comunicação
 
-| # | Teste | Comando ou ação | Resultado esperado |
-|---|---|---|---|
-| 1 | Interfaces ativas | R-POSTO: `show ip interface brief` | Subinterfaces e `Serial0/0/0` em `up/up` |
-| 2 | VLANs e trunks | SW-CORE: `show vlan brief` e `show interfaces trunk` | VLANs 10, 20, 30, 99 e 999 criadas; 4 trunks ativos |
-| 3 | Link serial com PPP | R-POSTO: `show interfaces serial0/0/0` | `Encapsulation PPP`, `LCP Open` |
-| 4 | DHCP | PC-EQUIPE-01 e NB-CIDADAO-01: `ipconfig /all`; R-POSTO: `show ip dhcp binding` | IPs `192.168.10.134` e `192.168.10.11` (ou seguintes), com gateway e DNS certos |
-| 5 | Wi-Fi com WPA2 | Laptops e smartphones associados ao `CaminhoLivre-Publico` | Seis dispositivos com IP da VLAN 20 |
-| 6 | Ping entre VLANs | PC-EQUIPE-01: `ping 192.168.10.162` | Respostas (VLAN 10 → VLAN 30) |
-| 7 | Roteamento até a nuvem | PC-EQUIPE-01: `tracert 198.51.100.10`; R-POSTO: `show ip route` | Saltos 192.168.10.129 → 203.0.113.1 → 198.51.100.10; rota `S*` padrão |
-| 8 | DNS e web | NB-CIDADAO-01: `http://www.caminholivre.lan`; CEL-CIDADAO-01: `http://app.caminholivre.lan`; PC-EQUIPE-01: `http://mail.caminholivre.lan` | As três páginas abrem pelo nome |
-| 9 | E-mail | PC-EQUIPE-01 envia para `equipe2@caminholivre.lan`; PC-EQUIPE-02 clica em Receive | Mensagem recebida |
-| 10 | NAT | Depois do teste 8, R-POSTO: `show ip nat translations` | Traduções 192.168.10.x → 203.0.113.2 |
-| 11 | ACL bloqueando | NB-CIDADAO-01: `ping` no PC-EQUIPE-01 e abrir `http://mail.caminholivre.lan`; R-POSTO: `show access-lists` | Ping e página falham; contadores do `deny` sobem |
-| 12 | Só SSH | PC-EQUIPE-01: `ssh -l admin 192.168.10.129` funciona e `telnet 192.168.10.129` é recusado; NB-CIDADAO-01: `ssh -l admin 192.168.10.1` não conecta | Acesso remoto só por SSH e só a partir da equipe |
+Todos os testes passaram. A tabela resume o que foi testado e o resultado; os prints vêm em seguida, na mesma ordem.
 
-> 📷 **Print:** um print por teste, na ordem da tabela.
+| # | Teste | Comando ou ação | Resultado obtido | Status |
+|---|---|---|---|---|
+| 1 | Interfaces ativas | R-POSTO: `show ip interface brief` | Subinterfaces .10, .20, .30, .99 e .999 e `Serial0/0/0` em `up/up` | ✅ |
+| 2 | VLANs e trunks | SW-CORE: `show vlan brief` e `show interfaces trunk` | VLANs 10, 20, 30, 99 e 999 ativas; 4 trunks 802.1Q com nativa 999 e só as VLANs permitidas | ✅ |
+| 3 | Link serial com PPP | R-POSTO: `show interfaces serial0/0/0` | `Encapsulation PPP`, `LCP Open`, `IPCP` aberto | ✅ |
+| 4 | DHCP | PC-EQUIPE-01 e NB-CIDADAO-01: IP Configuration; R-POSTO: `show ip dhcp binding` | PC recebeu 192.168.10.134/27 (VLAN 10) e laptop 192.168.10.11/25 (VLAN 20), com gateway e DNS certos; 9 concessões no roteador | ✅ |
+| 5 | Wi-Fi com WPA2 | 3 laptops e 3 smartphones no SSID `CaminhoLivre-Publico` | Os 6 associados ao AP e com IP da VLAN 20 (6 concessões entre .11 e .19 no teste 4) | ✅ |
+| 6 | Ping entre VLANs | PC-EQUIPE-01: `ping 192.168.10.162` | 4/4 respostas (VLAN 10 → VLAN 30) | ✅ |
+| 7 | Roteamento até a nuvem | PC-EQUIPE-01: `tracert 198.51.100.10` | Saltos 192.168.10.129 → 203.0.113.1 → 198.51.100.10 | ✅ |
+| 8 | DNS e web | NB-CIDADAO-01: `www.caminholivre.lan`; CEL-CIDADAO-01: `app.caminholivre.lan`; PC-EQUIPE-01: `mail.caminholivre.lan` | As três páginas abriram pelo nome | ✅ |
+| 9 | E-mail | PC-EQUIPE-01 envia para `equipe2@caminholivre.lan`; PC-EQUIPE-02 recebe | Mensagem recebida via POP3, com o nome do servidor resolvido pelo DNS | ✅ |
+| 10 | NAT | R-POSTO: `show ip nat translations` | Acesso web de 192.168.10.15 traduzido para 203.0.113.2 | ✅ |
+| 11 | ACL bloqueando | NB-CIDADAO-01: `ping` no PC-EQUIPE-01 (192.168.10.134) e no gateway da equipe (192.168.10.129) | `Destination host unreachable` respondido pelo R-POSTO; 100% de perda | ✅ |
+| 12 | Só SSH | PC-EQUIPE-01: `ssh` e `telnet` no R-POSTO; NB-CIDADAO-01: `ssh` no R-POSTO | SSH da equipe entrou; Telnet foi encerrado pelo roteador; SSH do Wi-Fi público não conectou | ✅ |
+
+### Teste 1 — Interfaces do R-POSTO
+![Teste 1](prints/r-posto-ipbrief.png)
+
+### Teste 2 — VLANs e trunks no SW-CORE
+![Teste 2](prints/sw-core-vlanbrief-inttrunk.png)
+
+### Teste 3 — Link serial com PPP
+![Teste 3](prints/r-posto-ppp.png)
+
+### Teste 4 — DHCP
+![Teste 4: PC da equipe](prints/pc-equipe-01-dhcp-dns.png)
+
+![Teste 4: laptop do cidadão no Wi-Fi](prints/nb-cidadao-01-dhcp-dns.png)
+
+![Teste 4: concessões no R-POSTO](prints/r-posto-dhcp-binding.png)
+
+### Teste 6 — Ping entre VLANs
+![Teste 6](prints/ping-vlan10-vlan30.png)
+
+### Teste 7 — Roteamento até a nuvem
+![Teste 7](prints/tracert-nuvem.png)
+
+### Teste 8 — DNS e páginas web
+![Teste 8: página do posto no laptop do cidadão](prints/nb-cidadao-caminholivre-web.png)
+
+![Teste 8: app na nuvem no smartphone do cidadão](prints/cel-cidadao-caminholivre-web.png)
+
+![Teste 8: página do e-mail no PC da equipe](prints/pc-equipe-caminholivre-web.png)
+
+### Teste 9 — E-mail
+![Teste 9: envio](prints/pc-equipe1-envioemail.png)
+
+![Teste 9: recebimento](prints/pc-equipe2-recebeemail.png)
+
+### Teste 10 — NAT/PAT
+![Teste 10](prints/r-posto-nat-translations.png)
+
+### Teste 11 — ACL bloqueando o Wi-Fi público
+![Teste 11](prints/nb-cidadao-01-ping-fail.png)
+
+### Teste 12 — Acesso remoto só por SSH
+![Teste 12](prints/ssh-tries.png)
 
 ## 10. Registro das decisões
 
