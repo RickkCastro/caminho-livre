@@ -14,18 +14,18 @@ description: "Task list — Front-end web Caminho Livre (Next.js)"
 
 ## Phase 1: Setup
 
-- [ ] T001 Criar o app com `create-next-app` (TypeScript, App Router, Tailwind 4, `src/`) em `front-next/` e adicionar `react-leaflet`, `leaflet`, `@vercel/blob`, `@playwright/test`, `@axe-core/playwright` em `front-next/package.json`
-- [ ] T002 [P] Criar `front-next/.env.example` com `NEXT_PUBLIC_API_URL`, `NEXT_PUBLIC_GOOGLE_CLIENT_ID`, `BLOB_READ_WRITE_TOKEN`, `NEXT_PUBLIC_USE_MOCKS=true`
-- [ ] T003 [P] Configurar Playwright (viewport 375×812, servidor `npm run dev` com mocks) em `front-next/playwright.config.ts`
+- [X] T001 Criar o app com `create-next-app` (TypeScript, App Router, Tailwind 4, `src/`) em `front-next/` e adicionar `react-leaflet`, `leaflet`, `@vercel/blob`, `@playwright/test`, `@axe-core/playwright` em `front-next/package.json`
+- [X] T002 [P] Criar `front-next/.env.example` com `NEXT_PUBLIC_API_URL`, `NEXT_PUBLIC_GOOGLE_CLIENT_ID`, `BLOB_READ_WRITE_TOKEN`, `NEXT_PUBLIC_USE_MOCKS=true`
+- [X] T003 [P] Configurar Playwright (viewport 375×812, servidor `npm run dev` com mocks) em `front-next/playwright.config.ts`
 
 ## Phase 2: Foundational (bloqueia todas as histórias)
 
-- [ ] T004 Definir tokens no `@theme` (`--color-marca-escuro: #2A4B25`, `--color-marca-agua: #76C1A9`, `--color-fundo: #FFFFFF`, `--color-tipo-acessibilidade: #1F5FAD`, `--color-tipo-seguranca: #B3261E`, `--color-tipo-clima: #6A3FA0`), fonte base 16 px e `:focus-visible` com contorno `#2A4B25` em `…/app/globals.css`
-- [ ] T005 [P] Criar tipos do contrato (`Usuario`, `Categoria`, `OcorrenciaResumo`, `OcorrenciaDetalhe` com `minha`, `NovaOcorrencia` com descricao ≤ 500, `Preferencia`, `Rota`, `ErroApi { status, erro }`) em `…/lib/tipos.ts`
-- [ ] T006 [P] Criar mocks no formato do contrato da API (`categorias.json`, `ocorrencias.json`, `ocorrencia-1.json`, `rotas.json`, `usuario.json`, `ranking-bairros.json`) em `…/mocks/`
-- [ ] T007 Criar `…/lib/api.ts`: `fetch` com `NEXT_PUBLIC_API_URL`, header `Authorization: Bearer` quando houver sessão (inclusive GETs públicos, para `minha`), leitura dos mocks se `NEXT_PUBLIC_USE_MOCKS=true`, timeout de 60 s com estado "Acordando o servidor…", e conversão do erro em `ErroApi`
-- [ ] T008 [P] Criar componentes base acessíveis (alvos ≥ 48×48 px, ícone + texto): `Botao` (principal: fundo `#2A4B25` texto branco; secundário: contorno e texto `#2A4B25`), `Aviso` (`role="status"`/`role="alert"`) em `…/components/`
-- [ ] T009 Criar `layout.tsx` com `lang="pt-BR"`, cabeçalho `#76C1A9` com texto `#2A4B25`, navegação inferior Mapa · Rota · Avisar · Perfil e aviso de sem internet (`navigator.onLine`) em `…/app/layout.tsx`
+- [X] T004 Definir tokens no `@theme` (`--color-marca-escuro: #2A4B25`, `--color-marca-agua: #76C1A9`, `--color-fundo: #FFFFFF`, `--color-tipo-acessibilidade: #1F5FAD`, `--color-tipo-seguranca: #B3261E`, `--color-tipo-clima: #6A3FA0`), fonte base 16 px e `:focus-visible` com contorno `#2A4B25` em `…/app/globals.css`
+- [X] T005 [P] Criar tipos do contrato (`Usuario`, `Categoria`, `OcorrenciaResumo`, `OcorrenciaDetalhe` com `minha`, `NovaOcorrencia` com descricao ≤ 500, `Preferencia`, `Rota`, `ErroApi { status, erro }`) em `…/lib/tipos.ts`
+- [X] T006 [P] Criar mocks no formato do contrato da API (`categorias.json`, `ocorrencias.json`, `ocorrencia-1.json`, `rotas.json`, `usuario.json`, `ranking-bairros.json`) em `…/mocks/`
+- [X] T007 Criar `…/lib/api.ts`: `fetch` com `NEXT_PUBLIC_API_URL`, header `Authorization: Bearer` quando houver sessão (inclusive GETs públicos, para `minha`), leitura dos mocks se `NEXT_PUBLIC_USE_MOCKS=true` ou sem `NEXT_PUBLIC_API_URL`, timeout de 60 s com estado "Acordando o servidor…", e conversão do erro em `ErroApi`
+- [X] T008 [P] Criar componentes base acessíveis (alvos ≥ 48×48 px, ícone + texto): `Botao` (principal: fundo `#2A4B25` texto branco; secundário: contorno e texto `#2A4B25`), `Aviso` (`role="status"`/`role="alert"`) em `…/components/`
+- [X] T009 Criar `layout.tsx` com `lang="pt-BR"`, cabeçalho branco com logo `#76C1A9` (componente `Casca`), navegação Mapa · Rota · Avisar · Perfil (inferior no celular, no cabeçalho ≥ 768 px) e aviso de sem internet (`navigator.onLine`) em `…/app/layout.tsx`
 
 **Checkpoint**: app sobe com mocks, layout e cores aplicados.
 
@@ -33,75 +33,82 @@ description: "Task list — Front-end web Caminho Livre (Next.js)"
 
 **Goal**: login Google e "Sair". **Test**: quickstart 3, 9, 10.
 
-- [ ] T010 [US1] Criar `…/lib/sessao.ts`: carregar Google Identity Services, `entrar()` → `POST /auth/google` → salvar `{ usuario, idToken, expiraEm }` em `localStorage` (`cl.sessao`); `renovar()` via `google.accounts.id.prompt()` com `auto_select`; `sair()` apaga `cl.sessao` e `cl.rascunho`; hook `useSessao()`
-- [ ] T011 [US1] Em `…/lib/api.ts`, ao receber 401: `renovar()` e repetir a chamada uma vez; se falhar, redirecionar a `/login?voltar=<rota>` mantendo o rascunho
-- [ ] T012 [US1] Criar tela `/login` com botão "Entrar com Google", mensagem "Não foi possível entrar. Tente de novo." e retorno a `voltar`; se `primeiroAcesso`, ir a `/onboarding` em `…/app/login/page.tsx`
-- [ ] T013 [US1] Criar guarda `exigirLogin()` usada pelas telas 🔒 do contrato de telas em `…/lib/sessao.ts`
-- [ ] T014 [US1] Botão "Sair" no cabeçalho/perfil com volta a `/` em `…/app/layout.tsx`
+- [X] T010 [US1] Criar `…/lib/sessao.ts`: carregar Google Identity Services, `entrar()` → `POST /auth/google` → salvar `{ usuario, idToken, expiraEm }` em `localStorage` (`cl.sessao`); `renovar()` via `google.accounts.id.prompt()` com `auto_select`; `sair()` apaga `cl.sessao` e `cl.rascunho`; hook `useSessao()`
+- [X] T011 [US1] Em `…/lib/api.ts`, ao receber 401: `renovar()` e repetir a chamada uma vez; se falhar, redirecionar a `/login?voltar=<rota>` mantendo o rascunho
+- [X] T012 [US1] Criar tela `/login` com botão "Entrar com Google", mensagem "Não foi possível entrar. Tente de novo." e retorno a `voltar`; se `primeiroAcesso`, ir a `/onboarding` em `…/app/login/page.tsx`
+- [X] T013 [US1] Criar guarda `exigirLogin()` usada pelas telas 🔒 do contrato de telas em `…/lib/sessao.ts`
+- [X] T014 [US1] Botão "Sair" no perfil com volta a `/` (cabeçalho mostra inicial/foto que leva ao perfil) em `…/app/perfil/page.tsx`
 
 ## Phase 4: US2 — Ver alertas no mapa (P1, MVP)
 
 **Goal**: mapa público com filtros. **Test**: quickstart 1–2.
 
-- [ ] T015 [P] [US2] Criar `Mapa` client-only (`dynamic(..., { ssr: false })`), OpenStreetMap, centro na posição do usuário ou no centro de SP com aviso em texto se o GPS for negado, em `…/components/Mapa.tsx`
-- [ ] T016 [P] [US2] Criar marcadores `divIcon` com forma + cor + rótulo por tipo (círculo Acessibilidade, triângulo Segurança, gota Clima) e `aria-label` em `…/components/MarcadorAlerta.tsx`
-- [ ] T017 [US2] Criar `FiltroTipos` (três chips; ativo com fundo `#76C1A9` e texto `#2A4B25`, `aria-pressed`) em `…/components/FiltroTipos.tsx`
-- [ ] T018 [US2] Montar a tela `/` com `GET /ocorrencias?tipo=`, filtros, resumo ao tocar no marcador (link para o detalhe), estado vazio "Nenhum problema avisado por aqui" e botão "Avisar problema" em `…/app/page.tsx`
+- [X] T015 [P] [US2] Criar `Mapa` client-only (`dynamic(..., { ssr: false })`), OpenStreetMap, centro na posição do usuário ou no centro de SP com aviso em texto se o GPS for negado, em `…/components/Mapa.tsx`
+- [X] T016 [P] [US2] Criar marcadores `divIcon` com forma + cor + rótulo por tipo (círculo Acessibilidade, triângulo Segurança, gota Clima) e `aria-label` em `…/components/MarcadorAlerta.tsx`
+- [X] T017 [US2] Criar `FiltroTipos` (três chips; ativo com fundo `#76C1A9` e texto `#2A4B25`, `aria-pressed`) em `…/components/FiltroTipos.tsx`
+- [X] T018 [US2] Montar a tela `/` com `GET /ocorrencias?tipo=`, filtros, resumo ao tocar no marcador (link para o detalhe), estado vazio "Nenhum problema avisado por aqui" e botão "Avisar problema" em `…/app/page.tsx`
 
 ## Phase 5: US3 — Enviar alerta em até 4 toques (P1, MVP)
 
 **Goal**: foto → categoria → local → enviar. **Test**: quickstart 3–5, 12.
 
-- [ ] T019 [P] [US3] Criar `…/app/api/upload/route.ts` com `handleUpload` do Vercel Blob aceitando só `image/*` e ≤ 2 MB; em `onBeforeGenerateToken`, exigir `Authorization: Bearer <idToken>` válido (verificado com `google-auth-library`, audience = `NEXT_PUBLIC_GOOGLE_CLIENT_ID`) e responder 401 sem token
-- [ ] T020 [P] [US3] Criar `reduzirFoto(file)` (canvas, lado maior ≤ 1280 px, JPEG 0,8) em `…/lib/foto.ts`
-- [ ] T021 [US3] Criar tela `/ocorrencias/nova` 🔒: foto opcional (se o upload falhar, avisar e permitir enviar sem foto) → categoria (`GET /categorias`, obrigatória) → local ("Usar minha localização" ou toque no mapa, obrigatório) → descrição opcional (≤ 500) → "Enviar" desabilitado com texto do que falta; rascunho em `sessionStorage` (`cl.rascunho`) em `…/app/ocorrencias/nova/page.tsx`
-- [ ] T022 [US3] Ao enviar: `POST /ocorrencias`; sucesso → "Alerta enviado" e volta ao mapa com o marcador novo; erro → mostrar `erro` da API mantendo os dados, em `…/app/ocorrencias/nova/page.tsx`
+- [X] T019 [P] [US3] Criar `…/app/api/upload/route.ts` com `handleUpload` do Vercel Blob aceitando só `image/*` e ≤ 2 MB; em `onBeforeGenerateToken`, exigir `Authorization: Bearer <idToken>` válido (verificado com `google-auth-library`, audience = `NEXT_PUBLIC_GOOGLE_CLIENT_ID`) e responder 401 sem token
+- [X] T020 [P] [US3] Criar `reduzirFoto(file)` (canvas, lado maior ≤ 1280 px, JPEG 0,8) em `…/lib/foto.ts`
+- [X] T021 [US3] Criar tela `/ocorrencias/nova` 🔒: foto opcional (se o upload falhar, avisar e permitir enviar sem foto) → categoria (`GET /categorias`, obrigatória) → local ("Usar minha localização" ou toque no mapa, obrigatório) → descrição opcional (≤ 500) → "Enviar" desabilitado com texto do que falta; rascunho em `sessionStorage` (`cl.rascunho`) em `…/app/ocorrencias/nova/page.tsx`
+- [X] T022 [US3] Ao enviar: `POST /ocorrencias`; sucesso → "Alerta enviado" e volta ao mapa com o marcador novo; erro → mostrar `erro` da API mantendo os dados, em `…/app/ocorrencias/nova/page.tsx`
 
 ## Phase 6: US4 — Rota acessível comparada (P1, MVP)
 
 **Goal**: rota comum × Caminho Livre. **Test**: quickstart 6–7.
 
-- [ ] T023 [P] [US4] Criar `BuscaEndereco` (Nominatim, debounce 1 s, mínimo 3 letras, `countrycodes=br`, cache em memória; sem resultado → "Endereço não encontrado. Toque no mapa para marcar.") em `…/components/BuscaEndereco.tsx`
-- [ ] T024a [US4] Criar o formulário da tela `/rota`: origem "Minha localização" (trocável), destino por busca ou toque no mapa, checkbox "Tenho mobilidade reduzida" (visitante; logado usa o perfil), `ignorar` das preferências se logado (opcional: vazio até a T032 existir) e chamada `GET /rotas` em `…/app/rota/page.tsx`
-- [ ] T024b [US4] Desenhar o resultado da rota: comum tracejada e Caminho Livre contínua `#2A4B25`, legenda em texto e distâncias; `caminhoLivre = null` → mostrar `aviso`; 422 → mostrar `erro` em `…/components/ResultadoRota.tsx`
+- [X] T023 [P] [US4] Criar `BuscaEndereco` (Nominatim, debounce 1 s, mínimo 3 letras, `countrycodes=br`, cache em memória; atalho "Usar minha localização"; sem resultado → "Endereço não encontrado. Tente com o número ou o bairro.") em `…/components/BuscaEndereco.tsx`
+- [X] T024a [US4] Criar o formulário da tela `/rota`: origem e destino por `BuscaEndereco` (origem começa em "Minha localização"), botão "Inverter", sem toque no mapa, checkbox "Tenho mobilidade reduzida" (visitante; logado usa o perfil), `ignorar` das preferências se logado (opcional: vazio até a T032 existir) e chamada `GET /rotas` em `…/app/rota/page.tsx`
+- [X] T024b [US4] Desenhar o resultado da rota: comum tracejada e Caminho Livre contínua `#2A4B25`, legenda em texto e distâncias; `caminhoLivre = null` → mostrar `aviso`; 422 → mostrar `erro` em `…/components/ResultadoRota.tsx`
 
 ## Phase 7: US5 — Interface acessível (P1, MVP)
 
 **Test**: quickstart 13–14.
 
-- [ ] T025 [US5] Teste e2e `acessibilidade.spec.ts`: axe sem violações críticas em `/`, `/login`, `/rota`, `/ocorrencias/nova`, `/ocorrencias/1`, `/perfil`, `/minhas`, `/ranking` em `front-next/tests/e2e/acessibilidade.spec.ts`
-- [ ] T026 [US5] Teste e2e `fluxos-mvp.spec.ts` com mocks: mapa + filtro, enviar alerta em ≤ 4 toques, rota com duas linhas em `front-next/tests/e2e/fluxos-mvp.spec.ts`
+- [X] T025 [US5] Teste e2e `acessibilidade.spec.ts`: axe sem violações críticas em `/`, `/login`, `/rota`, `/ocorrencias/nova`, `/ocorrencias/1`, `/perfil`, `/minhas`, `/ranking` em `front-next/tests/e2e/acessibilidade.spec.ts`
+- [X] T026 [US5] Teste e2e `fluxos-mvp.spec.ts` com mocks: mapa + filtro, enviar alerta em ≤ 4 toques, rota com duas linhas em `front-next/tests/e2e/fluxos-mvp.spec.ts`
 - [ ] T027 [US5] Revisar todas as telas com fonte do sistema em 200% e navegação só por teclado; corrigir cortes e ordem de foco nos componentes de `…/components/`
 
 **Checkpoint MVP (front)**: US1–US5 com mocks.
 
 ## Phase 8: US6 — Detalhe e avaliação 👍/👎 (P2)
 
-- [ ] T028 [US6] Criar tela `/ocorrencias/[id]`: foto com `alt`, categoria, data, status em texto, totais; botões "Ainda está lá" / "Já foi resolvido" (`POST …/confirmacoes`), ocultos se `minha`, "Entre para avaliar" para visitante, desabilitados com "Você já avaliou" após avaliar ou em 409; sem nome do autor em `…/app/ocorrencias/[id]/page.tsx`
+- [X] T028 [US6] Criar tela `/ocorrencias/[id]`: foto com `alt`, categoria, data, status em texto, totais; botões "Ainda está lá" / "Já foi resolvido" (`POST …/confirmacoes`), ocultos se `minha`, "Entre para avaliar" para visitante, desabilitados com "Você já avaliou" após avaliar ou em 409; sem nome do autor em `…/app/ocorrencias/[id]/page.tsx`
 
 ## Phase 9: US7 — Onboarding e perfil (P2)
 
-- [ ] T029 [US7] Criar tela `/onboarding` 🔒 ("Você tem mobilidade reduzida?" Sim/Não → `PUT /usuarios/{id}` → mapa) em `…/app/onboarding/page.tsx`
-- [ ] T030 [US7] Criar tela `/perfil` 🔒: editar nome, foto (via Blob) e mobilidade (`PUT /usuarios/{id}`), atualizar sessão e cabeçalho, botão "Sair" em `…/app/perfil/page.tsx`
+- [X] T029 [US7] Criar tela `/onboarding` 🔒 ("Você tem mobilidade reduzida?" Sim/Não → `PUT /usuarios/{id}` → mapa) em `…/app/onboarding/page.tsx`
+- [X] T030 [US7] Criar tela `/perfil` 🔒: editar nome, foto (via Blob) e mobilidade (`PUT /usuarios/{id}`), atualizar sessão e cabeçalho, botão "Sair" em `…/app/perfil/page.tsx`
 
 ## Phase 10: US8 — Minhas ocorrências e ajustes de rota (P2)
 
-- [ ] T031 [P] [US8] Criar tela `/minhas` 🔒 com lista (categoria, data, status em texto, totais) de `GET /usuarios/{id}/ocorrencias` em `…/app/minhas/page.tsx`
-- [ ] T032 [US8] Adicionar seção "Ajustar rota" no perfil (liga/desliga categorias, `GET/PUT /usuarios/{id}/preferencias`) em `…/app/perfil/page.tsx`
+- [X] T031 [P] [US8] Criar tela `/minhas` 🔒 com lista (categoria, data, status em texto, totais) de `GET /usuarios/{id}/ocorrencias` em `…/app/minhas/page.tsx`
+- [X] T032 [US8] Adicionar seção "Ajustar rota" no perfil (liga/desliga categorias, `GET/PUT /usuarios/{id}/preferencias`) em `…/app/perfil/page.tsx`
 
 ## Phase 11: US9 — Ranking de bairros (P2)
 
-- [ ] T033 [P] [US9] Criar tela `/ranking` com duas listas ordenadas (posição, bairro, alertas ativos) de `GET /ranking/bairros` em `…/app/ranking/page.tsx`
+- [X] T033 [P] [US9] Criar tela `/ranking` com duas listas ordenadas (posição, bairro, alertas ativos) de `GET /ranking/bairros` em `…/app/ranking/page.tsx`
 
 ## Phase 12: US10 — Excluir conta (P2)
 
-- [ ] T034 [US10] Adicionar "Excluir minha conta" no perfil com diálogo acessível explicando o que é apagado e que os alertas ficam anônimos; confirmar → `DELETE /usuarios/{id}` → `sair()` → `/login` em `…/app/perfil/page.tsx`
+- [X] T034 [US10] Adicionar "Excluir minha conta" no perfil com diálogo acessível explicando o que é apagado e que os alertas ficam anônimos; confirmar → `DELETE /usuarios/{id}` → `sair()` → `/login` em `…/app/perfil/page.tsx`
 
 ## Phase 13: US11 — Pontos, ranking de usuários, favoritas (P3, Could)
 
-- [ ] T035 [US11] Mostrar pontos no perfil e "+10" / "+2" após enviar/avaliar em `…/app/perfil/page.tsx` e `…/app/ocorrencias/`
-- [ ] T036 [P] [US11] Aba "Pessoas" no ranking (`GET /ranking/usuarios`) em `…/app/ranking/page.tsx`
+- [X] T035 [US11] Mostrar pontos no perfil e "+10" / "+2" após enviar/avaliar em `…/app/perfil/page.tsx` e `…/app/ocorrencias/`
+- [X] T036 [P] [US11] Aba "Pessoas" no ranking (`GET /ranking/usuarios`) em `…/app/ranking/page.tsx`
 - [ ] T037 [US11] Criar `/favoritas` 🔒 (listar, abrir na rota, remover) e botão "Salvar rota" com apelido (≤ 60) na tela de rota em `…/app/favoritas/page.tsx` e `…/app/rota/page.tsx`
+
+## Phase 13b: Ajustes de layout e mapa (2026-11-13)
+
+- [X] T043 Layout minimalista e responsivo: mapa em tela cheia com filtros e "Avisar problema" flutuantes, cartões, ícones `lucide-react`, rota com painel lateral no desktop, em `…/components/` e `…/app/`
+- [X] T044 Mocks automáticos sem `NEXT_PUBLIC_API_URL` em `…/lib/api.ts`
+- [X] T045 Corrigir mapa em branco: `leaflet.css` global, `ResizeObserver` + `invalidateSize()`, tiles em `tile.openstreetmap.org`, enquadrar todos os pontos, em `…/components/MapaLeaflet.tsx` e `…/app/layout.tsx`
+- [X] T046 Rota sem toque no mapa: origem e destino por endereço ou localização atual, "Inverter", em `…/app/rota/page.tsx` e `…/components/BuscaEndereco.tsx`
 
 ## Phase 14: Polish
 

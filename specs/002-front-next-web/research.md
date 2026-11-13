@@ -6,12 +6,13 @@
 - **Alternatives**: NextAuth/Auth.js (cria sessão própria e cookie, duplica a validação da API); cookie httpOnly via route handler (mais seguro contra XSS, mas exige proxy de todas as chamadas — custo alto para a demo).
 
 ## Mapa
-- **Decision**: react-leaflet com tiles do OpenStreetMap, carregado com `dynamic(..., { ssr: false })`. Marcadores com `divIcon` (forma + ícone + rótulo por tipo); rota comum tracejada e Caminho Livre contínua em `#2A4B25`.
+- **Decision**: react-leaflet com tiles do OpenStreetMap (`https://tile.openstreetmap.org/{z}/{x}/{y}.png`, sem subdomínios, como o OSM recomenda), carregado com `dynamic(..., { ssr: false })`. Marcadores com `divIcon` (forma + ícone + rótulo por tipo); rota comum tracejada e Caminho Livre contínua em `#2A4B25`. O mapa enquadra juntos todos os pontos marcados e as linhas da rota.
+- **Tela branca (2026-11-13)**: `leaflet.css` é importado no `layout.tsx` (global), não no componente carregado sob demanda — se o CSS chega depois do mapa montar, os tiles ficam fora do lugar. Um `ResizeObserver` chama `invalidateSize()` quando o contêiner muda de tamanho (troca de tela, rotação, avisos).
 - **Rationale**: Gratuito, sem chave; Leaflet precisa de `window`, por isso client-only.
 - **Alternatives**: Google Maps / Mapbox (chave e cobrança).
 
 ## Busca de endereço
-- **Decision**: Nominatim com debounce de 1 s, mínimo 3 letras, `countrycodes=br` e `viewbox` da área mapeada; cache em memória por texto. Falha → mensagem e toque no mapa (clarificação 2).
+- **Decision**: Nominatim com debounce de 1 s, mínimo 3 letras, `countrycodes=br` e `viewbox` da área mapeada; cache em memória por texto. Mesmo componente para origem e destino, com atalho "Usar minha localização"; o lugar escolhido aparece no campo com o nome curto (3 primeiras partes do endereço). Sem resultado → mensagem pedindo número ou bairro. Toque no mapa removido da rota (clarificação de 2026-11-13).
 - **Rationale**: Política de uso do Nominatim (1 req/s); sem chave.
 - **Alternatives**: Photon (mesmo dado, menos limite, menos estável); Google Places (chave paga).
 
@@ -23,9 +24,10 @@
 ## Paleta e tema
 - **Decision**: Tokens no `@theme` do Tailwind 4: `--color-marca-escuro: #2A4B25`, `--color-marca-agua: #76C1A9`, `--color-fundo: #FFFFFF`; tipos de alerta com cor + forma: Acessibilidade `#1F5FAD` (círculo), Segurança `#B3261E` (triângulo), Clima `#6A3FA0` (gota), todos ≥ 4,5:1 sobre branco.
 - **Rationale**: FR-014; as cores de tipo não competem com o verde da marca.
+- **Layout (2026-11-13)**: minimalista — fundo branco, cartões com borda `neutral-200`, campos com borda `neutral-500` (≥ 3:1), texto secundário `neutral-600` (≥ 4,5:1), fundo leve `--color-marca-suave: #E8F4EF` sempre com texto verde-escuro. Ícones de linha da biblioteca `lucide-react`, sempre com texto ao lado. Fonte do sistema (`system-ui`), sem baixar fonte.
 
 ## Mocks e API fora do ar
-- **Decision**: `NEXT_PUBLIC_USE_MOCKS=true` faz `lib/api.ts` ler `src/mocks/*.json`. Em produção, timeout de 60 s com mensagem "Acordando o servidor…" (Render free).
+- **Decision**: `NEXT_PUBLIC_USE_MOCKS=true` **ou** `NEXT_PUBLIC_API_URL` vazio faz `lib/api.ts` ler `src/mocks/` (com estado em memória: enviar, avaliar e editar perfil funcionam até recarregar) e o login vira um botão de teste sem Google. Assim `npm run dev` sem `.env.local` nunca abre quebrado. Em produção, timeout de 60 s com mensagem "Acordando o servidor…" (Render free).
 - **Rationale**: Front e API andam em paralelo até 15/11.
 
 ## Sem internet
@@ -33,5 +35,5 @@
 - **Rationale**: Atende o caso de borda da spec com o mínimo; PWA fica fora do escopo.
 
 ## Testes
-- **Decision**: Playwright cobrindo os fluxos P1 com mocks + `@axe-core/playwright` em todas as rotas; Lighthouse manual antes da entrega.
+- **Decision**: Playwright cobrindo os fluxos P1 com mocks + `@axe-core/playwright` em todas as rotas + teste de fonte em 200% sem rolagem horizontal; o Nominatim é simulado com `page.route` nos testes. Lighthouse manual antes da entrega.
 - **Rationale**: SC-003 e SC-002 são verificáveis no navegador; o front não tem regra de negócio que justifique teste unitário.
