@@ -12,7 +12,7 @@
 
 **Arquivo do simulador:** `caminho-livre-rede.pkt` (Cisco Packet Tracer 9.0.1)
 
-**Vídeo dos serviços funcionando:** LINK_DO_VIDEO
+**Vídeo dos serviços funcionando:** https://youtu.be/jQe6hr3nbCQ
 
 ---
 

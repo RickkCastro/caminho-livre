@@ -32,7 +32,8 @@ Projetar a infraestrutura de rede que permitiria à CitizenTech operar em um cen
 ## Entregáveis
 - [x] [`caminho-livre-rede.pkt`](caminho-livre-rede.pkt): topologia no Packet Tracer 9.0.1
 - [x] [`Network_GS_CaminhoLivre.pdf`](Network_GS_CaminhoLivre.pdf): relatório com plano de endereçamento, configurações essenciais, explicação de cada serviço, testes de comunicação e registro das decisões
-- [ ] Vídeo mostrando os serviços funcionando (link no relatório)
+- [x] Vídeo mostrando os serviços funcionando: https://youtu.be/jQe6hr3nbCQ (link também no relatório)
+- [x] [`Entrega_Network_CaminhoLivre_OctoFlow.zip`](Entrega_Network_CaminhoLivre_OctoFlow.zip): pacote pronto para o Teams (`.pkt`, PDF e link do vídeo)
 
 ## Arquivos desta pasta
 | Arquivo | Para que serve |
