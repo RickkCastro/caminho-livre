@@ -1,50 +1,44 @@
-# 🌐 Network Architect Solutions — Lau
+# 🌐 Network Architect Solutions — Caio
 
-**Disciplina:** Network Architect Solutions · **Entrega:** `.pkt` + PDF no Teams/Portal até 19/11, 23h55 (um envio por equipe)
+**Disciplina:** Network Architect Solutions · **Entrega:** arquivo do simulador + documentação no Teams até 19/11, 23h55 (um envio por equipe)
+**Enunciado:** `docs/GS CitizenTech - 2ES Fev - FIAP 2026.pdf`, páginas 33 e 34 (versão enviada pelo professor de Network)
 
 ## Conceito
-Projetar no Packet Tracer a rede do **Posto Caminho Livre**, a base comunitária de zeladoria onde ficam a equipe, o Wi-Fi público para o cidadão e o servidor da solução com os sensores dos postes.
-
-## Entregáveis
-- [ ] Arquivo `.pkt`
-- [ ] PDF com: Ficha da CitizenTech, topologia, plano de endereçamento, trechos de `show running-config` e prints dos testes
+Projetar a infraestrutura de rede que permitiria à CitizenTech operar em um cenário real, considerando usuários, serviços e restrições locais. No nosso caso, a rede do **Posto Caminho Livre**: equipe isolada, Wi-Fi público para o cidadão, servidores do posto e acesso ao app na nuvem.
 
 ## Avaliação
 | Critério | Peso |
 |---|---|
-| Arquitetura e endereçamento | 3 |
-| Configuração | 3 |
+| Arquitetura | 3 |
+| Configuração e endereçamento | 3 |
 | Segurança | 2 |
 | Testes | 2 |
 
-## Requisitos mínimos
-### Endereçamento e VLANs
-- [ ] Faixa `192.168.X.0/24` (X = número da equipe) dividida em pelo menos 3 sub-redes:
+## Requisitos mínimos do `.pkt`
+- [ ] 2 roteadores com conexão serial
+- [ ] 4 switches com módulo de fibra óptica
+- [ ] 3 PCs
+- [ ] 3 servidores
+- [ ] 3 laptops com placa de rede wireless
+- [ ] 3 smartphones conectados via wireless
+- [ ] 1 Access Point (AP, e não roteador wireless)
+- [ ] Conexões com cabos UTP, fibra óptica e wireless
+- [ ] Página web personalizada em todos os servidores
+- [ ] E-mail enviado de um dispositivo para outro
+- [ ] DHCP funcionando em algum dispositivo
+- [ ] VLANs
+- [ ] Roteamento configurado
 
-| VLAN | Setor | Sub-rede | Gateway |
-|---|---|---|---|
-| 10 | Equipe | *calcular* | |
-| 20 | Cidadão (Wi-Fi público) | | |
-| 30 | Servidores / Sensores | | |
+## Entregáveis
+- [ ] `caminho-livre-rede.pkt`: topologia no Packet Tracer
+- [ ] Relatório em PDF (`RELATORIO.md` com os prints): plano de endereçamento, configurações essenciais, explicação de cada serviço, testes de comunicação e registro das decisões
+- [ ] Vídeo mostrando os serviços funcionando (`ROTEIRO-VIDEO.md`)
 
-- [ ] Trunk 802.1Q + **router-on-a-stick**
-
-### Serviços
-- [ ] DHCP com um pool por VLAN (excluindo gateway e servidor)
-- [ ] NAT/PAT até um roteador provedor com servidor externo simulando a internet
-- [ ] Servidor da solução com **DNS** e **HTTP** (página com a Ficha da CitizenTech), por exemplo `caminholivre.local`
-
-### Segurança
-- [ ] ACL estendida: o Wi-Fi do cidadão acessa **só HTTP e DNS** do servidor e a internet, **nada** da VLAN Equipe
-- [ ] Roteador acessível **só por SSH**, com senhas e `enable secret`
-- [ ] Wi-Fi com **WPA2**
-
-### Testes (prints no PDF)
-- [ ] Ping entre VLANs
-- [ ] PC recebendo IP por DHCP
-- [ ] Página abrindo pelo nome
-- [ ] `show ip nat translations`
-- [ ] Um acesso barrado pela ACL
-
-## Ideia para a narrativa
-Os "postes inteligentes" (sensores de luminosidade) ficam na VLAN Servidores/Sensores e reportam ao servidor quando a rua está escura, gerando automaticamente uma ocorrência de "rua sem iluminação".
+## Arquivos desta pasta
+| Arquivo | Para que serve |
+|---|---|
+| [`MONTAGEM.md`](MONTAGEM.md) | Passo a passo para montar a rede no Packet Tracer 9.0.1 |
+| [`configs/`](configs/) | Comandos de cada roteador e switch, prontos para colar no CLI |
+| [`servidores/`](servidores/) | Páginas web dos três servidores |
+| [`RELATORIO.md`](RELATORIO.md) | Relatório da entrega (vira o PDF) |
+| [`ROTEIRO-VIDEO.md`](ROTEIRO-VIDEO.md) | Roteiro e narração do vídeo |

@@ -1,22 +1,33 @@
-! R-ISP (Cisco 2911) - roteador do provedor
-! Nao precisa de rota para 192.168.X.0/24: o R-POSTO faz NAT/PAT.
+! R-ISP (Cisco 2911 + modulo HWIC-2T) - roteador do provedor
+! Lado DCE do cabo serial: e ele que define o clock rate.
+! Nao precisa de rota para 192.168.10.0/24: o R-POSTO faz NAT/PAT.
+! Senhas de laboratorio, validas so no Packet Tracer.
 enable
 configure terminal
 hostname R-ISP
 no ip domain-lookup
 enable secret CLenable2026
 service password-encryption
-banner motd # Provedor simulado #
-interface GigabitEthernet0/0
- description WAN para R-POSTO
+banner motd # Provedor simulado - acesso restrito #
+username R-POSTO password CLchap2026
+!
+interface Serial0/0/0
+ description WAN SERIAL para R-POSTO (DCE)
  ip address 203.0.113.1 255.255.255.252
+ encapsulation ppp
+ ppp authentication chap
+ clock rate 64000
  no shutdown
-interface GigabitEthernet0/1
- description INTERNET SIMULADA
+interface GigabitEthernet0/0
+ description NUVEM - SRV-NUVEM
  ip address 198.51.100.1 255.255.255.0
  no shutdown
+!
 line console 0
  password CLconsole2026
  login
+ exec-timeout 5 0
+line vty 0 4
+ transport input none
 end
 write memory
