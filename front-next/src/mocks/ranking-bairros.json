@@ -1,0 +1,4 @@
+{
+  "melhores": [ { "bairro": "Bela Vista", "pontuacao": 2, "totalAtivas": 1 }, { "bairro": "Liberdade", "pontuacao": 5, "totalAtivas": 2 } ],
+  "piores": [ { "bairro": "Sé", "pontuacao": 21, "totalAtivas": 6 }, { "bairro": "República", "pontuacao": 14, "totalAtivas": 4 } ]
+}

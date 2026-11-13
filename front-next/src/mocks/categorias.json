@@ -1,0 +1,11 @@
+[
+  { "id": 1, "nome": "Degrau", "tipo": "ACESSIBILIDADE", "pesoBase": 5, "pesoNoturno": 5, "bloqueiaMobilidade": "S" },
+  { "id": 2, "nome": "Falta de rampa", "tipo": "ACESSIBILIDADE", "pesoBase": 5, "pesoNoturno": 5, "bloqueiaMobilidade": "S" },
+  { "id": 3, "nome": "Buraco", "tipo": "ACESSIBILIDADE", "pesoBase": 3, "pesoNoturno": 4, "bloqueiaMobilidade": "N" },
+  { "id": 4, "nome": "Calçada quebrada", "tipo": "ACESSIBILIDADE", "pesoBase": 3, "pesoNoturno": 4, "bloqueiaMobilidade": "N" },
+  { "id": 5, "nome": "Obra", "tipo": "ACESSIBILIDADE", "pesoBase": 2, "pesoNoturno": 3, "bloqueiaMobilidade": "N" },
+  { "id": 6, "nome": "Rua escura", "tipo": "SEGURANCA", "pesoBase": 1, "pesoNoturno": 6, "bloqueiaMobilidade": "N" },
+  { "id": 7, "nome": "Local deserto", "tipo": "SEGURANCA", "pesoBase": 1, "pesoNoturno": 5, "bloqueiaMobilidade": "N" },
+  { "id": 8, "nome": "Assalto", "tipo": "SEGURANCA", "pesoBase": 4, "pesoNoturno": 8, "bloqueiaMobilidade": "N" },
+  { "id": 9, "nome": "Alagamento", "tipo": "CLIMA", "pesoBase": 6, "pesoNoturno": 6, "bloqueiaMobilidade": "N" }
+]

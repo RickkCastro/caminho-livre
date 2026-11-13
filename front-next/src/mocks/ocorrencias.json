@@ -1,0 +1,6 @@
+[
+  { "id": 1, "categoria": "Degrau", "tipo": "ACESSIBILIDADE", "latitude": -23.5489, "longitude": -46.6345, "status": "CONFIRMADA" },
+  { "id": 2, "categoria": "Rua escura", "tipo": "SEGURANCA", "latitude": -23.5521, "longitude": -46.6310, "status": "ABERTA" },
+  { "id": 3, "categoria": "Alagamento", "tipo": "CLIMA", "latitude": -23.5512, "longitude": -46.6372, "status": "ABERTA" },
+  { "id": 4, "categoria": "Buraco", "tipo": "ACESSIBILIDADE", "latitude": -23.5478, "longitude": -46.6302, "status": "ABERTA" }
+]

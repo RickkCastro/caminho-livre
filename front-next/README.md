@@ -28,13 +28,21 @@ Interface web simples e acessível que consome a API Java e exibe o mapa, as oco
 - Deploy na Vercel
 
 ## Configuração
-```
-NEXT_PUBLIC_API_URL=https://<servico>.onrender.com
-```
-Enquanto a API não estiver no ar, usar mocks em `src/mocks/` com o **mesmo formato** da tabela de endpoints em [`api-java/README.md`](../api-java/README.md).
+Copie `.env.example` para `.env.local`:
 
-## Como executar *(completar)*
+| Variável | Para quê |
+|---|---|
+| `NEXT_PUBLIC_API_URL` | URL da API Java (Render) |
+| `NEXT_PUBLIC_GOOGLE_CLIENT_ID` | OAuth Client ID do Google (origens: `http://localhost:3000` e a URL da Vercel) |
+| `BLOB_READ_WRITE_TOKEN` | Token do Vercel Blob (fotos) |
+| `NEXT_PUBLIC_USE_MOCKS` | `true` usa `src/mocks/` (mesmo formato do contrato da API) e um login falso, sem Google nem Blob |
+
+## Como executar
 ```bash
 npm install
-npm run dev
+npm run dev                      # http://localhost:3000
+npx playwright install chromium  # só na primeira vez
+npx playwright test              # fluxos do MVP + axe + fonte 200% (usa os mocks)
 ```
+
+Specs, plano e tarefas: [`specs/002-front-next-web/`](../specs/002-front-next-web/).

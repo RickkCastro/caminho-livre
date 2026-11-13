@@ -4,7 +4,7 @@
 
 **Created**: 2026-11-12
 
-**Status**: Draft
+**Status**: Implementada com mocks (2026-11-13) — US1–US10 prontas; US11 parcial (sem rotas favoritas); integração com a API e deploy pendentes
 
 **Input**: User description: "Interface web acessível, mobile first, que consome a API Java do Caminho Livre: login Google, mapa de alertas com filtros, envio de alerta, rota acessível comparada, detalhe/avaliação, perfil/onboarding, histórico, ranking e exclusão de conta — conforme agile/backlog.md."
 
@@ -17,6 +17,13 @@
 - Q: Quem não fez login pode ver o mapa e pedir rota? → A: Sim; mapa, detalhe e rota são abertos; login só para enviar/avaliar alerta, perfil e histórico.
 - Q: Por quanto tempo o usuário fica logado no aparelho? → A: Até tocar "Sair"; o token do Google é renovado automaticamente ao expirar.
 
+### Session 2026-11-13
+
+- Q: A rota ainda aceita toque no mapa para origem/destino? → A: Não. Origem e destino são escolhidos só por endereço digitado (com sugestões) ou "Usar minha localização"; o mapa da rota apenas exibe os pontos e as linhas. (Substitui a resposta de 2026-11-12 sobre origem e destino.) O toque no mapa continua só para marcar o local de um alerta.
+- Q: Qual o layout? → A: Minimalista e mobile first: fundo branco, cabeçalho branco com logo em `#76C1A9`, mapa em tela cheia na tela inicial com filtros e "Avisar problema" flutuando; navegação inferior no celular e no cabeçalho a partir de 768 px; na rota, painel lateral + mapa no desktop.
+- Q: Onde fica "Sair"? → A: No perfil; o cabeçalho mostra a inicial/foto que leva ao perfil. Ao sair, o usuário vira visitante no mapa.
+- Q: E se o app rodar sem `NEXT_PUBLIC_API_URL`? → A: Usa os mocks e um login de teste automaticamente, para o app nunca abrir quebrado.
+
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Entrar e sair (Priority: P1) — US01, US06
@@ -25,20 +32,20 @@ Usuário toca em "Entrar com Google", volta logado com nome e foto; em "Sair" a 
 
 **Why this priority**: Pré-requisito para enviar e avaliar alertas.
 
-**Independent Test**: login com conta Google de teste mostra nome/foto no topo; "Sair" volta à tela de login e recarregar não restaura a sessão.
+**Independent Test**: login com conta Google de teste mostra a inicial/foto no topo; "Sair" (no perfil) volta ao mapa como visitante e recarregar não restaura a sessão.
 
 **Acceptance Scenarios**:
 
 1. **Given** não logado, **When** toca "Entrar com Google" e autoriza, **Then** vê o mapa com seu nome e foto.
 2. **Given** é o primeiro acesso, **When** entra, **Then** vê o onboarding (US12) antes do mapa.
-3. **Given** logado, **When** toca "Sair", **Then** volta para `/login` e nenhum dado pessoal permanece no navegador.
+3. **Given** logado, **When** toca "Sair" no perfil, **Then** volta ao mapa como visitante e nenhum dado pessoal permanece no navegador.
 4. **Given** o login falha, **When** volta do Google, **Then** vê mensagem simples "Não foi possível entrar. Tente de novo." com botão.
 
 ---
 
 ### User Story 2 - Ver alertas no mapa (Priority: P1) — US03
 
-Tela inicial `/` mostra mapa OpenStreetMap centrado na posição do usuário, com alertas ativos por cor **e** forma de ícone, e filtros Acessibilidade / Segurança / Alagamento.
+Tela inicial `/` mostra mapa OpenStreetMap em tela cheia, centrado na posição do usuário, com alertas ativos por cor **e** forma de ícone, e filtros flutuantes Acessibilidade / Segurança / Clima (Clima inclui alagamento).
 
 **Why this priority**: É o primeiro valor que o usuário percebe.
 
@@ -80,8 +87,9 @@ Tela `/rota`: origem e destino; mostra rota comum e rota Caminho Livre lado a la
 
 **Acceptance Scenarios**:
 
-0. **Given** GPS permitido, **When** abre `/rota`, **Then** a origem já vem preenchida com "Minha localização" e pode ser trocada; o destino é escolhido pela busca de endereço ou tocando no mapa.
-1. **Given** origem e destino, **When** toca "Ver caminho", **Then** em ≤ 5 s vê as duas rotas, legenda em texto e as distâncias.
+0. **Given** GPS permitido, **When** abre `/rota`, **Then** a origem já vem preenchida com "Minha localização"; origem e destino podem ser digitados (com sugestões de endereço) ou definidos com "Usar minha localização", e "Inverter" troca os dois. Tocar no mapa não marca pontos.
+1. **Given** origem e destino, **When** toca "Ver rota", **Then** em ≤ 5 s vê as duas rotas, legenda em texto e as distâncias, com origem, destino e linhas enquadrados no mapa.
+1a. **Given** falta origem ou destino, **When** olha o botão, **Then** "Ver rota" fica desabilitado com texto dizendo o que falta.
 2. **Given** usuário com mobilidade reduzida, **When** pede a rota, **Then** a rota Caminho Livre não passa por trechos bloqueados e há aviso se não existir caminho possível.
 3. **Given** usuário desligou categorias em "Ajustar rota", **When** pede a rota, **Then** o cálculo usa essas preferências.
 
@@ -164,12 +172,14 @@ Transversal a todas as telas.
 ### Edge Cases
 
 - Sem internet: mostrar aviso em texto e manter o último mapa carregado; não perder o formulário de alerta.
-- API fora do ar (Render dormindo): mostrar "Carregando…" com até 60 s antes do erro; em desenvolvimento usar mocks em `src/mocks/` no mesmo formato da API.
+- API fora do ar (Render dormindo): mostrar "Acordando o servidor…" e esperar até 60 s antes do erro. Sem `NEXT_PUBLIC_API_URL` (ou com `NEXT_PUBLIC_USE_MOCKS=true`), usar mocks em `src/mocks/` no mesmo formato da API.
+- Mapa que muda de tamanho depois de aberto (troca de tela, rotação, avisos): recalcular o tamanho para não sobrar área em branco.
 - Token do Google expirado (401): renovar em silêncio e repetir a chamada; só se a renovação falhar, ir ao login preservando a tela e os dados do formulário.
 - Envio de foto sem login: o upload é recusado (só usuário logado gera token de upload).
 - Foto grande: reduzir no navegador (lado maior ≤ 1280 px, JPEG) antes de enviar; aceitar só imagem.
 - Falha no envio da foto: avisar e permitir enviar o alerta sem foto.
-- Busca de endereço sem resultado ou indisponível: mostrar "Endereço não encontrado. Toque no mapa para marcar."
+- Busca de endereço sem resultado ou indisponível: mostrar "Endereço não encontrado. Tente com o número ou o bairro." (ou usar "Usar minha localização").
+- GPS negado na rota: a origem fica vazia e a pessoa digita o endereço; aviso em texto se tocar em "Usar minha localização".
 - Destino fora da área mapeada (API responde 422): mostrar a mensagem do campo `erro`.
 - Visitante no detalhe do alerta: botões 👍/👎 aparecem com o texto "Entre para avaliar".
 - Sem alertas na região: texto "Nenhum problema avisado por aqui".
@@ -182,20 +192,20 @@ Transversal a todas as telas.
 - **FR-001** (RF01–RF03): DEVE oferecer login via Google, enviar o ID token para `POST /auth/google` e permitir sair apagando a sessão local. A sessão DEVE durar até o usuário tocar "Sair", com renovação automática do token do Google.
 - **FR-002** (RF07, RF08): DEVE exibir alertas ativos no mapa com cor + forma + rótulo por tipo e filtros por tipo.
 - **FR-003** (RF04–RF06, RNF03): DEVE permitir enviar alerta com categoria e local obrigatórios, foto e descrição opcionais, em até 4 toques.
-- **FR-004** (RF09–RF11): DEVE mostrar rota comum e rota Caminho Livre lado a lado com distâncias.
+- **FR-004** (RF09–RF11): DEVE mostrar rota comum e rota Caminho Livre lado a lado com distâncias. Origem e destino DEVEM ser informados por endereço (busca com sugestões) ou localização atual; a rota NÃO usa toque no mapa.
 - **FR-005** (RF12, RF15): DEVE exibir detalhe do alerta e permitir 👍/👎 uma vez, sem autoavaliação.
 - **FR-006** (RF16–RF19): DEVE oferecer onboarding de mobilidade, edição de perfil, histórico e preferências de rota.
 - **FR-007** (RF20): DEVE exibir ranking de bairros em lista acessível.
 - **FR-008** (RF21): DEVE permitir excluir a conta com confirmação explícita.
 - **FR-009** (RNF01, RNF02, RNF04): Toda tela DEVE cumprir WCAG 2.1 AA, fonte ≥ 16 px, alvos ≥ 48 px, ícone + texto, linguagem simples.
-- **FR-010** (RNF05): DEVE ser responsivo, mobile first, funcionando em Chrome, Safari e Edge atuais.
+- **FR-010** (RNF05): DEVE ser responsivo, mobile first, funcionando em Chrome, Safari e Edge atuais. Layout minimalista (fundo branco, cartões discretos, ícones de linha com texto); navegação inferior no celular e no cabeçalho a partir de 768 px.
 - **FR-011** (RNF08): NÃO DEVE exibir quem enviou um alerta.
 - **FR-012** (Princípio V): DEVE consumir apenas os endpoints do contrato da API Caminho Livre em `api-java/README.md` (além dos serviços externos Nominatim, para busca de endereço, e Vercel Blob, para fotos), com URL em `NEXT_PUBLIC_API_URL`, e mostrar o campo `erro` das respostas de erro.
 - **FR-013** (RF22–RF24, Could): DEVE mostrar pontos, ranking de usuários e aba de rotas favoritas.
 - **FR-014** (identidade visual): A interface DEVE usar as cores da marca, mais as cores de estado (tipos de alerta e erro) definidas no research, respeitando o contraste do RNF01:
   - **Verde-escuro `#2A4B25`**: textos, ícones, botões principais (com texto branco) e a linha da rota Caminho Livre. Contraste com branco 9,85:1 (AAA).
   - **Branco `#FFFFFF`**: fundo das telas e texto sobre verde-escuro.
-  - **Verde-água `#76C1A9`**: fundos de destaque (cabeçalho, cartões, chip de filtro ativo) **sempre com texto verde-escuro** (4,68:1, AA). É PROIBIDO texto branco sobre verde-água (2,11:1) e usar verde-água sozinho como borda, ícone ou linha sobre branco (abaixo de 3:1); nesses casos acompanhar de contorno verde-escuro.
+  - **Verde-água `#76C1A9`**: fundos de destaque (logo, item de navegação ativo, chip de filtro ativo, rota Caminho Livre na legenda) **sempre com texto verde-escuro** (4,68:1, AA). É PROIBIDO texto branco sobre verde-água (2,11:1) e usar verde-água sozinho como borda, ícone ou linha sobre branco (abaixo de 3:1); nesses casos acompanhar de contorno verde-escuro.
   - Cores de estado dos alertas (Acessibilidade, Segurança, Clima) e de erro são complementares, distinguidas também por forma e rótulo, e precisam de ≥ 3:1 contra o fundo do mapa.
 
 ### Key Entities
