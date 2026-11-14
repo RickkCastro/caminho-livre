@@ -16,25 +16,26 @@ O `.zip` contém o **PDF da documentação**, o **link do GitHub** e o **link do
 
 ### Parte técnica (70 pts)
 - [ ] Camada **model** com as classes de acordo com o banco (10)
-- [ ] Camadas **DAO** e **BO** (10)
+- [ ] Camadas **DAO** e **BO** (10): no padrão Spring Data JPA visto em aula, **repository** e **service**
 - [ ] **Controller** com GET, POST, PUT e DELETE (10)
 - [ ] **Tratamento de exceções** (10)
 - [ ] **Deploy no Render** (30) ⚠️ *fazer até 15/11*
 
 > ⚠️ Commits feitos após a data de entrega **zeram toda a parte técnica**.
 
-## Estrutura sugerida
+## Estrutura
+Projeto em [`caminholivre-backend/`](caminholivre-backend/) (Spring Boot 4.1, Java 21, Spring Data JPA).
 ```
-src/main/java/br/com/fiap/caminholivre/
-├── model/        Usuario, CategoriaOcorrencia, Localizacao, Ocorrencia, Confirmacao, Trecho, RotaSalva, ContatoConfianca
-├── dao/          um DAO por entidade
-├── bo/           regras de negócio (confirmar, expirar, resolver, calcular peso)
+src/main/java/br/com/caminholivre/
+├── model/        entidades JPA: Usuario, CategoriaOcorrencia, Localizacao, Ocorrencia, Confirmacao, PreferenciaRota, Trecho, RotaFavorita
+├── repository/   um JpaRepository por entidade
+├── service/      regras de negócio (confirmar, expirar, resolver, calcular peso, rota)
 ├── controller/   endpoints REST
-├── exception/    @ControllerAdvice, RecursoNaoEncontradoException, RegraNegocioException
-└── config/       conexão Oracle, CORS para o front
+├── exception/    @RestControllerAdvice, RecursoNaoEncontradoException, RegraNegocioException
+└── config/       CORS para o front, filtro do token Google, agendamento da expiração
 ```
 
-## Regras de negócio (BO)
+## Regras de negócio (services)
 Alinhadas ao [backlog MoSCoW](../agile/backlog.md):
 - Uma ocorrência nasce `ABERTA`, com `dt_expiracao` = registro + 15 dias (US08).
 - Com **3 confirmações positivas (👍)** ela passa para `CONFIRMADA` (US07).
@@ -84,6 +85,7 @@ Formato de erro padrão:
 
 ## Como executar *(completar)*
 ```bash
+cd api-java/caminholivre-backend
 ./mvnw spring-boot:run
 ```
 Variáveis de ambiente: `DB_URL`, `DB_USER`, `DB_PASSWORD` (nunca commitar credenciais).
