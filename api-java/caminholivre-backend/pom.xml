@@ -49,6 +49,11 @@
 		</dependency>
 
 		<dependency>
+			<groupId>com.google.api-client</groupId>
+			<artifactId>google-api-client</artifactId>
+			<version>2.7.2</version>
+		</dependency>
+		<dependency>
 			<groupId>com.oracle.database.jdbc</groupId>
 			<artifactId>ojdbc17</artifactId>
 			<scope>runtime</scope>
