@@ -23,6 +23,8 @@ public interface OcorrenciaRepository extends JpaRepository<Ocorrencia, Long> {
             order by o.dtRegistro desc""")
     List<Ocorrencia> listar(Collection<StatusOcorrencia> status, TipoCategoria tipo, String bairro);
 
+    List<Ocorrencia> findByUsuarioIdOrderByDtRegistroDesc(Long idUsuario);
+
     /** Só ABERTA expira; CONFIRMADA continua até ser resolvida. */
     @Modifying
     @Query("""

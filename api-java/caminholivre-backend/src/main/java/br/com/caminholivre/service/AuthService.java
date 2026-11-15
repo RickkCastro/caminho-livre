@@ -13,6 +13,7 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.gson.GsonFactory;
 
 import br.com.caminholivre.dto.UsuarioResponse;
+import br.com.caminholivre.exception.AcessoNegadoException;
 import br.com.caminholivre.exception.NaoAutorizadoException;
 import br.com.caminholivre.model.Usuario;
 import br.com.caminholivre.repository.UsuarioRepository;
@@ -69,6 +70,13 @@ public class AuthService {
     /** Rotas 🔒 chamam isto com o usuário que o GoogleTokenFilter identificou. */
     public static Usuario exigir(Usuario logado) {
         if (logado == null) throw new NaoAutorizadoException("Entre com sua conta Google para continuar.");
+        return logado;
+    }
+
+    /** Dados de /usuarios/{id}/...: só o próprio usuário (403 para outro). */
+    public static Usuario exigirProprio(Usuario logado, Long idUsuario) {
+        if (!exigir(logado).getId().equals(idUsuario))
+            throw new AcessoNegadoException("Você só pode acessar os seus próprios dados");
         return logado;
     }
 }

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import br.com.caminholivre.config.GoogleTokenFilter;
 import br.com.caminholivre.dto.ConfirmacaoRequest;
 import br.com.caminholivre.dto.NovaOcorrenciaRequest;
-import br.com.caminholivre.dto.OcorrenciaResponse;
+import br.com.caminholivre.dto.OcorrenciaDetalhe;
 import br.com.caminholivre.dto.OcorrenciaResumo;
 import br.com.caminholivre.dto.TotaisResponse;
 import br.com.caminholivre.model.StatusOcorrencia;
@@ -40,9 +40,29 @@ public class OcorrenciaController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public OcorrenciaResponse criar(@RequestBody @Valid NovaOcorrenciaRequest r,
+    public OcorrenciaDetalhe criar(@RequestBody @Valid NovaOcorrenciaRequest r,
             @RequestAttribute(name = GoogleTokenFilter.USUARIO_LOGADO, required = false) Usuario logado) {
         return ocorrencias.criar(AuthService.exigir(logado), r);
+    }
+
+    /** Público; com login, minha diz se o alerta é do usuário. */
+    @GetMapping("/{id}")
+    public OcorrenciaDetalhe detalhar(@PathVariable Long id,
+            @RequestAttribute(name = GoogleTokenFilter.USUARIO_LOGADO, required = false) Usuario logado) {
+        return ocorrencias.detalhar(id, logado);
+    }
+
+    @PutMapping("/{id}")
+    public OcorrenciaDetalhe atualizar(@PathVariable Long id, @RequestBody @Valid NovaOcorrenciaRequest r,
+            @RequestAttribute(name = GoogleTokenFilter.USUARIO_LOGADO, required = false) Usuario logado) {
+        return ocorrencias.atualizar(id, r, AuthService.exigir(logado));
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void excluir(@PathVariable Long id,
+            @RequestAttribute(name = GoogleTokenFilter.USUARIO_LOGADO, required = false) Usuario logado) {
+        ocorrencias.excluir(id, AuthService.exigir(logado));
     }
 
     @PostMapping("/{id}/confirmacoes")
