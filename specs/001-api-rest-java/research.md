@@ -22,7 +22,7 @@
 - **Alternatives**: Oracle Spatial (não garantido no Oracle da FIAP); FK ocorrência→trecho (muda o DER congelado).
 
 ## Rota: Dijkstra na API
-- **Decision**: `RotaBO` com Dijkstra (`PriorityQueue` do JDK) sobre o grafo não direcionado de TRECHO, rodado duas vezes: custo = distância (comum) e custo = peso sem trechos bloqueados (Caminho Livre).
+- **Decision**: `RotaService` com Dijkstra (`PriorityQueue` do JDK) sobre o grafo não direcionado de TRECHO, rodado duas vezes: custo = distância (comum) e custo = peso sem trechos bloqueados (Caminho Livre).
 - **Rationale**: Só Java e front integram o app; o grafo de demo é pequeno, então o cálculo em memória a cada chamada atende ≤ 2 s sem cache.
 - **Alternatives**: Serviço Python (Dynamic Programming é entrega isolada, sem deploy); cálculo no front (espalha regra de negócio no cliente).
 

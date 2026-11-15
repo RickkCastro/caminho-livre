@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import br.com.caminholivre.dto.AtualizarUsuarioRequest;
 import br.com.caminholivre.dto.PreferenciaDto;
 import br.com.caminholivre.exception.AcessoNegadoException;
+import br.com.caminholivre.exception.RecursoNaoEncontradoException;
 import br.com.caminholivre.model.CategoriaOcorrencia;
 import br.com.caminholivre.model.PreferenciaRota;
 import br.com.caminholivre.model.Usuario;
@@ -80,13 +81,21 @@ class PerfilServiceTest {
 
     @Test
     void salvarGravaCadaPreferenciaDoUsuario() {
-        when(categorias.listar()).thenReturn(List.of());
+        when(categorias.listar()).thenReturn(List.of(categoria(3L)));
 
         preferenciaService.salvar(1L, List.of(new PreferenciaDto(3L, "N")), usuario(1L));
 
-        verify(categorias).buscar(3L);
         verify(prefs).save(argThat(p -> p.getIdUsuario() == 1L && p.getIdCategoria() == 3L
                 && "N".equals(p.getConsiderar())));
+    }
+
+    @Test
+    void categoriaInexistenteDa404SemGravarNenhuma() {
+        when(categorias.listar()).thenReturn(List.of(categoria(3L)));
+
+        assertThrows(RecursoNaoEncontradoException.class, () -> preferenciaService.salvar(1L,
+                List.of(new PreferenciaDto(3L, "N"), new PreferenciaDto(99L, "N")), usuario(1L)));
+        verify(prefs, never()).save(any());
     }
 
     @Test

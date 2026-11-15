@@ -19,12 +19,12 @@ public class Confirmacao {
     private Long id;
 
     @NotNull
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "id_ocorrencia")
     private Ocorrencia ocorrencia;
 
     @NotNull
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "id_usuario")
     private Usuario usuario;
 

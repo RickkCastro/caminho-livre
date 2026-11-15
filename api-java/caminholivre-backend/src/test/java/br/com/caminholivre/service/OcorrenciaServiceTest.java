@@ -140,6 +140,23 @@ class OcorrenciaServiceTest {
     }
 
     @Test
+    void historicoTrazTotaisDeCadaAlertaNumaConsulta() {
+        Ocorrencia o10 = alertaDe(usuario(1L));
+        Ocorrencia o11 = alertaDe(usuario(1L));
+        o11.setId(11L);
+        when(ocorrencias.findByUsuarioIdOrderByDtRegistroDesc(1L)).thenReturn(List.of(o10, o11));
+        when(confirmacoes.contarPorOcorrencia(List.of(10L, 11L))).thenReturn(List.of(
+                new Object[] { 10L, "S", 2L }, new Object[] { 10L, "N", 1L }, new Object[] { 11L, "N", 3L }));
+
+        var h = service.listarDoUsuario(1L, usuario(1L));
+
+        assertEquals(List.of(2L, 0L), h.stream().map(OcorrenciaDetalhe::totalConfirma).toList());
+        assertEquals(List.of(1L, 3L), h.stream().map(OcorrenciaDetalhe::totalNega).toList());
+        assertTrue(h.stream().allMatch(OcorrenciaDetalhe::minha));
+        verify(confirmacoes, never()).countByOcorrenciaIdAndConfirma(any(), any());
+    }
+
+    @Test
     void historicoDeOutroUsuarioDa403() {
         assertThrows(AcessoNegadoException.class, () -> service.listarDoUsuario(1L, usuario(2L)));
     }

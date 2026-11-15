@@ -20,8 +20,8 @@ public class Ocorrencia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    /** Autor; null depois que a conta é excluída (anonimização LGPD). */
-    @ManyToOne
+    /** Autor; null depois que a conta é excluída (anonimização LGPD). LAZY: nenhuma resposta mostra o autor. */
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_usuario")
     private Usuario usuario;
 

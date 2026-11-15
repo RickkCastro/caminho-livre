@@ -24,7 +24,7 @@ ABERTA ──dt_expiracao < agora──▶ EXPIRADA
 - Nasce `ABERTA`, `dtExpiracao = dtRegistro + 15 dias`.
 - Ativa = `ABERTA` ou `CONFIRMADA`. `EXPIRADA`/`RESOLVIDA` não aceitam avaliação e somem do mapa e da rota.
 
-## Peso do trecho (TrechoBO)
+## Peso do trecho (TrechoService)
 
 ```text
 noturno = hora >= 19 || hora < 6
@@ -33,7 +33,7 @@ bloqueado = mobilidadeReduzida = S && alguma ativa tem categoria.bloqueiaMobilid
 peso = distanciaM × (1 + Σ (noturno ? pesoNoturno : pesoBase))
 ```
 
-## Rota (RotaBO)
+## Rota (RotaService)
 
 ```text
 grafo   = TRECHO como arestas não direcionadas entre LOCALIZACAO

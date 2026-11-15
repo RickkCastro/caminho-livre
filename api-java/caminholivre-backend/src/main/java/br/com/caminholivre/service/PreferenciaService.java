@@ -2,12 +2,15 @@ package br.com.caminholivre.service;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.caminholivre.dto.PreferenciaDto;
+import br.com.caminholivre.exception.RecursoNaoEncontradoException;
+import br.com.caminholivre.model.CategoriaOcorrencia;
 import br.com.caminholivre.model.PreferenciaRota;
 import br.com.caminholivre.model.Usuario;
 import br.com.caminholivre.repository.PreferenciaRotaRepository;
@@ -37,10 +40,13 @@ public class PreferenciaService {
     @Transactional
     public List<PreferenciaDto> salvar(Long idUsuario, List<PreferenciaDto> novas, Usuario logado) {
         AuthService.exigirProprio(logado, idUsuario);
-        for (PreferenciaDto p : novas) {
-            categorias.buscar(p.idCategoria());
+        // valida todas com uma consulta só, antes de gravar qualquer uma
+        Set<Long> existentes = categorias.listar().stream().map(CategoriaOcorrencia::getId).collect(Collectors.toSet());
+        for (PreferenciaDto p : novas)
+            if (!existentes.contains(p.idCategoria()))
+                throw new RecursoNaoEncontradoException("Categoria " + p.idCategoria() + " não encontrada");
+        for (PreferenciaDto p : novas)
             preferencias.save(new PreferenciaRota(idUsuario, p.idCategoria(), p.considerar()));
-        }
         return listar(idUsuario, logado);
     }
 }

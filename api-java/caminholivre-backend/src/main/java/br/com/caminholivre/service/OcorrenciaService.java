@@ -1,7 +1,9 @@
 package br.com.caminholivre.service;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -78,8 +80,19 @@ public class OcorrenciaService {
     public List<OcorrenciaDetalhe> listarDoUsuario(Long idUsuario, Usuario logado) {
         AuthService.exigirProprio(logado, idUsuario);
         ocorrencias.expirarVencidas(LocalDateTime.now());
-        return ocorrencias.findByUsuarioIdOrderByDtRegistroDesc(idUsuario).stream()
-                .map(o -> detalhe(o, logado)).toList();
+        List<Ocorrencia> doUsuario = ocorrencias.findByUsuarioIdOrderByDtRegistroDesc(idUsuario);
+        if (doUsuario.isEmpty()) return List.of();
+
+        // totais de todas numa consulta só (2 contagens por alerta pesariam no Render)
+        Map<Long, long[]> totais = new HashMap<>();
+        for (Object[] linha : confirmacoes.contarPorOcorrencia(doUsuario.stream().map(Ocorrencia::getId).toList())) {
+            long[] t = totais.computeIfAbsent((Long) linha[0], k -> new long[2]);
+            t["S".equals(linha[1]) ? 0 : 1] = (Long) linha[2];
+        }
+        return doUsuario.stream().map(o -> {
+            long[] t = totais.getOrDefault(o.getId(), new long[2]);
+            return OcorrenciaDetalhe.de(o, t[0], t[1], true);
+        }).toList();
     }
 
     /** Só o autor edita; muda categoria, ponto, descrição e foto, mantendo status e datas. */
