@@ -89,4 +89,20 @@ class PerfilServiceTest {
                 () -> preferenciaService.salvar(1L, List.of(new PreferenciaDto(3L, "N")), usuario(2L)));
         verify(prefs, never()).save(any());
     }
+
+    @Test
+    void excluirContaDeOutraPessoaDa403() {
+        assertThrows(AcessoNegadoException.class, () -> usuarioService.excluir(1L, usuario(2L)));
+        verify(usuarios, never()).delete(any());
+    }
+
+    @Test
+    void excluirAPropriaContaApagaOUsuario() {
+        Usuario salvo = usuario(1L);
+        when(usuarios.findById(1L)).thenReturn(Optional.of(salvo));
+
+        usuarioService.excluir(1L, usuario(1L));
+
+        verify(usuarios).delete(salvo);
+    }
 }

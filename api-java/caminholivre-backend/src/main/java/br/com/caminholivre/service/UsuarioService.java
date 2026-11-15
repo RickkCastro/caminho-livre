@@ -41,6 +41,16 @@ public class UsuarioService {
         return UsuarioResponse.de(usuarios.save(u), false);
     }
 
+    /**
+     * LGPD: apaga a conta. As FKs do banco fazem o resto na mesma transação: ocorrências ficam com
+     * id_usuario = NULL (seguem no mapa, anônimas) e confirmações, preferências e rotas favoritas saem em cascata.
+     */
+    @Transactional
+    public void excluir(Long id, Usuario logado) {
+        AuthService.exigirProprio(logado, id);
+        usuarios.delete(carregar(id));
+    }
+
     private Usuario carregar(Long id) {
         return usuarios.findById(id)
                 .orElseThrow(() -> new RecursoNaoEncontradoException("Usuário " + id + " não encontrado"));

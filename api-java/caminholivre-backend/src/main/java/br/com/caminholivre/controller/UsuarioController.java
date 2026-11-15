@@ -2,6 +2,7 @@ package br.com.caminholivre.controller;
 
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import br.com.caminholivre.config.GoogleTokenFilter;
@@ -50,6 +51,13 @@ public class UsuarioController {
     public UsuarioResponse atualizar(@PathVariable Long id, @RequestBody @Valid AtualizarUsuarioRequest r,
             @RequestAttribute(name = GoogleTokenFilter.USUARIO_LOGADO, required = false) Usuario logado) {
         return usuarios.atualizar(id, r, logado);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void excluir(@PathVariable Long id,
+            @RequestAttribute(name = GoogleTokenFilter.USUARIO_LOGADO, required = false) Usuario logado) {
+        usuarios.excluir(id, logado);
     }
 
     @GetMapping("/{id}/preferencias")
