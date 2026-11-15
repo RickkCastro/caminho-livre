@@ -1,15 +1,18 @@
 package br.com.caminholivre.service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.caminholivre.dto.NovaOcorrenciaRequest;
 import br.com.caminholivre.dto.OcorrenciaResponse;
+import br.com.caminholivre.dto.OcorrenciaResumo;
 import br.com.caminholivre.model.Localizacao;
 import br.com.caminholivre.model.Ocorrencia;
 import br.com.caminholivre.model.StatusOcorrencia;
+import br.com.caminholivre.model.TipoCategoria;
 import br.com.caminholivre.model.Usuario;
 import br.com.caminholivre.repository.LocalizacaoRepository;
 import br.com.caminholivre.repository.OcorrenciaRepository;
@@ -50,5 +53,14 @@ public class OcorrenciaService {
         o.setDtRegistro(agora);
         o.setDtExpiracao(agora.plusDays(Ocorrencia.DIAS_VALIDADE));
         return OcorrenciaResponse.de(ocorrencias.save(o));
+    }
+
+    /** Mapa: expira os vencidos antes de listar; sem status = só ativas (ABERTA e CONFIRMADA). */
+    @Transactional
+    public List<OcorrenciaResumo> listar(TipoCategoria tipo, StatusOcorrencia status, String bairro) {
+        ocorrencias.expirarVencidas(LocalDateTime.now());
+        var filtro = status != null ? List.of(status) : List.of(StatusOcorrencia.ABERTA, StatusOcorrencia.CONFIRMADA);
+        String b = bairro == null || bairro.isBlank() ? null : bairro.trim();
+        return ocorrencias.listar(filtro, tipo, b).stream().map(OcorrenciaResumo::de).toList();
     }
 }

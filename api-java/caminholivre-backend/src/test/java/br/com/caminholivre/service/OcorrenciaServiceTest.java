@@ -5,8 +5,10 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 import java.time.temporal.ChronoUnit;
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.InOrder;
 
 import br.com.caminholivre.dto.NovaOcorrenciaRequest;
 import br.com.caminholivre.dto.OcorrenciaResponse;
@@ -50,5 +52,21 @@ class OcorrenciaServiceTest {
 
         assertThrows(RecursoNaoEncontradoException.class, () -> service.criar(new Usuario(), pedido));
         verify(ocorrencias, never()).save(any());
+    }
+
+    @Test
+    void mapaExpiraVencidosAntesEPorPadraoMostraSoAtivas() {
+        service.listar(null, null, "  ");
+
+        InOrder ordem = inOrder(ocorrencias);
+        ordem.verify(ocorrencias).expirarVencidas(any());
+        ordem.verify(ocorrencias).listar(List.of(StatusOcorrencia.ABERTA, StatusOcorrencia.CONFIRMADA), null, null);
+    }
+
+    @Test
+    void filtroDeStatusSubstituiOPadrao() {
+        service.listar(TipoCategoria.CLIMA, StatusOcorrencia.EXPIRADA, " Sé ");
+
+        verify(ocorrencias).listar(List.of(StatusOcorrencia.EXPIRADA), TipoCategoria.CLIMA, "Sé");
     }
 }
