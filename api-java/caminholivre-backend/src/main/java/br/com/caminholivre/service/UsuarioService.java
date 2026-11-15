@@ -10,15 +10,29 @@ import br.com.caminholivre.dto.UsuarioPublico;
 import br.com.caminholivre.dto.UsuarioResponse;
 import br.com.caminholivre.exception.RecursoNaoEncontradoException;
 import br.com.caminholivre.model.Usuario;
+import br.com.caminholivre.repository.ConfirmacaoRepository;
+import br.com.caminholivre.repository.OcorrenciaRepository;
+import br.com.caminholivre.repository.PreferenciaRotaRepository;
+import br.com.caminholivre.repository.RotaFavoritaRepository;
 import br.com.caminholivre.repository.UsuarioRepository;
 
 @Service
 public class UsuarioService {
 
     private final UsuarioRepository usuarios;
+    private final OcorrenciaRepository ocorrencias;
+    private final ConfirmacaoRepository confirmacoes;
+    private final PreferenciaRotaRepository preferencias;
+    private final RotaFavoritaRepository favoritas;
 
-    public UsuarioService(UsuarioRepository usuarios) {
+    public UsuarioService(UsuarioRepository usuarios, OcorrenciaRepository ocorrencias,
+            ConfirmacaoRepository confirmacoes, PreferenciaRotaRepository preferencias,
+            RotaFavoritaRepository favoritas) {
         this.usuarios = usuarios;
+        this.ocorrencias = ocorrencias;
+        this.confirmacoes = confirmacoes;
+        this.preferencias = preferencias;
+        this.favoritas = favoritas;
     }
 
     public List<UsuarioPublico> listar() {
@@ -42,13 +56,18 @@ public class UsuarioService {
     }
 
     /**
-     * LGPD: apaga a conta. As FKs do banco fazem o resto na mesma transação: ocorrências ficam com
-     * id_usuario = NULL (seguem no mapa, anônimas) e confirmações, preferências e rotas favoritas saem em cascata.
+     * LGPD, numa transação só: alertas ficam anônimos (seguem no mapa) e os dados pessoais saem.
+     * Feito aqui, e não só pelos ON DELETE do banco, para não depender de como o script criou as FKs.
      */
     @Transactional
     public void excluir(Long id, Usuario logado) {
         AuthService.exigirProprio(logado, id);
-        usuarios.delete(carregar(id));
+        Usuario u = carregar(id);
+        ocorrencias.anonimizarPorUsuario(id);
+        confirmacoes.apagarDoUsuario(id);
+        preferencias.apagarDoUsuario(id);
+        favoritas.apagarDoUsuario(id);
+        usuarios.delete(u);
     }
 
     private Usuario carregar(Long id) {

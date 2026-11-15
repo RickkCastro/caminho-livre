@@ -2,6 +2,7 @@ package br.com.caminholivre.service;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.*;
 
 import java.time.temporal.ChronoUnit;
@@ -24,6 +25,7 @@ import br.com.caminholivre.model.Usuario;
 import br.com.caminholivre.repository.ConfirmacaoRepository;
 import br.com.caminholivre.repository.LocalizacaoRepository;
 import br.com.caminholivre.repository.OcorrenciaRepository;
+import br.com.caminholivre.repository.UsuarioRepository;
 
 class OcorrenciaServiceTest {
 
@@ -31,7 +33,8 @@ class OcorrenciaServiceTest {
     final LocalizacaoRepository localizacoes = mock(LocalizacaoRepository.class);
     final ConfirmacaoRepository confirmacoes = mock(ConfirmacaoRepository.class);
     final CategoriaService categorias = mock(CategoriaService.class);
-    final OcorrenciaService service = new OcorrenciaService(ocorrencias, localizacoes, confirmacoes, categorias);
+    final UsuarioRepository usuarios = mock(UsuarioRepository.class);
+    final OcorrenciaService service = new OcorrenciaService(ocorrencias, localizacoes, confirmacoes, categorias, usuarios);
 
     final NovaOcorrenciaRequest pedido = new NovaOcorrenciaRequest(1L, -23.55, -46.63, null, "Sé", "Calçada quebrada", null);
 
@@ -44,12 +47,13 @@ class OcorrenciaServiceTest {
         when(localizacoes.save(any())).thenAnswer(i -> i.getArgument(0));
         when(ocorrencias.save(any())).thenAnswer(i -> i.getArgument(0));
 
-        OcorrenciaDetalhe r = service.criar(new Usuario(), pedido);
+        OcorrenciaDetalhe r = service.criar(usuario(5L), pedido);
 
         assertEquals(StatusOcorrencia.ABERTA, r.status());
         assertEquals(15, ChronoUnit.DAYS.between(r.dtRegistro(), r.dtExpiracao()));
         assertEquals("Sé", r.bairro());
         assertEquals(-23.55, r.latitude());
+        verify(usuarios).somarPontos(5L, 10);
     }
 
     @Test
@@ -58,6 +62,7 @@ class OcorrenciaServiceTest {
 
         assertThrows(RecursoNaoEncontradoException.class, () -> service.criar(new Usuario(), pedido));
         verify(ocorrencias, never()).save(any());
+        verify(usuarios, never()).somarPontos(any(), anyInt());
     }
 
     @Test

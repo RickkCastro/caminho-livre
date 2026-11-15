@@ -7,12 +7,14 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import br.com.caminholivre.dto.PessoaRanking;
 import br.com.caminholivre.dto.RankingBairros;
 import br.com.caminholivre.dto.RankingBairros.Bairro;
 import br.com.caminholivre.model.Ocorrencia;
 import br.com.caminholivre.model.StatusOcorrencia;
 import br.com.caminholivre.repository.LocalizacaoRepository;
 import br.com.caminholivre.repository.OcorrenciaRepository;
+import br.com.caminholivre.repository.UsuarioRepository;
 
 @Service
 public class RankingService {
@@ -21,10 +23,18 @@ public class RankingService {
 
     private final OcorrenciaRepository ocorrencias;
     private final LocalizacaoRepository localizacoes;
+    private final UsuarioRepository usuarios;
 
-    public RankingService(OcorrenciaRepository ocorrencias, LocalizacaoRepository localizacoes) {
+    public RankingService(OcorrenciaRepository ocorrencias, LocalizacaoRepository localizacoes,
+            UsuarioRepository usuarios) {
         this.ocorrencias = ocorrencias;
         this.localizacoes = localizacoes;
+        this.usuarios = usuarios;
+    }
+
+    /** Todos os usuários por pontos (desc); empate em ordem alfabética. */
+    public List<PessoaRanking> usuarios() {
+        return usuarios.findAllByOrderByPontosDescNomeAsc().stream().map(PessoaRanking::de).toList();
     }
 
     @Transactional

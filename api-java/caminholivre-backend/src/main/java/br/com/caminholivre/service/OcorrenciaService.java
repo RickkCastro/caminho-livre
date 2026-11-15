@@ -19,6 +19,7 @@ import br.com.caminholivre.model.Usuario;
 import br.com.caminholivre.repository.ConfirmacaoRepository;
 import br.com.caminholivre.repository.LocalizacaoRepository;
 import br.com.caminholivre.repository.OcorrenciaRepository;
+import br.com.caminholivre.repository.UsuarioRepository;
 
 @Service
 public class OcorrenciaService {
@@ -27,16 +28,21 @@ public class OcorrenciaService {
     private final LocalizacaoRepository localizacoes;
     private final ConfirmacaoRepository confirmacoes;
     private final CategoriaService categorias;
+    private final UsuarioRepository usuarios;
+
+    /** Pontos por alerta enviado. */
+    static final int PONTOS_ALERTA = 10;
 
     public OcorrenciaService(OcorrenciaRepository ocorrencias, LocalizacaoRepository localizacoes,
-            ConfirmacaoRepository confirmacoes, CategoriaService categorias) {
+            ConfirmacaoRepository confirmacoes, CategoriaService categorias, UsuarioRepository usuarios) {
+        this.usuarios = usuarios;
         this.ocorrencias = ocorrencias;
         this.localizacoes = localizacoes;
         this.confirmacoes = confirmacoes;
         this.categorias = categorias;
     }
 
-    /** Novo alerta nasce ABERTO e vale 15 dias. Categoria inexistente = 404. */
+    /** Novo alerta nasce ABERTO, vale 15 dias e dá +10 pontos ao autor. Categoria inexistente = 404. */
     @Transactional
     public OcorrenciaDetalhe criar(Usuario autor, NovaOcorrenciaRequest r) {
         Ocorrencia o = new Ocorrencia();
@@ -47,7 +53,9 @@ public class OcorrenciaService {
         LocalDateTime agora = LocalDateTime.now();
         o.setDtRegistro(agora);
         o.setDtExpiracao(agora.plusDays(Ocorrencia.DIAS_VALIDADE));
-        return OcorrenciaDetalhe.de(ocorrencias.save(o), 0, 0, true);
+        Ocorrencia salva = ocorrencias.save(o);
+        usuarios.somarPontos(autor.getId(), PONTOS_ALERTA);
+        return OcorrenciaDetalhe.de(salva, 0, 0, true);
     }
 
     /** Mapa: expira os vencidos antes de listar; sem status = só ativas (ABERTA e CONFIRMADA). */

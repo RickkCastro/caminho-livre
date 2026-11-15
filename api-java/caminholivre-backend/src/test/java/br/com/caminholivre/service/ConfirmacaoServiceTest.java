@@ -2,6 +2,7 @@ package br.com.caminholivre.service;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.*;
 
 import java.util.Optional;
@@ -16,12 +17,14 @@ import br.com.caminholivre.model.StatusOcorrencia;
 import br.com.caminholivre.model.Usuario;
 import br.com.caminholivre.repository.ConfirmacaoRepository;
 import br.com.caminholivre.repository.OcorrenciaRepository;
+import br.com.caminholivre.repository.UsuarioRepository;
 
 class ConfirmacaoServiceTest {
 
     final ConfirmacaoRepository confirmacoes = mock(ConfirmacaoRepository.class);
     final OcorrenciaRepository ocorrencias = mock(OcorrenciaRepository.class);
-    final ConfirmacaoService service = new ConfirmacaoService(confirmacoes, ocorrencias);
+    final UsuarioRepository usuarios = mock(UsuarioRepository.class);
+    final ConfirmacaoService service = new ConfirmacaoService(confirmacoes, ocorrencias, usuarios);
 
     final Usuario autor = usuario(1L);
     final Usuario eu = usuario(2L);
@@ -55,6 +58,7 @@ class ConfirmacaoServiceTest {
         cenario(StatusOcorrencia.ABERTA, 1, 0);
         when(confirmacoes.existsByOcorrenciaIdAndUsuarioId(10L, 2L)).thenReturn(true);
         assertThrows(ConflitoException.class, () -> service.avaliar(eu, 10L, true));
+        verify(usuarios, never()).somarPontos(any(), anyInt());
     }
 
     @Test
@@ -70,6 +74,7 @@ class ConfirmacaoServiceTest {
         cenario(StatusOcorrencia.ABERTA, 3, 1);
         TotaisResponse r = service.avaliar(eu, 10L, true);
         assertEquals(new TotaisResponse(StatusOcorrencia.CONFIRMADA, 3, 1), r);
+        verify(usuarios).somarPontos(2L, 2);
     }
 
     @Test

@@ -15,6 +15,7 @@ import br.com.caminholivre.model.StatusOcorrencia;
 import br.com.caminholivre.model.Usuario;
 import br.com.caminholivre.repository.ConfirmacaoRepository;
 import br.com.caminholivre.repository.OcorrenciaRepository;
+import br.com.caminholivre.repository.UsuarioRepository;
 
 @Service
 public class ConfirmacaoService {
@@ -22,12 +23,18 @@ public class ConfirmacaoService {
     /** Votos (total, não saldo) que mudam o status. */
     static final int LIMITE = 3;
 
+    /** Pontos para quem avalia. */
+    static final int PONTOS_AVALIACAO = 2;
+
     private final ConfirmacaoRepository confirmacoes;
     private final OcorrenciaRepository ocorrencias;
+    private final UsuarioRepository usuarios;
 
-    public ConfirmacaoService(ConfirmacaoRepository confirmacoes, OcorrenciaRepository ocorrencias) {
+    public ConfirmacaoService(ConfirmacaoRepository confirmacoes, OcorrenciaRepository ocorrencias,
+            UsuarioRepository usuarios) {
         this.confirmacoes = confirmacoes;
         this.ocorrencias = ocorrencias;
+        this.usuarios = usuarios;
     }
 
     /** 3 👍 → CONFIRMADA; 3 👎 → RESOLVIDA (👎 prevalece). Autor, alerta inativo = 422; voto repetido = 409. */
@@ -48,6 +55,7 @@ public class ConfirmacaoService {
         c.setUsuario(usuario);
         c.setConfirma(confirma ? "S" : "N");
         confirmacoes.save(c);
+        usuarios.somarPontos(usuario.getId(), PONTOS_AVALIACAO);
 
         long sim = confirmacoes.countByOcorrenciaIdAndConfirma(idOcorrencia, "S");
         long nao = confirmacoes.countByOcorrenciaIdAndConfirma(idOcorrencia, "N");

@@ -15,7 +15,10 @@ import br.com.caminholivre.exception.AcessoNegadoException;
 import br.com.caminholivre.model.CategoriaOcorrencia;
 import br.com.caminholivre.model.PreferenciaRota;
 import br.com.caminholivre.model.Usuario;
+import br.com.caminholivre.repository.ConfirmacaoRepository;
+import br.com.caminholivre.repository.OcorrenciaRepository;
 import br.com.caminholivre.repository.PreferenciaRotaRepository;
+import br.com.caminholivre.repository.RotaFavoritaRepository;
 import br.com.caminholivre.repository.UsuarioRepository;
 
 /** UsuarioService e PreferenciaService: o que o front usa na tela de perfil e no onboarding. */
@@ -24,7 +27,10 @@ class PerfilServiceTest {
     final UsuarioRepository usuarios = mock(UsuarioRepository.class);
     final PreferenciaRotaRepository prefs = mock(PreferenciaRotaRepository.class);
     final CategoriaService categorias = mock(CategoriaService.class);
-    final UsuarioService usuarioService = new UsuarioService(usuarios);
+    final OcorrenciaRepository ocorrencias = mock(OcorrenciaRepository.class);
+    final ConfirmacaoRepository confirmacoes = mock(ConfirmacaoRepository.class);
+    final RotaFavoritaRepository favoritas = mock(RotaFavoritaRepository.class);
+    final UsuarioService usuarioService = new UsuarioService(usuarios, ocorrencias, confirmacoes, prefs, favoritas);
     final PreferenciaService preferenciaService = new PreferenciaService(prefs, categorias);
 
     static Usuario usuario(Long id) {
@@ -94,6 +100,7 @@ class PerfilServiceTest {
     void excluirContaDeOutraPessoaDa403() {
         assertThrows(AcessoNegadoException.class, () -> usuarioService.excluir(1L, usuario(2L)));
         verify(usuarios, never()).delete(any());
+        verify(ocorrencias, never()).anonimizarPorUsuario(any());
     }
 
     @Test
@@ -103,6 +110,11 @@ class PerfilServiceTest {
 
         usuarioService.excluir(1L, usuario(1L));
 
-        verify(usuarios).delete(salvo);
+        var ordem = inOrder(ocorrencias, confirmacoes, prefs, favoritas, usuarios);
+        ordem.verify(ocorrencias).anonimizarPorUsuario(1L);
+        ordem.verify(confirmacoes).apagarDoUsuario(1L);
+        ordem.verify(prefs).apagarDoUsuario(1L);
+        ordem.verify(favoritas).apagarDoUsuario(1L);
+        ordem.verify(usuarios).delete(salvo);
     }
 }

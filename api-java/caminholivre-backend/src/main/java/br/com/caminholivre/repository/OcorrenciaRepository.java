@@ -31,4 +31,9 @@ public interface OcorrenciaRepository extends JpaRepository<Ocorrencia, Long> {
             update Ocorrencia o set o.status = br.com.caminholivre.model.StatusOcorrencia.EXPIRADA
             where o.status = br.com.caminholivre.model.StatusOcorrencia.ABERTA and o.dtExpiracao < :agora""")
     int expirarVencidas(LocalDateTime agora);
+
+    /** LGPD: o alerta fica no mapa, sem autor. */
+    @Modifying
+    @Query("update Ocorrencia o set o.usuario = null where o.usuario.id = :idUsuario")
+    int anonimizarPorUsuario(Long idUsuario);
 }
