@@ -5,12 +5,14 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.gson.GsonFactory;
 
+import br.com.caminholivre.dto.UsuarioResponse;
 import br.com.caminholivre.exception.NaoAutorizadoException;
 import br.com.caminholivre.model.Usuario;
 import br.com.caminholivre.repository.UsuarioRepository;
@@ -37,6 +39,22 @@ public class AuthService {
             // token malformado: tratado igual a token inválido
         }
         throw new NaoAutorizadoException("Login inválido ou expirado. Entre com o Google de novo.");
+    }
+
+    /** Cria a conta no primeiro acesso (nome, e-mail e foto do Google); depois só devolve o usuário. */
+    @Transactional
+    public UsuarioResponse entrar(String idToken) {
+        GoogleIdToken.Payload p = verificar(idToken);
+        Optional<Usuario> existente = usuarios.findByGoogleId(p.getSubject());
+        if (existente.isPresent()) return UsuarioResponse.de(existente.get(), false);
+
+        Usuario u = new Usuario();
+        u.setGoogleId(p.getSubject());
+        u.setEmail(p.getEmail());
+        String nome = (String) p.get("name");
+        u.setNome(nome != null ? nome : p.getEmail());
+        u.setFotoUrl((String) p.get("picture"));
+        return UsuarioResponse.de(usuarios.save(u), true);
     }
 
     /** Usado pelo filtro: token inválido ou de quem nunca entrou = visitante. */
