@@ -12,7 +12,7 @@ App web mobile first em Next.js que consome a API Java ([contrato](../001-api-re
 
 **Language/Version**: TypeScript 5, Node 20 LTS
 
-**Primary Dependencies**: Next.js 15 (App Router), React 19, Tailwind CSS 4, react-leaflet 5 + Leaflet 1.9 (OpenStreetMap), Google Identity Services (script oficial), `@vercel/blob` (upload da foto), `google-auth-library` (validar o token no upload)
+**Primary Dependencies**: Next.js 15 (App Router), React 19, Tailwind CSS 4, react-leaflet 5 + Leaflet 1.9 (OpenStreetMap), Google Identity Services (script oficial), `@vercel/blob` (upload da foto), `google-auth-library` (validar o token no upload), `lucide-react` (ícones)
 
 **Storage**: Sem banco no front. Sessão (usuário + ID token) em `localStorage`; fotos no Vercel Blob
 
@@ -63,8 +63,8 @@ front-next/
 ├── .env.example                  NEXT_PUBLIC_API_URL, NEXT_PUBLIC_GOOGLE_CLIENT_ID, BLOB_READ_WRITE_TOKEN, NEXT_PUBLIC_USE_MOCKS
 ├── src/
 │   ├── app/
-│   │   ├── layout.tsx            cabeçalho, fonte, paleta
-│   │   ├── globals.css           tokens de cor (@theme)
+│   │   ├── layout.tsx            html pt-BR, leaflet.css global, Casca
+│   │   ├── globals.css           tokens de cor (@theme), utilitários pagina/cartao/campo
 │   │   ├── page.tsx              mapa (/)
 │   │   ├── login/page.tsx
 │   │   ├── onboarding/page.tsx
@@ -76,16 +76,18 @@ front-next/
 │   │   ├── ranking/page.tsx
 │   │   ├── favoritas/page.tsx     (Could)
 │   │   └── api/upload/route.ts   token de upload do Vercel Blob
-│   ├── components/               Mapa (client-only), Botao, FiltroTipos, BuscaEndereco, Aviso
+│   ├── components/               Casca (cabeçalho + navegação), Mapa/MapaLeaflet (client-only), MarcadorAlerta,
+│   │                             Botao, Aviso, FiltroTipos, BuscaEndereco, ResultadoRota
 │   ├── lib/
 │   │   ├── api.ts                fetch + Bearer + renovação do token + erro padrão
 │   │   ├── sessao.ts             login/sair com Google Identity Services
+│   │   ├── foto.ts               reduzir e enviar foto ao Vercel Blob
 │   │   └── tipos.ts              tipos do contrato da API
-│   └── mocks/                    JSON no formato do contrato
+│   └── mocks/                    JSON no formato do contrato + index.ts (respostas com estado em memória)
 └── tests/e2e/                    Playwright + axe
 ```
 
-**Structure Decision**: Projeto único em `front-next/`, App Router. Lógica de dados concentrada em `lib/api.ts` (um único cliente) para que trocar mocks pela API seja uma variável de ambiente.
+**Structure Decision**: Projeto único em `front-next/`, App Router. Lógica de dados concentrada em `lib/api.ts` (um único cliente) para que trocar mocks pela API seja uma variável de ambiente (sem `NEXT_PUBLIC_API_URL`, os mocks ligam sozinhos).
 
 ## Complexity Tracking
 

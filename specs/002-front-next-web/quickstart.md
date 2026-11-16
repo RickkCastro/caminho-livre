@@ -8,7 +8,7 @@ Node 20, um OAuth Client ID do Google (origem `http://localhost:3000`), um token
 cd front-next
 cp .env.example .env.local   # preencher as variáveis
 npm install
-npm run dev                  # NEXT_PUBLIC_USE_MOCKS=true para usar src/mocks
+npm run dev                  # sem NEXT_PUBLIC_API_URL (ou com NEXT_PUBLIC_USE_MOCKS=true) usa src/mocks e login de teste
 npx playwright test          # fluxos P1 + axe
 ```
 
@@ -20,11 +20,12 @@ npx playwright test          # fluxos P1 + axe
 | 3 | Tocar "Avisar problema" sem login | Vai a `/login`; depois de entrar volta ao formulário |
 | 4 | Enviar alerta: categoria → "Usar minha localização" → "Enviar" | ≤ 4 toques; "Alerta enviado"; marcador novo no mapa |
 | 5 | Enviar com foto de 5 MB | Foto reduzida, `fotoUrl` do Blob gravada; falha no upload permite enviar sem foto |
-| 6 | `/rota` sem login, destino por busca e por toque | Origem = "Minha localização"; duas linhas com legenda e distâncias em ≤ 5 s |
+| 6 | `/rota` sem login: digitar destino e escolher a sugestão; depois trocar a origem digitando outro endereço e tocar "Inverter" | Origem começa em "Minha localização"; tocar no mapa marca o ponto escolhido no seletor (campo mostra rua e bairro); duas linhas com legenda e distâncias em ≤ 5 s, origem e destino visíveis no mapa |
+| 6a | Abrir e alternar Mapa ↔ Rota várias vezes, girar o celular | Mapa sempre preenchido, sem área branca |
 | 7 | Marcar "Tenho mobilidade reduzida" | Caminho Livre não usa trecho com degrau, ou aviso "não há caminho" |
 | 8 | Detalhe de alerta próprio / de outro / como visitante | Sem botões / 👍👎 / "Entre para avaliar" |
 | 9 | Deixar o token expirar (ou apagar e recarregar após 1 h) | Continua logado; chamada repetida sem perder o formulário |
-| 10 | "Sair" e recarregar | Volta a visitante; `localStorage` sem `cl.sessao` |
+| 10 | "Sair" no perfil e recarregar | Volta ao mapa como visitante; `localStorage` sem `cl.sessao` |
 | 11 | "Excluir minha conta" e confirmar | Volta ao login; o alerta enviado continua no mapa |
 | 12 | Modo avião no formulário | Aviso de sem internet; dados mantidos ao voltar |
 | 13 | Lighthouse + axe em todas as rotas, fonte do sistema 200% | Acessibilidade ≥ 95; zero violações críticas; nada cortado |

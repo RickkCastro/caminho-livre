@@ -30,7 +30,7 @@ Quem anda a pé (idosos, cadeirantes, pais com carrinho de bebê, quem volta à 
 
 ```
 Usuário ──▶ Front Next.js (Vercel) ──HTTP──▶ API Java Spring Boot (Render) ──JDBC──▶ Oracle (FIAP)
-                                               └─ cálculo da rota (Dijkstra)
+                                               └─ rota por ruas reais (OpenRouteService)
 ```
 
 Dynamic Programming (Python), Data Science, Network e AR/VR são entregas **isoladas** e não se conectam ao app.

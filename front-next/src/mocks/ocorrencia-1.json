@@ -1,0 +1,6 @@
+{
+  "id": 1, "categoria": "Degrau", "tipo": "ACESSIBILIDADE", "latitude": -23.5489, "longitude": -46.6345, "status": "CONFIRMADA",
+  "descricao": "Degrau alto na esquina, sem rampa.", "fotoUrl": null, "bairro": "Sé",
+  "dtRegistro": "2026-11-10T09:30:00", "dtExpiracao": "2026-11-25T09:30:00",
+  "totalConfirma": 3, "totalNega": 0, "minha": false
+}
