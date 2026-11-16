@@ -1,17 +1,17 @@
 # Graph Report - caminho-livre  (2026-11-16)
 
 ## Corpus Check
-- 185 files · ~84,910 words
+- 185 files · ~85,294 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 15 file(s) not represented in the graph (top: (none) 7, .css 2, .properties 2)
 
 ## Summary
-- 1266 nodes · 2817 edges · 85 communities (56 shown, 29 thin omitted)
-- Extraction: 94% EXTRACTED · 6% INFERRED · 0% AMBIGUOUS · INFERRED: 169 edges (avg confidence: 0.86)
+- 1280 nodes · 2827 edges · 99 communities (56 shown, 43 thin omitted)
+- Extraction: 94% EXTRACTED · 6% INFERRED · 0% AMBIGUOUS · INFERRED: 175 edges (avg confidence: 0.86)
 - Token cost: 1,040,542 input · 4,099 output
 
 ## Graph Freshness
-- Built from commit: `5084e461`
+- Built from commit: `cfc1706b`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -78,36 +78,47 @@
 - Tabela de endpoints (contrato com o front)
 - .criar
 - GoogleTokenFilter.java
-- org.junit.jupiter.api.Test
+- Ocorrencia
 - RankingController
+- OcorrenciaService
 - Localizacao
+- OcorrenciaServiceTest
 - CategoriaOcorrencia
 - RecursoNaoEncontradoException
+- org.junit.jupiter.api.Test
 - tipos.ts
 - lib/sessao.ts
+- list
 - Usuario
 - OcorrenciaRepository
-- OcorrenciaServiceTest.java
+- RotaService.java
 - Localizacao
 - PerfilServiceTest
-- .entrar
+- RankingService.java
 - Dicionário de dados — Caminho Livre
-- RotaService.java
+- RotaServiceTest.java
+- RotaService
 - CaminholivreApplication.java
 - Modelos — Caminho Livre
 - ranking/page.tsx
 - br.com:caminholivre
+- CorsConfig.java
+- .bairros
+- PreferenciaRota
+- OrsResposta
+- RotaResponse
+- CaminholivreApplicationTests.java
 
 ## God Nodes (most connected - your core abstractions)
 1. `Usuario` - 89 edges
-2. `Ocorrencia` - 39 edges
-3. `Localizacao` - 37 edges
-4. `OcorrenciaRepository` - 31 edges
-5. `CategoriaOcorrencia` - 30 edges
-6. `UsuarioRepository` - 29 edges
-7. `StatusOcorrencia` - 26 edges
-8. `OcorrenciaService` - 26 edges
-9. `Diagrama de Casos de Uso - Caminho Livre` - 26 edges
+2. `Localizacao` - 36 edges
+3. `Ocorrencia` - 35 edges
+4. `CategoriaOcorrencia` - 29 edges
+5. `OcorrenciaRepository` - 28 edges
+6. `OcorrenciaService` - 26 edges
+7. `UsuarioRepository` - 26 edges
+8. `Diagrama de Casos de Uso - Caminho Livre` - 26 edges
+9. `StatusOcorrencia` - 25 edges
 10. `api()` - 25 edges
 
 ## Surprising Connections (you probably didn't know these)
@@ -136,7 +147,7 @@
 - **spec-kit specify-plan-tasks-implement workflow** — _specify_memory_constitution_workflow [INFERRED 0.85]
 - **Calculo de rota acessivel** — specs_001_api_rest_java_contracts_api_get_rotas, specs_001_api_rest_java_data_model_rotabo, specs_001_api_rest_java_data_model_peso_trecho, specs_001_api_rest_java_research_haversine_30m, specs_001_api_rest_java_research_dijkstra_na_api [INFERRED 0.85]
 
-## Communities (85 total, 29 thin omitted)
+## Communities (99 total, 43 thin omitted)
 
 ### Community 0 - "Casos de uso e atores"
 Cohesion: 0.15
@@ -220,7 +231,7 @@ Nodes (12): Assumptions, Edge Cases, Feature Specification: [FEATURE NAME], Func
 
 ### Community 40 - "AuthService"
 Cohesion: 0.08
-Nodes (6): ExpiracaoJob, GoogleTokenFilter, AuthController, ConfirmacaoRequest, LoginRequest, AuthService
+Nodes (7): ExpiracaoJob, GoogleTokenFilter, AuthController, LoginRequest, NaoAutorizadoException, AuthService, AuthServiceTest
 
 ### Community 41 - "speckit-plan/SKILL.md"
 Cohesion: 0.18
@@ -251,8 +262,8 @@ Cohesion: 0.25
 Nodes (7): Anti-Examples: What NOT To Do, Checklist Purpose: "Unit Tests for English", Example Checklist Types & Sample Items, Execution Steps, Post-Execution Checks, Pre-Execution Checks, User Input
 
 ### Community 48 - "Trecho"
-Cohesion: 0.11
-Nodes (7): TrechoController, TrechoPeso, Vertice, TrechoRequest, Trecho, TrechoRepository, TrechoService
+Cohesion: 0.07
+Nodes (8): TrechoController, TrechoPeso, Vertice, TrechoRequest, Trecho, TrechoRepository, TrechoService, TrechoServiceTest
 
 ### Community 49 - "speckit-clarify/SKILL.md"
 Cohesion: 0.29
@@ -295,28 +306,28 @@ Cohesion: 0.25
 Nodes (7): POST /auth/google, GET /rotas (Dijkstra na API), Tabela de endpoints (contrato com o front), GET /trechos/pesos, Front-end Next.js Caminho Livre, React Leaflet + OpenStreetMap, Mocks em src/mocks no formato da API
 
 ### Community 62 - ".criar"
-Cohesion: 0.14
+Cohesion: 0.12
 Nodes (5): RotaFavoritaController, RotaFavoritaRequest, RotaFavorita, RotaFavoritaService, RotaFavoritaServiceTest
 
 ### Community 63 - "GoogleTokenFilter.java"
-Cohesion: 0.14
+Cohesion: 0.13
 Nodes (6): Camada model (entidades JPA = tabelas do Oracle), Camadas controller → service → repository, Diagrama de classes — Caminho Livre API, ConflitoException, ErroResponse, GlobalExceptionHandler
 
-### Community 64 - "org.junit.jupiter.api.Test"
-Cohesion: 0.05
-Nodes (20): OcorrenciaController, NovaOcorrenciaRequest, OcorrenciaDetalhe, OcorrenciaResumo, TotaisResponse, Ocorrencia, StatusOcorrencia, ABERTA (+12 more)
+### Community 64 - "Ocorrencia"
+Cohesion: 0.10
+Nodes (12): OcorrenciaResumo, TotaisResponse, Ocorrencia, StatusOcorrencia, ABERTA, CONFIRMADA, EXPIRADA, RESOLVIDA (+4 more)
 
-### Community 67 - "Localizacao"
-Cohesion: 0.20
-Nodes (3): Confirmacao, Chave, PreferenciaRota
+### Community 65 - "RankingController"
+Cohesion: 0.19
+Nodes (3): RankingController, PessoaRanking, RankingBairros
+
+### Community 66 - "OcorrenciaService"
+Cohesion: 0.16
+Nodes (5): OcorrenciaController, ConfirmacaoRequest, NovaOcorrenciaRequest, OcorrenciaDetalhe, OcorrenciaService
 
 ### Community 69 - "CategoriaOcorrencia"
 Cohesion: 0.11
-Nodes (7): CategoriaController, Bairro, RankingBairros, CategoriaOcorrencia, CategoriaRepository, CategoriaService, RankingServiceTest
-
-### Community 70 - "RecursoNaoEncontradoException"
-Cohesion: 0.18
-Nodes (6): UsuarioController, RecursoNaoEncontradoException, PreferenciaRotaRepository, RotaFavoritaRepository, PreferenciaService, UsuarioService
+Nodes (4): CategoriaController, CategoriaOcorrencia, CategoriaRepository, CategoriaService
 
 ### Community 72 - "tipos.ts"
 Cohesion: 0.19
@@ -327,32 +338,24 @@ Cohesion: 0.23
 Nodes (18): LogoGoogle(), PaginaLogin(), api(), avisarAcordando(), USA_MOCKS, assinar(), botaoGoogle(), carregarGoogle() (+10 more)
 
 ### Community 75 - "Usuario"
-Cohesion: 0.17
-Nodes (3): UsuarioPublico, UsuarioResponse, Usuario
+Cohesion: 0.10
+Nodes (6): UsuarioController, AtualizarUsuarioRequest, UsuarioPublico, UsuarioResponse, Usuario, PreferenciaService
 
 ### Community 76 - "OcorrenciaRepository"
-Cohesion: 0.24
-Nodes (6): ConfirmacaoRepository, LocalizacaoRepository, OcorrenciaRepository, UsuarioRepository, ConfirmacaoService, RankingService
-
-### Community 77 - "OcorrenciaServiceTest.java"
-Cohesion: 0.14
-Nodes (3): AcessoNegadoException, NaoAutorizadoException, RegraNegocioException
+Cohesion: 0.27
+Nodes (6): ConfirmacaoRepository, OcorrenciaRepository, PreferenciaRotaRepository, UsuarioRepository, ConfirmacaoService, UsuarioService
 
 ### Community 78 - "Localizacao"
-Cohesion: 0.12
+Cohesion: 0.13
 Nodes (3): LocalizacaoController, Localizacao, LocalizacaoService
-
-### Community 79 - "PerfilServiceTest"
-Cohesion: 0.22
-Nodes (3): AtualizarUsuarioRequest, PreferenciaDto, PerfilServiceTest
 
 ### Community 81 - "Dicionário de dados — Caminho Livre"
 Cohesion: 0.17
 Nodes (12): CATEGORIA_OCORRENCIA, CONFIRMACAO, Dicionário de dados — Caminho Livre, LOCALIZACAO, Normalização, Objetos auxiliares, OCORRENCIA, PREFERENCIA_ROTA (+4 more)
 
-### Community 84 - "RotaService.java"
-Cohesion: 0.06
-Nodes (14): CorsConfig, RotaController, Ponto, RotaResponse, Trajeto, Detalhe, Feature, Geometria (+6 more)
+### Community 84 - "RotaService"
+Cohesion: 0.15
+Nodes (4): RotaController, Detalhe, OrsErro, RotaService
 
 ### Community 86 - "Modelos — Caminho Livre"
 Cohesion: 0.18
@@ -362,25 +365,33 @@ Nodes (10): API RESTful Spring Boot (Caminho Livre), Deploy no Render, 1. Modelo
 Cohesion: 0.50
 Nodes (4): Lista(), PaginaRanking(), Pessoa, RankingBairros
 
+### Community 92 - "OrsResposta"
+Cohesion: 0.70
+Nodes (5): Feature, Geometria, OrsResposta, Propriedades, Resumo
+
+### Community 93 - "RotaResponse"
+Cohesion: 0.67
+Nodes (3): Ponto, RotaResponse, Trajeto
+
 ## Knowledge Gaps
 - **88 isolated node(s):** `ABERTA`, `CONFIRMADA`, `EXPIRADA`, `RESOLVIDA`, `ACESSIBILIDADE` (+83 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 470 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **29 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 475 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **43 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Usuario` connect `Usuario` to `org.junit.jupiter.api.Test`, `RankingController`, `Localizacao`, `CategoriaOcorrencia`, `RecursoNaoEncontradoException`, `AuthService`, `list`, `OcorrenciaRepository`, `OcorrenciaServiceTest.java`, `Localizacao`, `PerfilServiceTest`, `Trecho`, `.entrar`, `.criar`?**
-  _High betweenness centrality (0.047) - this node is a cross-community bridge._
+- **Why does `Usuario` connect `Usuario` to `Ocorrencia`, `RankingController`, `OcorrenciaService`, `Localizacao`, `OcorrenciaServiceTest`, `CategoriaOcorrencia`, `RecursoNaoEncontradoException`, `org.junit.jupiter.api.Test`, `AuthService`, `list`, `OcorrenciaRepository`, `Localizacao`, `PerfilServiceTest`, `Trecho`, `RankingService.java`, `.criar`?**
+  _High betweenness centrality (0.025) - this node is a cross-community bridge._
+- **Are the 2 inferred relationships involving `Localizacao` (e.g. with `.alerta()` and `.alerta()`) actually correct?**
+  _`Localizacao` has 2 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `ABERTA`, `CONFIRMADA`, `EXPIRADA` to the rest of the system?**
   _88 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Casos de uso e atores` be split into smaller, more focused modules?**
   _Cohesion score 0.1452991452991453 - nodes in this community are weakly interconnected._
-- **Why does `RotaService` connect `RotaService.java` to `AuthService`, `RecursoNaoEncontradoException`?**
-  _High betweenness centrality (0.014) - this node is a cross-community bridge._
+- **Why does `GlobalExceptionHandler` connect `GoogleTokenFilter.java` to `AuthService`?**
+  _High betweenness centrality (0.013) - this node is a cross-community bridge._
 - **Should `Contrato REST da API` be split into smaller, more focused modules?**
   _Cohesion score 0.07007575757575757 - nodes in this community are weakly interconnected._
-- **Why does `Localizacao` connect `Localizacao` to `org.junit.jupiter.api.Test`, `Localizacao`, `CategoriaOcorrencia`, `RecursoNaoEncontradoException`, `AuthService`, `list`, `OcorrenciaRepository`, `OcorrenciaServiceTest.java`, `Trecho`, `RotaService.java`, `.criar`?**
-  _High betweenness centrality (0.014) - this node is a cross-community bridge._
-- **Should `Caminho Livre Constitution` be split into smaller, more focused modules?**
-  _Cohesion score 0.12280701754385964 - nodes in this community are weakly interconnected._
+- **Why does `RecursoNaoEncontradoException` connect `RecursoNaoEncontradoException` to `Ocorrencia`, `OcorrenciaService`, `org.junit.jupiter.api.Test`, `list`, `Usuario`, `OcorrenciaRepository`, `PerfilServiceTest`, `Trecho`, `.criar`, `GoogleTokenFilter.java`?**
+  _High betweenness centrality (0.010) - this node is a cross-community bridge._

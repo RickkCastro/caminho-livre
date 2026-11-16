@@ -6,13 +6,13 @@
 
 ## Summary
 
-API REST em Spring Boot que expõe o núcleo do Caminho Livre: login Google, ocorrências (alertas) com confirmação/expiração, cálculo da rota acessível (Dijkstra sobre os trechos com pesos) na própria API, perfil, preferências, rankings e exclusão de conta (LGPD). Camadas model (entidades JPA) / repository (Spring Data JPA) / service / controller / exception sobre o Oracle da FIAP, deploy no Render via Docker.
+API REST em Spring Boot que expõe o núcleo do Caminho Livre: login Google, ocorrências (alertas) com confirmação/expiração, cálculo da rota acessível na própria API (por ruas reais do Brasil inteiro via OpenRouteService; até 16/11 era Dijkstra sobre a tabela TRECHO, substituído — tarefas T052/T054 — e `GET /trechos/pesos` continua para depuração), perfil, preferências, rankings e exclusão de conta (LGPD). Camadas model (entidades JPA) / repository (Spring Data JPA) / service / controller / exception sobre o Oracle da FIAP, deploy no Render via Docker.
 
 ## Technical Context
 
 **Language/Version**: Java 21
 
-**Primary Dependencies**: Spring Boot 4.1 (webmvc, data-jpa, validation), Oracle JDBC (ojdbc17), Lombok, springdoc-openapi (Swagger), google-api-client (verificação do ID token)
+**Primary Dependencies**: Spring Boot 4.1 (webmvc, data-jpa, validation), Oracle JDBC (ojdbc17), Lombok, springdoc-openapi (Swagger), google-api-client (verificação do ID token); OpenRouteService (`/v2/directions`, perfis `foot-walking` e `wheelchair`) chamado com `RestClient`, chave em `ORS_API_KEY` só no servidor
 
 **Storage**: Oracle (FIAP), schema de `database/scripts/01_create.sql`
 
