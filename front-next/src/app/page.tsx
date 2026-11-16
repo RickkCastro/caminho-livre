@@ -43,7 +43,7 @@ export default function PaginaMapa() {
         <FiltroTipos ativos={ativos} aoMudar={setAtivos} />
         {recado && <Aviso className="shadow-md md:max-w-sm">{recado}</Aviso>}
         {semGps && (
-          <Aviso className="shadow-md md:max-w-sm">Sem acesso à sua localização. Mostrando o centro de São Paulo.</Aviso>
+          <Aviso className="shadow-md md:max-w-sm">Sem acesso à sua localização. Mostrando a região da Av. Paulista.</Aviso>
         )}
         {erro && <Aviso tipo="alert" className="shadow-md md:max-w-sm">{erro}</Aviso>}
         {alertas && !erro && visiveis.length === 0 && (

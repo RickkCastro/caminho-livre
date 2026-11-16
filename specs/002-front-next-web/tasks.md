@@ -62,7 +62,7 @@ description: "Task list — Front-end web Caminho Livre (Next.js)"
 **Goal**: rota comum × Caminho Livre. **Test**: quickstart 6–7.
 
 - [X] T023 [P] [US4] Criar `BuscaEndereco` (Nominatim, debounce 1 s, mínimo 3 letras, `countrycodes=br`, cache em memória; atalho "Usar minha localização"; sem resultado → "Endereço não encontrado. Tente com o número ou o bairro.") em `…/components/BuscaEndereco.tsx`
-- [X] T024a [US4] Criar o formulário da tela `/rota`: origem e destino por `BuscaEndereco` (origem começa em "Minha localização"), botão "Inverter", sem toque no mapa, checkbox "Tenho mobilidade reduzida" (visitante; logado usa o perfil), `ignorar` das preferências se logado (opcional: vazio até a T032 existir) e chamada `GET /rotas` em `…/app/rota/page.tsx`
+- [X] T024a [US4] Criar o formulário da tela `/rota`: origem e destino por `BuscaEndereco` (origem começa em "Minha localização"), botão "Inverter", toque no mapa com seletor Origem/Destino (T048), checkbox "Tenho mobilidade reduzida" (visitante; logado usa o perfil), `ignorar` das preferências se logado (opcional: vazio até a T032 existir) e chamada `GET /rotas` em `…/app/rota/page.tsx`
 - [X] T024b [US4] Desenhar o resultado da rota: comum tracejada e Caminho Livre contínua `#2A4B25`, legenda em texto e distâncias; `caminhoLivre = null` → mostrar `aviso`; 422 → mostrar `erro` em `…/components/ResultadoRota.tsx`
 
 ## Phase 7: US5 — Interface acessível (P1, MVP)
@@ -110,9 +110,13 @@ description: "Task list — Front-end web Caminho Livre (Next.js)"
 - [X] T045 Corrigir mapa em branco: `leaflet.css` global, `ResizeObserver` + `invalidateSize()`, tiles em `tile.openstreetmap.org`, enquadrar todos os pontos, em `…/components/MapaLeaflet.tsx` e `…/app/layout.tsx`
 - [X] T046 Rota sem toque no mapa: origem e destino por endereço ou localização atual, "Inverter", em `…/app/rota/page.tsx` e `…/components/BuscaEndereco.tsx`
 
+- [X] T047 Integração: enviar `bairro`/`logradouro` do alerta (Nominatim reverse), mapa abre na área da malha (Av. Paulista), foto do Google com `referrerPolicy="no-referrer"`, Playwright em porta própria (3100) sempre com mocks
+
+- [X] T048 Rota: marcar origem/destino tocando no mapa (seletor flutuante, nome do ponto via `lib/endereco.ts`), alertas no mapa da rota e busca de endereço no Brasil inteiro, em `…/app/rota/page.tsx`
+
 ## Phase 14: Polish
 
-- [ ] T038 Trocar mocks pela API do Render (`NEXT_PUBLIC_USE_MOCKS=false`) e corrigir divergências de contrato junto com a API 001
+- [ ] T038 Trocar mocks pela API do Render (`NEXT_PUBLIC_USE_MOCKS=false`) e corrigir divergências de contrato junto com a API 001 — **16/11: integração local (API em `localhost:8080` + Oracle FIAP) validada: mapa, detalhe (`minha`), ranking, rota, login Google, onboarding, enviar alerta (+10), meus alertas, preferências e DELETE do autor. Falta: avaliar 👍/👎, excluir conta, renovação do token após 1 h, foto (Blob) e repetir no Render**
 - [ ] T039 Publicar na Vercel com as variáveis do `.env.example`; adicionar a URL da Vercel ao OAuth Client do Google e ao `FRONT_URL` da API
 - [ ] T040 [P] Atualizar `front-next/README.md` com URL, variáveis e passo a passo
 - [ ] T042 Teste de usabilidade com 3 pessoas pouco familiarizadas com tecnologia enviando um alerta sozinhas na primeira tentativa (SC-004); registrar resultado no PDF do Agile em `agile/`

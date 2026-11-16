@@ -6,8 +6,6 @@ import type { Ponto } from "@/lib/tipos";
 
 type Lugar = { display_name: string; lat: string; lon: string };
 const cache = new Map<string, Lugar[]>();
-// Área mapeada (cidade de São Paulo): oeste, norte, leste, sul.
-const VIEWBOX = "-46.83,-23.36,-46.36,-23.80";
 export const MINHA_LOCALIZACAO = "Minha localização";
 
 const nomeCurto = (l: Lugar) => l.display_name.split(",").slice(0, 3).join(",");
@@ -38,7 +36,7 @@ export default function BuscaEndereco({ rotulo, valor, aoEscolher }: Props) {
     const espera = setTimeout(async () => {
       try {
         const r = await fetch(
-          `https://nominatim.openstreetmap.org/search?format=json&countrycodes=br&limit=5&bounded=1&viewbox=${VIEWBOX}&q=${encodeURIComponent(q)}`,
+          `https://nominatim.openstreetmap.org/search?format=json&countrycodes=br&limit=5&q=${encodeURIComponent(q)}`,
         );
         const achados: Lugar[] = r.ok ? await r.json() : [];
         if (r.ok) cache.set(q, achados);

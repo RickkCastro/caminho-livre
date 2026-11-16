@@ -20,7 +20,7 @@ npx playwright test          # fluxos P1 + axe
 | 3 | Tocar "Avisar problema" sem login | Vai a `/login`; depois de entrar volta ao formulário |
 | 4 | Enviar alerta: categoria → "Usar minha localização" → "Enviar" | ≤ 4 toques; "Alerta enviado"; marcador novo no mapa |
 | 5 | Enviar com foto de 5 MB | Foto reduzida, `fotoUrl` do Blob gravada; falha no upload permite enviar sem foto |
-| 6 | `/rota` sem login: digitar destino e escolher a sugestão; depois trocar a origem digitando outro endereço e tocar "Inverter" | Origem começa em "Minha localização"; tocar no mapa não marca nada; duas linhas com legenda e distâncias em ≤ 5 s, origem e destino visíveis no mapa |
+| 6 | `/rota` sem login: digitar destino e escolher a sugestão; depois trocar a origem digitando outro endereço e tocar "Inverter" | Origem começa em "Minha localização"; tocar no mapa marca o ponto escolhido no seletor (campo mostra rua e bairro); duas linhas com legenda e distâncias em ≤ 5 s, origem e destino visíveis no mapa |
 | 6a | Abrir e alternar Mapa ↔ Rota várias vezes, girar o celular | Mapa sempre preenchido, sem área branca |
 | 7 | Marcar "Tenho mobilidade reduzida" | Caminho Livre não usa trecho com degrau, ou aviso "não há caminho" |
 | 8 | Detalhe de alerta próprio / de outro / como visitante | Sem botões / 👍👎 / "Entre para avaliar" |

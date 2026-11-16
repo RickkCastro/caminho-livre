@@ -2,6 +2,7 @@
 
 <!--
 Sync Impact Report
+- Version: 1.1.0 → 1.2.0 (rota por ruas reais via OpenRouteService na API Java, Brasil inteiro; sai o Dijkstra do GET /rotas)
 - Version: 1.0.0 → 1.1.0 (rota passa a ser calculada na API Java; Python e Data Science isolados)
 - Version: (template) → 1.0.0
 - Princípios criados: I–V; seções: Restrições do projeto, Fluxo de trabalho
@@ -30,7 +31,7 @@ A tabela de endpoints de `api-java/README.md` e o DER de `database/README.md` s�
 
 - API REST em Java 21 + Spring Boot, banco Oracle (FIAP), camadas model / DAO / BO / controller / exception; deploy no Render até 15/11.
 - Front em Next.js (App Router) + TypeScript + Tailwind + React Leaflet, mobile first; deploy na Vercel.
-- Cálculo de rota (Dijkstra) na própria API Java (`GET /rotas`). Dynamic Programming (Python) e Data Science são entregas isoladas e não integram o app.
+- Cálculo de rota na própria API Java (`GET /rotas`), por ruas reais via OpenRouteService (chave só no servidor); a API decide quais alertas a rota Caminho Livre evita. Dynamic Programming (Python) e Data Science são entregas isoladas e não integram o app.
 - Desempenho: mapa com alertas em ≤ 3 s e rota em ≤ 5 s em 4G.
 - Entrega final 19/11, 23h55; commits após o prazo zeram a parte técnica.
 
@@ -44,4 +45,4 @@ A tabela de endpoints de `api-java/README.md` e o DER de `database/README.md` s�
 
 Esta constituição prevalece sobre outras práticas do repositório. Emendas: alterar este arquivo, subir a versão (MAJOR remove/redefine princípio, MINOR adiciona, PATCH esclarece) e registrar no Sync Impact Report.
 
-**Version**: 1.1.0 | **Ratified**: 2026-11-12 | **Last Amended**: 2026-11-12
+**Version**: 1.2.0 | **Ratified**: 2026-11-12 | **Last Amended**: 2026-11-16

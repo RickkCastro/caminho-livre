@@ -78,7 +78,7 @@ export default function Casca({ children }: { children: ReactNode }) {
               <span className="hidden max-w-32 truncate sm:inline">{sessao.usuario.nome.split(" ")[0]}</span>
               {sessao.usuario.fotoUrl ? (
                 // eslint-disable-next-line @next/next/no-img-element -- URL externa
-                <img src={sessao.usuario.fotoUrl} alt="" className="size-9 rounded-full object-cover" />
+                <img src={sessao.usuario.fotoUrl} referrerPolicy="no-referrer" alt="" className="size-9 rounded-full object-cover" />
               ) : (
                 <span aria-hidden="true" className="grid size-9 place-items-center rounded-full bg-marca-suave font-bold">
                   {sessao.usuario.nome[0]}

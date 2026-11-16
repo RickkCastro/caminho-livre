@@ -7,7 +7,8 @@ import type { OcorrenciaResumo, Ponto, Rota } from "@/lib/tipos";
 import Aviso from "./Aviso";
 import MarcadorAlerta from "./MarcadorAlerta";
 
-const CENTRO_SP: [number, number] = [-23.5505, -46.6333];
+// Centro da malha de ruas da API (Av. Paulista): é onde a rota funciona.
+const CENTRO: [number, number] = [-23.5636, -46.6566];
 
 const pino = (nome: string) =>
   L.divIcon({
@@ -77,7 +78,7 @@ export default function MapaLeaflet(props: Props) {
 
   return (
     <div className={`relative isolate overflow-hidden ${className}`}>
-      <MapContainer center={CENTRO_SP} zoom={15} zoomControl={false} className="size-full">
+      <MapContainer center={CENTRO} zoom={15} zoomControl={false} className="size-full">
         <TileLayer
           url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -101,7 +102,7 @@ export default function MapaLeaflet(props: Props) {
       </MapContainer>
       {negado && (
         <Aviso className="absolute top-3 right-3 left-3 z-[1000] shadow-md md:right-auto md:max-w-sm">
-          Sem acesso à sua localização. Mostrando o centro de São Paulo.
+          Sem acesso à sua localização. Mostrando a região da Av. Paulista.
         </Aviso>
       )}
     </div>
