@@ -5,8 +5,9 @@ JDK 21, Maven (ou `./mvnw`), acesso ao Oracle da FIAP com `database/scripts/01_c
 
 ## Rodar
 ```bash
-cd api-java
-export DB_URL=jdbc:oracle:thin:@oracle.fiap.com.br:1521/ORCL DB_USER=... DB_PASSWORD=... GOOGLE_CLIENT_ID=... FRONT_URL=http://localhost:3000
+cd api-java/caminholivre-backend
+# credenciais no .env (ver api-java/README.md) ou exportadas:
+export DB_URL=jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL DB_USER=... DB_PASSWORD=... GOOGLE_CLIENT_ID=... FRONT_URL=http://localhost:3000
 ./mvnw test
 ./mvnw spring-boot:run
 ```
@@ -27,6 +28,6 @@ export DB_URL=jdbc:oracle:thin:@oracle.fiap.com.br:1521/ORCL DB_USER=... DB_PASS
 | 11 | `DELETE /usuarios/{id}` | 204; `GET /ocorrencias/{idDele}` ainda existe; usuário não aparece em lugar nenhum |
 | 12 | Deploy: `curl https://<servico>.onrender.com/categorias` | 200 |
 | 13 | `curl -o /dev/null -w "%{time_total}"` em `GET /ocorrencias` e `GET /rotas` (Render acordado) | ≤ 1 s e ≤ 2 s (SC-001, SC-002) |
+| 14 | Detalhe de ocorrência própria com e sem token | `minha=true` com token do autor, `false` sem token |
 | 15 | `GET /rotas` entre dois pontos com uma ocorrência ativa no caminho mais curto | `comum` passa pela ocorrência; `caminhoLivre` desvia e é mais longa |
 | 16 | Mesmo com `mobilidadeReduzida=S` e só caminhos com Degrau | `caminhoLivre=null` e `aviso` |
-| 14 | Detalhe de ocorrência própria com e sem token | `minha=true` com token do autor, `false` sem token |

@@ -6,17 +6,17 @@
 
 ## Summary
 
-API REST em Spring Boot que expõe o núcleo do Caminho Livre: login Google, ocorrências (alertas) com confirmação/expiração, cálculo da rota acessível (Dijkstra sobre os trechos com pesos) na própria API, perfil, preferências, rankings e exclusão de conta (LGPD). Camadas model / DAO (JdbcTemplate) / BO / controller / exception sobre o Oracle da FIAP, deploy no Render via Docker.
+API REST em Spring Boot que expõe o núcleo do Caminho Livre: login Google, ocorrências (alertas) com confirmação/expiração, cálculo da rota acessível (Dijkstra sobre os trechos com pesos) na própria API, perfil, preferências, rankings e exclusão de conta (LGPD). Camadas model (entidades JPA) / repository (Spring Data JPA) / service / controller / exception sobre o Oracle da FIAP, deploy no Render via Docker.
 
 ## Technical Context
 
 **Language/Version**: Java 21
 
-**Primary Dependencies**: Spring Boot 3.3 (web, jdbc, validation), Oracle JDBC (ojdbc11), google-api-client (verificação do ID token)
+**Primary Dependencies**: Spring Boot 4.1 (webmvc, data-jpa, validation), Oracle JDBC (ojdbc17), Lombok, springdoc-openapi (Swagger), google-api-client (verificação do ID token)
 
 **Storage**: Oracle (FIAP), schema de `database/scripts/01_create.sql`
 
-**Testing**: JUnit 5 + Mockito nos BOs (regras de negócio); teste manual dos endpoints pelo [quickstart](quickstart.md)
+**Testing**: JUnit 5 + Mockito nos services (regras de negócio); teste manual dos endpoints pelo [quickstart](quickstart.md)
 
 **Target Platform**: Container Docker no Render (Linux)
 
@@ -57,22 +57,22 @@ specs/001-api-rest-java/
 ### Source Code (repository root)
 
 ```text
-api-java/
+api-java/caminholivre-backend/
 ├── pom.xml
 ├── Dockerfile
 └── src/
-    ├── main/java/br/com/fiap/caminholivre/
-    │   ├── model/        Usuario, CategoriaOcorrencia, Localizacao, Ocorrencia, Confirmacao, PreferenciaRota, Trecho, RotaFavorita
-    │   ├── dao/          um DAO por entidade (JdbcTemplate)
-    │   ├── bo/           AuthBO, OcorrenciaBO, ConfirmacaoBO, TrechoBO, RotaBO, UsuarioBO, RankingBO
+    ├── main/java/br/com/caminholivre/
+    │   ├── model/        entidades JPA: Usuario, CategoriaOcorrencia, Localizacao, Ocorrencia, Confirmacao, PreferenciaRota, Trecho, RotaFavorita
+    │   ├── repository/   um JpaRepository por entidade
+    │   ├── service/      AuthService, OcorrenciaService, ConfirmacaoService, TrechoService, RotaService, UsuarioService, RankingService
     │   ├── controller/   um controller por recurso
     │   ├── exception/    GlobalExceptionHandler, RecursoNaoEncontradoException, RegraNegocioException, ConflitoException, NaoAutorizadoException
     │   └── config/       CorsConfig, GoogleTokenFilter, agendamento da expiração
     ├── main/resources/application.properties
-    └── test/java/br/com/fiap/caminholivre/bo/
+    └── test/java/br/com/caminholivre/service/
 ```
 
-**Structure Decision**: Projeto único em `api-java/`, seguindo a estrutura sugerida no README da disciplina (model/DAO/BO/controller), sem JPA porque a avaliação pede as camadas DAO e BO explícitas.
+**Structure Decision**: Projeto único em `api-java/caminholivre-backend/` (gerado no Spring Initializr), com Spring Data JPA no padrão visto em aula: repository faz o papel da camada DAO e service o da camada BO pedidas na rubrica. `ddl-auto=none`: as tabelas vêm de `database/scripts/`.
 
 ## Complexity Tracking
 

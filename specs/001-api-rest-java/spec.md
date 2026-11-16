@@ -176,7 +176,7 @@ O front pede a rota entre origem e destino; a API calcula os pesos dos trechos p
 - **FR-011** (RF21, RNF08): `DELETE /usuarios/{id}` DEVE apagar dados pessoais e anonimizar ocorrências.
 - **FR-012** (RNF08): Nenhuma resposta pública de ocorrência DEVE identificar o autor.
 - **FR-013**: Todo erro DEVE seguir `{ "timestamp", "status", "erro" }` via `@ControllerAdvice` (400 validação, 401 token, 403 não é o dono, 404 não encontrado, 409 duplicidade, 422 regra de negócio, 503 banco indisponível).
-- **FR-014** (RNF12): DEVE oferecer CRUD (GET/POST/PUT/DELETE) para categorias, localizações, ocorrências e trechos, organizado em model/DAO/BO/controller.
+- **FR-014** (RNF12): DEVE oferecer CRUD (GET/POST/PUT/DELETE) para categorias, localizações, ocorrências e trechos, organizado em model/repository/service/controller.
 - **FR-015** (RF22–RF24, Could): DEVE somar pontos (+10 alerta, +2 avaliação), expor ranking de usuários e CRUD de rotas favoritas.
 - **FR-016** (RNF07): DEVE ter CORS liberado apenas para o domínio do front (Vercel) e localhost em desenvolvimento.
 

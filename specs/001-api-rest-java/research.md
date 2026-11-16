@@ -1,9 +1,9 @@
 # Research: API REST Caminho Livre
 
-## Acesso a dados: JdbcTemplate em DAOs
-- **Decision**: DAOs com `JdbcTemplate` + `RowMapper`, SQL escrito à mão.
-- **Rationale**: A avaliação pede camadas DAO e BO explícitas e model "de acordo com o banco"; SQL direto segue o DER do Caio sem mapeamento ORM.
-- **Alternatives**: Spring Data JPA (esconde o DAO, mais difícil de justificar na rubrica); JDBC puro (mais boilerplate de conexão).
+## Acesso a dados: Spring Data JPA
+- **Decision**: Entidades JPA mapeadas nas tabelas existentes (`ddl-auto=none`, ids `IDENTITY`), `JpaRepository` por entidade e regras nos services.
+- **Rationale**: É o padrão trabalhado em aula; repository cumpre o papel da camada DAO e service o da BO na rubrica, com menos código que SQL à mão.
+- **Alternatives**: JdbcTemplate em DAOs (mais código, fora do padrão da aula); JDBC puro (mais boilerplate de conexão).
 
 ## Autenticação: ID token Google revalidado
 - **Decision**: `GoogleIdTokenVerifier` (google-api-client) com `GOOGLE_CLIENT_ID`. `POST /auth/google` faz upsert do usuário; um filtro valida `Authorization: Bearer <idToken>` nas rotas de escrita e põe o usuário na request. Nos GETs públicos o token é opcional (se vier válido, identifica o usuário para `minha`).
@@ -22,7 +22,7 @@
 - **Alternatives**: Oracle Spatial (não garantido no Oracle da FIAP); FK ocorrência→trecho (muda o DER congelado).
 
 ## Rota: Dijkstra na API
-- **Decision**: `RotaBO` com Dijkstra (`PriorityQueue` do JDK) sobre o grafo não direcionado de TRECHO, rodado duas vezes: custo = distância (comum) e custo = peso sem trechos bloqueados (Caminho Livre).
+- **Decision**: `RotaService` com Dijkstra (`PriorityQueue` do JDK) sobre o grafo não direcionado de TRECHO, rodado duas vezes: custo = distância (comum) e custo = peso sem trechos bloqueados (Caminho Livre).
 - **Rationale**: Só Java e front integram o app; o grafo de demo é pequeno, então o cálculo em memória a cada chamada atende ≤ 2 s sem cache.
 - **Alternatives**: Serviço Python (Dynamic Programming é entrega isolada, sem deploy); cálculo no front (espalha regra de negócio no cliente).
 
