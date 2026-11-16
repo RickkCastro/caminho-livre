@@ -1,0 +1,62 @@
+! SW-EQUIPE (Switch-PT com 1 modulo PT-SWITCH-NM-1FGE no slot 1)
+! Acesso da equipe do posto: 3 PCs na VLAN 10.
+! Senhas de laboratorio, validas so no Packet Tracer.
+enable
+configure terminal
+hostname SW-EQUIPE
+no ip domain-lookup
+enable secret CLenable2026
+service password-encryption
+banner motd # Acesso restrito - Posto Caminho Livre #
+!
+vlan 10
+ name EQUIPE
+vlan 99
+ name GERENCIA
+vlan 999
+ name NATIVA_SEM_USO
+exit
+!
+interface GigabitEthernet1/1
+ description FIBRA TRUNK para SW-CORE
+ switchport mode trunk
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,99,999
+interface FastEthernet0/1
+ description PC-EQUIPE-01
+ switchport mode access
+ switchport access vlan 10
+interface FastEthernet2/1
+ description PC-EQUIPE-02
+ switchport mode access
+ switchport access vlan 10
+interface FastEthernet3/1
+ description PC-EQUIPE-03
+ switchport mode access
+ switchport access vlan 10
+interface FastEthernet4/1
+ description SEM USO
+ switchport mode access
+ switchport access vlan 999
+ shutdown
+interface FastEthernet5/1
+ description SEM USO
+ switchport mode access
+ switchport access vlan 999
+ shutdown
+!
+interface Vlan1
+ shutdown
+interface Vlan99
+ description GERENCIA
+ ip address 192.168.10.195 255.255.255.240
+ no shutdown
+exit
+ip default-gateway 192.168.10.193
+!
+line console 0
+ password CLconsole2026
+ login
+ exec-timeout 5 0
+end
+write memory

@@ -4,6 +4,20 @@
 
 Projeto da **Global Solution 2026.2 — CitizenTech** da FIAP (Engenharia de Software, 2º ano, turma 2ESPV), do **Grupo OctoFlow**.
 
+## Ficha da CitizenTech
+
+| Campo | Resposta |
+|---|---|
+| **Nome da CitizenTech** | Caminho Livre |
+| **Cidade e bairro** | São Paulo (SP), Bela Vista: entorno da FIAP Paulista |
+| **Cidadão beneficiado** | Pessoas com mobilidade reduzida (cadeirantes, idosos, pais com carrinho de bebê) e pedestres que voltam a pé à noite, sobretudo mulheres e estudantes |
+| **Problema, em uma frase** | Quem anda a pé não sabe, antes de sair, onde há degrau, calçada quebrada, rua escura ou alagamento, e os apps de rota ignoram isso. |
+| **Como funciona** | O usuário entra com a conta Google e registra alertas com foto, categoria e local. A comunidade confirma ou nega cada alerta, e os que não são confirmados expiram em 15 dias. O app calcula uma rota que desvia dos alertas (com peso maior à noite para os de segurança e bloqueio de degraus para quem tem mobilidade reduzida) e a mostra ao lado da rota comum. |
+| **O que cada parte faz** | **Front Next.js:** telas acessíveis e mapa · **API Java Spring Boot:** regras de negócio e rota (Dijkstra) · **Banco Oracle:** usuários, alertas, confirmações e trechos · **Dynamic Programming:** algoritmo de rota em Python · **Data Science:** análise estatística dos alertas · **Network:** rede do Posto Caminho Livre no Packet Tracer · **AR/VR:** vídeo 3D do trajeto · **Agile:** personas, casos de uso, backlog e pitch |
+| **Link do repositório** | https://github.com/RickkCastro/caminho-livre |
+| **Indicador de impacto** | % de obstáculos e trechos escuros evitados por rota · alertas resolvidos por mês · tempo médio até a resolução |
+| **ODS conectados** | ODS 3 (saúde e bem-estar) · ODS 9 (indústria, inovação e infraestrutura) · ODS 10 (redução das desigualdades) · ODS 11 (cidades e comunidades sustentáveis) |
+
 ## O projeto
 
 Quem anda a pé (idosos, cadeirantes, pais com carrinho de bebê, quem volta à noite) não sabe de antemão onde há degrau, buraco, calçada quebrada, rua escura ou alagamento. O Caminho Livre é um app web colaborativo em que:
