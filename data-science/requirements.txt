@@ -1,0 +1,10 @@
+# Análise (notebook)
+pandas>=2.2
+numpy>=1.26
+scipy>=1.11
+matplotlib>=3.8
+astral>=3.2          # horário do pôr e do nascer do sol em São Paulo
+jupyter
+
+# Só para gerar os extratos a partir do .xlsx bruto da SSP (dados/gerar_extratos.py)
+python-calamine>=0.2
