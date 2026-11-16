@@ -44,7 +44,10 @@ public class RankingService {
         return montar(localizacoes.listarBairros(), ativas);
     }
 
-    /** Bairro sem alerta ativo entra nos melhores com 0; nos piores só entra quem tem alerta. */
+    /**
+     * Piores: só bairros com alerta, maior soma primeiro. Melhores: os de menor soma que não estão nos piores
+     * (sem alerta contam 0), para o mesmo bairro não aparecer nas duas listas.
+     */
     static RankingBairros montar(List<String> bairros, List<Ocorrencia> ativas) {
         List<Bairro> todos = bairros.stream().map(b -> {
             var doBairro = ativas.stream().filter(o -> b.equals(o.getLocalizacao().getBairro())).toList();
@@ -53,10 +56,10 @@ public class RankingService {
         }).toList();
 
         Comparator<Bairro> menorPrimeiro = Comparator.comparingDouble(Bairro::pontuacao).thenComparing(Bairro::bairro);
-        var melhores = todos.stream().sorted(menorPrimeiro).limit(TOP).toList();
         var piores = todos.stream().filter(b -> b.totalAtivas() > 0)
                 .sorted(Comparator.comparingDouble(Bairro::pontuacao).reversed().thenComparing(Bairro::bairro))
                 .limit(TOP).toList();
+        var melhores = todos.stream().filter(b -> !piores.contains(b)).sorted(menorPrimeiro).limit(TOP).toList();
         return new RankingBairros(melhores, piores);
     }
 }

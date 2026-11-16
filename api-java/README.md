@@ -69,9 +69,9 @@ Alinhadas ao [backlog MoSCoW](../agile/backlog.md):
 | POST 🔒 | `/ocorrencias/{id}/confirmacoes` | Avaliar `{ confirma }` → 201 `{ status, totalConfirma, totalNega }` | US07 |
 | GET / POST🔒 | `/trechos` | | |
 | GET / PUT🔒 / DELETE🔒 | `/trechos/{id}` | | |
-| GET | `/rotas?origemLat=&origemLon=&destinoLat=&destinoLon=&hora=&mobilidadeReduzida=&ignorar=` | `{ comum, caminhoLivre \| null, aviso? }` por ruas reais do Brasil inteiro (OpenRouteService); ponto sem rua por perto → 422; ORS fora do ar → 503 | US04, US11 |
+| GET | `/rotas?origemLat=&origemLon=&destinoLat=&destinoLon=&hora=&mobilidadeReduzida=&ignorar=` | `{ comum, caminhoLivre \| null, aviso? }` por ruas reais do Brasil inteiro (OpenRouteService); coordenada fora da faixa → 400; ponto sem rua por perto → 422; ORS fora do ar → 503 | US04, US11 |
 | GET | `/trechos/pesos?hora=&mobilidadeReduzida=&ignorar=` | Grafo com pesos (depuração; mesmo formato do mock do Dynamic Programming) | US04, US11 |
-| GET | `/ranking/bairros` | Top 5 melhores e piores bairros | US14 |
+| GET | `/ranking/bairros` | Top 5 piores (só com alerta) e top 5 melhores, sem repetir bairro | US14 |
 | GET | `/ranking/usuarios` | Pessoas por pontos (nome, foto, pontos) | US19 |
 | GET / POST 🔒 | `/rotas-favoritas` | Minhas rotas favoritas `{ idOrigem, idDestino, apelido }` | US16 |
 | DELETE 🔒👤 | `/rotas-favoritas/{id}` | | US16 |

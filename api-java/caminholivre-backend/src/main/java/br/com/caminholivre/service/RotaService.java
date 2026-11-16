@@ -107,13 +107,17 @@ public class RotaService {
                     f.properties().summary().distance());
         } catch (HttpClientErrorException e) {
             OrsErro erro = e.getResponseBodyAs(OrsErro.class);
-            int codigo = erro != null && erro.error() != null ? erro.error().code() : 0;
-            if (codigo == 2010) // ponto longe de qualquer rua (no mar, no meio do mato)
-                throw new RegraNegocioException("Não encontramos uma rua perto da origem ou do destino");
-            if (codigo == 2009) return null; // sem caminho possível
-            if (codigo == 2004) throw new RegraNegocioException("Origem e destino estão longe demais para ir a pé");
+            if (semCaminho(erro != null && erro.error() != null ? erro.error().code() : 0)) return null;
             throw e; // chave inválida, cota estourada...: 503 no GlobalExceptionHandler
         }
+    }
+
+    /** Traduz o código de erro do ORS: true = sem caminho possível; 422 para ponto ruim; false = falha do serviço. */
+    static boolean semCaminho(int codigoOrs) {
+        if (codigoOrs == 2010) // ponto longe de qualquer rua (no mar, no meio do mato)
+            throw new RegraNegocioException("Não encontramos uma rua perto da origem ou do destino");
+        if (codigoOrs == 2004) throw new RegraNegocioException("Origem e destino estão longe demais para ir a pé");
+        return codigoOrs == 2009;
     }
 
     /** Polígono GeoJSON (lon, lat) de lado 2 × RAIO_DESVIO_M em volta do alerta. */
