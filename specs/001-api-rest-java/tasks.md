@@ -143,3 +143,11 @@ description: "Task list — API REST Caminho Livre (Java)"
 2. **Demo do pitch**: + US5, US6, US7 (confiança do dado).
 3. **Should restante**: US8, US9, US10.
 4. **Could**: US11 só se sobrar tempo antes de 19/11 (lembrete: commit após o prazo zera a parte técnica).
+
+## Phase 15: Convergence
+
+- [ ] T055 Configurar `ORS_API_KEY` (sem aspas) nas variáveis do Render e conferir `GET /rotas` no deploy (hoje responde 503 sem a chave) per SC-003 (partial)
+- [X] T056 Em `RankingService.montar`, não repetir um bairro nas duas listas (com poucos bairros, um bairro com alerta aparece em melhores e em piores); cobrir com teste em `api-java/caminholivre-backend/src/test/java/br/com/caminholivre/service/RankingServiceTest.java` per US9/AC1 (partial)
+- [X] T057 Validar faixa de `origemLat`/`destinoLat` (−90..90) e `origemLon`/`destinoLon` (−180..180) com `@DecimalMin/@DecimalMax` em `…/controller/RotaController.java`, respondendo 400 em vez de repassar ao OpenRouteService per Edge Cases (coordenadas fora de faixa) (partial)
+- [X] T058 Testar o mapeamento de erros do OpenRouteService em `RotaService` (2010/2004 → 422, 2009 → `caminhoLivre = null` + aviso, outros → 503) em `api-java/caminholivre-backend/src/test/java/br/com/caminholivre/service/RotaServiceTest.java` per FR-005a, plan: Testing (partial)
+- [X] T059 Alinhar `plan.md` (Summary e Primary Dependencies: OpenRouteService via `RestClient`, `ORS_API_KEY`) e registrar que T052/T054 (Dijkstra) foram substituídos pelo OpenRouteService; apontar no spec a divergência entre FR-005 (peso em `GET /rotas`) e FR-005a per plan: Summary (contradicts)

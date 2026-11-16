@@ -48,9 +48,9 @@
     "semantic_hash": ""
   },
   "api-java/README.md": {
-    "mtime": 1794835847.595949,
-    "seen": 1794835850.0826488,
-    "ast_hash": "d6d06488fc90dd5da98fa65f15d7cbb2",
+    "mtime": 1794859999.6781836,
+    "seen": 1794860028.837525,
+    "ast_hash": "773947672a4769def441dba75ed28fc5",
     "semantic_hash": ""
   },
   "ar-vr/README.md": {
@@ -90,9 +90,9 @@
     "semantic_hash": "ad1d610c9cb993f88fe1406d77990b89"
   },
   "specs/001-api-rest-java/contracts/api.md": {
-    "mtime": 1794835847.5976584,
-    "seen": 1794835850.0833094,
-    "ast_hash": "e12286bdc3fab77371701e1ac3d379cf",
+    "mtime": 1794860008.1004548,
+    "seen": 1794860028.8382523,
+    "ast_hash": "9fae6508157e3dcc084a64769e4ab2d1",
     "semantic_hash": ""
   },
   "specs/001-api-rest-java/data-model.md": {
@@ -102,9 +102,9 @@
     "semantic_hash": ""
   },
   "specs/001-api-rest-java/plan.md": {
-    "mtime": 1794833082.950001,
-    "seen": 1794835081.7836893,
-    "ast_hash": "741bffb1cc007243639edb300735d57d",
+    "mtime": 1794859987.1750653,
+    "seen": 1794860028.8384273,
+    "ast_hash": "08da8dd908319920c4849d616e48cc6a",
     "semantic_hash": ""
   },
   "specs/001-api-rest-java/quickstart.md": {
@@ -120,15 +120,15 @@
     "semantic_hash": ""
   },
   "specs/001-api-rest-java/spec.md": {
-    "mtime": 1794835847.5976584,
-    "seen": 1794835850.083587,
-    "ast_hash": "e15356890cc6b4aea011b0feabb72418",
+    "mtime": 1794859987.1766367,
+    "seen": 1794860028.838816,
+    "ast_hash": "04b58f3d4cd4b3e7f24e56d8e56ff08a",
     "semantic_hash": ""
   },
   "specs/001-api-rest-java/tasks.md": {
-    "mtime": 1794833082.9525888,
-    "seen": 1794835081.7836938,
-    "ast_hash": "12b581e69fdb5c5c8020f4acbc8cd567",
+    "mtime": 1794860023.2544956,
+    "seen": 1794860028.8388183,
+    "ast_hash": "94034be561ed98a2c3aefcd173221632",
     "semantic_hash": ""
   },
   "specs/002-front-next-web/checklists/requirements.md": {
@@ -714,9 +714,9 @@
     "semantic_hash": ""
   },
   "api-java/caminholivre-backend/src/main/java/br/com/caminholivre/controller/RotaController.java": {
-    "mtime": 1794833082.9239132,
-    "seen": 1794835081.7780597,
-    "ast_hash": "830b95c4e0bc5b8649288d9ab784a120",
+    "mtime": 1794859933.7813652,
+    "seen": 1794860028.826182,
+    "ast_hash": "d803bc05484fdef01e737c39ccb5172b",
     "semantic_hash": ""
   },
   "api-java/caminholivre-backend/src/main/java/br/com/caminholivre/controller/RotaFavoritaController.java": {
@@ -1020,9 +1020,9 @@
     "semantic_hash": ""
   },
   "api-java/caminholivre-backend/src/main/java/br/com/caminholivre/service/RankingService.java": {
-    "mtime": 1794833082.9409244,
-    "seen": 1794835081.7781026,
-    "ast_hash": "352c94659fae7a9b450ef5232e9a114f",
+    "mtime": 1794859904.6326954,
+    "seen": 1794860028.8307064,
+    "ast_hash": "9560f8b3526e880eab84b4ee332647cb",
     "semantic_hash": ""
   },
   "api-java/caminholivre-backend/src/main/java/br/com/caminholivre/service/RotaFavoritaService.java": {
@@ -1032,9 +1032,9 @@
     "semantic_hash": ""
   },
   "api-java/caminholivre-backend/src/main/java/br/com/caminholivre/service/RotaService.java": {
-    "mtime": 1794835671.60454,
-    "seen": 1794835837.5562708,
-    "ast_hash": "9e1eb54319f23d1b9ca5d4fbfd1b1a05",
+    "mtime": 1794859921.608606,
+    "seen": 1794860028.8308032,
+    "ast_hash": "7e7aa0e9889db0786b8c21f62f1fb4d3",
     "semantic_hash": ""
   },
   "api-java/caminholivre-backend/src/main/java/br/com/caminholivre/service/TrechoService.java": {
@@ -1080,9 +1080,9 @@
     "semantic_hash": ""
   },
   "api-java/caminholivre-backend/src/test/java/br/com/caminholivre/service/RankingServiceTest.java": {
-    "mtime": 1794833082.946429,
-    "seen": 1794835081.7781138,
-    "ast_hash": "babb0d4567284f368f88756acc69b54d",
+    "mtime": 1794859921.608606,
+    "seen": 1794860028.831512,
+    "ast_hash": "e07c0ae222205f8899d2771ef815d5dc",
     "semantic_hash": ""
   },
   "api-java/caminholivre-backend/src/test/java/br/com/caminholivre/service/RotaFavoritaServiceTest.java": {
@@ -1092,9 +1092,9 @@
     "semantic_hash": ""
   },
   "api-java/caminholivre-backend/src/test/java/br/com/caminholivre/service/RotaServiceTest.java": {
-    "mtime": 1794835671.7201679,
-    "seen": 1794835837.5570757,
-    "ast_hash": "41d49f35973dffeb1139fa1292d4bfea",
+    "mtime": 1794859921.610919,
+    "seen": 1794860028.8315983,
+    "ast_hash": "ce0263c587d5becb389f8d9bd84e3f84",
     "semantic_hash": ""
   },
   "api-java/caminholivre-backend/src/test/java/br/com/caminholivre/service/TrechoServiceTest.java": {

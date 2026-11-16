@@ -7,13 +7,17 @@ import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 
+import org.springframework.web.client.RestClientException;
+
 import br.com.caminholivre.dto.RotaResponse.Ponto;
+import br.com.caminholivre.exception.GlobalExceptionHandler;
+import br.com.caminholivre.exception.RegraNegocioException;
 import br.com.caminholivre.model.CategoriaOcorrencia;
 import br.com.caminholivre.model.Localizacao;
 import br.com.caminholivre.model.Ocorrencia;
 import br.com.caminholivre.model.StatusOcorrencia;
 
-/** Quais alertas a rota Caminho Livre contorna (o pedido ao OpenRouteService é testado à mão). */
+/** Quais alertas a rota Caminho Livre contorna e como os erros do OpenRouteService viram resposta. */
 class RotaServiceTest {
 
     // Origem e destino ~1,1 km de distância; o alerta fica no meio do caminho.
@@ -40,6 +44,23 @@ class RotaServiceTest {
 
     List<Ocorrencia> evitar(List<Ocorrencia> ativas, boolean noturno, boolean mobilidade, Set<Long> ignorar) {
         return RotaService.aEvitar(ativas, noturno, mobilidade, ignorar, origem, destino);
+    }
+
+    @Test
+    void traduzOsErrosDoOpenRouteService() {
+        var semRua = assertThrows(RegraNegocioException.class, () -> RotaService.semCaminho(2010));
+        assertEquals("Não encontramos uma rua perto da origem ou do destino", semRua.getMessage());
+        assertThrows(RegraNegocioException.class, () -> RotaService.semCaminho(2004)); // longe demais
+        assertTrue(RotaService.semCaminho(2009)); // caminhoLivre = null + aviso
+        assertFalse(RotaService.semCaminho(2001)); // demais: o erro sobe e vira 503
+        assertFalse(RotaService.semCaminho(0));
+    }
+
+    @Test
+    void falhaDoServicoDeRotasVira503() {
+        var r = new GlobalExceptionHandler().rotasIndisponivel(new RestClientException("cota"));
+        assertEquals(503, r.getStatusCode().value());
+        assertEquals("Serviço de rotas indisponível. Tente de novo em instantes.", r.getBody().erro());
     }
 
     @Test
