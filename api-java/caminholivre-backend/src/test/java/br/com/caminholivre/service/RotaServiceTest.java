@@ -3,73 +3,76 @@ package br.com.caminholivre.service;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
+import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 
-import br.com.caminholivre.dto.RotaResponse;
 import br.com.caminholivre.dto.RotaResponse.Ponto;
-import br.com.caminholivre.dto.TrechoPeso;
-import br.com.caminholivre.dto.TrechoPeso.Vertice;
-import br.com.caminholivre.exception.RegraNegocioException;
+import br.com.caminholivre.model.CategoriaOcorrencia;
+import br.com.caminholivre.model.Localizacao;
+import br.com.caminholivre.model.Ocorrencia;
+import br.com.caminholivre.model.StatusOcorrencia;
 
-/** Quadrado A-B-D e A-C-D: por B é mais curto, por C é a alternativa. */
+/** Quais alertas a rota Caminho Livre contorna (o pedido ao OpenRouteService é testado à mão). */
 class RotaServiceTest {
 
-    final Vertice a = new Vertice(1L, -23.560, -46.650);
-    final Vertice b = new Vertice(2L, -23.560, -46.649);
-    final Vertice c = new Vertice(3L, -23.561, -46.650);
-    final Vertice d = new Vertice(4L, -23.561, -46.649);
+    // Origem e destino ~1,1 km de distância; o alerta fica no meio do caminho.
+    final Ponto origem = new Ponto(-23.560, -46.650);
+    final Ponto destino = new Ponto(-23.570, -46.650);
+    final double meioLat = -23.565;
 
-    TrechoPeso t(long id, Vertice o, Vertice de, double dist, double peso, boolean bloqueado) {
-        return new TrechoPeso(id, o, de, dist, peso, bloqueado);
+    static Ocorrencia alerta(long idCategoria, double lat, double pesoBase, double pesoNoturno, String bloqueia,
+            StatusOcorrencia status) {
+        CategoriaOcorrencia c = new CategoriaOcorrencia();
+        c.setId(idCategoria);
+        c.setPesoBase(pesoBase);
+        c.setPesoNoturno(pesoNoturno);
+        c.setBloqueiaMobilidade(bloqueia);
+        Localizacao l = new Localizacao();
+        l.setLatitude(lat);
+        l.setLongitude(-46.650);
+        Ocorrencia o = new Ocorrencia();
+        o.setCategoria(c);
+        o.setLocalizacao(l);
+        o.setStatus(status);
+        return o;
     }
 
-    RotaResponse rota(List<TrechoPeso> grafo) {
-        return RotaService.montar(grafo, a.lat(), a.lon(), d.lat(), d.lon());
-    }
-
-    static Ponto p(Vertice v) {
-        return new Ponto(v.lat(), v.lon());
-    }
-
-    @Test
-    void comumPegaOMaisCurtoECaminhoLivreDesviaDoPesado() {
-        var r = rota(List.of(t(1, a, b, 100, 1000, false), t(2, b, d, 100, 100, false),
-                t(3, a, c, 150, 150, false), t(4, d, c, 150, 150, false))); // trecho 4 cadastrado ao contrário
-
-        assertEquals(List.of(p(a), p(b), p(d)), r.comum().pontos());
-        assertEquals(200, r.comum().distanciaM());
-        assertEquals(List.of(p(a), p(c), p(d)), r.caminhoLivre().pontos());
-        assertEquals(300, r.caminhoLivre().distanciaM());
-        assertNull(r.aviso());
+    List<Ocorrencia> evitar(List<Ocorrencia> ativas, boolean noturno, boolean mobilidade, Set<Long> ignorar) {
+        return RotaService.aEvitar(ativas, noturno, mobilidade, ignorar, origem, destino);
     }
 
     @Test
-    void semAlternativaSemBloqueioCaminhoLivreNuloComAviso() {
-        var r = rota(List.of(t(1, a, b, 100, 100, true), t(2, b, d, 100, 100, false),
-                t(3, a, c, 150, 150, true), t(4, c, d, 150, 150, false)));
+    void desviaSoDoQueTemPesoNaHora() {
+        var buraco = alerta(3, meioLat, 3, 4, "N", StatusOcorrencia.ABERTA);
+        var ruaEscura = alerta(6, meioLat, 1, 6, "N", StatusOcorrencia.ABERTA);
 
-        assertEquals(200, r.comum().distanciaM());
-        assertNull(r.caminhoLivre());
-        assertNotNull(r.aviso());
+        assertEquals(List.of(buraco), evitar(List.of(buraco, ruaEscura), false, false, Set.of()));
+        assertEquals(List.of(buraco, ruaEscura), evitar(List.of(buraco, ruaEscura), true, false, Set.of()));
     }
 
     @Test
-    void pontoForaDaAreaDa422() {
-        var grafo = List.of(t(1, a, b, 100, 100, false));
-        assertThrows(RegraNegocioException.class, () -> RotaService.montar(grafo, -23.0, -46.0, b.lat(), b.lon()));
+    void degrauLeveSoBloqueiaComMobilidadeReduzida() {
+        var degrauLeve = alerta(1, meioLat, 1, 1, "S", StatusOcorrencia.CONFIRMADA);
+
+        assertTrue(evitar(List.of(degrauLeve), false, false, Set.of()).isEmpty());
+        assertEquals(List.of(degrauLeve), evitar(List.of(degrauLeve), false, true, Set.of()));
     }
 
     @Test
-    void grafoDesconexoDa422() {
-        var grafo = List.of(t(1, a, b, 100, 100, false), t(2, c, d, 100, 100, false));
-        assertThrows(RegraNegocioException.class, () -> rota(grafo));
+    void ignoraCategoriasDesligadasEAlertasInativos() {
+        var alagamento = alerta(9, meioLat, 6, 6, "N", StatusOcorrencia.ABERTA);
+        var resolvido = alerta(9, meioLat, 6, 6, "N", StatusOcorrencia.RESOLVIDA);
+
+        assertTrue(evitar(List.of(alagamento), false, false, Set.of(9L)).isEmpty());
+        assertTrue(evitar(List.of(resolvido), false, false, Set.of()).isEmpty());
     }
 
     @Test
-    void origemIgualDestinoDevolveUmPonto() {
-        var r = RotaService.montar(List.of(t(1, a, b, 100, 100, false)), a.lat(), a.lon(), a.lat(), a.lon());
-        assertEquals(List.of(p(a)), r.comum().pontos());
-        assertEquals(0, r.comum().distanciaM());
+    void naoDesviaDeAlertaNaOrigemNemLongeDoTrajeto() {
+        var naOrigem = alerta(9, origem.lat() + 0.0002, 6, 6, "N", StatusOcorrencia.ABERTA); // ~22 m
+        var longe = alerta(9, -23.700, 6, 6, "N", StatusOcorrencia.ABERTA); // ~14 km ao sul
+
+        assertTrue(evitar(List.of(naOrigem, longe), false, false, Set.of()).isEmpty());
     }
 }

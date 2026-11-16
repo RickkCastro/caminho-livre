@@ -8,6 +8,7 @@ import Botao from "@/components/Botao";
 import { FormaTipo } from "@/components/FiltroTipos";
 import Mapa from "@/components/Mapa";
 import { api, textoErro } from "@/lib/api";
+import { enderecoDe } from "@/lib/endereco";
 import { enviarFoto } from "@/lib/foto";
 import { CHAVE_RASCUNHO, useExigirLogin } from "@/lib/sessao";
 import type { Categoria, NovaOcorrencia } from "@/lib/tipos";
@@ -80,7 +81,8 @@ export default function PaginaNovaOcorrencia() {
     setErro("");
     setEnviando(true);
     try {
-      await api("/ocorrencias", { method: "POST", body: r });
+      const endereco = await enderecoDe(r!.latitude!, r!.longitude!);
+      await api("/ocorrencias", { method: "POST", body: { ...r, ...endereco } });
       sessionStorage.removeItem(CHAVE_RASCUNHO);
       sessionStorage.setItem("cl.aviso", "Alerta enviado. Você ganhou +10 pontos. Obrigado!");
       router.push("/");

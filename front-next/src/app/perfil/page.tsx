@@ -105,7 +105,7 @@ export default function PaginaPerfil() {
         <label className="relative cursor-pointer rounded-full has-focus-visible:outline-3 has-focus-visible:outline-offset-2">
           {u.fotoUrl ? (
             // eslint-disable-next-line @next/next/no-img-element -- URL externa (Google ou Vercel Blob)
-            <img src={u.fotoUrl} alt="Sua foto" className="size-20 rounded-full object-cover" />
+            <img src={u.fotoUrl} referrerPolicy="no-referrer" alt="Sua foto" className="size-20 rounded-full object-cover" />
           ) : (
             <span aria-hidden="true" className="grid size-20 place-items-center rounded-full bg-marca-suave text-3xl font-bold">
               {u.nome[0]}

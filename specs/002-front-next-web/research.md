@@ -12,9 +12,15 @@
 - **Alternatives**: Google Maps / Mapbox (chave e cobrança).
 
 ## Busca de endereço
-- **Decision**: Nominatim com debounce de 1 s, mínimo 3 letras, `countrycodes=br` e `viewbox` da área mapeada; cache em memória por texto. Mesmo componente para origem e destino, com atalho "Usar minha localização"; o lugar escolhido aparece no campo com o nome curto (3 primeiras partes do endereço). Sem resultado → mensagem pedindo número ou bairro. Toque no mapa removido da rota (clarificação de 2026-11-13).
+- **Decision**: Nominatim com debounce de 1 s, mínimo 3 letras, `countrycodes=br` (Brasil inteiro, sem `viewbox`); cache em memória por texto. Mesmo componente para origem e destino, com atalho "Usar minha localização"; o lugar escolhido aparece no campo com o nome curto (3 primeiras partes do endereço). Sem resultado → mensagem pedindo número ou bairro. Toque no mapa removido em 13/11 e devolvido em 16/11: seletor Origem/Destino sobre o mapa; o nome do ponto vem de `lib/endereco.ts` (Nominatim reverse, o mesmo usado para o bairro do alerta).
 - **Rationale**: Política de uso do Nominatim (1 req/s); sem chave.
 - **Alternatives**: Photon (mesmo dado, menos limite, menos estável); Google Places (chave paga).
+
+## Integração local (2026-11-16)
+- **Bairro do alerta**: o front preenche `bairro` (`suburb` → `neighbourhood` → `city_district`) e `logradouro` com `nominatim.openstreetmap.org/reverse` antes do `POST /ocorrencias`; sem isso o alerta não entra no ranking de bairros. Falha → envia sem.
+- **Área da rota**: desde 16/11 a API usa o OpenRouteService e a rota funciona no Brasil inteiro, seguindo as ruas; o mapa da rota também mostra os alertas, para ver do que a Caminho Livre desvia. Com o GPS negado o mapa ainda abre na Av. Paulista (onde estão os alertas de exemplo).
+- **Foto do Google**: `lh3.googleusercontent.com` recusa a imagem com referrer de `localhost`; usar `referrerPolicy="no-referrer"`.
+- **Testes**: Playwright sobe o próprio `next dev` na porta 3100 com `NEXT_DIST_DIR=.next-testes` e mocks, para não usar o dev da porta 3000 ligado na API.
 
 ## Foto
 - **Decision**: Redimensionar no navegador (canvas, lado maior ≤ 1280 px, JPEG 0,8) e enviar via `@vercel/blob/client` `upload()`, com token gerado em `app/api/upload/route.ts` (aceita só `image/*`, ≤ 2 MB, e só para quem envia um ID token Google válido — evita que qualquer pessoa use a cota do Blob). A URL vai para `fotoUrl`.

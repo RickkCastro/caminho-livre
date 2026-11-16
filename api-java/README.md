@@ -69,7 +69,7 @@ Alinhadas ao [backlog MoSCoW](../agile/backlog.md):
 | POST 🔒 | `/ocorrencias/{id}/confirmacoes` | Avaliar `{ confirma }` → 201 `{ status, totalConfirma, totalNega }` | US07 |
 | GET / POST🔒 | `/trechos` | | |
 | GET / PUT🔒 / DELETE🔒 | `/trechos/{id}` | | |
-| GET | `/rotas?origemLat=&origemLon=&destinoLat=&destinoLon=&hora=&mobilidadeReduzida=&ignorar=` | `{ comum, caminhoLivre \| null, aviso? }` (Dijkstra na API); ponto a mais de 500 m do mapa → 422 | US04, US11 |
+| GET | `/rotas?origemLat=&origemLon=&destinoLat=&destinoLon=&hora=&mobilidadeReduzida=&ignorar=` | `{ comum, caminhoLivre \| null, aviso? }` por ruas reais do Brasil inteiro (OpenRouteService); ponto sem rua por perto → 422; ORS fora do ar → 503 | US04, US11 |
 | GET | `/trechos/pesos?hora=&mobilidadeReduzida=&ignorar=` | Grafo com pesos (depuração; mesmo formato do mock do Dynamic Programming) | US04, US11 |
 | GET | `/ranking/bairros` | Top 5 melhores e piores bairros | US14 |
 | GET | `/ranking/usuarios` | Pessoas por pontos (nome, foto, pontos) | US19 |
@@ -104,6 +104,7 @@ Formato de erro padrão:
    DB_PASSWORD=sua_senha
    GOOGLE_CLIENT_ID=xxxx.apps.googleusercontent.com
    FRONT_URL=http://localhost:3000
+   ORS_API_KEY=sua_chave_openrouteservice   # sem aspas; grátis em openrouteservice.org/dev
    ```
    `GOOGLE_CLIENT_ID` é o ID do cliente OAuth (tipo "Aplicativo da Web") do Google Cloud Console, o mesmo do front. Sem ele a API sobe, mas o login responde 401.
 3. **Testes e execução:**

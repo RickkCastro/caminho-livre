@@ -81,6 +81,12 @@ public class GlobalExceptionHandler {
         return erro(HttpStatus.SERVICE_UNAVAILABLE, "Banco de dados indisponível. Tente de novo em instantes.");
     }
 
+    @ExceptionHandler(org.springframework.web.client.RestClientException.class)
+    public ResponseEntity<ErroResponse> rotasIndisponivel(Exception e) {
+        log.error("OpenRouteService indisponível", e);
+        return erro(HttpStatus.SERVICE_UNAVAILABLE, "Serviço de rotas indisponível. Tente de novo em instantes.");
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErroResponse> inesperado(Exception e) {
         log.error("Erro inesperado", e);
