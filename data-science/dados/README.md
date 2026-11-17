@@ -43,7 +43,7 @@ O primeiro baixa os brutos para `dados/brutos/` (pasta ignorada pelo git). O seg
 | `baixar_dados.py` | Baixa os arquivos originais das fontes oficiais |
 | `gerar_extratos.py` | Faz o recorte e a anonimização e grava os extratos |
 
-Os `.csv.gz` são CSV comuns compactados: o pandas lê direto (`pd.read_csv("arquivo.csv.gz")`), e qualquer descompactador abre.
+Os `.csv.gz` são CSV comuns compactados: o pandas lê direto (`pd.read_csv("arquivo.csv.gz")`), e qualquer descompactador abre. No ZIP de entrega (montado por `gerar_zip_entrega.py`), eles vão descompactados, como `.csv`, e abrem no Excel. O notebook lê qualquer um dos dois formatos.
 
 ### O que o `gerar_extratos.py` fez (e o que não fez)
 
@@ -54,7 +54,7 @@ Os `.csv.gz` são CSV comuns compactados: o pandas lê direto (`pd.read_csv("arq
 * **latitude e longitude foram arredondadas** para 3 casas decimais (~100 m);
 * no SP156, foram removidas as **305.671 linhas totalmente vazias** do arquivo do 1º trimestre (o CSV foi exportado do Excel e completado com linhas em branco até o limite de 1.048.576 linhas da planilha; os dados não foram cortados, as datas vão até 31/03).
 
-**Não fez:** nenhuma limpeza de conteúdo. Os textos `"NULL"`, as duplicatas, as datas de outros anos, as grafias diferentes etc. continuam nos extratos e são tratados **passo a passo no notebook** (`analise.ipynb`, seções A.1 e B.1).
+**Não fez:** nenhuma limpeza de conteúdo. Os textos `"NULL"`, as duplicatas, as datas de outros anos, as grafias diferentes etc. continuam nos extratos e são tratados **passo a passo no notebook** (`analise.ipynb`, seção 4).
 
 ## Dicionário dos extratos
 
@@ -97,11 +97,15 @@ Mesmos nomes de coluna do arquivo da SSP (inclusive a grafia `CIRCUNCRIÇÃO`). 
 | Base | Problema | Tratamento |
 |---|---|---|
 | SSP | Campo vazio escrito como o texto `"NULL"` | Convertido em nulo |
-| SSP | 35% dos roubos/furtos a pedestres sem hora exata (48% dos furtos, 10% dos roubos) | Análise por hora só com quem tem hora; checagem de robustez com o período informado |
-| SSP | Hora estimada: 34% dos horários terminam em `:00` e 85% em múltiplos de 5 minutos | Análise por hora cheia, não por minuto |
-| SSP | BOs registrados em 2025 sobre fatos de anos anteriores | Mantidos só fatos de 2025 |
+| SSP | Conduta "Transeunte" pouco usada; a maioria dos roubos de rua está como "Outros" | Pedestre = via pública + conduta Transeunte/Outros, fora de veículos e transporte coletivo |
 | SSP | 28 BOs aparecem duas vezes (como furto e como roubo) | Uma linha por BO, priorizando o roubo |
-| SSP | Conduta "Transeunte" pouco usada; a maioria dos roubos de rua está como "Outros" | Pedestre = via pública + conduta Transeunte/Outros, fora de veículos; robustez só com "Transeunte" |
+| SSP | 48% dos furtos e 10% dos roubos a pedestres sem hora exata | A variável-alvo conta só roubos (o "assalto" do app); roubos sem hora exata ficam fora da contagem por hora |
+| SSP | BOs registrados em 2025 sobre fatos de anos anteriores | Mantidos só fatos de 2025 |
+| SSP | Fatos do fim de dezembro registrados só em 2026 não estão no arquivo (5,5% dos roubos são registrados mais de 7 dias depois do fato) | Análise até 15/12/2025 |
+| SSP | Roubos caem ao longo de 2025 | Variável de tendência (`dias_desde_inicio`) no modelo linear |
+| SSP | Hora estimada pela vítima: 26% dos horários de roubo terminam em `:00` (ao acaso seria 1,7%) | Análise por hora cheia, não por minuto |
 | SP156 | 305.671 linhas vazias no 1º trimestre | Removidas na extração |
-| SP156 | Subprefeitura com grafias alternativas (*CASA VERDE-LIMAO-CACHOEIRINHA*, *PERUS-ANHANGUERA*) e nomes de órgãos | Grafias unificadas; órgãos viraram nulo |
-| SP156 | Nenhuma categoria de iluminação pública em 2025 | A hipótese 2 do README (iluminação × crime) não pôde ser testada |
+| SP156 | Subprefeitura com grafias alternativas (*CASA VERDE-LIMAO-CACHOEIRINHA*, *PERUS-ANHANGUERA*) e nomes de órgãos | Grafias unificadas; órgãos viraram nulo e saíram da base do modelo |
+| SP156 | 884 pedidos cancelados pelo próprio cidadão | Excluídos da base da regressão logística (não dizem se o problema foi resolvido) |
+| SP156 | 19 pedidos "Finalizada" sem data de finalização | Excluídos |
+| SP156 | Nenhuma categoria de iluminação pública em 2025 | O alerta "rua escura" fica fora da regressão logística; o efeito do escuro é medido na regressão linear (variável `escuro`) |
