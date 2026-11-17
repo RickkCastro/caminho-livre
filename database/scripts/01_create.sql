@@ -174,6 +174,10 @@ CREATE INDEX ix_trecho_destino         ON trecho (id_destino);
 CREATE INDEX ix_localizacao_bairro     ON localizacao (bairro);
 CREATE INDEX ix_rota_favorita_usuario  ON rota_favorita (id_usuario);
 
+-- Trecho é aresta não direcionada: (A, B) e (B, A) são o mesmo trecho.
+-- uk_trecho só barra a repetição no mesmo sentido; este índice barra a inversa.
+CREATE UNIQUE INDEX uk_trecho_par ON trecho (LEAST(id_origem, id_destino), GREATEST(id_origem, id_destino));
+
 -- ---------------------------------------------------------------------
 -- 10. Triggers de integridade
 -- ---------------------------------------------------------------------
@@ -191,9 +195,9 @@ BEGIN
 END;
 /
 
--- Ninguém avalia o próprio alerta (RF12).
+-- Ninguém avalia o próprio alerta (RF12), nem por INSERT nem por UPDATE.
 CREATE OR REPLACE TRIGGER trg_confirmacao_autor
-BEFORE INSERT ON confirmacao
+BEFORE INSERT OR UPDATE OF id_ocorrencia, id_usuario ON confirmacao
 FOR EACH ROW
 DECLARE
   v_autor ocorrencia.id_usuario%TYPE;

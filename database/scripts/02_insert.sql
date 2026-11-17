@@ -3,8 +3,8 @@
 -- Os IDs são gerados por IDENTITY a partir de 1; como 01_create.sql recria
 -- as tabelas, os IDs citados nos comentários são estáveis.
 -- Usuários são fictícios (acordo da equipe: nenhum dado pessoal real).
--- Pontos da Av. Paulista/Al. Santos: trocar pelos pontos fotografados
--- pela equipe na pesquisa de campo, se houver.
+-- Localizações: cruzamentos reais da Av. Paulista e da Al. Santos, no
+-- entorno da FIAP Paulista, com coordenadas aproximadas.
 -- =====================================================================
 
 -- ---------------------------------------------------------------------

@@ -162,7 +162,7 @@ SELECT DENSE_RANK() OVER (ORDER BY u.pontos DESC) AS posicao,
 
 -- ---------------------------------------------------------------------
 -- 7. Peso de cada trecho à noite para uma pessoa com mobilidade reduzida
---    (mesma fórmula do TrechoBO, US04/US11):
+--    (mesma fórmula do TrechoService da API, US04):
 --    peso = distância × (1 + Σ pesos das ocorrências ativas a ≤ 30 m
 --    da origem ou do destino); bloqueado se houver categoria que
 --    bloqueia mobilidade. Distância aproximada por equirretangular.
@@ -197,8 +197,12 @@ SELECT t.id,
 -- 8. Exclusão de conta (US15, LGPD) — demonstração
 --    ON DELETE SET NULL anonimiza as ocorrências; confirmações,
 --    preferências e rotas favoritas somem em cascata.
---    Desfeita com ROLLBACK para não alterar a carga.
+--    Usuário 8: autor da ocorrência 8, avaliou a ocorrência 5 e tem
+--    uma rota favorita. Desfeita com ROLLBACK para não alterar a carga
+--    (funciona com o autocommit desligado, o padrão do SQL Developer).
 -- ---------------------------------------------------------------------
-DELETE FROM usuario WHERE id = 10;
-SELECT id, id_usuario, status FROM ocorrencia WHERE id = 11;   -- id_usuario agora é NULL
+DELETE FROM usuario WHERE id = 8;
+SELECT id, id_usuario, status FROM ocorrencia WHERE id = 8;                -- id_usuario agora é NULL (SET NULL)
+SELECT COUNT(*) AS confirmacoes_do_8 FROM confirmacao   WHERE id_usuario = 8;   -- 0 (CASCADE)
+SELECT COUNT(*) AS rotas_do_8        FROM rota_favorita WHERE id_usuario = 8;   -- 0 (CASCADE)
 ROLLBACK;

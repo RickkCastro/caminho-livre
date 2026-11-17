@@ -1,4 +1,4 @@
-# 🗄️ Database Design — Caio
+# 🗄️ Database Design — Henrique
 
 **Disciplina:** Database Design · **Entrega:** Teams até 19/11, 23h55
 
