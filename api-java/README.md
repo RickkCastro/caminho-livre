@@ -121,6 +121,6 @@ Formato de erro padrão:
    docker run -p 8080:8080 --env-file .env caminholivre-api
    ```
 
-**Render:** Web Service com runtime Docker, Root Directory `api-java/caminholivre-backend`, branch `java`, e as mesmas variáveis do `.env` em *Environment* (`FRONT_URL` = URL do front na Vercel, sem barra no final). Cada push na branch gera um novo deploy.
+**Render:** Web Service com runtime Docker, Root Directory `api-java/caminholivre-backend`, branch `main`, e as mesmas variáveis do `.env` em *Environment* (`FRONT_URL` = URL do front na Vercel, sem barra no final). Cada push na branch gera um novo deploy.
 
 Teste rápido: `curl https://caminho-livre.onrender.com/categorias` → 200 com as categorias.
