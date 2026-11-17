@@ -90,9 +90,6 @@ CREATE TABLE ocorrencia (
   dt_registro    TIMESTAMP     DEFAULT SYSTIMESTAMP NOT NULL,
   dt_expiracao   TIMESTAMP     NOT NULL,
   CONSTRAINT pk_ocorrencia             PRIMARY KEY (id),
-  CONSTRAINT fk_ocorrencia_usuario     FOREIGN KEY (id_usuario)     REFERENCES usuario (id) ON DELETE SET NULL,
-  CONSTRAINT fk_ocorrencia_categoria   FOREIGN KEY (id_categoria)   REFERENCES categoria_ocorrencia (id),
-  CONSTRAINT fk_ocorrencia_localizacao FOREIGN KEY (id_localizacao) REFERENCES localizacao (id),
   CONSTRAINT ck_ocorrencia_status      CHECK (status IN ('ABERTA', 'CONFIRMADA', 'EXPIRADA', 'RESOLVIDA')),
   CONSTRAINT ck_ocorrencia_datas       CHECK (dt_expiracao > dt_registro)
 );
@@ -107,8 +104,6 @@ CREATE TABLE confirmacao (
   confirma       CHAR(1)    NOT NULL,
   dt_confirmacao TIMESTAMP  DEFAULT SYSTIMESTAMP NOT NULL,
   CONSTRAINT pk_confirmacao            PRIMARY KEY (id),
-  CONSTRAINT fk_confirmacao_ocorrencia FOREIGN KEY (id_ocorrencia) REFERENCES ocorrencia (id) ON DELETE CASCADE,
-  CONSTRAINT fk_confirmacao_usuario    FOREIGN KEY (id_usuario)    REFERENCES usuario (id)    ON DELETE CASCADE,
   CONSTRAINT uk_confirmacao            UNIQUE (id_ocorrencia, id_usuario),
   CONSTRAINT ck_confirmacao_confirma   CHECK (confirma IN ('S', 'N'))
 );
@@ -121,8 +116,6 @@ CREATE TABLE preferencia_rota (
   id_categoria NUMBER(5)  NOT NULL,
   considerar   CHAR(1)    DEFAULT 'S' NOT NULL,
   CONSTRAINT pk_preferencia_rota     PRIMARY KEY (id_usuario, id_categoria),
-  CONSTRAINT fk_preferencia_usuario  FOREIGN KEY (id_usuario)   REFERENCES usuario (id) ON DELETE CASCADE,
-  CONSTRAINT fk_preferencia_categoria FOREIGN KEY (id_categoria) REFERENCES categoria_ocorrencia (id) ON DELETE CASCADE,
   CONSTRAINT ck_preferencia_considerar CHECK (considerar IN ('S', 'N'))
 );
 
@@ -136,8 +129,6 @@ CREATE TABLE trecho (
   distancia_m NUMBER(7,1) NOT NULL,
   iluminado   CHAR(1)     DEFAULT 'S' NOT NULL,
   CONSTRAINT pk_trecho            PRIMARY KEY (id),
-  CONSTRAINT fk_trecho_origem     FOREIGN KEY (id_origem)  REFERENCES localizacao (id),
-  CONSTRAINT fk_trecho_destino    FOREIGN KEY (id_destino) REFERENCES localizacao (id),
   CONSTRAINT uk_trecho            UNIQUE (id_origem, id_destino),
   CONSTRAINT ck_trecho_distancia  CHECK (distancia_m > 0),
   CONSTRAINT ck_trecho_iluminado  CHECK (iluminado IN ('S', 'N')),
@@ -155,14 +146,28 @@ CREATE TABLE rota_favorita (
   apelido    VARCHAR2(60) NOT NULL,
   dt_criacao TIMESTAMP    DEFAULT SYSTIMESTAMP NOT NULL,
   CONSTRAINT pk_rota_favorita         PRIMARY KEY (id),
-  CONSTRAINT fk_rota_favorita_usuario FOREIGN KEY (id_usuario) REFERENCES usuario (id) ON DELETE CASCADE,
-  CONSTRAINT fk_rota_favorita_origem  FOREIGN KEY (id_origem)  REFERENCES localizacao (id),
-  CONSTRAINT fk_rota_favorita_destino FOREIGN KEY (id_destino) REFERENCES localizacao (id),
   CONSTRAINT ck_rota_favorita_extremos CHECK (id_origem <> id_destino)
 );
 
 -- ---------------------------------------------------------------------
--- 9. Índices nas FKs e nos filtros do mapa
+-- 9. Chaves estrangeiras (ALTER TABLE)
+--    Criadas depois das 8 tabelas, então a ordem dos CREATE TABLE não importa.
+-- ---------------------------------------------------------------------
+ALTER TABLE ocorrencia       ADD CONSTRAINT fk_ocorrencia_usuario     FOREIGN KEY (id_usuario)     REFERENCES usuario (id) ON DELETE SET NULL;
+ALTER TABLE ocorrencia       ADD CONSTRAINT fk_ocorrencia_categoria   FOREIGN KEY (id_categoria)   REFERENCES categoria_ocorrencia (id);
+ALTER TABLE ocorrencia       ADD CONSTRAINT fk_ocorrencia_localizacao FOREIGN KEY (id_localizacao) REFERENCES localizacao (id);
+ALTER TABLE confirmacao      ADD CONSTRAINT fk_confirmacao_ocorrencia FOREIGN KEY (id_ocorrencia)  REFERENCES ocorrencia (id) ON DELETE CASCADE;
+ALTER TABLE confirmacao      ADD CONSTRAINT fk_confirmacao_usuario    FOREIGN KEY (id_usuario)     REFERENCES usuario (id) ON DELETE CASCADE;
+ALTER TABLE preferencia_rota ADD CONSTRAINT fk_preferencia_usuario    FOREIGN KEY (id_usuario)     REFERENCES usuario (id) ON DELETE CASCADE;
+ALTER TABLE preferencia_rota ADD CONSTRAINT fk_preferencia_categoria  FOREIGN KEY (id_categoria)   REFERENCES categoria_ocorrencia (id) ON DELETE CASCADE;
+ALTER TABLE trecho           ADD CONSTRAINT fk_trecho_origem          FOREIGN KEY (id_origem)      REFERENCES localizacao (id);
+ALTER TABLE trecho           ADD CONSTRAINT fk_trecho_destino         FOREIGN KEY (id_destino)     REFERENCES localizacao (id);
+ALTER TABLE rota_favorita    ADD CONSTRAINT fk_rota_favorita_usuario  FOREIGN KEY (id_usuario)     REFERENCES usuario (id) ON DELETE CASCADE;
+ALTER TABLE rota_favorita    ADD CONSTRAINT fk_rota_favorita_origem   FOREIGN KEY (id_origem)      REFERENCES localizacao (id);
+ALTER TABLE rota_favorita    ADD CONSTRAINT fk_rota_favorita_destino  FOREIGN KEY (id_destino)     REFERENCES localizacao (id);
+
+-- ---------------------------------------------------------------------
+-- 10. Índices nas FKs e nos filtros do mapa
 -- ---------------------------------------------------------------------
 CREATE INDEX ix_ocorrencia_usuario     ON ocorrencia (id_usuario);
 CREATE INDEX ix_ocorrencia_categoria   ON ocorrencia (id_categoria);
@@ -179,7 +184,7 @@ CREATE INDEX ix_rota_favorita_usuario  ON rota_favorita (id_usuario);
 CREATE UNIQUE INDEX uk_trecho_par ON trecho (LEAST(id_origem, id_destino), GREATEST(id_origem, id_destino));
 
 -- ---------------------------------------------------------------------
--- 10. Triggers de integridade
+-- 11. Triggers de integridade
 -- ---------------------------------------------------------------------
 -- Ocorrência nasce com validade de 15 dias se dt_expiracao não vier (US08).
 CREATE OR REPLACE TRIGGER trg_ocorrencia_expiracao
@@ -210,7 +215,7 @@ END;
 /
 
 -- ---------------------------------------------------------------------
--- 11. Comentários (dicionário de dados no próprio banco)
+-- 12. Comentários (dicionário de dados no próprio banco)
 -- ---------------------------------------------------------------------
 COMMENT ON TABLE usuario              IS 'Pessoa que usa o app; autenticada pelo Google, sem senha';
 COMMENT ON TABLE categoria_ocorrencia IS 'Tipos de problema e seus pesos no cálculo da rota';
