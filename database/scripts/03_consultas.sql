@@ -133,7 +133,7 @@ COMMIT;
 
 -- ---------------------------------------------------------------------
 -- 5. Histórico de um usuário com o total de 👍/👎 (US10)
---    Trocar :id_usuario pelo id desejado (ex.: 1).
+--    Usuário 1 de exemplo: troque o 1 no WHERE pelo id desejado.
 -- ---------------------------------------------------------------------
 SELECT o.id,
        c.nome AS categoria,
@@ -146,7 +146,7 @@ SELECT o.id,
   JOIN categoria_ocorrencia c ON c.id = o.id_categoria
   JOIN localizacao l          ON l.id = o.id_localizacao
   LEFT JOIN confirmacao f     ON f.id_ocorrencia = o.id
- WHERE o.id_usuario = :id_usuario
+ WHERE o.id_usuario = 1
  GROUP BY o.id, c.nome, l.logradouro, o.status, o.dt_registro
  ORDER BY o.dt_registro DESC;
 
@@ -162,7 +162,7 @@ SELECT DENSE_RANK() OVER (ORDER BY u.pontos DESC) AS posicao,
 
 -- ---------------------------------------------------------------------
 -- 7. Peso de cada trecho à noite para uma pessoa com mobilidade reduzida
---    (mesma fórmula do TrechoBO, US04/US11):
+--    (mesma fórmula do TrechoService da API, US04):
 --    peso = distância × (1 + Σ pesos das ocorrências ativas a ≤ 30 m
 --    da origem ou do destino); bloqueado se houver categoria que
 --    bloqueia mobilidade. Distância aproximada por equirretangular.
@@ -197,8 +197,14 @@ SELECT t.id,
 -- 8. Exclusão de conta (US15, LGPD) — demonstração
 --    ON DELETE SET NULL anonimiza as ocorrências; confirmações,
 --    preferências e rotas favoritas somem em cascata.
---    Desfeita com ROLLBACK para não alterar a carga.
+--    Usuário 8: autor da ocorrência 8, avaliou a ocorrência 5 e tem
+--    uma rota favorita. Desfeita com ROLLBACK para não alterar a carga
+--    (funciona com o autocommit desligado, o padrão do SQL Developer).
 -- ---------------------------------------------------------------------
-DELETE FROM usuario WHERE id = 10;
-SELECT id, id_usuario, status FROM ocorrencia WHERE id = 11;   -- id_usuario agora é NULL
+DELETE FROM usuario WHERE id = 8;
+-- id_usuario da ocorrência 8 agora é NULL (SET NULL)
+SELECT id, id_usuario, status FROM ocorrencia WHERE id = 8;
+-- 0 nas duas contagens (CASCADE)
+SELECT COUNT(*) AS confirmacoes_do_8 FROM confirmacao   WHERE id_usuario = 8;
+SELECT COUNT(*) AS rotas_do_8        FROM rota_favorita WHERE id_usuario = 8;
 ROLLBACK;

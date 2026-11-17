@@ -90,7 +90,7 @@ _FIAP — Faculdade de Informática e Administração Paulista_
 
 ![Diagrama de entidades — Oracle Data Modeler](modelos/Logical.png)
 
-_Os dois diagramas foram feitos no **Oracle Data Modeler**. O relacional (3) mostra todas as tabelas, atributos e tipos, as chaves primárias (P), estrangeiras (F) e únicas (U), os relacionamentos e as cardinalidades. A visão de entidades (3.1) mostra a mesma estrutura com `#` = identificador, `*` = obrigatório, `o` = opcional e `U` = único. A linha tracejada marca um relacionamento opcional, como o autor da ocorrência, que fica nulo depois da exclusão da conta._
+_Os dois diagramas foram feitos no **Oracle Data Modeler**. O relacional (3) mostra todas as tabelas, atributos e tipos, as chaves primárias (P), estrangeiras (F) e únicas (U), os relacionamentos e as cardinalidades. No relacional, a linha tracejada com círculo marca a única FK que aceita nulo: o autor da ocorrência, que fica nulo depois da exclusão da conta. A visão de entidades (3.1) mostra a mesma estrutura com `#` = identificador, `*` = obrigatório, `o` = opcional e `U` = único. Em cada linha, a metade tracejada marca o lado opcional (um usuário pode não ter nenhum alerta, por exemplo), a metade cheia marca o lado obrigatório e o pé de galinha marca o lado N. A ligação entre usuário e ocorrência é toda tracejada pelo mesmo motivo do autor nulo._
 
 ## 4. Tabelas e relacionamentos
 
@@ -127,7 +127,7 @@ Os scripts vão em arquivos `.sql` separados e devem ser executados nesta ordem 
 
 | Arquivo | Tipo | Conteúdo |
 | :-- | :-- | :-- |
-| `01_create.sql` | **DDL** | `CREATE TABLE` das 8 tabelas com todas as constraints, índices, as 2 triggers e comentários. Pode ser executado de novo, porque apaga e recria tudo. |
+| `01_create.sql` | **DDL** | `CREATE TABLE` das 8 tabelas com PK, UNIQUE e CHECK, `ALTER TABLE` com as 12 FKs, índices, as 2 triggers e comentários. Pode ser executado de novo, porque apaga e recria tudo. |
 | `02_insert.sql` | **DML** | Carga com no mínimo 5 linhas por tabela (entre 6 e 16 linhas). |
 | `03_consultas.sql` | **DQL** | **A1** INNER JOIN entre 2 tabelas · **A2** INNER JOIN entre 2 tabelas com `GROUP BY` · **A3** LEFT OUTER JOIN entre 2 tabelas com `WHERE` e `ORDER BY`, seguidas de consultas complementares usadas pelo app. |
 
