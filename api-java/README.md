@@ -76,6 +76,8 @@ Alinhadas ao [backlog MoSCoW](../agile/backlog.md):
 | GET / POST 🔒 | `/rotas-favoritas` | Minhas rotas favoritas `{ idOrigem, idDestino, apelido }` | US16 |
 | DELETE 🔒👤 | `/rotas-favoritas/{id}` | | US16 |
 
+> ⚠️ **CRUD aberto para avaliação.** `/categorias`, `/localizacoes` e `/trechos` aceitam POST/PUT/DELETE de **qualquer usuário logado**, de propósito, para o professor testar os quatro verbos no deploy. Não existe perfil de administrador no escopo da GS. Mudanças nessas tabelas afetam o mapa e as rotas de todos: apagar um trecho tira a rua do grafo, e mudar o peso de uma categoria muda o Caminho Livre. Registros em uso respondem 409, sem apagar nada. Para voltar aos dados de demonstração, rode de novo `database/scripts/01_create.sql` e `02_insert.sql` (⚠️ apaga tudo, inclusive usuários e alertas).
+
 **`OcorrenciaDetalhe`**: `{ id, categoria, tipo, latitude, longitude, status, descricao, fotoUrl, bairro, dtRegistro, dtExpiracao, totalConfirma, totalNega, minha }`.
 
 Códigos: 400 validação · 401 token · 403 não é o dono · 404 · 409 duplicidade · 422 regra de negócio · 503 banco.
