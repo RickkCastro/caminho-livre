@@ -8,7 +8,8 @@ Convenções: nomes em minúsculas com `_`; chaves primárias `id` com `IDENTITY
 - **1FN:** todos os atributos são atômicos (latitude e longitude separadas; nada de listas em colunas).
 - **2FN:** a única PK composta (`preferencia_rota`) tem `considerar` dependendo das duas colunas da chave.
 - **3FN:** atributos que dependem da categoria (tipo, pesos, bloqueio) ficam em `categoria_ocorrencia`, e não se repetem em `ocorrencia`; endereço e bairro ficam em `localizacao`.
-- **Derivados não armazenados:** totais de 👍/👎 e o peso de cada trecho são calculados em consulta. Exceção consciente: `usuario.pontos` é guardado (somado pela API) para o ranking não recalcular todo o histórico.
+- **Derivados não armazenados:** totais de 👍/👎 e o peso de cada trecho são calculados em consulta. Exceções conscientes: `usuario.pontos` é guardado (somado pela API) para o ranking não recalcular todo o histórico, e `ocorrencia.status` guarda `CONFIRMADA` e `RESOLVIDA`, que derivam da contagem em `confirmacao`, para o mapa filtrar alertas ativos sem contar votos a cada leitura. A API atualiza os dois na mesma transação do voto.
+- **Bairro como texto:** `localizacao.bairro` fica como texto, preenchido a partir do endereço, e não como tabela própria. Uma tabela `BAIRRO` evitaria grafias diferentes no ranking, mas mudaria a API perto da entrega. Fica como evolução.
 
 ---
 
@@ -99,7 +100,7 @@ Segmento de rua entre duas localizações (aresta não direcionada do grafo). Hi
 | distancia_m | NUMBER(7,1) | Não | | CHECK > 0 | Metros |
 | iluminado | CHAR(1) | Não | 'S' | CHECK S/N | Informativo para o mapa |
 
-Restrição extra: `UNIQUE (id_origem, id_destino)`.
+Restrições extras: `UNIQUE (id_origem, id_destino)` e o índice único `uk_trecho_par` em `(LEAST(id_origem, id_destino), GREATEST(id_origem, id_destino))`, que impede cadastrar o mesmo trecho no sentido inverso.
 
 ## ROTA_FAVORITA *(Could)*
 Rota salva com apelido. História: US16.
@@ -134,7 +135,8 @@ Rota salva com apelido. História: US16.
 | Objeto | Tipo | Função |
 |---|---|---|
 | `trg_ocorrencia_expiracao` | Trigger BEFORE INSERT | Preenche `dt_registro` e `dt_expiracao = registro + 15 dias` (US08) |
-| `trg_confirmacao_autor` | Trigger BEFORE INSERT | Impede o autor de avaliar o próprio alerta (RF12) |
+| `trg_confirmacao_autor` | Trigger BEFORE INSERT OR UPDATE | Impede o autor de avaliar o próprio alerta (RF12) |
+| `uk_trecho_par` | Índice único | Mesmo trecho não entra de novo no sentido inverso |
 | `ix_ocorrencia_status` | Índice | Filtro do mapa e rotina de expiração (`status`, `dt_expiracao`) |
 | `ix_localizacao_bairro` | Índice | Ranking de bairros |
 | demais `ix_*` | Índices | Uma por FK, para JOINs e cascatas |

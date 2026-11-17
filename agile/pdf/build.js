@@ -5,7 +5,9 @@ const fs = require('fs');
 const path = require('path');
 const { mdToPdf } = require('md-to-pdf');
 
-const SRC = path.resolve(__dirname, '..', 'Agile_GS_CaminhoLivre.md');
+// Outro documento: node build.js <arquivo.md> <rótulo do rodapé>
+const [arg, ROTULO = 'Agile'] = process.argv.slice(2).filter(a => !a.startsWith('--'));
+const SRC = arg ? path.resolve(arg) : path.resolve(__dirname, '..', 'Agile_GS_CaminhoLivre.md');
 const OUT = SRC.replace(/\.md$/, '.pdf');
 const CSS = path.join(__dirname, 'style.css');
 
@@ -66,7 +68,7 @@ async function build() {
         printBackground: true,
         displayHeaderFooter: true,
         headerTemplate: '<span></span>',
-        footerTemplate: '<div style="width:100%;font-size:8px;color:#8794a8;text-align:center;font-family:Segoe UI,Arial">Caminho Livre · Agile · <span class="pageNumber"></span>/<span class="totalPages"></span></div>',
+        footerTemplate: `<div style="width:100%;font-size:8px;color:#8794a8;text-align:center;font-family:Segoe UI,Arial">Caminho Livre · ${ROTULO} · <span class="pageNumber"></span>/<span class="totalPages"></span></div>`,
         margin: { top: '18mm', bottom: '18mm', left: '18mm', right: '18mm' },
       },
       launch_options: { args: ['--no-sandbox'] },

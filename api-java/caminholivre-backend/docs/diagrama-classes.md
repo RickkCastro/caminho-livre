@@ -141,7 +141,16 @@ classDiagram
         +calcularPesos(hora, mobilidadeReduzida, ignorar) List~TrechoPeso~
         +distanciaM(lat1, lon1, lat2, lon2)$ double
     }
-    class RotaService { +calcular(origem, destino, hora, mobilidadeReduzida, ignorar) RotaResponse }
+    class RotaService {
+        +calcular(origem, destino, hora, mobilidadeReduzida, ignorar) RotaResponse
+        +aEvitar(ativas, noturno, mobilidadeReduzida, ignorar, origem, destino)$ List~Ocorrencia~
+        +semCaminho(codigoOrs)$ boolean
+    }
+    class OpenRouteService {
+        <<API externa>>
+        POST /v2/directions/foot-walking
+        POST /v2/directions/wheelchair
+    }
     class UsuarioService { +listar() +buscar() +atualizar() +excluir(id, Usuario) }
     class PreferenciaService { +listar(idUsuario, Usuario) +salvar(idUsuario, List, Usuario) }
     class RankingService { +bairros() RankingBairros +usuarios() List~PessoaRanking~ }
@@ -162,7 +171,8 @@ classDiagram
     RotaFavoritaController --> RotaFavoritaService
     CategoriaController --> CategoriaService
     LocalizacaoController --> LocalizacaoService
-    RotaService --> TrechoService
+    RotaService --> OpenRouteService : RestClient (ORS_API_KEY)
+    RotaService ..> TrechoService : distanciaM (Haversine)
     OcorrenciaService --> CategoriaService
     PreferenciaService --> CategoriaService
     TrechoService --> LocalizacaoService
@@ -187,6 +197,7 @@ classDiagram
     ConfirmacaoService --> UsuarioRepository
     TrechoService --> TrechoRepository
     TrechoService --> OcorrenciaRepository
+    RotaService --> OcorrenciaRepository
     UsuarioService --> UsuarioRepository
     UsuarioService --> OcorrenciaRepository
     UsuarioService --> ConfirmacaoRepository
