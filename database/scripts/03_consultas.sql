@@ -1,6 +1,63 @@
 -- =====================================================================
 -- Caminho Livre — Consultas do projeto (rodar após 02_insert.sql)
 -- "Ativa" = status ABERTA ou CONFIRMADA (RNF10).
+-- Parte A: as três consultas pedidas na entrega (duas tabelas cada).
+-- Parte B: consultas complementares usadas pelo app.
+-- =====================================================================
+
+-- =====================================================================
+-- PARTE A — Consultas da entrega
+-- =====================================================================
+
+-- ---------------------------------------------------------------------
+-- A1. INNER JOIN (2 tabelas): alertas ativos com o nome e o tipo da
+--     categoria, do mais recente ao mais antigo (mapa, US03).
+-- ---------------------------------------------------------------------
+SELECT o.id,
+       c.nome   AS categoria,
+       c.tipo,
+       o.status,
+       o.descricao,
+       TO_CHAR(o.dt_registro, 'DD/MM/YYYY HH24:MI') AS registrado_em
+  FROM ocorrencia o
+ INNER JOIN categoria_ocorrencia c ON c.id = o.id_categoria
+ WHERE o.status IN ('ABERTA', 'CONFIRMADA')
+ ORDER BY o.dt_registro DESC;
+
+-- ---------------------------------------------------------------------
+-- A2. INNER JOIN (2 tabelas) + GROUP BY: total de alertas, alertas
+--     ativos e período dos registros por bairro (ranking de bairros, US14).
+-- ---------------------------------------------------------------------
+SELECT l.bairro,
+       COUNT(o.id)                  AS total_alertas,
+       SUM(CASE WHEN o.status IN ('ABERTA', 'CONFIRMADA') THEN 1 ELSE 0 END) AS alertas_ativos,
+       MIN(o.dt_registro)           AS primeiro_alerta,
+       MAX(o.dt_registro)           AS ultimo_alerta
+  FROM ocorrencia o
+ INNER JOIN localizacao l ON l.id = o.id_localizacao
+ GROUP BY l.bairro
+ ORDER BY alertas_ativos DESC, l.bairro;
+
+-- ---------------------------------------------------------------------
+-- A3. LEFT OUTER JOIN (2 tabelas) + WHERE + ORDER BY: todos os pontos
+--     do entorno da FIAP Paulista (Bela Vista e Jardim Paulista) com os
+--     alertas ativos de cada um; pontos sem alerta aparecem com NULL.
+--     O filtro de status fica no ON para não descartar os pontos sem alerta.
+-- ---------------------------------------------------------------------
+SELECT l.bairro,
+       l.logradouro,
+       o.id        AS id_ocorrencia,
+       o.status,
+       o.descricao
+  FROM localizacao l
+  LEFT OUTER JOIN ocorrencia o
+    ON o.id_localizacao = l.id
+   AND o.status IN ('ABERTA', 'CONFIRMADA')
+ WHERE l.bairro IN ('Bela Vista', 'Jardim Paulista')
+ ORDER BY l.bairro, l.logradouro;
+
+-- =====================================================================
+-- PARTE B — Consultas complementares
 -- =====================================================================
 
 -- ---------------------------------------------------------------------

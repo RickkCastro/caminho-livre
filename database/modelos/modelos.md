@@ -1,6 +1,6 @@
 # Modelos — Caminho Livre
 
-Os diagramas abaixo estão em [Mermaid](https://mermaid.js.org/) e aparecem desenhados no GitHub. As imagens `conceitual.png`, `logico.png` e `fisico.png` desta pasta são exportadas deles. Detalhe de cada coluna: [dicionário de dados](../dicionario-dados.md).
+Os diagramas abaixo estão em [Mermaid](https://mermaid.js.org/) e aparecem desenhados no GitHub. Detalhe de cada coluna: [dicionário de dados](../dicionario-dados.md).
 
 ## 1. Modelo conceitual
 
