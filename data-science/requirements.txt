@@ -1,0 +1,10 @@
+# Análise (notebook)
+pandas>=2.2
+numpy>=1.26
+scikit-learn>=1.3   # regressão linear e logística, métricas e Pipeline
+matplotlib>=3.8
+astral>=3.2         # horário do amanhecer e do anoitecer em São Paulo
+jupyter
+
+# Só para gerar os extratos a partir do .xlsx bruto da SSP (dados/gerar_extratos.py)
+python-calamine>=0.2
