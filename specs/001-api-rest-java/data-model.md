@@ -35,7 +35,21 @@ peso = distanciaM × (1 + Σ (noturno ? pesoNoturno : pesoBase))
 
 ## Rota (RotaService)
 
-Desde 2026-11-16 a rota vem do OpenRouteService (ver research.md); o bloco abaixo é o desenho anterior, que continua valendo para `GET /trechos/pesos`.
+Desde 2026-11-16 a rota vem do OpenRouteService (ruas reais do OpenStreetMap, ver research.md):
+
+```text
+comum        = ORS foot-walking(origem, destino)                     sem caminho → 422
+evitar       = ocorrências ativas, fora de `ignorar`, dentro da caixa origem–destino + 2 km,
+               a mais de 60 m da origem e do destino, com
+               (mobilidadeReduzida = S e bloqueiaMobilidade = S) ou peso na hora ≥ 3
+caminhoLivre = ORS (wheelchair se mobilidadeReduzida, senão foot-walking)
+               desviando de um quadrado de 50 m em volta de cada alerta em `evitar`
+               sem desvio possível → null + aviso
+               nada a evitar e sem mobilidade reduzida → igual à comum + aviso (economiza um pedido)
+erros do ORS = 2010 sem rua perto → 422 · 2004 longe demais a pé → 422 · chave/cota/fora do ar → 503
+```
+
+O bloco abaixo é o desenho anterior (Dijkstra sobre TRECHO), que continua valendo para `GET /trechos/pesos`:
 
 ```text
 grafo   = TRECHO como arestas não direcionadas entre LOCALIZACAO
