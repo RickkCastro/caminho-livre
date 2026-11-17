@@ -52,3 +52,10 @@ img { display: block; max-width: 100%; max-height: 235mm; margin: 0.5em auto; }
 .landscape { page: landscape; break-before: page; break-after: page; }
 .landscape img { max-height: 160mm; width: auto; max-width: 100%; }
 .landscape h3 { margin-top: 0; }
+
+/* Protótipo: print do celular à esquerda e comentários de UX/UI à direita */
+.tela { display: flex; gap: 1.4em; align-items: flex-start; margin: 0 0 1.6em; break-inside: avoid; page-break-inside: avoid; }
+.tela > img { width: 36%; flex: none; border: 1px solid #dde4ec; border-radius: 14px; box-shadow: 0 2px 8px rgba(11, 63, 82, 0.12); }
+.tela > div { flex: 1; font-size: 0.95em; }
+.tela h4 { margin: 0 0 0.5em; font-size: 1.15em; }
+.tela ul { margin: 0.2em 0 0.6em; }

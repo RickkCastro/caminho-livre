@@ -65,6 +65,9 @@ _FIAP — Faculdade de Informática e Administração Paulista_
   - [4.2 Escopo do MVP](#42-escopo-do-mvp)
   - [4.3 Requisitos funcionais](#43-requisitos-funcionais)
   - [4.4 Requisitos não funcionais](#44-requisitos-não-funcionais)
+- [5. Protótipo](#5-protótipo)
+  - [5.1 Decisões gerais de UX e UI](#51-decisões-gerais-de-ux-e-ui)
+  - [5.2 Telas](#52-telas)
 
 <div style="page-break-after: always;"></div>
 
@@ -372,6 +375,177 @@ Para a demonstração do pitch, o grupo também prioriza **US07, US08 e US09** (
 | **RNF10** | Confiabilidade dos dados     | Alertas `EXPIRADA` e `RESOLVIDA` não aparecem no mapa nem entram no cálculo da rota.                                             | US07, US08       |
 | **RNF11** | Arquitetura                  | API REST em Java com banco Oracle, front em Next.js e cálculo de rota (Dijkstra) na própria API Java, publicados em nuvem.                            | Todas            |
 | **RNF12** | Manutenibilidade             | Código versionado no GitHub, com a API organizada em camadas (model, DAO, BO, controller).                                       | Todas            |
+
+<div style="page-break-after: always;"></div>
+
+## 5. Protótipo
+
+O protótipo não é um esboço solto: as telas abaixo são do **front-end real do Caminho Livre** (Next.js), capturadas no tamanho de um celular comum (390 × 844 px) com dados de exemplo. Elas cobrem o ciclo do MVP (**entrar → ver o mapa → avisar → desviar**) e o diferencial do mapa confiável (confirmar o alerta).
+
+| # | Tela | Histórias | Personas que mais se beneficiam |
+| :-: | :-- | :-- | :-- |
+| 1 | Entrar com Google | US01 | todas |
+| 2 | Pergunta de mobilidade (onboarding) | US12 | Dona Marta |
+| 3 | Mapa de alertas | US03 | todas |
+| 4 | Avisar problema | US02 | Seu Antônio, Dona Marta |
+| 5 | Rota acessível | US04, US11 | Dona Marta, Júlia |
+| 6 | Detalhe do alerta com 👍/👎 | US07, US09 | todas |
+
+### 5.1 Decisões gerais de UX e UI
+
+As personas definem o público: **Dona Marta** (68 anos, andador), **Júlia** (21 anos, volta a pé às 23h) e **Seu Antônio** (74 anos, pouca familiaridade com o celular). As decisões abaixo valem para todas as telas e atendem à US05 e aos RNF01–RNF05.
+
+| Decisão | Por quê (UX) | Como aparece (UI) |
+| :-- | :-- | :-- |
+| **Celular primeiro** | Quem usa está na rua, com uma mão ocupada (andador, carrinho, bolsa). | Layout de uma coluna; no computador vira mapa + painel lateral. |
+| **Navegação fixa embaixo** com 4 destinos: Mapa, Rota, Avisar, Perfil | Polegar alcança sem esticar; a pessoa nunca se perde (sempre sabe onde está e como voltar). | Barra inferior com ícone **e** texto; o item atual fica destacado em verde-água. |
+| **Áreas de toque de no mínimo 48 × 48 px** | Tremor nas mãos e dedos menos precisos (Seu Antônio, Dona Marta). | Botões, chips e itens de lista com altura mínima de 48 px (RNF02). |
+| **Texto grande e linguagem simples** | Leitura sem óculos e sem termos técnicos ("Avisar problema", "Ainda está lá"). | Fonte base de 16 px que acompanha o aumento de fonte do sistema (RNF02, RNF04). |
+| **Contraste alto** | Uso na rua, sob sol forte, e baixa visão. | Verde-escuro `#2a4b25` sobre branco (contraste ≈ 10:1, acima do 4,5:1 da WCAG AA). As telas passam no teste automático **axe-core** (WCAG 2.1 AA) do projeto (RNF01). |
+| **Tipo de alerta por cor *e* forma** | Daltônicos distinguem o tipo sem depender só da cor. | Acessibilidade = ● azul, Segurança = ▲ vermelho, Clima = gota roxa, sempre com o nome escrito ao lado. |
+| **Ação principal única por tela** | Menos decisões, menos erro (lei de Hick). | Um botão principal cheio (verde-escuro) e, quando há, um secundário só com contorno. |
+| **Feedback sempre visível** | A pessoa entende por que não consegue avançar. | Botão desabilitado vem com o motivo escrito ("falta escolher o tipo de problema e o local"); erros aparecem em avisos lidos pelo leitor de tela. |
+| **Privacidade explícita** | Medo de exposição ao denunciar um assalto ou um vizinho. | Frase na tela de entrada: "ninguém vê quem enviou um alerta" (RNF08). |
+
+### 5.2 Telas
+
+<div class="tela">
+<img src="prototipo/01-login.png" alt="Tela 1: entrar com Google">
+<div>
+
+#### Tela 1 · Entrar com Google (US01)
+
+**Intenção:** entrar sem criar nem lembrar senha, em um toque.
+
+**UX**
+
+- Um único caminho de entrada (conta Google): menos uma barreira para quem tem pouca familiaridade com tecnologia (Seu Antônio).
+- A frase de privacidade responde à principal objeção antes que ela apareça: "Não pedimos senha e ninguém vê quem enviou um alerta".
+- A navegação de baixo já aparece: o visitante pode ver o mapa e calcular rota **sem entrar**. O login só é pedido para avisar ou avaliar.
+
+**UI**
+
+- Ícone da marca, título curto e o botão oficial do Google, centralizados no meio da tela, onde o olhar cai primeiro.
+- Muito espaço em branco: nada compete com a ação principal.
+
+</div>
+</div>
+
+<div class="tela">
+<img src="prototipo/02-onboarding.png" alt="Tela 2: pergunta de mobilidade reduzida">
+<div>
+
+#### Tela 2 · Pergunta de mobilidade (US12)
+
+**Intenção:** adaptar a rota à pessoa logo no primeiro acesso, com **uma pergunta só**.
+
+**UX**
+
+- Pergunta de sim ou não, com exemplos concretos ("cadeira de rodas, andador, muleta ou carrinho de bebê") para a pessoa se reconhecer sem precisar se rotular.
+- Explica o benefício na mesma frase ("usamos isso para evitar degraus na sua rota"): a pessoa sabe por que o app pergunta.
+- A resposta pode ser mudada depois no Perfil (RF18), então não há pressão para acertar.
+
+**UI**
+
+- Ícone universal de acessibilidade no topo.
+- Dois botões grandes lado a lado; "Sim" cheio e "Não" com contorno, ambos com 48 px ou mais de altura.
+
+</div>
+</div>
+
+<div class="tela">
+<img src="prototipo/03-mapa.png" alt="Tela 3: mapa de alertas">
+<div>
+
+#### Tela 3 · Mapa de alertas (US03)
+
+**Intenção:** mostrar, antes de sair de casa, o que a pessoa vai encontrar no caminho.
+
+**UX**
+
+- O mapa abre centrado na localização da pessoa: a informação útil aparece sem nenhum toque.
+- Filtros por tipo (Acessibilidade, Segurança, Clima) em chips que ligam e desligam: Júlia pode ver só segurança à noite; Dona Marta, só acessibilidade.
+- "Avisar problema" fica sempre à mão, sobre o mapa: quem viu o problema registra na hora.
+- Só aparecem alertas ativos; os expirados e resolvidos somem (RNF10), então o mapa não engana.
+
+**UI**
+
+- Cada alerta tem forma, cor **e** rótulo escrito ("Degrau", "Rua escura").
+- Chips com ✓ deixam claro o que está ligado.
+- Botão principal verde-escuro no canto inferior, ao alcance do polegar; "Ranking" como ação secundária.
+
+</div>
+</div>
+
+<div class="tela">
+<img src="prototipo/04-enviar-alerta.png" alt="Tela 4: avisar problema">
+<div>
+
+#### Tela 4 · Avisar problema (US02)
+
+**Intenção:** registrar um problema em **menos de um minuto e em até 4 toques** (RNF03).
+
+**UX**
+
+- Passos numerados (1 · Qual é o problema? 2 · Onde fica?) que dividem a tarefa e mostram o progresso.
+- Categorias à vista, sem menu escondido: um toque escolhe.
+- Local pelo GPS ("Usar minha localização") ou tocando no mapa, para quem está longe do lugar.
+- O botão "Enviar" diz o que falta enquanto está desabilitado; nunca há erro "surpresa" depois do toque.
+- Foto e descrição são opcionais: não bloqueiam quem tem pressa.
+
+**UI**
+
+- Chips grandes com o mesmo código de cor e forma do mapa: a pessoa aprende uma vez só.
+- Botão "Enviar" fixo no rodapé, sempre visível ao rolar a tela.
+
+</div>
+</div>
+
+<div class="tela">
+<img src="prototipo/05-rota.png" alt="Tela 5: rota acessível">
+<div>
+
+#### Tela 5 · Rota acessível (US04, US11)
+
+**Intenção:** mostrar **lado a lado** a rota comum e a rota que desvia dos problemas, para a pessoa decidir.
+
+**UX**
+
+- Origem já vem preenchida com "Minha localização"; o destino pode ser buscado por endereço ou tocado no mapa. O botão "Inverter" serve para a volta.
+- O perfil é aplicado sozinho ("Mobilidade reduzida: não, do seu perfil"), sem configurar nada a cada rota.
+- A comparação mostra o custo da segurança em metros (610 m × 480 m): Júlia aceita andar 130 m a mais para evitar a rua escura.
+- Os alertas aparecem no mapa da rota, explicando **do que** a linha está desviando.
+
+**UI**
+
+- Legenda com a linha contínua (Caminho Livre) e a tracejada (rota comum): a diferença não depende só de cor.
+- Seletor "Tocar no mapa marca: Origem | Destino" deixa claro o que o próximo toque vai fazer.
+
+</div>
+</div>
+
+<div class="tela">
+<img src="prototipo/06-detalhe.png" alt="Tela 6: detalhe do alerta">
+<div>
+
+#### Tela 6 · Detalhe do alerta com 👍/👎 (US07, US09)
+
+**Intenção:** manter o mapa **confiável**: a comunidade confirma o que ainda existe e derruba o que já foi resolvido.
+
+**UX**
+
+- A pergunta é sobre o mundo, não sobre a pessoa: "O problema continua?", respondida com "Ainda está lá" ou "Já foi resolvido", em vez de "confirmar/negar".
+- Os totais (3 × 0) mostram o que a comunidade já disse; com 3 votos o alerta muda de status (RF13).
+- O status vem em linguagem simples ("Confirmado pela comunidade") e com a data, para a pessoa saber se a informação é recente.
+- Não mostra quem enviou o alerta (RNF08).
+
+**UI**
+
+- Tipo (selo "Acessibilidade") e título grande no topo; descrição logo abaixo.
+- Dois botões com ícone de polegar **e** texto; "Voltar ao mapa" no topo para não prender a pessoa na tela.
+
+</div>
+</div>
 
 <br>
 

@@ -5,13 +5,13 @@ Base: rubricas do [PDF da GS](GS%20CitizenTech%20-%202ES%20Fev%20-%20FIAP%202026
 
 | Disciplina | Situação | Onde enviar | O que vai |
 |---|---|---|---|
-| Agile | 🟡 faltam protótipo e pitch | Teams | **1 PDF** com o link do pitch |
+| Agile | 🟡 falta o pitch | Teams | **1 PDF** com o link do pitch |
 | AR-VR | 🔴 não começou | Teams | PDF com nomes + link do vídeo |
-| Data Science | 🟢 só enviar | Teams | ZIP (ipynb + TXT + CSV) |
+| Data Science | ✅ finalizado | Teams | ZIP (ipynb + TXT + CSV) |
 | Database | 🟢 só conferir e enviar | Teams | PDF + 3 arquivos `.sql` |
 | DDD Java | 🟡 falta o PDF e o deploy atualizado | **Portal do Aluno** | ZIP (PDF + link do GitHub + link do deploy) |
-| Dynamic Programming | 🟢 só enviar | Teams | ZIP (código + README) |
-| Network | 🟢 só conferir e enviar | Teams ou Portal | `.pkt` + PDF |
+| Dynamic Programming | 🟢 testes ok, só enviar | Teams | ZIP (código + README) |
+| Network | ✅ finalizado | Teams ou Portal | `.pkt` + PDF |
 
 ---
 
@@ -22,9 +22,9 @@ Entrega: **um único PDF**. Mais de um PDF ou link externo custa -10 pts. O víd
 - [x] 2. Personas (10)
 - [x] 3. Diagrama de casos de uso, exportado como imagem (20)
 - [x] 4. Backlog com MoSCoW, story points (Planning Poker) e MVP destacado (20)
-- [ ] **5. Protótipo de no mínimo 3 telas, com comentários de UX (20)**: prints das telas do `front-next/` (login/onboarding, mapa, enviar alerta, rota) e, para cada tela, a intenção e a adequação da UX (contraste, fonte grande, poucos toques, linguagem simples)
+- [x] **5. Protótipo de no mínimo 3 telas, com comentários de UX (20)**: seção 5 do PDF, com 6 telas do front real (`agile/prototipo/`): prints das telas do `front-next/` (login/onboarding, mapa, enviar alerta, rota) e, para cada tela, a intenção e a adequação da UX (contraste, fonte grande, poucos toques, linguagem simples)
 - [ ] **6. Vídeo pitch de até 3 min (20)**: narrado pela equipe, no YouTube como **não listado**, com o link no PDF. O mesmo vídeo serve para Testing
-- [ ] Acrescentar as seções "Protótipo" e "Pitch" em `agile/Agile_GS_CaminhoLivre.md` e gerar o PDF de novo (`cd agile/pdf && node build.js`)
+- [ ] Acrescentar a seção "Pitch" (o Protótipo já está) em `agile/Agile_GS_CaminhoLivre.md` e gerar o PDF de novo (`cd agile/pdf && node build.js`)
 - [ ] Conferir se o PDF tem todos os integrantes e se o link do vídeo abre numa aba anônima
 
 ## 🥽 AR-VR Modelling And Simulation
@@ -32,13 +32,13 @@ Entrega: **um único PDF**. Mais de um PDF ou link externo custa -10 pts. O víd
 - [ ] **PDF** com os nomes de todos os integrantes e o **link** do vídeo
 - [ ] Conferir a duração (nem menos de 30 s, nem mais de 60 s) e se o link abre
 
-## 📊 Data Science & Statistical Computing
+## 📊 Data Science & Statistical Computing — ✅ finalizado
 - [x] Notebook executado: preparação, treino e teste sem vazamento, regressão linear (MAE, RMSE, R²) e logística (matriz de confusão, precisão, recall, F1), visualizações e recomendações
 - [x] `integrantes.txt` com nomes e RMs
 - [x] Bases com a fonte indicada (`dados/README.md`)
-- [ ] Gerar o ZIP: `cd data-science && python gerar_zip_entrega.py` (sai em `data-science/entrega/`)
-- [ ] Abrir o ZIP e conferir: `.ipynb` com as saídas, `.txt` e os CSV descompactados
-- [ ] Enviar no Teams (um envio por equipe)
+- [x] Gerar o ZIP: `cd data-science && python gerar_zip_entrega.py` (sai em `data-science/entrega/`)
+- [x] Abrir o ZIP e conferir: `.ipynb` com as saídas, `.txt` e os CSV descompactados
+- [x] Enviar no Teams (um envio por equipe)
 
 ## 🗄️ Database Design
 - [x] 1. PDF com capa (integrantes em ordem alfabética, RM, equipe e solução), sumário, objetivo/escopo e funcionalidades (10)
@@ -67,15 +67,15 @@ Documentação, PDF único (30):
 ## 🧮 Dynamic Programming
 - [x] Código com grafos, memoização e tabulação, mais testes e exemplos
 - [x] README com nomes, RMs, descrição dos algoritmos e das funcionalidades
-- [ ] Rodar os testes uma vez (`cd dynamic-programming && python -m unittest discover -s tests -v`, 44 testes)
+- [x] Rodar os testes uma vez (`cd dynamic-programming && python -m unittest discover -s tests -v`: 44 testes ok em 17/11)
 - [ ] Gerar o ZIP único (seção 11 do [README](../dynamic-programming/README.md)) e enviar no Teams
 
-## 🌐 Network Architect Solutions
+## 🌐 Network Architect Solutions — ✅ finalizado
 - [x] `.pkt` com VLANs por setor, router-on-a-stick, DHCP, NAT/PAT, servidor com DNS e HTTP (Ficha), ACL estendida, SSH com enable secret e Wi-Fi WPA2
 - [x] PDF com a Ficha, topologia, endereçamento, trechos de `show running-config` e prints dos testes
-- [ ] **Confirmar o número da equipe**: a rubrica pede `192.168.X.0/24` com X = número da equipe, e o projeto usa **X = 10**. Se não for 10, ajustar ou explicar no PDF
-- [ ] A rubrica pede "um pool DHCP por VLAN", e hoje só há pools de Cidadão e Equipe. Citar no PDF que Servidores e Gerência usam IP fixo de propósito
-- [ ] Enviar o `.pkt` e o PDF (um envio por equipe)
+- [x] **Confirmar o número da equipe**: a rubrica pede `192.168.X.0/24` com X = número da equipe, e o projeto usa **X = 10**. Se não for 10, ajustar ou explicar no PDF
+- [x] A rubrica pede "um pool DHCP por VLAN", e hoje só há pools de Cidadão e Equipe. Citar no PDF que Servidores e Gerência usam IP fixo de propósito
+- [x] Enviar o `.pkt` e o PDF (um envio por equipe)
 
 ---
 
