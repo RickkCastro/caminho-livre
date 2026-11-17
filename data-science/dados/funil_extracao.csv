@@ -1,0 +1,14 @@
+base,etapa,linhas
+SSP,"1. linhas no arquivo original (estado de SP, 2025)",1161132
+SSP,2. ocorridas na cidade de São Paulo,468052
+SSP,3. natureza ROUBO - OUTROS ou FURTO - OUTROS (extrato),346702
+SP156,sp156_2025_1tri.csv: linhas no arquivo,1048575
+SP156,sp156_2025_1tri.csv: linhas totalmente vazias (removidas),305671
+SP156,sp156_2025_2tri.csv: linhas no arquivo,589980
+SP156,sp156_2025_2tri.csv: linhas totalmente vazias (removidas),0
+SP156,sp156_2025_3tri.csv: linhas no arquivo,501685
+SP156,sp156_2025_3tri.csv: linhas totalmente vazias (removidas),0
+SP156,sp156_2025_4tri.csv: linhas no arquivo,479701
+SP156,sp156_2025_4tri.csv: linhas totalmente vazias (removidas),0
+SP156,1. solicitações de 2025 (sem linhas vazias),2314270
+SP156,2. tema 'Rua e bairro' (extrato),336555

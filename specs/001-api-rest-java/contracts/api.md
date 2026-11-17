@@ -16,7 +16,7 @@ Espelha `api-java/README.md` (Princípio V).
 | GET | `/categorias` | — | 200 `[{ id, nome, tipo, pesoBase, pesoNoturno, bloqueiaMobilidade }]` | US02 |
 | POST 🔒 | `/ocorrencias` | `{ idCategoria, latitude, longitude, logradouro?, bairro?, descricao?, fotoUrl? }` | 201 `OcorrenciaDetalhe` | US02 |
 | GET | `/ocorrencias` | `?tipo=&status=&bairro=` (padrão: ativas) | 200 `[OcorrenciaResumo]` | US03 |
-| GET | `/rotas` | `?origemLat=&origemLon=&destinoLat=&destinoLon=&hora=&mobilidadeReduzida=S\|N&ignorar=1,5` | 200 `{ comum:{ pontos:[{lat,lon}], distanciaM }, caminhoLivre:{...}\|null, aviso? }` · 422 fora da área | US04, US11 |
+| GET | `/rotas` | `?origemLat=&origemLon=&destinoLat=&destinoLon=&hora=&mobilidadeReduzida=S\|N&ignorar=1,5` | 200 `{ comum:{ pontos:[{lat,lon}], distanciaM }, caminhoLivre:{...}\|null, aviso? }` · 400 lat/lon fora da faixa · 422 sem rua perto da origem/destino · 503 serviço de rotas fora (OpenRouteService) | US04, US11 |
 | GET | `/trechos/pesos` | `?hora=0-23&mobilidadeReduzida=S\|N&ignorar=1,5` (sem idUsuario — LGPD) | 200 `[{ idTrecho, origem:{id,lat,lon}, destino:{id,lat,lon}, distanciaM, peso, bloqueado }]` | US04 |
 
 ## Should
@@ -28,7 +28,7 @@ Espelha `api-java/README.md` (Princípio V).
 | GET / PUT 🔒 | `/usuarios/{id}/preferencias` | `[{ idCategoria, considerar }]` | 200 lista | US11 |
 | GET / PUT 🔒 | `/usuarios/{id}` | `{ nome?, fotoUrl?, mobilidadeReduzida? }` | 200 `Usuario` | US12, US13 |
 | DELETE 🔒 | `/usuarios/{id}` | — | 204 | US15 |
-| GET | `/ranking/bairros` | — | 200 `{ melhores:[{bairro, pontuacao, totalAtivas}], piores:[...] }` | US14 |
+| GET | `/ranking/bairros` | — | 200 `{ melhores:[{bairro, pontuacao, totalAtivas}], piores:[...] }` — piores só com alerta; um bairro não aparece nas duas listas | US14 |
 
 ## Could
 | Método | Rota | Corpo | Resposta | US |

@@ -8,10 +8,12 @@ import BuscaEndereco, { MINHA_LOCALIZACAO } from "@/components/BuscaEndereco";
 import Mapa from "@/components/Mapa";
 import ResultadoRota from "@/components/ResultadoRota";
 import { api, textoErro } from "@/lib/api";
+import { enderecoDe } from "@/lib/endereco";
 import { useSessao } from "@/lib/sessao";
-import type { Ponto, Preferencia, Rota } from "@/lib/tipos";
+import type { OcorrenciaResumo, Ponto, Preferencia, Rota } from "@/lib/tipos";
 
 type Lugar = { p: Ponto; nome: string } | null;
+const PONTO_NO_MAPA = "Ponto marcado no mapa";
 
 export default function PaginaRota() {
   const sessao = useSessao();
@@ -21,6 +23,8 @@ export default function PaginaRota() {
   const [mobilidadeVisitante, setMobilidadeVisitante] = useState(false);
   const [ignorar, setIgnorar] = useState<number[]>([]);
   const [rota, setRota] = useState<Rota | null>(null);
+  const [alertas, setAlertas] = useState<OcorrenciaResumo[]>([]);
+  const [marcando, setMarcando] = useState<"origem" | "destino" | null>(null);
   const [erro, setErro] = useState("");
   const [buscando, setBuscando] = useState(false);
 
@@ -31,6 +35,11 @@ export default function PaginaRota() {
         setOrigem((atual) => atual ?? { p: { lat: p.coords.latitude, lon: p.coords.longitude }, nome: MINHA_LOCALIZACAO }),
       () => {},
     );
+  }, []);
+
+  useEffect(() => {
+    // Alertas no mapa da rota: mostram do que a linha Caminho Livre está desviando.
+    api<OcorrenciaResumo[]>("/ocorrencias").then(setAlertas, () => {});
   }, []);
 
   useEffect(() => {
@@ -47,6 +56,18 @@ export default function PaginaRota() {
     setRota(null);
     definir(p && { p, nome });
   };
+
+  // Toque no mapa marca o ponto escolhido no seletor; sem escolha, o que estiver faltando.
+  const alvo = marcando ?? (origem && !destino ? "destino" : "origem");
+  async function tocar(p: Ponto) {
+    const definir = alvo === "origem" ? setOrigem : setDestino;
+    escolher(definir)(p, PONTO_NO_MAPA);
+    if (alvo === "origem") setMarcando("destino");
+    const { logradouro, bairro } = await enderecoDe(p.lat, p.lon);
+    const nome = [logradouro, bairro].filter(Boolean).join(", ");
+    // Só troca o nome se a pessoa não marcou outro ponto enquanto o endereço chegava.
+    if (nome) definir((atual) => (atual?.p === p ? { p, nome } : atual));
+  }
 
   async function verRota() {
     if (!origem || !destino) return;
@@ -131,9 +152,28 @@ export default function PaginaRota() {
         {rota && <ResultadoRota rota={rota} />}
       </div>
 
-      <div className="px-4 pb-6 md:p-0">
+      <div className="relative px-4 pb-6 md:p-0">
+        <fieldset className="absolute top-3 left-7 z-[1000] rounded-2xl bg-white p-2 shadow-md md:left-4">
+          <legend className="sr-only">Tocar no mapa marca</legend>
+          <p aria-hidden="true" className="px-1 pb-1 text-xs font-semibold text-neutral-600">
+            Tocar no mapa marca
+          </p>
+          <div className="grid grid-cols-2 gap-1 rounded-xl bg-neutral-100 p-1">
+            {(["origem", "destino"] as const).map((m) => (
+              <label
+                key={m}
+                className="flex min-h-12 cursor-pointer items-center justify-center rounded-lg px-3 text-sm font-semibold has-checked:bg-marca-agua has-focus-visible:outline-3"
+              >
+                <input type="radio" name="marcando" className="sr-only" checked={alvo === m} onChange={() => setMarcando(m)} />
+                {m === "origem" ? "Origem" : "Destino"}
+              </label>
+            ))}
+          </div>
+        </fieldset>
         <Mapa
-          className="h-80 rounded-2xl md:h-full md:rounded-none"
+          alertas={alertas}
+          aoTocar={tocar}
+          className="h-96 rounded-2xl md:h-full md:rounded-none"
           rota={rota}
           pontos={[
             ["Origem", origem?.p ?? null],

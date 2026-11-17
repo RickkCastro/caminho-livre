@@ -1,0 +1,757 @@
+{
+  "nome": "Bairro simulado no entorno da FIAP Paulista (Bela Vista, São Paulo)",
+  "fonte": "Dados simulados pela equipe para demonstrar o algoritmo: ruas, coordenadas e alertas são fictícios e não há dados pessoais. Distâncias calculadas com a fórmula de Haversine a partir das coordenadas.",
+  "categorias": [
+    {
+      "id": 1,
+      "nome": "Degrau",
+      "tipo": "ACESSIBILIDADE",
+      "pesoBase": 10,
+      "pesoNoturno": 10,
+      "bloqueiaMobilidade": "S"
+    },
+    {
+      "id": 2,
+      "nome": "Falta de rampa",
+      "tipo": "ACESSIBILIDADE",
+      "pesoBase": 8,
+      "pesoNoturno": 8,
+      "bloqueiaMobilidade": "S"
+    },
+    {
+      "id": 3,
+      "nome": "Buraco",
+      "tipo": "ACESSIBILIDADE",
+      "pesoBase": 3,
+      "pesoNoturno": 5,
+      "bloqueiaMobilidade": "N"
+    },
+    {
+      "id": 4,
+      "nome": "Calçada quebrada",
+      "tipo": "ACESSIBILIDADE",
+      "pesoBase": 2,
+      "pesoNoturno": 3,
+      "bloqueiaMobilidade": "N"
+    },
+    {
+      "id": 5,
+      "nome": "Obra",
+      "tipo": "ACESSIBILIDADE",
+      "pesoBase": 2,
+      "pesoNoturno": 2,
+      "bloqueiaMobilidade": "N"
+    },
+    {
+      "id": 6,
+      "nome": "Rua escura",
+      "tipo": "SEGURANCA",
+      "pesoBase": 0,
+      "pesoNoturno": 8,
+      "bloqueiaMobilidade": "N"
+    },
+    {
+      "id": 7,
+      "nome": "Local deserto",
+      "tipo": "SEGURANCA",
+      "pesoBase": 1,
+      "pesoNoturno": 6,
+      "bloqueiaMobilidade": "N"
+    },
+    {
+      "id": 8,
+      "nome": "Assalto",
+      "tipo": "SEGURANCA",
+      "pesoBase": 5,
+      "pesoNoturno": 9,
+      "bloqueiaMobilidade": "N"
+    },
+    {
+      "id": 9,
+      "nome": "Alagamento",
+      "tipo": "CLIMA",
+      "pesoBase": 6,
+      "pesoNoturno": 6,
+      "bloqueiaMobilidade": "N"
+    }
+  ],
+  "localizacoes": [
+    {
+      "id": 1,
+      "latitude": -23.564381,
+      "longitude": -46.65714,
+      "logradouro": "Rua das Acácias × Rua dos Sabiás",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 2,
+      "latitude": -23.564381,
+      "longitude": -46.656355,
+      "logradouro": "Rua das Acácias, 80",
+      "bairro": "Bela Vista",
+      "nome": "Faculdade"
+    },
+    {
+      "id": 3,
+      "latitude": -23.564381,
+      "longitude": -46.655178,
+      "logradouro": "Rua das Acácias, 200",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 4,
+      "latitude": -23.564381,
+      "longitude": -46.654,
+      "logradouro": "Rua das Acácias × Rua das Andorinhas",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 5,
+      "latitude": -23.564381,
+      "longitude": -46.653215,
+      "logradouro": "Rua das Acácias, 400",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 6,
+      "latitude": -23.564381,
+      "longitude": -46.652431,
+      "logradouro": "Rua das Acácias × Rua dos Beija-flores",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 7,
+      "latitude": -23.564966,
+      "longitude": -46.653804,
+      "logradouro": "Rua das Andorinhas, 65 (curva)",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 8,
+      "latitude": -23.564966,
+      "longitude": -46.652431,
+      "logradouro": "Rua dos Beija-flores, 65",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 9,
+      "latitude": -23.56555,
+      "longitude": -46.65714,
+      "logradouro": "Avenida Central × Rua dos Sabiás",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 10,
+      "latitude": -23.56555,
+      "longitude": -46.65557,
+      "logradouro": "Avenida Central × Rua dos Bem-te-vis",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 11,
+      "latitude": -23.56555,
+      "longitude": -46.654,
+      "logradouro": "Avenida Central × Rua das Andorinhas",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 12,
+      "latitude": -23.56555,
+      "longitude": -46.652431,
+      "logradouro": "Avenida Central × Rua dos Beija-flores",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 13,
+      "latitude": -23.56555,
+      "longitude": -46.652038,
+      "logradouro": "Avenida Central, 520",
+      "bairro": "Bela Vista",
+      "nome": "Padaria"
+    },
+    {
+      "id": 14,
+      "latitude": -23.56555,
+      "longitude": -46.651646,
+      "logradouro": "Avenida Central, 560",
+      "bairro": "Bela Vista",
+      "nome": "Estação de Metrô"
+    },
+    {
+      "id": 15,
+      "latitude": -23.56555,
+      "longitude": -46.650861,
+      "logradouro": "Avenida Central × Rua dos Tucanos",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 16,
+      "latitude": -23.56609,
+      "longitude": -46.65714,
+      "logradouro": "Rua dos Sabiás, 190",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 17,
+      "latitude": -23.566629,
+      "longitude": -46.65714,
+      "logradouro": "Rua das Paineiras × Rua dos Sabiás",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 18,
+      "latitude": -23.566629,
+      "longitude": -46.656748,
+      "logradouro": "Rua das Paineiras, 40",
+      "bairro": "Bela Vista",
+      "nome": "Casa da Dona Marta"
+    },
+    {
+      "id": 19,
+      "latitude": -23.566629,
+      "longitude": -46.65557,
+      "logradouro": "Rua das Paineiras × Rua dos Bem-te-vis",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 20,
+      "latitude": -23.566629,
+      "longitude": -46.654785,
+      "logradouro": "Rua das Paineiras, 240",
+      "bairro": "Bela Vista",
+      "nome": "Mercado"
+    },
+    {
+      "id": 21,
+      "latitude": -23.566629,
+      "longitude": -46.654,
+      "logradouro": "Rua das Paineiras × Rua das Andorinhas",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 22,
+      "latitude": -23.566629,
+      "longitude": -46.652431,
+      "logradouro": "Rua das Paineiras × Rua dos Beija-flores",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 23,
+      "latitude": -23.566629,
+      "longitude": -46.651253,
+      "logradouro": "Rua das Paineiras, 600",
+      "bairro": "Bela Vista",
+      "nome": "Posto de Saúde"
+    },
+    {
+      "id": 24,
+      "latitude": -23.566629,
+      "longitude": -46.650861,
+      "logradouro": "Rua das Paineiras × Rua dos Tucanos",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 25,
+      "latitude": -23.567349,
+      "longitude": -46.650861,
+      "logradouro": "Rua dos Tucanos, 330",
+      "bairro": "Bela Vista",
+      "nome": "Casa do Seu Antônio"
+    },
+    {
+      "id": 26,
+      "latitude": -23.567619,
+      "longitude": -46.65714,
+      "logradouro": "Rua dos Jacarandás × Rua dos Sabiás",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 27,
+      "latitude": -23.567619,
+      "longitude": -46.65557,
+      "logradouro": "Rua dos Jacarandás × Rua dos Bem-te-vis",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 28,
+      "latitude": -23.567619,
+      "longitude": -46.654785,
+      "logradouro": "Rua dos Jacarandás, 240",
+      "bairro": "Bela Vista",
+      "nome": "Praça"
+    },
+    {
+      "id": 29,
+      "latitude": -23.567619,
+      "longitude": -46.654,
+      "logradouro": "Rua dos Jacarandás × Rua das Andorinhas",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 30,
+      "latitude": -23.567619,
+      "longitude": -46.652431,
+      "logradouro": "Rua dos Jacarandás × Rua dos Beija-flores",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 31,
+      "latitude": -23.567619,
+      "longitude": -46.650861,
+      "logradouro": "Rua dos Jacarandás × Rua dos Tucanos",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 101,
+      "latitude": -23.564381,
+      "longitude": -46.655129,
+      "logradouro": "Rua das Acácias, 205",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 102,
+      "latitude": -23.564381,
+      "longitude": -46.653255,
+      "logradouro": "Rua das Acácias, 396",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 103,
+      "latitude": -23.565011,
+      "longitude": -46.652411,
+      "logradouro": "Rua dos Beija-flores, 70",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 104,
+      "latitude": -23.566629,
+      "longitude": -46.654707,
+      "logradouro": "Rua das Paineiras, 248",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 105,
+      "latitude": -23.566602,
+      "longitude": -46.653981,
+      "logradouro": "Rua das Paineiras × Rua das Andorinhas",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 106,
+      "latitude": -23.567619,
+      "longitude": -46.654825,
+      "logradouro": "Rua dos Jacarandás, 236",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 107,
+      "latitude": -23.566647,
+      "longitude": -46.65088,
+      "logradouro": "Rua das Paineiras × Rua dos Tucanos",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 108,
+      "latitude": -23.566737,
+      "longitude": -46.650861,
+      "logradouro": "Rua dos Tucanos, 262",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 109,
+      "latitude": -23.566108,
+      "longitude": -46.657111,
+      "logradouro": "Rua dos Sabiás, 192",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 110,
+      "latitude": -23.565532,
+      "longitude": -46.65402,
+      "logradouro": "Avenida Central × Rua das Andorinhas",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 111,
+      "latitude": -23.565559,
+      "longitude": -46.655531,
+      "logradouro": "Avenida Central × Rua dos Bem-te-vis",
+      "bairro": "Bela Vista"
+    },
+    {
+      "id": 112,
+      "latitude": -23.567592,
+      "longitude": -46.653961,
+      "logradouro": "Rua dos Jacarandás × Rua das Andorinhas",
+      "bairro": "Bela Vista"
+    }
+  ],
+  "trechos": [
+    {
+      "id": 1,
+      "idOrigem": 1,
+      "idDestino": 2,
+      "distanciaM": 80,
+      "logradouro": "Rua das Acácias"
+    },
+    {
+      "id": 2,
+      "idOrigem": 2,
+      "idDestino": 3,
+      "distanciaM": 120,
+      "logradouro": "Rua das Acácias"
+    },
+    {
+      "id": 3,
+      "idOrigem": 3,
+      "idDestino": 4,
+      "distanciaM": 120,
+      "logradouro": "Rua das Acácias"
+    },
+    {
+      "id": 4,
+      "idOrigem": 4,
+      "idDestino": 5,
+      "distanciaM": 80,
+      "logradouro": "Rua das Acácias"
+    },
+    {
+      "id": 5,
+      "idOrigem": 5,
+      "idDestino": 6,
+      "distanciaM": 80,
+      "logradouro": "Rua das Acácias"
+    },
+    {
+      "id": 6,
+      "idOrigem": 1,
+      "idDestino": 9,
+      "distanciaM": 130,
+      "logradouro": "Rua dos Sabiás"
+    },
+    {
+      "id": 7,
+      "idOrigem": 9,
+      "idDestino": 16,
+      "distanciaM": 60,
+      "logradouro": "Rua dos Sabiás"
+    },
+    {
+      "id": 8,
+      "idOrigem": 16,
+      "idDestino": 17,
+      "distanciaM": 60,
+      "logradouro": "Rua dos Sabiás"
+    },
+    {
+      "id": 9,
+      "idOrigem": 17,
+      "idDestino": 26,
+      "distanciaM": 110,
+      "logradouro": "Rua dos Sabiás"
+    },
+    {
+      "id": 10,
+      "idOrigem": 4,
+      "idDestino": 7,
+      "distanciaM": 68,
+      "logradouro": "Rua das Andorinhas"
+    },
+    {
+      "id": 11,
+      "idOrigem": 7,
+      "idDestino": 11,
+      "distanciaM": 68,
+      "logradouro": "Rua das Andorinhas"
+    },
+    {
+      "id": 12,
+      "idOrigem": 11,
+      "idDestino": 21,
+      "distanciaM": 120,
+      "logradouro": "Rua das Andorinhas"
+    },
+    {
+      "id": 13,
+      "idOrigem": 21,
+      "idDestino": 29,
+      "distanciaM": 110,
+      "logradouro": "Rua das Andorinhas"
+    },
+    {
+      "id": 14,
+      "idOrigem": 6,
+      "idDestino": 8,
+      "distanciaM": 65,
+      "logradouro": "Rua dos Beija-flores"
+    },
+    {
+      "id": 15,
+      "idOrigem": 8,
+      "idDestino": 12,
+      "distanciaM": 65,
+      "logradouro": "Rua dos Beija-flores"
+    },
+    {
+      "id": 16,
+      "idOrigem": 12,
+      "idDestino": 22,
+      "distanciaM": 120,
+      "logradouro": "Rua dos Beija-flores"
+    },
+    {
+      "id": 17,
+      "idOrigem": 22,
+      "idDestino": 30,
+      "distanciaM": 110,
+      "logradouro": "Rua dos Beija-flores"
+    },
+    {
+      "id": 18,
+      "idOrigem": 10,
+      "idDestino": 19,
+      "distanciaM": 120,
+      "logradouro": "Rua dos Bem-te-vis"
+    },
+    {
+      "id": 19,
+      "idOrigem": 19,
+      "idDestino": 27,
+      "distanciaM": 110,
+      "logradouro": "Rua dos Bem-te-vis"
+    },
+    {
+      "id": 20,
+      "idOrigem": 15,
+      "idDestino": 24,
+      "distanciaM": 120,
+      "logradouro": "Rua dos Tucanos"
+    },
+    {
+      "id": 21,
+      "idOrigem": 24,
+      "idDestino": 25,
+      "distanciaM": 80,
+      "logradouro": "Rua dos Tucanos"
+    },
+    {
+      "id": 22,
+      "idOrigem": 25,
+      "idDestino": 31,
+      "distanciaM": 30,
+      "logradouro": "Rua dos Tucanos"
+    },
+    {
+      "id": 23,
+      "idOrigem": 9,
+      "idDestino": 10,
+      "distanciaM": 160,
+      "logradouro": "Avenida Central"
+    },
+    {
+      "id": 24,
+      "idOrigem": 10,
+      "idDestino": 11,
+      "distanciaM": 160,
+      "logradouro": "Avenida Central"
+    },
+    {
+      "id": 25,
+      "idOrigem": 11,
+      "idDestino": 12,
+      "distanciaM": 160,
+      "logradouro": "Avenida Central"
+    },
+    {
+      "id": 26,
+      "idOrigem": 12,
+      "idDestino": 13,
+      "distanciaM": 40,
+      "logradouro": "Avenida Central"
+    },
+    {
+      "id": 27,
+      "idOrigem": 13,
+      "idDestino": 14,
+      "distanciaM": 40,
+      "logradouro": "Avenida Central"
+    },
+    {
+      "id": 28,
+      "idOrigem": 14,
+      "idDestino": 15,
+      "distanciaM": 80,
+      "logradouro": "Avenida Central"
+    },
+    {
+      "id": 29,
+      "idOrigem": 17,
+      "idDestino": 18,
+      "distanciaM": 40,
+      "logradouro": "Rua das Paineiras"
+    },
+    {
+      "id": 30,
+      "idOrigem": 18,
+      "idDestino": 19,
+      "distanciaM": 120,
+      "logradouro": "Rua das Paineiras"
+    },
+    {
+      "id": 31,
+      "idOrigem": 19,
+      "idDestino": 20,
+      "distanciaM": 80,
+      "logradouro": "Rua das Paineiras"
+    },
+    {
+      "id": 32,
+      "idOrigem": 20,
+      "idDestino": 21,
+      "distanciaM": 80,
+      "logradouro": "Rua das Paineiras"
+    },
+    {
+      "id": 33,
+      "idOrigem": 21,
+      "idDestino": 22,
+      "distanciaM": 160,
+      "logradouro": "Rua das Paineiras"
+    },
+    {
+      "id": 34,
+      "idOrigem": 22,
+      "idDestino": 23,
+      "distanciaM": 120,
+      "logradouro": "Rua das Paineiras"
+    },
+    {
+      "id": 35,
+      "idOrigem": 23,
+      "idDestino": 24,
+      "distanciaM": 40,
+      "logradouro": "Rua das Paineiras"
+    },
+    {
+      "id": 36,
+      "idOrigem": 26,
+      "idDestino": 27,
+      "distanciaM": 160,
+      "logradouro": "Rua dos Jacarandás"
+    },
+    {
+      "id": 37,
+      "idOrigem": 27,
+      "idDestino": 28,
+      "distanciaM": 80,
+      "logradouro": "Rua dos Jacarandás"
+    },
+    {
+      "id": 38,
+      "idOrigem": 28,
+      "idDestino": 29,
+      "distanciaM": 80,
+      "logradouro": "Rua dos Jacarandás"
+    },
+    {
+      "id": 39,
+      "idOrigem": 29,
+      "idDestino": 30,
+      "distanciaM": 160,
+      "logradouro": "Rua dos Jacarandás"
+    },
+    {
+      "id": 40,
+      "idOrigem": 30,
+      "idDestino": 31,
+      "distanciaM": 160,
+      "logradouro": "Rua dos Jacarandás"
+    }
+  ],
+  "ocorrencias": [
+    {
+      "id": 1,
+      "idCategoria": 6,
+      "idLocalizacao": 101,
+      "status": "CONFIRMADA",
+      "descricao": "Poste apagado há semanas"
+    },
+    {
+      "id": 2,
+      "idCategoria": 6,
+      "idLocalizacao": 102,
+      "status": "ABERTA",
+      "descricao": "Segundo poste apagado na mesma rua"
+    },
+    {
+      "id": 3,
+      "idCategoria": 7,
+      "idLocalizacao": 103,
+      "status": "CONFIRMADA",
+      "descricao": "Rua vazia depois que as lojas fecham"
+    },
+    {
+      "id": 4,
+      "idCategoria": 4,
+      "idLocalizacao": 104,
+      "status": "CONFIRMADA",
+      "descricao": "Calçada quebrada em frente ao mercado"
+    },
+    {
+      "id": 5,
+      "idCategoria": 2,
+      "idLocalizacao": 105,
+      "status": "CONFIRMADA",
+      "descricao": "Guia alta sem rampa na esquina"
+    },
+    {
+      "id": 6,
+      "idCategoria": 1,
+      "idLocalizacao": 106,
+      "status": "ABERTA",
+      "descricao": "Degrau alto na calçada da praça"
+    },
+    {
+      "id": 7,
+      "idCategoria": 9,
+      "idLocalizacao": 107,
+      "status": "ABERTA",
+      "descricao": "Esquina alaga com chuva forte"
+    },
+    {
+      "id": 8,
+      "idCategoria": 3,
+      "idLocalizacao": 108,
+      "status": "ABERTA",
+      "descricao": "Buraco escondido pela água"
+    },
+    {
+      "id": 9,
+      "idCategoria": 8,
+      "idLocalizacao": 109,
+      "status": "CONFIRMADA",
+      "descricao": "Relatos de assalto à noite"
+    },
+    {
+      "id": 10,
+      "idCategoria": 5,
+      "idLocalizacao": 110,
+      "status": "EXPIRADA",
+      "descricao": "Obra na calçada (sem confirmação em 15 dias)"
+    },
+    {
+      "id": 11,
+      "idCategoria": 3,
+      "idLocalizacao": 111,
+      "status": "RESOLVIDA",
+      "descricao": "Buraco tapado (3 pessoas negaram o alerta)"
+    },
+    {
+      "id": 12,
+      "idCategoria": 5,
+      "idLocalizacao": 112,
+      "status": "ABERTA",
+      "descricao": "Obra ocupando a calçada"
+    }
+  ]
+}

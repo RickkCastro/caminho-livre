@@ -35,6 +35,8 @@ peso = distanciaM × (1 + Σ (noturno ? pesoNoturno : pesoBase))
 
 ## Rota (RotaService)
 
+Desde 2026-11-16 a rota vem do OpenRouteService (ver research.md); o bloco abaixo é o desenho anterior, que continua valendo para `GET /trechos/pesos`.
+
 ```text
 grafo   = TRECHO como arestas não direcionadas entre LOCALIZACAO
 origem  = vértice mais próximo de (origemLat, origemLon); idem destino; > 500 m → 422

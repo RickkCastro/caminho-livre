@@ -1,0 +1,11 @@
+Global Solution 2026.2 - CitizenTech - FIAP
+Disciplina: Data Science & Statistical Computing
+Solução: Caminho Livre
+Grupo: OctoFlow - Turma 2ESPV
+
+Integrantes (nome completo - RM):
+Caio Nascimento Caminha - RM 564789
+Eduardo Duran Del Ciel - RM 562017
+Eduardo Ulisses Pereira da Silva - RM 566339
+Henrique Castro de Matos - RM 564560
+Laura Tigre Amaral - RM 565281

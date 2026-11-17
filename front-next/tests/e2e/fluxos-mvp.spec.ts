@@ -15,6 +15,10 @@ test("mapa mostra alertas e o filtro esconde só um tipo", async ({ page }) => {
 });
 
 test("visitante entra, volta ao formulário e envia alerta em até 4 toques", async ({ page }) => {
+  // Bairro do alerta (geocodificação reversa) sem depender do Nominatim de verdade.
+  await page.route("**/nominatim.openstreetmap.org/reverse**", (r) =>
+    r.fulfill({ json: { address: { road: "Avenida Paulista", house_number: "1000", suburb: "Bela Vista" } } }),
+  );
   await page.goto("/ocorrencias/nova");
   await expect(page).toHaveURL(/\/login\?voltar=%2Focorrencias%2Fnova/);
   await page.getByRole("button", { name: "Entrar com Google" }).click();
@@ -60,4 +64,18 @@ test("rota mostra duas linhas com legenda e distâncias", async ({ page }) => {
   await expect(resultado).toContainText("Rota comum (linha tracejada): 480 m");
   await expect(resultado).toContainText("Caminho Livre (linha contínua): 610 m");
   await expect(page.locator("path.leaflet-interactive")).toHaveCount(2);
+});
+
+test("rota com destino marcado tocando no mapa", async ({ page }) => {
+  await page.route("**/nominatim.openstreetmap.org/reverse**", (r) =>
+    r.fulfill({ json: { address: { road: "Rua Pamplona", house_number: "52", suburb: "Bela Vista" } } }),
+  );
+  await page.goto("/rota");
+  await expect(page.getByLabel("De onde você sai?")).toHaveValue("Minha localização");
+  await expect(page.getByRole("radio", { name: "Destino" })).toBeChecked(); // falta o destino
+
+  await page.locator(".leaflet-container").click({ position: { x: 60, y: 340 } }); // canto sem marcador de alerta
+  await expect(page.getByLabel("Para onde você vai?")).toHaveValue("Rua Pamplona, 52, Bela Vista");
+  await page.getByRole("button", { name: "Ver rota" }).click();
+  await expect(page.getByLabel("Resultado da rota")).toContainText("Caminho Livre");
 });

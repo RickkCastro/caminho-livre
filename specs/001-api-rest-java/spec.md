@@ -59,7 +59,7 @@ Front lista ocorrências ativas com filtros por tipo (ACESSIBILIDADE, SEGURANCA,
 
 ### User Story 4 - Rota acessível (Priority: P1) — US04, US11
 
-O front pede a rota entre origem e destino; a API calcula os pesos dos trechos para o horário e o perfil (mobilidade reduzida e categorias ignoradas, sem identificar o usuário — LGPD) e devolve a rota comum e a rota Caminho Livre (Dijkstra).
+O front pede a rota entre origem e destino; a API pede ao OpenRouteService a rota comum (a pé) e a rota Caminho Livre, que desvia dos alertas relevantes para o horário e o perfil (mobilidade reduzida e categorias ignoradas, sem identificar o usuário — LGPD), por ruas reais de todo o Brasil.
 
 **Why this priority**: Rota que desvia de alertas é o diferencial do produto.
 
@@ -154,7 +154,7 @@ O front pede a rota entre origem e destino; a API calcula os pesos dos trechos p
 - Avaliação de ocorrência `EXPIRADA`/`RESOLVIDA` → 422.
 - Usuário excluído tentando entrar de novo com Google → nova conta (dados antigos não voltam).
 - `ignorar` com id de categoria inexistente → ignorado.
-- Origem ou destino a mais de 500 m de qualquer vértice → 422 "Local fora da área mapeada".
+- Origem ou destino sem rua por perto (ex.: no mar) → 422 "Não encontramos uma rua perto da origem ou do destino"; OpenRouteService fora do ar ou sem cota → 503.
 - `hora` ausente em `/trechos/pesos` → usa a hora atual do servidor (America/Sao_Paulo).
 - Banco indisponível → 503 no formato de erro padrão, sem stack trace.
 
@@ -166,8 +166,8 @@ O front pede a rota entre origem e destino; a API calcula os pesos dos trechos p
 - **FR-002** (RF02): No primeiro login, DEVE criar o usuário com nome, e-mail, foto e google_id únicos.
 - **FR-003** (RF04, RF05): DEVE criar ocorrências com categoria e localização obrigatórias; foto e descrição opcionais; categorias agrupadas em ACESSIBILIDADE, SEGURANCA, CLIMA.
 - **FR-004** (RF07, RF08, RNF10): `GET /ocorrencias` DEVE devolver apenas ocorrências ativas por padrão e aceitar filtros `tipo`, `status`, `bairro`.
-- **FR-005a** (RF09, RF11): `GET /rotas` DEVE calcular por Dijkstra a rota comum (custo = distância) e a rota Caminho Livre (custo = peso, sem trechos bloqueados) entre os vértices mais próximos da origem e do destino informados.
-- **FR-005** (RF09, RF10, RF17): `GET /trechos/pesos` e `GET /rotas` DEVEM calcular `peso = distância × (1 + Σ pesos ativos próximos)`, com `peso_noturno` entre 19h e 6h, ignorando as categorias de `ignorar` e marcando como bloqueados, quando `mobilidadeReduzida=S`, os trechos com categoria `bloqueia_mobilidade = S`. A rota não recebe nem expõe `idUsuario`.
+- **FR-005a** (RF09, RF11): `GET /rotas` DEVE calcular, pelo OpenRouteService (ruas reais do OpenStreetMap, Brasil inteiro), a rota comum (perfil `foot-walking`) e a rota Caminho Livre, que evita um quadrado de 50 m em volta de cada alerta ativo com peso ≥ 3 na hora pedida (ou com `bloqueia_mobilidade = S` para mobilidade reduzida, que também usa o perfil `wheelchair`), exceto categorias em `ignorar`. Sem caminho que desvie → `caminhoLivre = null` com aviso. (Até 16/11 era Dijkstra sobre a tabela TRECHO, restrito à Av. Paulista; `GET /trechos/pesos` continua disponível.)
+- **FR-005** (RF09, RF10, RF17): `GET /trechos/pesos` DEVE calcular `peso = distância × (1 + Σ pesos ativos próximos)`, com `peso_noturno` entre 19h e 6h, ignorando as categorias de `ignorar` e marcando como bloqueados, quando `mobilidadeReduzida=S`, os trechos com categoria `bloqueia_mobilidade = S`. Em `GET /rotas` vale o FR-005a (desvio por limiar de peso no OpenRouteService). A rota não recebe nem expõe `idUsuario`.
 - **FR-006** (RF12, RF13): DEVE aceitar uma avaliação por usuário por ocorrência, recusar a autoavaliação, e mudar status com 3 👍 (`CONFIRMADA`) ou 3 👎 (`RESOLVIDA`).
 - **FR-007** (RF14): DEVE expirar ocorrências `ABERTA` 15 dias após o registro.
 - **FR-008** (RF15, RF16): DEVE expor detalhe da ocorrência e o histórico do usuário com totais de 👍/👎.

@@ -49,7 +49,7 @@ export function mock(metodo: string, caminho: string, corpo?: unknown): unknown 
         status: "ABERTA",
         descricao: n.descricao ?? null,
         fotoUrl: n.fotoUrl ?? null,
-        bairro: null,
+        bairro: n.bairro ?? null,
         dtRegistro: new Date().toISOString(),
         totalConfirma: 0,
         totalNega: 0,

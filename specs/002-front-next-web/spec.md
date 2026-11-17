@@ -20,6 +20,11 @@
 ### Session 2026-11-13
 
 - Q: A rota ainda aceita toque no mapa para origem/destino? → A: Não. Origem e destino são escolhidos só por endereço digitado (com sugestões) ou "Usar minha localização"; o mapa da rota apenas exibe os pontos e as linhas. (Substitui a resposta de 2026-11-12 sobre origem e destino.) O toque no mapa continua só para marcar o local de um alerta.
+
+### Session 2026-11-16
+
+- Q: A rota volta a aceitar toque no mapa? → A: Sim, além do endereço e da localização atual. Um seletor sobre o mapa ("Tocar no mapa marca: Origem | Destino") escolhe o ponto; sem escolha, o toque preenche o que falta. O campo mostra a rua e o bairro do ponto (Nominatim reverse). (Substitui a resposta de 2026-11-13 sobre toque no mapa.)
+- Q: Onde a rota funciona? → A: No Brasil inteiro, por ruas reais (OpenRouteService via API Java); a busca de endereço também cobre o país todo.
 - Q: Qual o layout? → A: Minimalista e mobile first: fundo branco, cabeçalho branco com logo em `#76C1A9`, mapa em tela cheia na tela inicial com filtros e "Avisar problema" flutuando; navegação inferior no celular e no cabeçalho a partir de 768 px; na rota, painel lateral + mapa no desktop.
 - Q: Onde fica "Sair"? → A: No perfil; o cabeçalho mostra a inicial/foto que leva ao perfil. Ao sair, o usuário vira visitante no mapa.
 - Q: E se o app rodar sem `NEXT_PUBLIC_API_URL`? → A: Usa os mocks e um login de teste automaticamente, para o app nunca abrir quebrado.
@@ -87,7 +92,7 @@ Tela `/rota`: origem e destino; mostra rota comum e rota Caminho Livre lado a la
 
 **Acceptance Scenarios**:
 
-0. **Given** GPS permitido, **When** abre `/rota`, **Then** a origem já vem preenchida com "Minha localização"; origem e destino podem ser digitados (com sugestões de endereço) ou definidos com "Usar minha localização", e "Inverter" troca os dois. Tocar no mapa não marca pontos.
+0. **Given** GPS permitido, **When** abre `/rota`, **Then** a origem já vem preenchida com "Minha localização"; origem e destino podem ser digitados (com sugestões de endereço) ou definidos com "Usar minha localização", e "Inverter" troca os dois. Também podem ser marcados tocando no mapa, com o seletor "Tocar no mapa marca: Origem | Destino".
 1. **Given** origem e destino, **When** toca "Ver rota", **Then** em ≤ 5 s vê as duas rotas, legenda em texto e as distâncias, com origem, destino e linhas enquadrados no mapa.
 1a. **Given** falta origem ou destino, **When** olha o botão, **Then** "Ver rota" fica desabilitado com texto dizendo o que falta.
 2. **Given** usuário com mobilidade reduzida, **When** pede a rota, **Then** a rota Caminho Livre não passa por trechos bloqueados e há aviso se não existir caminho possível.
@@ -180,7 +185,7 @@ Transversal a todas as telas.
 - Falha no envio da foto: avisar e permitir enviar o alerta sem foto.
 - Busca de endereço sem resultado ou indisponível: mostrar "Endereço não encontrado. Tente com o número ou o bairro." (ou usar "Usar minha localização").
 - GPS negado na rota: a origem fica vazia e a pessoa digita o endereço; aviso em texto se tocar em "Usar minha localização".
-- Destino fora da área mapeada (API responde 422): mostrar a mensagem do campo `erro`.
+- Origem ou destino sem rua por perto (API responde 422) ou serviço de rotas fora (503): mostrar a mensagem do campo `erro`.
 - Visitante no detalhe do alerta: botões 👍/👎 aparecem com o texto "Entre para avaliar".
 - Sem alertas na região: texto "Nenhum problema avisado por aqui".
 
@@ -192,7 +197,7 @@ Transversal a todas as telas.
 - **FR-001** (RF01–RF03): DEVE oferecer login via Google, enviar o ID token para `POST /auth/google` e permitir sair apagando a sessão local. A sessão DEVE durar até o usuário tocar "Sair", com renovação automática do token do Google.
 - **FR-002** (RF07, RF08): DEVE exibir alertas ativos no mapa com cor + forma + rótulo por tipo e filtros por tipo.
 - **FR-003** (RF04–RF06, RNF03): DEVE permitir enviar alerta com categoria e local obrigatórios, foto e descrição opcionais, em até 4 toques.
-- **FR-004** (RF09–RF11): DEVE mostrar rota comum e rota Caminho Livre lado a lado com distâncias. Origem e destino DEVEM ser informados por endereço (busca com sugestões) ou localização atual; a rota NÃO usa toque no mapa.
+- **FR-004** (RF09–RF11): DEVE mostrar rota comum e rota Caminho Livre lado a lado com distâncias. Origem e destino DEVEM poder ser informados por endereço (busca com sugestões), localização atual ou toque no mapa, em qualquer lugar do Brasil; as linhas seguem as ruas.
 - **FR-005** (RF12, RF15): DEVE exibir detalhe do alerta e permitir 👍/👎 uma vez, sem autoavaliação.
 - **FR-006** (RF16–RF19): DEVE oferecer onboarding de mobilidade, edição de perfil, histórico e preferências de rota.
 - **FR-007** (RF20): DEVE exibir ranking de bairros em lista acessível.

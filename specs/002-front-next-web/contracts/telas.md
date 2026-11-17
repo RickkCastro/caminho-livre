@@ -7,7 +7,7 @@ Coluna US = numeração do [backlog](../../../agile/backlog.md). Endpoints: ver 
 | `/` | Mapa com filtros Acessibilidade / Segurança / Clima e botão "Avisar problema" | `GET /ocorrencias?tipo=`, `GET /categorias` | US03 | Must |
 | `/login` | Botão "Entrar com Google" | `POST /auth/google` | US01 | Must |
 | `/ocorrencias/nova` 🔒 | Passos: foto (opcional) → categoria → local → enviar | `POST /api/upload` 🔒 (Vercel Blob), `POST /ocorrencias` | US02 | Must |
-| `/rota` | Origem e destino por endereço digitado ou "Usar minha localização" (origem começa no GPS), "Inverter", "Tenho mobilidade reduzida", duas rotas + distâncias; mapa só exibe (sem toque) | Nominatim, `GET /rotas` | US04, US11 | Must |
+| `/rota` | Origem e destino por endereço digitado ou "Usar minha localização" (origem começa no GPS), "Inverter", toque no mapa com seletor Origem/Destino, "Tenho mobilidade reduzida", duas rotas + distâncias, alertas no mapa | Nominatim, `GET /rotas` | US04, US11 | Must |
 | `/ocorrencias/[id]` | Foto, dados, totais, "Ainda está lá" / "Já foi resolvido" | `GET /ocorrencias/{id}`, `POST …/confirmacoes` 🔒 | US07, US09 | Should |
 | `/onboarding` 🔒 | "Você tem mobilidade reduzida?" Sim / Não | `PUT /usuarios/{id}` | US12 | Should |
 | `/perfil` 🔒 | Nome, foto, mobilidade, pontos, "Ajustar rota", "Sair", "Excluir minha conta" | `GET/PUT /usuarios/{id}`, `GET/PUT …/preferencias`, `DELETE /usuarios/{id}` | US06, US11, US13, US15, US17 | Must (Sair) / Should |

@@ -1,32 +1,37 @@
-# Graph Report - caminho-livre  (2026-11-12)
+# Graph Report - caminho-livre  (2026-11-16)
 
 ## Corpus Check
-- 33 files · ~53,099 words
+- 185 files · ~85,294 words
 - Verdict: corpus is large enough that graph structure adds value.
-- Unclassified: 4 file(s) not represented in the graph (top: (none) 2, .graphify-bak 1, .css 1)
+- Unclassified: 15 file(s) not represented in the graph (top: (none) 7, .css 2, .properties 2)
 
 ## Summary
-- 230 nodes · 241 edges · 35 communities (15 shown, 20 thin omitted)
-- Extraction: 89% EXTRACTED · 11% INFERRED · 0% AMBIGUOUS · INFERRED: 27 edges (avg confidence: 0.89)
-- Token cost: 25,410 input · 4,099 output
+- 1280 nodes · 2827 edges · 99 communities (56 shown, 43 thin omitted)
+- Extraction: 94% EXTRACTED · 6% INFERRED · 0% AMBIGUOUS · INFERRED: 175 edges (avg confidence: 0.86)
+- Token cost: 1,040,542 input · 4,099 output
+
+## Graph Freshness
+- Built from commit: `cfc1706b`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - Casos de uso e atores
 - Contrato REST da API
-- Ideia, personas e escopo
-- Constitution do projeto
-- Gerador de PDF (build.js)
-- Gerador do diagrama (usecase.js)
-- API Java e endpoints
+- Caminho Livre Constitution
+- nova/page.tsx
+- usecase.js
+- steps
+- common.ps1
 - Briefing da GS CitizenTech
-- Banco e regras de negócio
+- Tabela OCORRENCIA
 - Ficha CitizenTech e rede
 - Front: telas e sessão
-- Front: stack e integrações
+- Tasks: [FEATURE NAME]
 - Ciclo de vida da ocorrência
 - LGPD: login e exclusão
 - Entregáveis de Agile
-- Front: telas, quickstart, tasks
+- speckit-analyze/SKILL.md
 - Front: sessão e usuário
 - Entregáveis Banco e Java
 - Front: envio com foto
@@ -44,80 +49,139 @@
 - Tipo OcorrenciaResumo
 - Tipo Preferencia
 - Tipo Rota
+- front-next/package.json
+- compilerOptions
+- Execution Steps
+- index.ts
+- Feature Specification: [FEATURE NAME]
+- AuthService
+- speckit-plan/SKILL.md
+- speckit-specify/SKILL.md
+- speckit-tasks/SKILL.md
+- Core Principles
+- BuscaEndereco.tsx
+- Implementation Plan: [FEATURE]
+- speckit-checklist/SKILL.md
+- Trecho
+- speckit-clarify/SKILL.md
+- speckit-implement/SKILL.md
+- MapaLeaflet.tsx
+- speckit-constitution/SKILL.md
+- MapaLeaflet.tsx
+- PaginaNovaOcorrencia
+- [CHECKLIST TYPE] Checklist: [FEATURE NAME]
+- CLAUDE.md
+- .claude/CLAUDE.md
+- postcss.config.mjs
+- Backlog MoSCoW (22 historias, 81 SP)
+- Mapa colaborativo de alertas
+- Tabela de endpoints (contrato com o front)
+- .criar
+- GoogleTokenFilter.java
+- Ocorrencia
+- RankingController
+- OcorrenciaService
+- Localizacao
+- OcorrenciaServiceTest
+- CategoriaOcorrencia
+- RecursoNaoEncontradoException
+- org.junit.jupiter.api.Test
+- tipos.ts
+- lib/sessao.ts
+- list
+- Usuario
+- OcorrenciaRepository
+- RotaService.java
+- Localizacao
+- PerfilServiceTest
+- RankingService.java
+- Dicionário de dados — Caminho Livre
+- RotaServiceTest.java
+- RotaService
+- CaminholivreApplication.java
+- Modelos — Caminho Livre
+- ranking/page.tsx
+- br.com:caminholivre
+- CorsConfig.java
+- .bairros
+- PreferenciaRota
+- OrsResposta
+- RotaResponse
+- CaminholivreApplicationTests.java
 
 ## God Nodes (most connected - your core abstractions)
-1. `Diagrama de Casos de Uso - Caminho Livre` - 26 edges
-2. `Ator: Usuario` - 14 edges
-3. `Caminho Livre Constitution` - 9 edges
-4. `Caminho Livre (project README)` - 7 edges
-5. `Global Solution 2026.2 (FIAP)` - 7 edges
-6. `GS CitizenTech Briefing (2ES Fev 2026)` - 7 edges
-7. `Backlog MoSCoW (22 historias, 81 SP)` - 6 edges
-8. `Tabela de endpoints (contrato com o front)` - 6 edges
-9. `Contrato REST API Caminho Livre` - 6 edges
-10. `Implementation Plan API REST Java` - 6 edges
+1. `Usuario` - 89 edges
+2. `Localizacao` - 36 edges
+3. `Ocorrencia` - 35 edges
+4. `CategoriaOcorrencia` - 29 edges
+5. `OcorrenciaRepository` - 28 edges
+6. `OcorrenciaService` - 26 edges
+7. `UsuarioRepository` - 26 edges
+8. `Diagrama de Casos de Uso - Caminho Livre` - 26 edges
+9. `StatusOcorrencia` - 25 edges
+10. `api()` - 25 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `Camadas controller → service → repository` --references--> `GlobalExceptionHandler`  [INFERRED]
+  api-java/caminholivre-backend/docs/diagrama-classes.md → api-java/caminholivre-backend/src/main/java/br/com/caminholivre/exception/GlobalExceptionHandler.java
 - `Postes inteligentes (sensores de luminosidade)` --conceptually_related_to--> `Tabela OCORRENCIA`  [INFERRED]
   network/README.md → database/README.md
-- `Caminho Livre (project README)` --references--> `Backlog MoSCoW (agile/backlog.md)`  [EXTRACTED]
-  README.md → .specify/memory/constitution.md
 - `Rota acessivel desviando de alertas` --conceptually_related_to--> `Calculo de rota Dijkstra (GET /rotas)`  [INFERRED]
   README.md → .specify/memory/constitution.md
-- `API RESTful Spring Boot (Caminho Livre)` --references--> `Modelo relacional Caminho Livre (Oracle)`  [EXTRACTED]
-  api-java/README.md → database/README.md
-- `Rede do Posto Caminho Livre (Packet Tracer)` --conceptually_related_to--> `API RESTful Spring Boot (Caminho Livre)`  [INFERRED]
-  network/README.md → api-java/README.md
+- `Caminho Livre (project README)` --references--> `Backlog MoSCoW (agile/backlog.md)`  [EXTRACTED]
+  README.md → .specify/memory/constitution.md
+- `Caminho Livre (project README)` --references--> `Backlog MoSCoW (22 historias, 81 SP)`  [EXTRACTED]
+  README.md → agile/backlog.md
 
 ## Import Cycles
-- None detected.
+- 2-file cycle: `front-next/src/lib/api.ts -> front-next/src/lib/sessao.ts -> front-next/src/lib/api.ts`
 
 ## Hyperedges (group relationships)
-- **spec-kit specify-plan-tasks-implement workflow** — _specify_memory_constitution_workflow [INFERRED 0.85]
 - **Personas que orientam o backlog** — agile_agile_gs_caminholivre_persona_dona_marta, agile_agile_gs_caminholivre_persona_julia, agile_agile_gs_caminholivre_persona_seu_antonio [EXTRACTED 1.00]
-- **Calculo de rota ponderada** — api_java_readme_get_rotas, api_java_readme_trechos_pesos, database_readme_trecho, api_java_readme_regras_negocio_bo [INFERRED 0.85]
 - **Modelo de dados do Caminho Livre** — database_readme_usuario, database_readme_categoria_ocorrencia, database_readme_localizacao, database_readme_ocorrencia, database_readme_confirmacao, database_readme_preferencia_rota, database_readme_trecho [EXTRACTED 1.00]
-- **Calculo de rota acessivel** — specs_001_api_rest_java_contracts_api_get_rotas, specs_001_api_rest_java_data_model_rotabo, specs_001_api_rest_java_data_model_peso_trecho, specs_001_api_rest_java_research_haversine_30m, specs_001_api_rest_java_research_dijkstra_na_api [INFERRED 0.85]
 - **Seven disciplines, one CitizenTech project** — docs_gs_citizentech_2es_fev_fiap_2026_agile, docs_gs_citizentech_2es_fev_fiap_2026_arvr, docs_gs_citizentech_2es_fev_fiap_2026_data_science, docs_gs_citizentech_2es_fev_fiap_2026_database_design, docs_gs_citizentech_2es_fev_fiap_2026_ddd_java, docs_gs_citizentech_2es_fev_fiap_2026_dynamic_programming, docs_gs_citizentech_2es_fev_fiap_2026_network [EXTRACTED 1.00]
 - **Front-end External Integrations** — specs_002_front_next_web_research_google_identity, specs_002_front_next_web_research_nominatim, specs_002_front_next_web_plan_vercel_blob, specs_002_front_next_web_research_leaflet [EXTRACTED 1.00]
-- **Client-Side Data Persistence** — specs_002_front_next_web_data_model_sessao, specs_002_front_next_web_data_model_nova_ocorrencia, specs_002_front_next_web_plan_vercel_blob [INFERRED 0.85]
 - **Front-end MVP Core Flow** — front_next_app_page, front_next_app_login_page, front_next_app_ocorrencias_nova_page, front_next_app_rota_page [EXTRACTED 1.00]
+- **Calculo de rota ponderada** — api_java_readme_get_rotas, api_java_readme_trechos_pesos, database_readme_trecho, api_java_readme_regras_negocio_bo [INFERRED 0.85]
+- **Client-Side Data Persistence** — specs_002_front_next_web_data_model_sessao, specs_002_front_next_web_data_model_nova_ocorrencia, specs_002_front_next_web_plan_vercel_blob [INFERRED 0.85]
+- **spec-kit specify-plan-tasks-implement workflow** — _specify_memory_constitution_workflow [INFERRED 0.85]
+- **Calculo de rota acessivel** — specs_001_api_rest_java_contracts_api_get_rotas, specs_001_api_rest_java_data_model_rotabo, specs_001_api_rest_java_data_model_peso_trecho, specs_001_api_rest_java_research_haversine_30m, specs_001_api_rest_java_research_dijkstra_na_api [INFERRED 0.85]
 
-## Communities (35 total, 20 thin omitted)
+## Communities (99 total, 43 thin omitted)
 
 ### Community 0 - "Casos de uso e atores"
 Cohesion: 0.15
 Nodes (27): Ator: Administrador (Won't), Diagrama de Casos de Uso - Caminho Livre, Sistema externo: Google, Ator: Sistema, UC01 Entrar com Google (Must), UC02 Validar token no Google, UC03 Responder onboarding de perfil (Should), UC04 Sair da conta (Must) (+19 more)
 
 ### Community 1 - "Contrato REST da API"
-Cohesion: 0.10
-Nodes (18): Specification Quality Checklist, Contrato REST API Caminho Livre, Erro padrao {timestamp,status,erro}, GET /rotas, GET /trechos/pesos, OcorrenciaDetalhe.minha flag, /ocorrencias endpoints, POST /auth/google (+10 more)
+Cohesion: 0.07
+Nodes (27): Specification Quality Checklist, API Java Contract, Contrato REST API Caminho Livre, Erro padrao {timestamp,status,erro}, GET /rotas, GET /trechos/pesos, OcorrenciaDetalhe.minha flag, /ocorrencias endpoints (+19 more)
 
-### Community 2 - "Ideia, personas e escopo"
-Cohesion: 0.11
-Nodes (18): Diagrama de casos de uso UC01-UC22, Agile GS Caminho Livre (documento de entrega), Mapa colaborativo de alertas, Escopo do MVP (Must US01-US06, 32 SP), ODS 3, 9, 10, 11, Persona Dona Marta, Persona Julia, Problema: pedestres sem informacao de calcadas e ruas (+10 more)
-
-### Community 3 - "Constitution do projeto"
+### Community 2 - "Caminho Livre Constitution"
 Cohesion: 0.12
 Nodes (11): Caminho Livre Constitution, Backlog MoSCoW (agile/backlog.md), API Java README (endpoints), Database README (DER), Calculo de rota Dijkstra (GET /rotas), Rota acessivel desviando de alertas, Arquitetura Next.js -> Spring Boot -> Oracle, Caminho Livre (project README) (+3 more)
 
-### Community 4 - "Gerador de PDF (build.js)"
-Cohesion: 0.11
-Nodes (15): build(), CSS, fs, { mdToPdf }, OUT, path, SRC, dependencies (+7 more)
+### Community 3 - "nova/page.tsx"
+Cohesion: 0.29
+Nodes (15): PaginaMinhas(), PaginaDetalhe(), avaliar(), PaginaOnboarding(), responder(), PaginaPerfil(), tentar(), Aviso() (+7 more)
 
-### Community 5 - "Gerador do diagrama (usecase.js)"
-Cohesion: 0.14
-Nodes (15): add(), ADM, C, dep(), dir, fs, GOOGLE, leg (+7 more)
+### Community 4 - "usecase.js"
+Cohesion: 0.05
+Nodes (34): build(), CSS, fs, { mdToPdf }, OUT, path, SRC, dependencies (+26 more)
 
-### Community 6 - "API Java e endpoints"
-Cohesion: 0.14
-Nodes (13): API RESTful Spring Boot (Caminho Livre), POST /auth/google, Deploy no Render, GET /rotas (Dijkstra na API), Tabela de endpoints (contrato com o front), GET /trechos/pesos, Modelo relacional Caminho Livre (Oracle), Front-end Next.js Caminho Livre (+5 more)
+### Community 5 - "steps"
+Cohesion: 0.05
+Nodes (37): args, inputs, integration, spec, speckit_review_plan_verdict, speckit_review_spec_verdict, default, prompt (+29 more)
+
+### Community 6 - "common.ps1"
+Cohesion: 0.16
+Nodes (19): Find-SpecifyRoot(), Format-SpecKitCommand(), Get-CurrentBranch(), Get-FeaturePathsEnv(), Get-InvokeSeparator(), Get-NormalizedPriority(), Get-Python3Command(), Get-RepoRoot() (+11 more)
 
 ### Community 7 - "Briefing da GS CitizenTech"
 Cohesion: 0.15
 Nodes (13): Be My Eyes (caso de referencia), Casos: hackathon UNICEF Salvador, Aqualuz (UNESCO), CitizenTech - Tecnologia para pessoas, CitizenTech Studio (QR - descubra sua ideia), Problema: desperdicio de alimentos e fome, Global Solution 2026.2 (FIAP), Problema: mobilidade urbana e acessibilidade, ODS (Objetivos de Desenvolvimento Sustentavel) (+5 more)
 
-### Community 8 - "Banco e regras de negócio"
+### Community 8 - "Tabela OCORRENCIA"
 Cohesion: 0.21
 Nodes (11): Analise Data Science (teste de hipotese), Fontes publicas (SSP-SP, SP156, GeoSampa, OSM), Tabela CATEGORIA_OCORRENCIA, Tabela CONFIRMACAO, Tabela LOCALIZACAO, Tabela OCORRENCIA, Tabela PREFERENCIA_ROTA, Tabela ROTA_FAVORITA (Could) (+3 more)
 
@@ -129,41 +193,205 @@ Nodes (7): GS CitizenTech Briefing (2ES Fev 2026), Accessible Sidewalks Starting
 Cohesion: 0.25
 Nodes (8): API REST Java (001), Login Page (/login), Home Page (/), Map Component, API Client, Session Management, Google Identity Services, Feature Specification: Front-end web Caminho Livre (Next.js)
 
-### Community 11 - "Front: stack e integrações"
-Cohesion: 0.33
-Nodes (6): API Java Contract, NovaOcorrencia, Next.js App Router, Vercel Blob, React Leaflet, Nominatim
+### Community 11 - "Tasks: [FEATURE NAME]"
+Cohesion: 0.07
+Nodes (26): Dependencies & Execution Order, Format: `[ID] [P?] [Story] Description`, Implementation for User Story 1, Implementation for User Story 2, Implementation for User Story 3, Implementation Strategy, Incremental Delivery, MVP First (User Story 1 Only) (+18 more)
 
 ### Community 14 - "Entregáveis de Agile"
 Cohesion: 0.67
 Nodes (3): Agile Methodology With Squad Framework deliverable, Product Backlog with MoSCoW and Planning Poker, Video Pitch (max 3 min, YouTube)
 
-### Community 15 - "Front: telas, quickstart, tasks"
-Cohesion: 0.67
-Nodes (3): Contrato de telas — Front Caminho Livre, Quickstart: validar o front, Tasks: Front-end web Caminho Livre (Next.js)
+### Community 15 - "speckit-analyze/SKILL.md"
+Cohesion: 0.08
+Nodes (25): 1. Initialize Analysis Context, 2. Load Artifacts (Progressive Disclosure), 3. Build Semantic Models, 4. Detection Passes (Token-Efficient Analysis), 5. Severity Assignment, 6. Produce Compact Analysis Report, 7. Provide Next Actions, 8. Offer Remediation (+17 more)
 
 ### Community 16 - "Front: sessão e usuário"
 Cohesion: 0.67
 Nodes (3): Sessao, Usuario, Google Identity Services
 
+### Community 35 - "front-next/package.json"
+Cohesion: 0.06
+Nodes (38): react-dom@19.1.0, devDependencies, @axe-core/playwright@^4.14.0, eslint@^9, eslint-config-next@15.5.29, @eslint/eslintrc@^3, @playwright/test@^1.65.0, tailwindcss@^4 (+30 more)
+
+### Community 36 - "compilerOptions"
+Cohesion: 0.11
+Nodes (18): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+10 more)
+
+### Community 37 - "Execution Steps"
+Cohesion: 0.12
+Nodes (15): 1. Initialize Convergence Context, 2. Load Artifacts (Progressive Disclosure), 3. Build the Intent Inventory, 4. Assess the Codebase and Classify Findings, 5. Assign Severity, 6. Present the In-Session Findings Summary, 7. Append Convergence Tasks (or report converged), 8. Provide Next Actions (Handoff) (+7 more)
+
+### Community 38 - "index.ts"
+Cohesion: 0.14
+Nodes (8): OcorrenciaDetalhe, Preferencia, avaliadas, detalhes, erro(), mock(), preferencias, usuario
+
+### Community 39 - "Feature Specification: [FEATURE NAME]"
+Cohesion: 0.15
+Nodes (12): Assumptions, Edge Cases, Feature Specification: [FEATURE NAME], Functional Requirements, Key Entities *(include if feature involves data)*, Measurable Outcomes, Requirements *(mandatory)*, Success Criteria *(mandatory)* (+4 more)
+
+### Community 40 - "AuthService"
+Cohesion: 0.08
+Nodes (7): ExpiracaoJob, GoogleTokenFilter, AuthController, LoginRequest, NaoAutorizadoException, AuthService, AuthServiceTest
+
+### Community 41 - "speckit-plan/SKILL.md"
+Cohesion: 0.18
+Nodes (10): Completion Report, Done When, Key rules, Mandatory Post-Execution Hooks, Outline, Phase 0: Outline & Research, Phase 1: Design & Contracts, Phases (+2 more)
+
+### Community 42 - "speckit-specify/SKILL.md"
+Cohesion: 0.18
+Nodes (10): Completion Report, Done When, For AI Generation, Mandatory Post-Execution Hooks, Outline, Pre-Execution Checks, Quick Guidelines, Section Requirements (+2 more)
+
+### Community 43 - "speckit-tasks/SKILL.md"
+Cohesion: 0.18
+Nodes (10): Checklist Format (REQUIRED), Completion Report, Done When, Mandatory Post-Execution Hooks, Outline, Phase Structure, Pre-Execution Checks, Task Generation Rules (+2 more)
+
+### Community 44 - "Core Principles"
+Cohesion: 0.18
+Nodes (10): Core Principles, Governance, [PRINCIPLE_1_NAME], [PRINCIPLE_2_NAME], [PRINCIPLE_3_NAME], [PRINCIPLE_4_NAME], [PRINCIPLE_5_NAME], [PROJECT_NAME] Constitution (+2 more)
+
+### Community 45 - "BuscaEndereco.tsx"
+Cohesion: 0.15
+Nodes (16): Lugar, PaginaRota(), tocar(), verRota(), BuscaEndereco(), cache, Lugar, MINHA_LOCALIZACAO (+8 more)
+
+### Community 46 - "Implementation Plan: [FEATURE]"
+Cohesion: 0.22
+Nodes (8): Complexity Tracking, Constitution Check, Documentation (this feature), Implementation Plan: [FEATURE], Project Structure, Source Code (repository root), Summary, Technical Context
+
+### Community 47 - "speckit-checklist/SKILL.md"
+Cohesion: 0.25
+Nodes (7): Anti-Examples: What NOT To Do, Checklist Purpose: "Unit Tests for English", Example Checklist Types & Sample Items, Execution Steps, Post-Execution Checks, Pre-Execution Checks, User Input
+
+### Community 48 - "Trecho"
+Cohesion: 0.07
+Nodes (8): TrechoController, TrechoPeso, Vertice, TrechoRequest, Trecho, TrechoRepository, TrechoService, TrechoServiceTest
+
+### Community 49 - "speckit-clarify/SKILL.md"
+Cohesion: 0.29
+Nodes (6): Completion Report, Done When, Mandatory Post-Execution Hooks, Outline, Pre-Execution Checks, User Input
+
+### Community 50 - "speckit-implement/SKILL.md"
+Cohesion: 0.29
+Nodes (6): Completion Report, Done When, Mandatory Post-Execution Hooks, Outline, Pre-Execution Checks, User Input
+
+### Community 51 - "MapaLeaflet.tsx"
+Cohesion: 0.11
+Nodes (17): nextConfig, dependencies, google-auth-library@^11.3.4, lucide-react@^1.72.0, next@15.5.29, react@19.1.0, @vercel/blob@^2.9.0, google (+9 more)
+
+### Community 52 - "speckit-constitution/SKILL.md"
+Cohesion: 0.33
+Nodes (5): Outline, Post-Execution Checks, Pre-Execution Checks, Scope Guard, User Input
+
+### Community 53 - "MapaLeaflet.tsx"
+Cohesion: 0.19
+Nodes (13): leaflet@^1.9.4, react-leaflet@^5.0.0, CENTRO, Controle(), MapaLeaflet(), pino(), Props, escapar() (+5 more)
+
+### Community 54 - "PaginaNovaOcorrencia"
+Cohesion: 0.32
+Nodes (6): PaginaNovaOcorrencia(), enviar(), escolherFoto(), Passo(), enviarFoto(), reduzirFoto()
+
+### Community 55 - "[CHECKLIST TYPE] Checklist: [FEATURE NAME]"
+Cohesion: 0.40
+Nodes (4): [Category 1], [Category 2], [CHECKLIST TYPE] Checklist: [FEATURE NAME], Notes
+
+### Community 59 - "Backlog MoSCoW (22 historias, 81 SP)"
+Cohesion: 0.22
+Nodes (10): Diagrama de casos de uso UC01-UC22, Agile GS Caminho Livre (documento de entrega), Escopo do MVP (Must US01-US06, 32 SP), ODS 3, 9, 10, 11, Backlog MoSCoW (22 historias, 81 SP), Planning Poker (Fibonacci, referencia US06), Requisitos nao funcionais RNF01-RNF12, Entregaveis Agile (PDF unico, prototipo, pitch) (+2 more)
+
+### Community 60 - "Mapa colaborativo de alertas"
+Cohesion: 0.20
+Nodes (8): Mapa colaborativo de alertas, Persona Dona Marta, Persona Julia, Problema: pedestres sem informacao de calcadas e ruas, Calculo de rota Dijkstra na API Java (GET /rotas), Matriz de rastreabilidade (historia-requisito-endpoint-tabela), Requisitos funcionais RF01-RF25, Status de alerta CONFIRMADA/RESOLVIDA/EXPIRADA
+
+### Community 61 - "Tabela de endpoints (contrato com o front)"
+Cohesion: 0.25
+Nodes (7): POST /auth/google, GET /rotas (Dijkstra na API), Tabela de endpoints (contrato com o front), GET /trechos/pesos, Front-end Next.js Caminho Livre, React Leaflet + OpenStreetMap, Mocks em src/mocks no formato da API
+
+### Community 62 - ".criar"
+Cohesion: 0.12
+Nodes (5): RotaFavoritaController, RotaFavoritaRequest, RotaFavorita, RotaFavoritaService, RotaFavoritaServiceTest
+
+### Community 63 - "GoogleTokenFilter.java"
+Cohesion: 0.13
+Nodes (6): Camada model (entidades JPA = tabelas do Oracle), Camadas controller → service → repository, Diagrama de classes — Caminho Livre API, ConflitoException, ErroResponse, GlobalExceptionHandler
+
+### Community 64 - "Ocorrencia"
+Cohesion: 0.10
+Nodes (12): OcorrenciaResumo, TotaisResponse, Ocorrencia, StatusOcorrencia, ABERTA, CONFIRMADA, EXPIRADA, RESOLVIDA (+4 more)
+
+### Community 65 - "RankingController"
+Cohesion: 0.19
+Nodes (3): RankingController, PessoaRanking, RankingBairros
+
+### Community 66 - "OcorrenciaService"
+Cohesion: 0.16
+Nodes (5): OcorrenciaController, ConfirmacaoRequest, NovaOcorrenciaRequest, OcorrenciaDetalhe, OcorrenciaService
+
+### Community 69 - "CategoriaOcorrencia"
+Cohesion: 0.11
+Nodes (4): CategoriaController, CategoriaOcorrencia, CategoriaRepository, CategoriaService
+
+### Community 72 - "tipos.ts"
+Cohesion: 0.19
+Nodes (15): Totais, Rascunho, PaginaMapa(), FiltroTipos(), FormaTipo(), CHAVE_RASCUNHO, Categoria, ErroApi (+7 more)
+
+### Community 73 - "lib/sessao.ts"
+Cohesion: 0.23
+Nodes (18): LogoGoogle(), PaginaLogin(), api(), avisarAcordando(), USA_MOCKS, assinar(), botaoGoogle(), carregarGoogle() (+10 more)
+
+### Community 75 - "Usuario"
+Cohesion: 0.10
+Nodes (6): UsuarioController, AtualizarUsuarioRequest, UsuarioPublico, UsuarioResponse, Usuario, PreferenciaService
+
+### Community 76 - "OcorrenciaRepository"
+Cohesion: 0.27
+Nodes (6): ConfirmacaoRepository, OcorrenciaRepository, PreferenciaRotaRepository, UsuarioRepository, ConfirmacaoService, UsuarioService
+
+### Community 78 - "Localizacao"
+Cohesion: 0.13
+Nodes (3): LocalizacaoController, Localizacao, LocalizacaoService
+
+### Community 81 - "Dicionário de dados — Caminho Livre"
+Cohesion: 0.17
+Nodes (12): CATEGORIA_OCORRENCIA, CONFIRMACAO, Dicionário de dados — Caminho Livre, LOCALIZACAO, Normalização, Objetos auxiliares, OCORRENCIA, PREFERENCIA_ROTA (+4 more)
+
+### Community 84 - "RotaService"
+Cohesion: 0.15
+Nodes (4): RotaController, Detalhe, OrsErro, RotaService
+
+### Community 86 - "Modelos — Caminho Livre"
+Cohesion: 0.18
+Nodes (10): API RESTful Spring Boot (Caminho Livre), Deploy no Render, 1. Modelo conceitual, 2. Modelo lógico, 3. Modelo físico (Oracle), Modelos — Caminho Livre, Modelo relacional Caminho Livre (Oracle), ACL estendida, SSH e WPA2 (+2 more)
+
+### Community 87 - "ranking/page.tsx"
+Cohesion: 0.50
+Nodes (4): Lista(), PaginaRanking(), Pessoa, RankingBairros
+
+### Community 92 - "OrsResposta"
+Cohesion: 0.70
+Nodes (5): Feature, Geometria, OrsResposta, Propriedades, Resumo
+
+### Community 93 - "RotaResponse"
+Cohesion: 0.67
+Nodes (3): Ponto, RotaResponse, Trajeto
+
 ## Knowledge Gaps
-- **83 isolated node(s):** `API Java README (endpoints)`, `Database README (DER)`, `Grupo OctoFlow`, `Global Solution 2026.2 CitizenTech FIAP`, `Alertas colaborativos confirmados pela comunidade` (+78 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 122 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **20 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **88 isolated node(s):** `ABERTA`, `CONFIRMADA`, `EXPIRADA`, `RESOLVIDA`, `ACESSIBILIDADE` (+83 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 475 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **43 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `API RESTful Spring Boot (Caminho Livre)` connect `API Java e endpoints` to `Banco e regras de negócio`?**
-  _High betweenness centrality (0.008) - this node is a cross-community bridge._
-- **What connects `API Java README (endpoints)`, `Database README (DER)`, `Grupo OctoFlow` to the rest of the system?**
-  _83 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `Usuario` connect `Usuario` to `Ocorrencia`, `RankingController`, `OcorrenciaService`, `Localizacao`, `OcorrenciaServiceTest`, `CategoriaOcorrencia`, `RecursoNaoEncontradoException`, `org.junit.jupiter.api.Test`, `AuthService`, `list`, `OcorrenciaRepository`, `Localizacao`, `PerfilServiceTest`, `Trecho`, `RankingService.java`, `.criar`?**
+  _High betweenness centrality (0.025) - this node is a cross-community bridge._
+- **Are the 2 inferred relationships involving `Localizacao` (e.g. with `.alerta()` and `.alerta()`) actually correct?**
+  _`Localizacao` has 2 INFERRED edges - model-reasoned connections that need verification._
+- **What connects `ABERTA`, `CONFIRMADA`, `EXPIRADA` to the rest of the system?**
+  _88 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Casos de uso e atores` be split into smaller, more focused modules?**
   _Cohesion score 0.1452991452991453 - nodes in this community are weakly interconnected._
+- **Why does `GlobalExceptionHandler` connect `GoogleTokenFilter.java` to `AuthService`?**
+  _High betweenness centrality (0.013) - this node is a cross-community bridge._
 - **Should `Contrato REST da API` be split into smaller, more focused modules?**
-  _Cohesion score 0.09782608695652174 - nodes in this community are weakly interconnected._
-- **Should `Ideia, personas e escopo` be split into smaller, more focused modules?**
-  _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
-- **Should `Constitution do projeto` be split into smaller, more focused modules?**
-  _Cohesion score 0.12280701754385964 - nodes in this community are weakly interconnected._
-- **Should `Gerador de PDF (build.js)` be split into smaller, more focused modules?**
-  _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07007575757575757 - nodes in this community are weakly interconnected._
+- **Why does `RecursoNaoEncontradoException` connect `RecursoNaoEncontradoException` to `Ocorrencia`, `OcorrenciaService`, `org.junit.jupiter.api.Test`, `list`, `Usuario`, `OcorrenciaRepository`, `PerfilServiceTest`, `Trecho`, `.criar`, `GoogleTokenFilter.java`?**
+  _High betweenness centrality (0.010) - this node is a cross-community bridge._

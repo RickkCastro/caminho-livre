@@ -110,7 +110,7 @@
 | **RNF08** | Privacidade (LGPD) | Coletar apenas nome, e-mail e foto do Google; não exibir publicamente quem enviou um alerta; permitir que o usuário exclua a conta e os dados pessoais. | US01, US02, US15 |
 | **RNF09** | Desempenho | Carregar o mapa com os alertas em até 3 segundos e calcular a rota em até 5 segundos em conexão 4G. | US03, US04 |
 | **RNF10** | Confiabilidade dos dados | Alertas `EXPIRADA` e `RESOLVIDA` não aparecem no mapa nem entram no cálculo da rota. | US07, US08 |
-| **RNF11** | Arquitetura | API REST em Java com banco Oracle, front em Next.js e cálculo de rota (Dijkstra) na própria API Java, publicados em nuvem (Render/Vercel). | Todas |
+| **RNF11** | Arquitetura | API REST em Java com banco Oracle, front em Next.js e cálculo de rota na própria API Java (ruas reais via OpenRouteService, Brasil inteiro), publicados em nuvem (Render/Vercel). | Todas |
 | **RNF12** | Manutenibilidade | Código versionado no GitHub, com a API organizada em camadas (model, DAO, BO, controller). | Todas |
 
 ---
@@ -122,7 +122,7 @@
 | US01 | RF01, RF02, RNF06–RNF08 | `POST /auth/google` | USUARIO |
 | US02 | RF04–RF06, RNF03 | `POST /ocorrencias` | OCORRENCIA, LOCALIZACAO, CATEGORIA_OCORRENCIA |
 | US03 | RF07, RF08, RNF09 | `GET /ocorrencias?tipo=&status=` | OCORRENCIA |
-| US04 | RF09–RF11, RNF09 | `GET /rotas` (Dijkstra na API) | TRECHO, LOCALIZACAO, PREFERENCIA_ROTA |
+| US04 | RF09–RF11, RNF09 | `GET /rotas` (OpenRouteService via API) | TRECHO, LOCALIZACAO, PREFERENCIA_ROTA |
 | US05 | RNF01–RNF05 | todas as telas | — |
 | US06 | RF03 | logout no front (descarta a sessão) | — |
 | US07 | RF12, RF13 | `POST /ocorrencias/{id}/confirmacoes` | CONFIRMACAO |

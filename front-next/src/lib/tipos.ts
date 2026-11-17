@@ -39,6 +39,8 @@ export type NovaOcorrencia = {
   idCategoria: number;
   latitude: number;
   longitude: number;
+  logradouro?: string;
+  bairro?: string;
   descricao?: string;
   fotoUrl?: string;
 };

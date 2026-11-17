@@ -1,0 +1,98 @@
+==============================================================================
+ CAMINHO LIVRE · Dynamic Programming · demonstração
+ Bairro simulado no entorno da FIAP Paulista (Bela Vista, São Paulo)
+ 31 pontos · 40 trechos · 10 alertas ativos (2 expirados ou resolvidos ficam de fora)
+==============================================================================
+
+[1] GRAFOS (Dijkstra) · Dona Marta, 68 anos, usa andador
+    Casa da Dona Marta -> Posto de Saúde · 10h (dia) · mobilidade reduzida
+
+  ROTA COMUM (menor distância, como um GPS comum)
+    560 m · risco 2.240 · 2 alertas
+    Rua das Paineiras 560 m
+    Alertas: Calçada quebrada (Rua das Paineiras, 248) · Falta de rampa (Rua das Paineiras × Rua das Andorinhas) [BARREIRA]
+  ROTA CAMINHO LIVRE (menor peso, sem barreiras)
+    800 m (+240 m) · risco 0 · 0 alertas
+    Rua das Paineiras 120 m -> Rua dos Bem-te-vis 120 m -> Avenida Central 320 m -> Rua dos Beija-flores 120 m -> Rua das Paineiras 120 m
+  => Evita 2 de 2 alertas (100%) andando 240 m a mais.
+
+[2] GRAFOS (Dijkstra) · Júlia, 21 anos, sai da faculdade às 23h
+    Faculdade -> Estação de Metrô · 23h (noite) · pedestre
+
+  ROTA COMUM (menor distância, como um GPS comum)
+    610 m · risco 3.980 · 3 alertas
+    Rua das Acácias 400 m -> Rua dos Beija-flores 130 m -> Avenida Central 80 m
+    Alertas: Rua escura (Rua das Acácias, 205) · Rua escura (Rua das Acácias, 396) · Local deserto (Rua dos Beija-flores, 70)
+  ROTA CAMINHO LIVRE (menor peso, sem barreiras)
+    770 m (+160 m) · risco 0 · 0 alertas
+    Rua das Acácias 80 m -> Rua dos Sabiás 130 m -> Avenida Central 560 m
+  => Evita 3 de 3 alertas (100%) andando 160 m a mais.
+
+[3] GRAFOS (Dijkstra) · Seu Antônio, 74 anos, mora numa rua que alaga
+    Casa do Seu Antônio -> Padaria · 8h (dia) · pedestre
+
+  ROTA COMUM (menor distância, como um GPS comum)
+    320 m · risco 1.800 · 2 alertas
+    Rua dos Tucanos 200 m -> Avenida Central 120 m
+    Alertas: Alagamento (Rua das Paineiras × Rua dos Tucanos) · Buraco (Rua dos Tucanos, 262)
+  ROTA CAMINHO LIVRE (menor peso, sem barreiras)
+    460 m (+140 m) · risco 0 · 0 alertas
+    Rua dos Tucanos 30 m -> Rua dos Jacarandás 160 m -> Rua dos Beija-flores 230 m -> Avenida Central 40 m
+  => Evita 2 de 2 alertas (100%) andando 140 m a mais.
+
+    Mesma consulta da Júlia às 14h (de dia, poste apagado não pesa):
+
+  ROTA COMUM (menor distância, como um GPS comum)
+    610 m · risco 130 · 3 alertas
+    Rua das Acácias 400 m -> Rua dos Beija-flores 130 m -> Avenida Central 80 m
+    Alertas: Rua escura (Rua das Acácias, 205) · Rua escura (Rua das Acácias, 396) · Local deserto (Rua dos Beija-flores, 70)
+  ROTA CAMINHO LIVRE (menor peso, sem barreiras)
+    616 m (+6 m) · risco 0 · 1 alerta
+    Rua das Acácias 240 m -> Rua das Andorinhas 136 m -> Avenida Central 240 m
+    Alertas: Rua escura (Rua das Acácias, 205)
+  => Evita 2 de 3 alertas (67%) andando 6 m a mais.
+
+[4] TABULAÇÃO · Júlia, 23h: quanto a mais andar para correr menos risco?
+  Rota comum: 610 m. Limite: 610 m + 160 m = 770 m
+  Tabela T[b][v]: 771 linhas (b = 0 a 770 m) × 31 pontos = 23.901 células
+
+  MELHOR ROTA COM ATÉ 770 m (menor risco)
+    770 m (+160 m) · risco 0 · 0 alertas
+    Rua das Acácias 80 m -> Rua dos Sabiás 130 m -> Avenida Central 560 m
+
+  Opções lidas na coluna da origem (cada uma troca distância por menos risco):
+     distância      a mais      risco   alertas
+         610 m        +0 m      3.980         3   <- rota comum
+         616 m        +6 m      1.920         1
+         770 m      +160 m          0         0
+
+  A mesma tabela responde a um limite menor sem recalcular nada:
+  com até +100 m (linha b = 710) -> 616 m · risco 1.920 · 1 alerta
+    Rua das Acácias 240 m -> Rua das Andorinhas 136 m -> Avenida Central 240 m
+
+    Dona Marta, 10h, mobilidade reduzida, aceitando até 100 m a mais:
+  Rota comum: 560 m. Limite: 560 m + 100 m = 660 m
+  Tabela T[b][v]: 661 linhas (b = 0 a 660 m) × 31 pontos = 20.491 células
+
+  Nenhuma rota sem barreiras cabe nesse limite.
+  A menor rota sem barreiras tem 800 m (+240 m): aumente o limite.
+
+[5] MEMOIZAÇÃO · a mesma recorrência f(v, b) de cima para baixo
+  Faculdade -> Estação de Metrô, 23h, limites cada vez maiores (rota comum: 610 m)
+                  sem memo                  com memo               tabulação
+     limite    chamadas    tempo  chamadas  subprobl.    tempo   células   tempo
+      770 m       1.253  0,001 s       453        302   0,3 ms    23.901   23 ms
+    1.010 m      16.925  0,010 s     1.684      1.006   1,1 ms    31.341   37 ms
+    1.220 m     166.503  0,094 s     4.465      2.453   2,9 ms    37.851   48 ms
+    1.410 m   1.425.520  0,687 s     8.968      4.540   6,1 ms    43.741   56 ms
+  As três formas encontram a mesma rota em todas as linhas (conferido no código).
+
+[6] MEMOIZAÇÃO · cache de rotas por (origem, destino, perfil, faixa horária)
+  1.000 pedidos de rota simulados entre os 8 lugares do mapa (hora e perfil sorteados)
+    sem cache: 0,522 s · com cache: 0,008 s (67x mais rápido)
+    784 respostas vieram do cache e 216 foram calculadas (máximo de chaves: 8 × 7 pares × 2 perfis × 2 faixas = 224)
+    respostas idênticas às calculadas sem cache: sim
+
+[7] MESMO FORMATO DA API · GET /trechos/pesos?hora=23&mobilidadeReduzida=N
+  {"idTrecho": 2, "origem": {"id": 2, "lat": -23.564381, "lon": -46.656355}, "destino": {"id": 3, "lat": -23.564381, "lon": -46.655178}, "distanciaM": 120, "peso": 1080, "bloqueado": false}
+  ... 40 trechos ao todo (comando: python main.py pesos --hora 23)
