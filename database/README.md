@@ -20,8 +20,9 @@ Projetar a base relacional que registra e consulta as informações do Caminho L
 1. Rode `01_create.sql` no Oracle da FIAP, se ainda não rodou.
 2. No Data Modeler (ou SQL Developer → *View → Data Modeler → Browser*): **File → Import → Data Dictionary**, conecte no Oracle da FIAP, escolha o seu schema e marque as 8 tabelas → *Finish*. Também funciona por **File → Import → DDL File** com o `01_create.sql`, sem conectar.
 3. Organize o diagrama relacional (botão direito → *Layout → Resize Objects to Visible* e arraste para não cruzar linhas). Confira se aparecem PK, FK e as cardinalidades.
-4. **File → Data Modeler → Print Diagram → To Image File**, e salve como `database/modelos/Relational_1.png` (relacional) e `Logical.png` (entidades).
-5. Gere o PDF de novo:
+4. **Engineer to Logical Model** gera a visão de entidades. Nela, marque como opcional o lado da tabela referenciada em cada relacionamento (duplo clique na linha → *Source/Target Optional*): a metade tracejada fica do lado do pai, e `usuario`–`ocorrencia` fica toda tracejada. Não use *Engineer to Relational Model* depois disso: ele recria o relacional com nomes padrão (`usuario_id`, `localizacao_id1`) que não batem com o `01_create.sql`.
+5. **File → Data Modeler → Print Diagram → To Image File**, e salve como `database/modelos/Relational_1.png` (relacional) e `Logical.png` (entidades).
+6. Gere o PDF de novo:
    ```bash
    cd agile/pdf && npm install && node build.js ../../database/Database_GS_CaminhoLivre.md Database
    ```
