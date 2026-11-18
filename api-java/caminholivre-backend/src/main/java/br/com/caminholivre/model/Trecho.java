@@ -1,5 +1,8 @@
 package br.com.caminholivre.model;
 
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.Getter;
@@ -27,9 +30,10 @@ public class Trecho {
     private Localizacao destino;
 
     @NotNull @Positive
-    @Column(name = "distancia_m")
+    @JdbcTypeCode(SqlTypes.NUMERIC) @Column(name = "distancia_m", precision = 7, scale = 1)
     private Double distanciaM;
 
     @Pattern(regexp = "[SN]")
+    @JdbcTypeCode(SqlTypes.CHAR) @Column(length = 1) // CHAR(1) S/N no Oracle
     private String iluminado = "S";
 }

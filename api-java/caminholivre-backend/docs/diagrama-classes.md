@@ -1,6 +1,6 @@
 # Diagrama de classes — Caminho Livre API
 
-Gerado a partir do código em `src/main/java/br/com/caminholivre`. O GitHub desenha os diagramas abaixo; para o PDF, cole cada bloco em [mermaid.live](https://mermaid.live) e exporte como PNG.
+Gerado a partir do código em `src/main/java/br/com/caminholivre`. O GitHub desenha os diagramas abaixo. As imagens prontas estão em `diagrama-model.png` e `diagrama-camadas.png`; para gerar de novo, cole o `.mmd` correspondente em [mermaid.live](https://mermaid.live) e exporte como PNG.
 
 ## Camada model (entidades JPA = tabelas do Oracle)
 
@@ -109,7 +109,7 @@ Cada controller chama só services; cada service usa os repositories (Spring Dat
 
 ```mermaid
 classDiagram
-    direction TB
+    direction LR
 
     class AuthController { +entrar(LoginRequest) }
     class OcorrenciaController { +listar() +criar() +detalhar() +atualizar() +excluir() +avaliar() }

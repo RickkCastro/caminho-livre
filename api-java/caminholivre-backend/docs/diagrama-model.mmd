@@ -1,0 +1,96 @@
+classDiagram
+    direction LR
+
+    class Usuario {
+        -Long id
+        -String nome
+        -String email
+        -String googleId
+        -String mobilidadeReduzida
+        -String fotoUrl
+        -Integer pontos
+        -LocalDateTime dtCadastro
+    }
+
+    class CategoriaOcorrencia {
+        -Long id
+        -String nome
+        -TipoCategoria tipo
+        -Double pesoBase
+        -Double pesoNoturno
+        -String bloqueiaMobilidade
+    }
+
+    class Localizacao {
+        -Long id
+        -Double latitude
+        -Double longitude
+        -String logradouro
+        -String bairro
+    }
+
+    class Ocorrencia {
+        +int DIAS_VALIDADE = 15$
+        -Long id
+        -String descricao
+        -String fotoUrl
+        -StatusOcorrencia status
+        -LocalDateTime dtRegistro
+        -LocalDateTime dtExpiracao
+    }
+
+    class Confirmacao {
+        -Long id
+        -String confirma
+        -LocalDateTime dtConfirmacao
+    }
+
+    class PreferenciaRota {
+        -Long idUsuario
+        -Long idCategoria
+        -String considerar
+    }
+
+    class Trecho {
+        -Long id
+        -Double distanciaM
+        -String iluminado
+    }
+
+    class RotaFavorita {
+        -Long id
+        -Long idUsuario
+        -String apelido
+        -LocalDateTime dtCriacao
+    }
+
+    class TipoCategoria {
+        <<enumeration>>
+        ACESSIBILIDADE
+        SEGURANCA
+        CLIMA
+    }
+
+    class StatusOcorrencia {
+        <<enumeration>>
+        ABERTA
+        CONFIRMADA
+        EXPIRADA
+        RESOLVIDA
+        +ativa() boolean
+    }
+
+    Ocorrencia "0..*" --> "0..1" Usuario : autor (null após excluir conta)
+    Ocorrencia "0..*" --> "1" CategoriaOcorrencia : categoria
+    Ocorrencia "0..*" --> "1" Localizacao : localizacao
+    Ocorrencia ..> StatusOcorrencia
+    CategoriaOcorrencia ..> TipoCategoria
+    Confirmacao "0..*" --> "1" Ocorrencia : ocorrencia
+    Confirmacao "0..*" --> "1" Usuario : usuario
+    Trecho "0..*" --> "1" Localizacao : origem
+    Trecho "0..*" --> "1" Localizacao : destino
+    RotaFavorita "0..*" --> "1" Localizacao : origem
+    RotaFavorita "0..*" --> "1" Localizacao : destino
+    PreferenciaRota "0..*" ..> "1" Usuario : idUsuario
+    PreferenciaRota "0..*" ..> "1" CategoriaOcorrencia : idCategoria
+    RotaFavorita "0..*" ..> "1" Usuario : idUsuario
