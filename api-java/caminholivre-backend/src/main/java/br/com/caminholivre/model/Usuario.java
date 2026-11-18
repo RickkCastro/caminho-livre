@@ -2,6 +2,9 @@ package br.com.caminholivre.model;
 
 import java.time.LocalDateTime;
 
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.Getter;
@@ -28,6 +31,7 @@ public class Usuario {
     private String googleId;
 
     @Pattern(regexp = "[SN]")
+    @JdbcTypeCode(SqlTypes.CHAR) @Column(length = 1) // CHAR(1) S/N no Oracle
     private String mobilidadeReduzida = "N";
 
     @Size(max = 500)

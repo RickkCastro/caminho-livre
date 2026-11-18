@@ -94,7 +94,7 @@ Formato de erro padrão:
 
 ## Como executar
 
-**Deploy:** https://caminho-livre.onrender.com (Swagger em [`/swagger-ui.html`](https://caminho-livre.onrender.com/swagger-ui.html)). No plano gratuito o Render dorme após 15 min sem uso: a primeira chamada pode levar ~1 min.
+**Deploy:** API em https://caminho-livre.onrender.com, front-end em https://caminho-livre-nu.vercel.app (Swagger da API em [`/swagger-ui.html`](https://caminho-livre.onrender.com/swagger-ui.html)). No plano gratuito o Render dorme após 15 min sem uso: a primeira chamada pode levar ~1 min.
 
 **Ferramentas:** JDK 21 (ou mais novo), Maven via `./mvnw` (já vem no projeto), Oracle da FIAP, Docker (opcional).
 
