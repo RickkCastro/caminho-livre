@@ -1,0 +1,26 @@
+CAMINHO LIVRE - Domain Driven Design - Java
+Global Solution 2026.2 - CitizenTech - FIAP - Engenharia de Software (2ESPV)
+Grupo OctoFlow
+
+Integrantes
+- Caio Nascimento Caminha ............ RM 564789
+- Eduardo Duran Del Ciel ............. RM 562017
+- Eduardo Ulisses Pereira da Silva ... RM 566339
+- Henrique Castro de Matos ........... RM 564560
+- Laura Tigre Amaral ................. RM 565281
+
+Link do projeto no GitHub
+https://github.com/RickkCastro/caminho-livre
+(codigo da API em api-java/caminholivre-backend)
+
+Link do deploy (Render)
+API ............ https://caminho-livre.onrender.com
+Swagger ........ https://caminho-livre.onrender.com/swagger-ui.html
+Front-end ...... https://caminho-livre-nu.vercel.app
+
+Documentacao
+Documentacao_DDD_Java_CaminhoLivre.pdf (neste .zip)
+
+Observacao: o plano gratuito do Render dorme apos 15 minutos sem uso;
+a primeira chamada pode levar cerca de 1 minuto para responder.
+Para testar POST/PUT/DELETE no Swagger, veja a secao 4.5 do PDF (botao Authorize).
