@@ -1,0 +1,18 @@
+# Mídia do vídeo fica fora do git (pesada); roteiro, perfil, scripts e montagem.md continuam versionados
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.wav
+*.mp3
+*.m4a
+*.aac
+*.flac
+
+# Projeto Remotion: dependências e saídas geradas
+node_modules/
+edicao/remotion/out/
+edicao/remotion/build/
+
+# Respostas cruas da transcrição (regeráveis e com a voz transcrita)
+edicao/preparar/scribe_raw_*.json

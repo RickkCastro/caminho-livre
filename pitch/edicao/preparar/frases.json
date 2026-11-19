@@ -1,0 +1,362 @@
+[
+ {
+  "id": "f001",
+  "bloco": "1 · Gancho",
+  "inicio": 0.96,
+  "fim": 2.12,
+  "texto": "Imagina a Dona Marta.",
+  "falado": "Imagine a Dona Marta.",
+  "palavras": [
+   0,
+   3
+  ]
+ },
+ {
+  "id": "f002",
+  "bloco": "1 · Gancho",
+  "inicio": 2.64,
+  "fim": 7.28,
+  "texto": "Ela tem sessenta e oito anos, usa andador e mora a só seiscentos metros do posto de saúde.",
+  "falado": "Ela tem 68 anos, usa andador e mora a só 80 metros do posto de saúde.",
+  "palavras": [
+   4,
+   19
+  ]
+ },
+ {
+  "id": "f003",
+  "bloco": "1 · Gancho",
+  "inicio": 7.76,
+  "fim": 8.6,
+  "texto": "Parece perto, né?",
+  "falado": "Parece perto, né?",
+  "palavras": [
+   20,
+   22
+  ]
+ },
+ {
+  "id": "f004",
+  "bloco": "1 · Gancho",
+  "inicio": 9.0,
+  "fim": 14.54,
+  "texto": "Só que na última vez que ela tentou ir sozinha, deu de cara com uma guia alta sem rampa e teve que voltar no meio do caminho.",
+  "falado": "Só que a última vez que ela tentou ir sozinha, deu de cara com uma guia alta, sem rampa e teve que voltar no meio do caminho.",
+  "palavras": [
+   23,
+   49
+  ]
+ },
+ {
+  "id": "f005",
+  "bloco": "1 · Gancho",
+  "inicio": 15.24,
+  "fim": 18.8,
+  "texto": "Hoje, quando a filha não pode ir junto, ela simplesmente remarca a consulta.",
+  "falado": "Hoje, quando a filha não pode ir junto, ela simplesmente remarca a consulta.",
+  "palavras": [
+   50,
+   62
+  ]
+ },
+ {
+  "id": "f006",
+  "bloco": "2 · Problema",
+  "inicio": 19.64,
+  "fim": 27.8,
+  "texto": "O problema é que os aplicativos de GPS tratam a cidade como se fosse perfeita: toda calçada livre e toda rua segura, a qualquer hora do dia.",
+  "falado": "O problema é que os aplicativos de GPS tratam a cidade como se fosse perfeita. Toda calçada livre e toda rua segura, a qualquer hora do dia.",
+  "palavras": [
+   63,
+   89
+  ]
+ },
+ {
+  "id": "f007",
+  "bloco": "2 · Problema",
+  "inicio": 28.14,
+  "fim": 34.0,
+  "texto": "Eles não avisam que a calçada tá quebrada, que aquela esquina alaga quando chove, ou que o poste tá apagado há semanas.",
+  "falado": "Eles não avisam que a calçada tá quebrada, que aquela esquina alaga quando chove ou que o poste tá apagado há semanas.",
+  "palavras": [
+   90,
+   111
+  ]
+ },
+ {
+  "id": "f008",
+  "bloco": "2 · Problema",
+  "inicio": 34.38,
+  "fim": 36.8,
+  "texto": "Quem passa ali todo dia sabe disso de cor.",
+  "falado": "Quem passa ali todo dia, sabe disso de cor.",
+  "palavras": [
+   112,
+   120
+  ]
+ },
+ {
+  "id": "f009",
+  "bloco": "2 · Problema",
+  "inicio": 37.22,
+  "fim": 41.74,
+  "texto": "Só faltava um lugar simples pra registrar essa informação e usar ela na hora de escolher por onde andar.",
+  "falado": "Só falta um lugar simples pra registrar essa informação e usar ela na hora que escolher por onde andar.",
+  "palavras": [
+   121,
+   139
+  ]
+ },
+ {
+  "id": "f010",
+  "bloco": "3 · Solução",
+  "inicio": 42.28,
+  "fim": 49.72,
+  "texto": "Foi pra resolver isso que a gente criou o Caminho Livre: um mapa colaborativo de obstáculos e trechos inseguros, que traça uma rota desviando deles.",
+  "falado": "Foi para resolver isso que a gente criou o Caminho Seguro, um mapa colaborativo de obstáculos e trechos inseguros, que traça uma rota desviando deles.",
+  "palavras": [
+   140,
+   164
+  ]
+ },
+ {
+  "id": "f011",
+  "bloco": "3 · Solução",
+  "inicio": 50.28,
+  "fim": 52.6,
+  "texto": "É o mapa da cidade que mostra o que o GPS não vê.",
+  "falado": "É o mapa da cidade que mostra o que o GPS não vê.",
+  "palavras": [
+   165,
+   177
+  ]
+ },
+ {
+  "id": "f012",
+  "bloco": "4 · Como funciona",
+  "inicio": 53.2,
+  "fim": 55.16,
+  "texto": "Na prática, é sem complicação.",
+  "falado": "Na prática, é sem complicação.",
+  "palavras": [
+   178,
+   182
+  ]
+ },
+ {
+  "id": "f013",
+  "bloco": "4 · Como funciona",
+  "inicio": 55.38,
+  "fim": 58.92,
+  "texto": "Você entra direto com a sua conta Google, sem criar senha e sem preencher cadastro.",
+  "falado": "Você entra direto com a sua conta Google, sem criar senha e sem preencher cadastro.",
+  "palavras": [
+   183,
+   197
+  ]
+ },
+ {
+  "id": "f014",
+  "bloco": "4 · Como funciona",
+  "inicio": 59.32,
+  "fim": 61.38,
+  "texto": "Viu um buraco, um degrau ou uma rua escura?",
+  "falado": "Viu um buraco, um degrau ou uma rua escura?",
+  "palavras": [
+   198,
+   206
+  ]
+ },
+ {
+  "id": "f015",
+  "bloco": "4 · Como funciona",
+  "inicio": 61.66,
+  "fim": 67.58,
+  "texto": "Em até quatro toques você avisa a comunidade: tira uma foto, escolhe o tipo de problema, marca o local e envia.",
+  "falado": "Em até quatro toques, você avisa a comunidade. Tira uma foto, escolhe o tipo de problema, marca o local e envia.",
+  "palavras": [
+   207,
+   227
+  ]
+ },
+ {
+  "id": "f016",
+  "bloco": "4 · Como funciona",
+  "inicio": 68.04,
+  "fim": 72.12,
+  "texto": "E pra garantir que o mapa seja confiável, os próprios moradores validam os alertas.",
+  "falado": "E para garantir que o mapa seja confiável, os próprios moradores validam os alertas.",
+  "palavras": [
+   228,
+   241
+  ]
+ },
+ {
+  "id": "f017",
+  "bloco": "4 · Como funciona",
+  "inicio": 72.42,
+  "fim": 79.04,
+  "texto": "Se três pessoas confirmarem que o problema ainda tá lá, o alerta fica confirmado; se três avisarem que já foi resolvido, ele sai do mapa.",
+  "falado": "Se três pessoas confirmarem que o problema ainda tá lá, o alerta fica confirmado. Se três avisarem que já foi resolvido, ele sai do mapa.",
+  "palavras": [
+   242,
+   266
+  ]
+ },
+ {
+  "id": "f018",
+  "bloco": "4 · Como funciona",
+  "inicio": 79.38,
+  "fim": 82.06,
+  "texto": "E se ninguém confirmar nada em quinze dias, ele expira sozinho.",
+  "falado": "E se ninguém confirmar nada em 15 dias, ele expira sozinho.",
+  "palavras": [
+   267,
+   277
+  ]
+ },
+ {
+  "id": "f019",
+  "bloco": "4 · Como funciona",
+  "inicio": 82.4,
+  "fim": 83.72,
+  "texto": "Assim, o mapa nunca fica velho.",
+  "falado": "Assim, o mapa nunca fica velho.",
+  "palavras": [
+   278,
+   283
+  ]
+ },
+ {
+  "id": "f020",
+  "bloco": "4 · Como funciona",
+  "inicio": 84.44,
+  "fim": 89.74,
+  "texto": "Na hora de sair de casa, o app compara lado a lado a rota comum e a rota do Caminho Livre.",
+  "falado": "Na hora de sair de casa, o app compara lado a lado a rota comum e a rota do Caminho Livre. Pense",
+  "palavras": [
+   284,
+   305
+  ]
+ },
+ {
+  "id": "f021",
+  "bloco": "4 · Como funciona",
+  "inicio": 89.78,
+  "fim": 92.24,
+  "texto": "Pensa na Júlia, que sai da faculdade às onze da noite.",
+  "falado": "na Júlia, que sai da faculdade às 23h,",
+  "palavras": [
+   306,
+   313
+  ]
+ },
+ {
+  "id": "f022",
+  "bloco": "4 · Como funciona",
+  "inicio": 92.34,
+  "fim": 95.4,
+  "texto": "Andando só cento e trinta metros a mais, ela evita uma rua escura.",
+  "falado": "andando só 130 metros a mais, ela evita uma rua escura.",
+  "palavras": [
+   314,
+   324
+  ]
+ },
+ {
+  "id": "f023",
+  "bloco": "4 · Como funciona",
+  "inicio": 95.62,
+  "fim": 101.22,
+  "texto": "Já pra quem tem mobilidade reduzida, um degrau bloqueia aquele trecho na hora, e o app procura outro caminho, sem degrau.",
+  "falado": "Já pra quem tem mobilidade reduzida, um degrau bloqueia aquele trecho na hora e o app procura outro caminho sem degrau.",
+  "palavras": [
+   325,
+   345
+  ]
+ },
+ {
+  "id": "f024",
+  "bloco": "5 · Diferencial e impacto",
+  "inicio": 101.5,
+  "fim": 107.72,
+  "texto": "Cada detalhe da tela foi desenhado pensando em quem mais precisa: letra grande, alto contraste e poucos passos.",
+  "falado": "Cada detalhe da tela foi pensado em quem mais precisa. Letra grande, alto contraste e poucos passos.",
+  "palavras": [
+   346,
+   362
+  ]
+ },
+ {
+  "id": "f025",
+  "bloco": "5 · Diferencial e impacto",
+  "inicio": 107.96,
+  "fim": 114.06,
+  "texto": "Tudo pra que pessoas como o Seu Antônio, que normalmente desiste de um app na primeira tela de senha, consigam usar sozinhas.",
+  "falado": "Tudo para que pessoas como o Seu Antônio, que normalmente desiste de um app na primeira tela de senha, consigam usar sozinhas.",
+  "palavras": [
+   363,
+   384
+  ]
+ },
+ {
+  "id": "f026",
+  "bloco": "5 · Diferencial e impacto",
+  "inicio": 114.36,
+  "fim": 121.18,
+  "texto": "E além de ajudar o cidadão na hora, esses alertas viram dados pra zeladoria e pra iluminação pública saberem onde agir primeiro.",
+  "falado": "E além de ajudar o cidadão na hora, esses alertas viram dados para a zeladoria e para a iluminação pública saberem onde agir primeiro.",
+  "palavras": [
+   385,
+   408
+  ]
+ },
+ {
+  "id": "f027",
+  "bloco": "6 · Fechamento",
+  "inicio": 121.4,
+  "fim": 125.22,
+  "texto": "Com o Caminho Livre, a Dona Marta não depende mais de ninguém pra ir ao posto de saúde.",
+  "falado": "Com o Caminho Livre, Dona Marta não depende mais de ninguém para ir ao posto de saúde.",
+  "palavras": [
+   409,
+   425
+  ]
+ },
+ {
+  "id": "f028",
+  "bloco": "6 · Fechamento",
+  "inicio": 125.6,
+  "fim": 127.26,
+  "texto": "Ela vai sozinha, e com segurança.",
+  "falado": "Ela vai sozinha e com segurança.",
+  "palavras": [
+   426,
+   431
+  ]
+ },
+ {
+  "id": "f029",
+  "bloco": "6 · Fechamento",
+  "inicio": 127.76,
+  "fim": 128.34,
+  "texto": "Caminho Livre.",
+  "falado": "Caminho Livre,",
+  "palavras": [
+   432,
+   433
+  ]
+ },
+ {
+  "id": "f030",
+  "bloco": "6 · Fechamento",
+  "inicio": 128.68,
+  "fim": 129.6,
+  "texto": "Grupo Octoflow.",
+  "falado": "grupo Octoflow.",
+  "palavras": [
+   434,
+   435
+  ]
+ }
+]

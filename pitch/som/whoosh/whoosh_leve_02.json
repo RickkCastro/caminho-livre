@@ -1,0 +1,8 @@
+{
+ "tipo": "efeito",
+ "prompt": "soft airy whoosh, modern UI transition, clean, short tail",
+ "model_id": "eleven_text_to_sound_v3",
+ "duration_seconds": 0.8,
+ "loop": false,
+ "prompt_influence": 0.5
+}

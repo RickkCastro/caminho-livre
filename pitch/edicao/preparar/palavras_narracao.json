@@ -1,0 +1,3054 @@
+[
+ {
+  "texto": "Imagine",
+  "inicio": 0.96,
+  "fim": 1.5,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "a",
+  "inicio": 1.52,
+  "fim": 1.56,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Dona",
+  "inicio": 1.6,
+  "fim": 1.76,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Marta.",
+  "inicio": 1.84,
+  "fim": 2.12,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Ela",
+  "inicio": 2.64,
+  "fim": 2.8,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "tem",
+  "inicio": 2.84,
+  "fim": 2.98,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "68",
+  "inicio": 3.24,
+  "fim": 3.78,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "anos,",
+  "inicio": 3.84,
+  "fim": 4.14,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "usa",
+  "inicio": 4.36,
+  "fim": 4.46,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "andador",
+  "inicio": 4.5,
+  "fim": 4.92,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "e",
+  "inicio": 5.08,
+  "fim": 5.12,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "mora",
+  "inicio": 5.2,
+  "fim": 5.34,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "a",
+  "inicio": 5.38,
+  "fim": 5.4,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "só",
+  "inicio": 5.5,
+  "fim": 5.62,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "80",
+  "inicio": 5.8,
+  "fim": 6.02,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "metros",
+  "inicio": 6.06,
+  "fim": 6.36,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "do",
+  "inicio": 6.38,
+  "fim": 6.44,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "posto",
+  "inicio": 6.54,
+  "fim": 6.76,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "de",
+  "inicio": 6.8,
+  "fim": 6.86,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "saúde.",
+  "inicio": 6.9,
+  "fim": 7.28,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Parece",
+  "inicio": 7.76,
+  "fim": 8.119,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "perto,",
+  "inicio": 8.14,
+  "fim": 8.4,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "né?",
+  "inicio": 8.48,
+  "fim": 8.6,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Só",
+  "inicio": 9.0,
+  "fim": 9.08,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "que",
+  "inicio": 9.14,
+  "fim": 9.18,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "a",
+  "inicio": 9.2,
+  "fim": 9.22,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "última",
+  "inicio": 9.24,
+  "fim": 9.54,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "vez",
+  "inicio": 9.58,
+  "fim": 9.7,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "que",
+  "inicio": 9.74,
+  "fim": 9.76,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "ela",
+  "inicio": 9.8,
+  "fim": 9.88,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "tentou",
+  "inicio": 9.94,
+  "fim": 10.18,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "ir",
+  "inicio": 10.2,
+  "fim": 10.26,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "sozinha,",
+  "inicio": 10.3,
+  "fim": 10.72,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "deu",
+  "inicio": 11.12,
+  "fim": 11.22,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "de",
+  "inicio": 11.26,
+  "fim": 11.36,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "cara",
+  "inicio": 11.4,
+  "fim": 11.6,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "com",
+  "inicio": 11.64,
+  "fim": 11.7,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "uma",
+  "inicio": 11.74,
+  "fim": 11.84,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "guia",
+  "inicio": 11.88,
+  "fim": 12.0,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "alta,",
+  "inicio": 12.08,
+  "fim": 12.3,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "sem",
+  "inicio": 12.42,
+  "fim": 12.56,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "rampa",
+  "inicio": 12.62,
+  "fim": 12.92,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "e",
+  "inicio": 13.12,
+  "fim": 13.16,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "teve",
+  "inicio": 13.26,
+  "fim": 13.4,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "que",
+  "inicio": 13.44,
+  "fim": 13.5,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "voltar",
+  "inicio": 13.54,
+  "fim": 13.8,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "no",
+  "inicio": 13.84,
+  "fim": 13.92,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "meio",
+  "inicio": 13.94,
+  "fim": 14.06,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "do",
+  "inicio": 14.1,
+  "fim": 14.14,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "caminho.",
+  "inicio": 14.22,
+  "fim": 14.54,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Hoje,",
+  "inicio": 15.24,
+  "fim": 15.54,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "quando",
+  "inicio": 15.82,
+  "fim": 15.96,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "a",
+  "inicio": 16.0,
+  "fim": 16.059,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "filha",
+  "inicio": 16.1,
+  "fim": 16.28,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "não",
+  "inicio": 16.32,
+  "fim": 16.44,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "pode",
+  "inicio": 16.46,
+  "fim": 16.62,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "ir",
+  "inicio": 16.64,
+  "fim": 16.7,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "junto,",
+  "inicio": 16.74,
+  "fim": 17.02,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "ela",
+  "inicio": 17.18,
+  "fim": 17.32,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "simplesmente",
+  "inicio": 17.36,
+  "fim": 17.88,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "remarca",
+  "inicio": 17.92,
+  "fim": 18.24,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "a",
+  "inicio": 18.28,
+  "fim": 18.32,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "consulta.",
+  "inicio": 18.34,
+  "fim": 18.8,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "O",
+  "inicio": 19.64,
+  "fim": 19.68,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "problema",
+  "inicio": 19.76,
+  "fim": 20.22,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "é",
+  "inicio": 20.42,
+  "fim": 20.46,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "que",
+  "inicio": 20.48,
+  "fim": 20.52,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "os",
+  "inicio": 20.54,
+  "fim": 20.62,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "aplicativos",
+  "inicio": 20.66,
+  "fim": 21.28,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "de",
+  "inicio": 21.3,
+  "fim": 21.36,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "GPS",
+  "inicio": 21.38,
+  "fim": 21.88,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "tratam",
+  "inicio": 22.16,
+  "fim": 22.42,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "a",
+  "inicio": 22.44,
+  "fim": 22.5,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "cidade",
+  "inicio": 22.54,
+  "fim": 22.88,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "como",
+  "inicio": 22.92,
+  "fim": 23.08,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "se",
+  "inicio": 23.14,
+  "fim": 23.18,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "fosse",
+  "inicio": 23.22,
+  "fim": 23.42,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "perfeita.",
+  "inicio": 23.46,
+  "fim": 23.94,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Toda",
+  "inicio": 24.4,
+  "fim": 24.56,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "calçada",
+  "inicio": 24.62,
+  "fim": 25.02,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "livre",
+  "inicio": 25.06,
+  "fim": 25.4,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "e",
+  "inicio": 25.44,
+  "fim": 25.5,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "toda",
+  "inicio": 25.54,
+  "fim": 25.74,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "rua",
+  "inicio": 25.78,
+  "fim": 25.94,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "segura,",
+  "inicio": 26.0,
+  "fim": 26.3,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "a",
+  "inicio": 26.76,
+  "fim": 26.84,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "qualquer",
+  "inicio": 26.86,
+  "fim": 27.14,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "hora",
+  "inicio": 27.18,
+  "fim": 27.34,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "do",
+  "inicio": 27.38,
+  "fim": 27.48,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "dia.",
+  "inicio": 27.54,
+  "fim": 27.8,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Eles",
+  "inicio": 28.14,
+  "fim": 28.32,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "não",
+  "inicio": 28.34,
+  "fim": 28.46,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "avisam",
+  "inicio": 28.52,
+  "fim": 28.86,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "que",
+  "inicio": 28.88,
+  "fim": 28.92,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "a",
+  "inicio": 28.96,
+  "fim": 28.98,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "calçada",
+  "inicio": 29.02,
+  "fim": 29.4,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "tá",
+  "inicio": 29.44,
+  "fim": 29.54,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "quebrada,",
+  "inicio": 29.56,
+  "fim": 30.0,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "que",
+  "inicio": 30.36,
+  "fim": 30.4,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "aquela",
+  "inicio": 30.44,
+  "fim": 30.66,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "esquina",
+  "inicio": 30.7,
+  "fim": 31.0,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "alaga",
+  "inicio": 31.04,
+  "fim": 31.32,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "quando",
+  "inicio": 31.36,
+  "fim": 31.58,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "chove",
+  "inicio": 31.62,
+  "fim": 31.98,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "ou",
+  "inicio": 32.36,
+  "fim": 32.42,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "que",
+  "inicio": 32.439,
+  "fim": 32.5,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "o",
+  "inicio": 32.52,
+  "fim": 32.58,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "poste",
+  "inicio": 32.64,
+  "fim": 32.88,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "tá",
+  "inicio": 32.92,
+  "fim": 32.98,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "apagado",
+  "inicio": 33.0,
+  "fim": 33.36,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "há",
+  "inicio": 33.38,
+  "fim": 33.42,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "semanas.",
+  "inicio": 33.48,
+  "fim": 34.0,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Quem",
+  "inicio": 34.38,
+  "fim": 34.54,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "passa",
+  "inicio": 34.6,
+  "fim": 34.78,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "ali",
+  "inicio": 34.82,
+  "fim": 34.96,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "todo",
+  "inicio": 35.0,
+  "fim": 35.2,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "dia,",
+  "inicio": 35.28,
+  "fim": 35.46,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "sabe",
+  "inicio": 35.88,
+  "fim": 36.1,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "disso",
+  "inicio": 36.14,
+  "fim": 36.34,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "de",
+  "inicio": 36.36,
+  "fim": 36.46,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "cor.",
+  "inicio": 36.5,
+  "fim": 36.8,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Só",
+  "inicio": 37.22,
+  "fim": 37.32,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "falta",
+  "inicio": 37.36,
+  "fim": 37.52,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "um",
+  "inicio": 37.56,
+  "fim": 37.58,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "lugar",
+  "inicio": 37.6,
+  "fim": 37.86,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "simples",
+  "inicio": 37.92,
+  "fim": 38.16,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "pra",
+  "inicio": 38.2,
+  "fim": 38.3,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "registrar",
+  "inicio": 38.34,
+  "fim": 38.7,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "essa",
+  "inicio": 38.72,
+  "fim": 38.8,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "informação",
+  "inicio": 38.84,
+  "fim": 39.66,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "e",
+  "inicio": 39.72,
+  "fim": 39.76,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "usar",
+  "inicio": 39.82,
+  "fim": 40.02,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "ela",
+  "inicio": 40.1,
+  "fim": 40.28,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "na",
+  "inicio": 40.34,
+  "fim": 40.42,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "hora",
+  "inicio": 40.46,
+  "fim": 40.68,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "que",
+  "inicio": 40.72,
+  "fim": 40.78,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "escolher",
+  "inicio": 40.8,
+  "fim": 41.12,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "por",
+  "inicio": 41.16,
+  "fim": 41.26,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "onde",
+  "inicio": 41.3,
+  "fim": 41.4,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "andar.",
+  "inicio": 41.44,
+  "fim": 41.74,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Foi",
+  "inicio": 42.28,
+  "fim": 42.38,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "para",
+  "inicio": 42.42,
+  "fim": 42.58,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "resolver",
+  "inicio": 42.62,
+  "fim": 43.02,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "isso",
+  "inicio": 43.1,
+  "fim": 43.32,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "que",
+  "inicio": 43.34,
+  "fim": 43.4,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "a",
+  "inicio": 43.44,
+  "fim": 43.46,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "gente",
+  "inicio": 43.5,
+  "fim": 43.7,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "criou",
+  "inicio": 43.76,
+  "fim": 43.9,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "o",
+  "inicio": 43.94,
+  "fim": 43.98,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Caminho",
+  "inicio": 44.02,
+  "fim": 44.26,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Seguro,",
+  "inicio": 44.32,
+  "fim": 44.64,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "um",
+  "inicio": 44.96,
+  "fim": 45.02,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "mapa",
+  "inicio": 45.06,
+  "fim": 45.3,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "colaborativo",
+  "inicio": 45.34,
+  "fim": 46.0,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "de",
+  "inicio": 46.02,
+  "fim": 46.06,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "obstáculos",
+  "inicio": 46.1,
+  "fim": 46.62,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "e",
+  "inicio": 46.66,
+  "fim": 46.72,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "trechos",
+  "inicio": 46.76,
+  "fim": 47.04,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "inseguros,",
+  "inicio": 47.08,
+  "fim": 47.56,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "que",
+  "inicio": 47.96,
+  "fim": 48.06,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "traça",
+  "inicio": 48.12,
+  "fim": 48.34,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "uma",
+  "inicio": 48.38,
+  "fim": 48.54,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "rota",
+  "inicio": 48.58,
+  "fim": 48.86,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "desviando",
+  "inicio": 48.92,
+  "fim": 49.34,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "deles.",
+  "inicio": 49.38,
+  "fim": 49.72,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "É",
+  "inicio": 50.28,
+  "fim": 50.32,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "o",
+  "inicio": 50.36,
+  "fim": 50.42,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "mapa",
+  "inicio": 50.46,
+  "fim": 50.68,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "da",
+  "inicio": 50.72,
+  "fim": 50.8,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "cidade",
+  "inicio": 50.86,
+  "fim": 51.28,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "que",
+  "inicio": 51.3,
+  "fim": 51.4,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "mostra",
+  "inicio": 51.44,
+  "fim": 51.66,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "o",
+  "inicio": 51.68,
+  "fim": 51.7,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "que",
+  "inicio": 51.72,
+  "fim": 51.76,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "o",
+  "inicio": 51.78,
+  "fim": 51.82,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "GPS",
+  "inicio": 51.86,
+  "fim": 52.22,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "não",
+  "inicio": 52.26,
+  "fim": 52.38,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "vê.",
+  "inicio": 52.42,
+  "fim": 52.6,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Na",
+  "inicio": 53.2,
+  "fim": 53.32,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "prática,",
+  "inicio": 53.38,
+  "fim": 53.8,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "é",
+  "inicio": 54.3,
+  "fim": 54.34,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "sem",
+  "inicio": 54.4,
+  "fim": 54.5,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "complicação.",
+  "inicio": 54.54,
+  "fim": 55.16,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Você",
+  "inicio": 55.38,
+  "fim": 55.64,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "entra",
+  "inicio": 55.66,
+  "fim": 55.84,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "direto",
+  "inicio": 55.9,
+  "fim": 56.16,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "com",
+  "inicio": 56.2,
+  "fim": 56.24,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "a",
+  "inicio": 56.26,
+  "fim": 56.3,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "sua",
+  "inicio": 56.34,
+  "fim": 56.44,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "conta",
+  "inicio": 56.46,
+  "fim": 56.7,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Google,",
+  "inicio": 56.76,
+  "fim": 57.04,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "sem",
+  "inicio": 57.34,
+  "fim": 57.46,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "criar",
+  "inicio": 57.5,
+  "fim": 57.74,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "senha",
+  "inicio": 57.82,
+  "fim": 57.96,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "e",
+  "inicio": 57.98,
+  "fim": 58.0,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "sem",
+  "inicio": 58.04,
+  "fim": 58.12,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "preencher",
+  "inicio": 58.16,
+  "fim": 58.42,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "cadastro.",
+  "inicio": 58.46,
+  "fim": 58.92,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Viu",
+  "inicio": 59.32,
+  "fim": 59.38,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "um",
+  "inicio": 59.42,
+  "fim": 59.48,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "buraco,",
+  "inicio": 59.52,
+  "fim": 59.94,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "um",
+  "inicio": 59.98,
+  "fim": 60.04,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "degrau",
+  "inicio": 60.08,
+  "fim": 60.48,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "ou",
+  "inicio": 60.54,
+  "fim": 60.6,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "uma",
+  "inicio": 60.64,
+  "fim": 60.76,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "rua",
+  "inicio": 60.8,
+  "fim": 60.9,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "escura?",
+  "inicio": 60.94,
+  "fim": 61.38,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Em",
+  "inicio": 61.66,
+  "fim": 61.72,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "até",
+  "inicio": 61.78,
+  "fim": 61.94,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "quatro",
+  "inicio": 61.98,
+  "fim": 62.22,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "toques,",
+  "inicio": 62.26,
+  "fim": 62.48,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "você",
+  "inicio": 62.54,
+  "fim": 62.72,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "avisa",
+  "inicio": 62.78,
+  "fim": 62.98,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "a",
+  "inicio": 63.02,
+  "fim": 63.06,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "comunidade.",
+  "inicio": 63.1,
+  "fim": 63.72,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Tira",
+  "inicio": 63.96,
+  "fim": 64.099,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "uma",
+  "inicio": 64.12,
+  "fim": 64.26,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "foto,",
+  "inicio": 64.34,
+  "fim": 64.599,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "escolhe",
+  "inicio": 64.66,
+  "fim": 64.94,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "o",
+  "inicio": 64.98,
+  "fim": 65.0,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "tipo",
+  "inicio": 65.06,
+  "fim": 65.22,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "de",
+  "inicio": 65.26,
+  "fim": 65.319,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "problema,",
+  "inicio": 65.36,
+  "fim": 65.78,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "marca",
+  "inicio": 66.22,
+  "fim": 66.4,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "o",
+  "inicio": 66.42,
+  "fim": 66.44,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "local",
+  "inicio": 66.48,
+  "fim": 67.02,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "e",
+  "inicio": 67.08,
+  "fim": 67.1,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "envia.",
+  "inicio": 67.1,
+  "fim": 67.58,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "E",
+  "inicio": 68.04,
+  "fim": 68.1,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "para",
+  "inicio": 68.14,
+  "fim": 68.32,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "garantir",
+  "inicio": 68.36,
+  "fim": 68.7,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "que",
+  "inicio": 68.72,
+  "fim": 68.76,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "o",
+  "inicio": 68.78,
+  "fim": 68.82,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "mapa",
+  "inicio": 68.86,
+  "fim": 69.08,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "seja",
+  "inicio": 69.12,
+  "fim": 69.34,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "confiável,",
+  "inicio": 69.38,
+  "fim": 69.86,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "os",
+  "inicio": 70.18,
+  "fim": 70.28,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "próprios",
+  "inicio": 70.32,
+  "fim": 70.62,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "moradores",
+  "inicio": 70.66,
+  "fim": 71.12,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "validam",
+  "inicio": 71.16,
+  "fim": 71.46,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "os",
+  "inicio": 71.5,
+  "fim": 71.56,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "alertas.",
+  "inicio": 71.64,
+  "fim": 72.12,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Se",
+  "inicio": 72.42,
+  "fim": 72.5,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "três",
+  "inicio": 72.56,
+  "fim": 72.72,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "pessoas",
+  "inicio": 72.76,
+  "fim": 73.06,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "confirmarem",
+  "inicio": 73.1,
+  "fim": 73.52,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "que",
+  "inicio": 73.52,
+  "fim": 73.58,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "o",
+  "inicio": 73.6,
+  "fim": 73.64,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "problema",
+  "inicio": 73.68,
+  "fim": 73.98,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "ainda",
+  "inicio": 74.02,
+  "fim": 74.18,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "tá",
+  "inicio": 74.24,
+  "fim": 74.32,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "lá,",
+  "inicio": 74.36,
+  "fim": 74.48,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "o",
+  "inicio": 74.82,
+  "fim": 74.86,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "alerta",
+  "inicio": 74.92,
+  "fim": 75.2,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "fica",
+  "inicio": 75.24,
+  "fim": 75.4,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "confirmado.",
+  "inicio": 75.44,
+  "fim": 75.98,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Se",
+  "inicio": 76.34,
+  "fim": 76.44,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "três",
+  "inicio": 76.48,
+  "fim": 76.66,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "avisarem",
+  "inicio": 76.72,
+  "fim": 77.06,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "que",
+  "inicio": 77.08,
+  "fim": 77.16,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "já",
+  "inicio": 77.2,
+  "fim": 77.3,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "foi",
+  "inicio": 77.34,
+  "fim": 77.42,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "resolvido,",
+  "inicio": 77.44,
+  "fim": 77.96,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "ele",
+  "inicio": 78.3,
+  "fim": 78.44,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "sai",
+  "inicio": 78.5,
+  "fim": 78.62,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "do",
+  "inicio": 78.64,
+  "fim": 78.7,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "mapa.",
+  "inicio": 78.74,
+  "fim": 79.04,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "E",
+  "inicio": 79.38,
+  "fim": 79.42,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "se",
+  "inicio": 79.48,
+  "fim": 79.56,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "ninguém",
+  "inicio": 79.58,
+  "fim": 79.8,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "confirmar",
+  "inicio": 79.84,
+  "fim": 80.22,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "nada",
+  "inicio": 80.26,
+  "fim": 80.4,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "em",
+  "inicio": 80.42,
+  "fim": 80.48,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "15",
+  "inicio": 80.5,
+  "fim": 80.76,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "dias,",
+  "inicio": 80.8,
+  "fim": 81.06,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "ele",
+  "inicio": 81.26,
+  "fim": 81.34,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "expira",
+  "inicio": 81.36,
+  "fim": 81.64,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "sozinho.",
+  "inicio": 81.7,
+  "fim": 82.06,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Assim,",
+  "inicio": 82.4,
+  "fim": 82.58,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "o",
+  "inicio": 82.62,
+  "fim": 82.66,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "mapa",
+  "inicio": 82.7,
+  "fim": 82.94,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "nunca",
+  "inicio": 82.98,
+  "fim": 83.2,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "fica",
+  "inicio": 83.22,
+  "fim": 83.42,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "velho.",
+  "inicio": 83.48,
+  "fim": 83.72,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Na",
+  "inicio": 84.44,
+  "fim": 84.48,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "hora",
+  "inicio": 84.52,
+  "fim": 84.66,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "de",
+  "inicio": 84.68,
+  "fim": 84.72,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "sair",
+  "inicio": 84.76,
+  "fim": 84.92,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "de",
+  "inicio": 84.96,
+  "fim": 85.06,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "casa,",
+  "inicio": 85.12,
+  "fim": 85.54,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "o",
+  "inicio": 85.62,
+  "fim": 85.66,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "app",
+  "inicio": 85.72,
+  "fim": 85.86,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "compara",
+  "inicio": 85.92,
+  "fim": 86.32,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "lado",
+  "inicio": 86.38,
+  "fim": 86.56,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "a",
+  "inicio": 86.6,
+  "fim": 86.64,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "lado",
+  "inicio": 86.68,
+  "fim": 87.16,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "a",
+  "inicio": 87.24,
+  "fim": 87.28,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "rota",
+  "inicio": 87.32,
+  "fim": 87.58,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "comum",
+  "inicio": 87.64,
+  "fim": 87.92,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "e",
+  "inicio": 87.96,
+  "fim": 87.98,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "a",
+  "inicio": 88.0,
+  "fim": 88.04,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "rota",
+  "inicio": 88.06,
+  "fim": 88.28,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "do",
+  "inicio": 88.3,
+  "fim": 88.38,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Caminho",
+  "inicio": 88.42,
+  "fim": 88.7,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Livre.",
+  "inicio": 88.76,
+  "fim": 89.06,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Pense",
+  "inicio": 89.52,
+  "fim": 89.74,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "na",
+  "inicio": 89.78,
+  "fim": 89.9,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Júlia,",
+  "inicio": 89.96,
+  "fim": 90.32,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "que",
+  "inicio": 90.38,
+  "fim": 90.46,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "sai",
+  "inicio": 90.5,
+  "fim": 90.62,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "da",
+  "inicio": 90.66,
+  "fim": 90.72,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "faculdade",
+  "inicio": 90.78,
+  "fim": 91.18,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "às",
+  "inicio": 91.22,
+  "fim": 91.28,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "23h,",
+  "inicio": 91.52,
+  "fim": 92.24,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "andando",
+  "inicio": 92.34,
+  "fim": 92.6,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "só",
+  "inicio": 92.64,
+  "fim": 92.78,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "130",
+  "inicio": 92.96,
+  "fim": 93.36,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "metros",
+  "inicio": 93.4,
+  "fim": 93.64,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "a",
+  "inicio": 93.7,
+  "fim": 93.74,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "mais,",
+  "inicio": 93.78,
+  "fim": 94.02,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "ela",
+  "inicio": 94.36,
+  "fim": 94.44,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "evita",
+  "inicio": 94.48,
+  "fim": 94.68,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "uma",
+  "inicio": 94.74,
+  "fim": 94.84,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "rua",
+  "inicio": 94.88,
+  "fim": 94.94,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "escura.",
+  "inicio": 95.0,
+  "fim": 95.4,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Já",
+  "inicio": 95.62,
+  "fim": 95.72,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "pra",
+  "inicio": 95.74,
+  "fim": 95.84,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "quem",
+  "inicio": 95.88,
+  "fim": 96.0,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "tem",
+  "inicio": 96.04,
+  "fim": 96.12,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "mobilidade",
+  "inicio": 96.16,
+  "fim": 96.68,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "reduzida,",
+  "inicio": 96.72,
+  "fim": 97.22,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "um",
+  "inicio": 97.52,
+  "fim": 97.56,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "degrau",
+  "inicio": 97.6,
+  "fim": 97.94,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "bloqueia",
+  "inicio": 97.98,
+  "fim": 98.28,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "aquele",
+  "inicio": 98.32,
+  "fim": 98.54,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "trecho",
+  "inicio": 98.6,
+  "fim": 98.84,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "na",
+  "inicio": 98.88,
+  "fim": 98.96,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "hora",
+  "inicio": 99.0,
+  "fim": 99.54,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "e",
+  "inicio": 99.58,
+  "fim": 99.62,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "o",
+  "inicio": 99.66,
+  "fim": 99.7,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "app",
+  "inicio": 99.76,
+  "fim": 99.92,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "procura",
+  "inicio": 99.96,
+  "fim": 100.24,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "outro",
+  "inicio": 100.26,
+  "fim": 100.42,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "caminho",
+  "inicio": 100.46,
+  "fim": 100.7,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "sem",
+  "inicio": 100.74,
+  "fim": 100.84,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "degrau.",
+  "inicio": 100.88,
+  "fim": 101.22,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Cada",
+  "inicio": 101.5,
+  "fim": 101.7,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "detalhe",
+  "inicio": 101.74,
+  "fim": 102.08,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "da",
+  "inicio": 102.12,
+  "fim": 102.22,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "tela",
+  "inicio": 102.28,
+  "fim": 102.8,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "foi",
+  "inicio": 102.86,
+  "fim": 102.98,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "pensado",
+  "inicio": 103.02,
+  "fim": 103.34,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "em",
+  "inicio": 103.36,
+  "fim": 103.42,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "quem",
+  "inicio": 103.46,
+  "fim": 103.58,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "mais",
+  "inicio": 103.62,
+  "fim": 103.78,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "precisa.",
+  "inicio": 103.82,
+  "fim": 104.3,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Letra",
+  "inicio": 104.62,
+  "fim": 104.88,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "grande,",
+  "inicio": 104.94,
+  "fim": 105.3,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "alto",
+  "inicio": 105.6,
+  "fim": 105.78,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "contraste",
+  "inicio": 105.82,
+  "fim": 106.74,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "e",
+  "inicio": 106.8,
+  "fim": 106.92,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "poucos",
+  "inicio": 106.96,
+  "fim": 107.28,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "passos.",
+  "inicio": 107.32,
+  "fim": 107.72,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Tudo",
+  "inicio": 107.96,
+  "fim": 108.14,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "para",
+  "inicio": 108.18,
+  "fim": 108.34,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "que",
+  "inicio": 108.36,
+  "fim": 108.44,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "pessoas",
+  "inicio": 108.5,
+  "fim": 108.9,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "como",
+  "inicio": 108.94,
+  "fim": 109.06,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "o",
+  "inicio": 109.08,
+  "fim": 109.12,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Seu",
+  "inicio": 109.18,
+  "fim": 109.3,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Antônio,",
+  "inicio": 109.34,
+  "fim": 109.72,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "que",
+  "inicio": 109.98,
+  "fim": 110.06,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "normalmente",
+  "inicio": 110.1,
+  "fim": 110.62,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "desiste",
+  "inicio": 110.66,
+  "fim": 111.08,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "de",
+  "inicio": 111.12,
+  "fim": 111.14,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "um",
+  "inicio": 111.18,
+  "fim": 111.26,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "app",
+  "inicio": 111.32,
+  "fim": 111.48,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "na",
+  "inicio": 111.5,
+  "fim": 111.6,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "primeira",
+  "inicio": 111.64,
+  "fim": 111.96,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "tela",
+  "inicio": 112.02,
+  "fim": 112.2,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "de",
+  "inicio": 112.24,
+  "fim": 112.32,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "senha,",
+  "inicio": 112.4,
+  "fim": 112.62,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "consigam",
+  "inicio": 112.96,
+  "fim": 113.32,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "usar",
+  "inicio": 113.36,
+  "fim": 113.56,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "sozinhas.",
+  "inicio": 113.6,
+  "fim": 114.06,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "E",
+  "inicio": 114.36,
+  "fim": 114.42,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "além",
+  "inicio": 114.46,
+  "fim": 114.62,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "de",
+  "inicio": 114.64,
+  "fim": 114.66,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "ajudar",
+  "inicio": 114.7,
+  "fim": 115.0,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "o",
+  "inicio": 115.02,
+  "fim": 115.08,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "cidadão",
+  "inicio": 115.12,
+  "fim": 115.5,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "na",
+  "inicio": 115.54,
+  "fim": 115.62,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "hora,",
+  "inicio": 115.66,
+  "fim": 115.86,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "esses",
+  "inicio": 116.28,
+  "fim": 116.48,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "alertas",
+  "inicio": 116.56,
+  "fim": 116.94,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "viram",
+  "inicio": 116.98,
+  "fim": 117.2,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "dados",
+  "inicio": 117.26,
+  "fim": 117.6,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "para",
+  "inicio": 117.64,
+  "fim": 117.76,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "a",
+  "inicio": 117.8,
+  "fim": 117.82,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "zeladoria",
+  "inicio": 117.88,
+  "fim": 118.58,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "e",
+  "inicio": 118.64,
+  "fim": 118.74,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "para",
+  "inicio": 118.76,
+  "fim": 118.88,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "a",
+  "inicio": 118.88,
+  "fim": 118.9,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "iluminação",
+  "inicio": 118.94,
+  "fim": 119.48,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "pública",
+  "inicio": 119.52,
+  "fim": 119.9,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "saberem",
+  "inicio": 119.96,
+  "fim": 120.36,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "onde",
+  "inicio": 120.42,
+  "fim": 120.56,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "agir",
+  "inicio": 120.62,
+  "fim": 120.82,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "primeiro.",
+  "inicio": 120.86,
+  "fim": 121.18,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Com",
+  "inicio": 121.4,
+  "fim": 121.5,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "o",
+  "inicio": 121.52,
+  "fim": 121.54,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Caminho",
+  "inicio": 121.58,
+  "fim": 121.84,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Livre,",
+  "inicio": 121.9,
+  "fim": 122.16,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Dona",
+  "inicio": 122.48,
+  "fim": 122.7,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Marta",
+  "inicio": 122.74,
+  "fim": 122.98,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "não",
+  "inicio": 123.02,
+  "fim": 123.12,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "depende",
+  "inicio": 123.16,
+  "fim": 123.46,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "mais",
+  "inicio": 123.5,
+  "fim": 123.6,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "de",
+  "inicio": 123.64,
+  "fim": 123.7,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "ninguém",
+  "inicio": 123.74,
+  "fim": 124.0,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "para",
+  "inicio": 124.04,
+  "fim": 124.2,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "ir",
+  "inicio": 124.26,
+  "fim": 124.34,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "ao",
+  "inicio": 124.38,
+  "fim": 124.46,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "posto",
+  "inicio": 124.52,
+  "fim": 124.72,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "de",
+  "inicio": 124.78,
+  "fim": 124.82,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "saúde.",
+  "inicio": 124.88,
+  "fim": 125.22,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Ela",
+  "inicio": 125.6,
+  "fim": 125.7,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "vai",
+  "inicio": 125.74,
+  "fim": 125.84,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "sozinha",
+  "inicio": 125.9,
+  "fim": 126.42,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "e",
+  "inicio": 126.48,
+  "fim": 126.54,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "com",
+  "inicio": 126.58,
+  "fim": 126.68,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "segurança.",
+  "inicio": 126.72,
+  "fim": 127.26,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Caminho",
+  "inicio": 127.76,
+  "fim": 128.06,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Livre,",
+  "inicio": 128.1,
+  "fim": 128.34,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "grupo",
+  "inicio": 128.68,
+  "fim": 128.96,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ },
+ {
+  "texto": "Octoflow.",
+  "inicio": 129.02,
+  "fim": 129.6,
+  "tipo": "word",
+  "arquivo": "narracao.wav"
+ }
+]

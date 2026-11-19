@@ -1,0 +1,562 @@
+[
+ {
+  "texto": "Imagine",
+  "inicio": 0.96,
+  "fim": 1.5,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "a",
+  "inicio": 1.52,
+  "fim": 1.56,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "Dona",
+  "inicio": 1.6,
+  "fim": 1.76,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "Marta.",
+  "inicio": 1.84,
+  "fim": 2.12,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "Ela",
+  "inicio": 2.64,
+  "fim": 2.8,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "tem",
+  "inicio": 2.84,
+  "fim": 2.98,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "68",
+  "inicio": 3.24,
+  "fim": 3.78,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "anos,",
+  "inicio": 3.84,
+  "fim": 4.14,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "usa",
+  "inicio": 4.36,
+  "fim": 4.46,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "andador",
+  "inicio": 4.5,
+  "fim": 4.92,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "e",
+  "inicio": 5.08,
+  "fim": 5.12,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "mora",
+  "inicio": 5.2,
+  "fim": 5.34,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "a",
+  "inicio": 5.38,
+  "fim": 5.4,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "só",
+  "inicio": 5.5,
+  "fim": 5.62,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "80",
+  "inicio": 5.8,
+  "fim": 6.02,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "metros",
+  "inicio": 6.06,
+  "fim": 6.36,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "do",
+  "inicio": 6.38,
+  "fim": 6.44,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "posto",
+  "inicio": 6.54,
+  "fim": 6.76,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "de",
+  "inicio": 6.8,
+  "fim": 6.86,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "saúde.",
+  "inicio": 6.9,
+  "fim": 7.28,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "Parece",
+  "inicio": 7.76,
+  "fim": 8.119,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "perto,",
+  "inicio": 8.14,
+  "fim": 8.4,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "né?",
+  "inicio": 8.48,
+  "fim": 8.6,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "Só",
+  "inicio": 9.0,
+  "fim": 9.12,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "que",
+  "inicio": 9.14,
+  "fim": 9.18,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "a",
+  "inicio": 9.2,
+  "fim": 9.22,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "última",
+  "inicio": 9.24,
+  "fim": 9.54,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "vez",
+  "inicio": 9.58,
+  "fim": 9.7,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "que",
+  "inicio": 9.74,
+  "fim": 9.76,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "ela",
+  "inicio": 9.8,
+  "fim": 9.88,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "tentou",
+  "inicio": 9.94,
+  "fim": 10.18,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "ir",
+  "inicio": 10.2,
+  "fim": 10.26,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "sozinha,",
+  "inicio": 10.3,
+  "fim": 10.72,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "deu",
+  "inicio": 11.12,
+  "fim": 11.22,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "de",
+  "inicio": 11.26,
+  "fim": 11.36,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "cara",
+  "inicio": 11.4,
+  "fim": 11.6,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "com",
+  "inicio": 11.64,
+  "fim": 11.7,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "uma",
+  "inicio": 11.72,
+  "fim": 11.84,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "guia",
+  "inicio": 11.88,
+  "fim": 12.0,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "alta,",
+  "inicio": 12.08,
+  "fim": 12.3,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "sem",
+  "inicio": 12.42,
+  "fim": 12.56,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "rampa,",
+  "inicio": 12.62,
+  "fim": 12.92,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "e",
+  "inicio": 13.12,
+  "fim": 13.16,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "teve",
+  "inicio": 13.24,
+  "fim": 13.4,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "que",
+  "inicio": 13.44,
+  "fim": 13.5,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "voltar",
+  "inicio": 13.54,
+  "fim": 13.8,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "no",
+  "inicio": 13.84,
+  "fim": 13.92,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "meio",
+  "inicio": 13.94,
+  "fim": 14.06,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "do",
+  "inicio": 14.08,
+  "fim": 14.14,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "caminho.",
+  "inicio": 14.22,
+  "fim": 14.54,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "Hoje,",
+  "inicio": 15.24,
+  "fim": 15.54,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "quando",
+  "inicio": 15.82,
+  "fim": 15.96,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "a",
+  "inicio": 16.0,
+  "fim": 16.059,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "filha",
+  "inicio": 16.1,
+  "fim": 16.28,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "não",
+  "inicio": 16.32,
+  "fim": 16.44,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "pode",
+  "inicio": 16.46,
+  "fim": 16.62,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "ir",
+  "inicio": 16.64,
+  "fim": 16.7,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "junto,",
+  "inicio": 16.74,
+  "fim": 17.02,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "ela",
+  "inicio": 17.18,
+  "fim": 17.28,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "simplesmente",
+  "inicio": 17.36,
+  "fim": 17.88,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "remarca",
+  "inicio": 17.92,
+  "fim": 18.24,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "a",
+  "inicio": 18.26,
+  "fim": 18.32,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "consulta.",
+  "inicio": 18.34,
+  "fim": 18.74,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "O",
+  "inicio": 19.64,
+  "fim": 19.68,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "problema",
+  "inicio": 19.74,
+  "fim": 20.22,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "é",
+  "inicio": 20.42,
+  "fim": 20.44,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "que",
+  "inicio": 20.48,
+  "fim": 20.52,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "os",
+  "inicio": 20.54,
+  "fim": 20.62,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "aplicativos",
+  "inicio": 20.66,
+  "fim": 21.28,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "de",
+  "inicio": 21.3,
+  "fim": 21.36,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "GPS",
+  "inicio": 21.48,
+  "fim": 21.88,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "tratam",
+  "inicio": 22.16,
+  "fim": 22.42,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "a",
+  "inicio": 22.44,
+  "fim": 22.5,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "cidade",
+  "inicio": 22.54,
+  "fim": 22.9,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "como",
+  "inicio": 22.92,
+  "fim": 23.08,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "se",
+  "inicio": 23.14,
+  "fim": 23.18,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "fosse",
+  "inicio": 23.22,
+  "fim": 23.42,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "perfeita.",
+  "inicio": 23.46,
+  "fim": 23.94,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "Toda",
+  "inicio": 24.4,
+  "fim": 24.56,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ },
+ {
+  "texto": "calçada",
+  "inicio": 24.62,
+  "fim": 24.96,
+  "tipo": "word",
+  "arquivo": "teste25.wav"
+ }
+]

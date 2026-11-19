@@ -1,0 +1,8 @@
+{
+ "tipo": "efeito",
+ "prompt": "soft muted pop, gentle UI tag appearing",
+ "model_id": "eleven_text_to_sound_v3",
+ "duration_seconds": 0.5,
+ "loop": false,
+ "prompt_influence": 0.5
+}

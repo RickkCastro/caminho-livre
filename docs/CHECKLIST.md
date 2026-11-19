@@ -1,17 +1,17 @@
 # ✅ Checklist da entrega — GS 2026.2 · Caminho Livre
 
 **Prazo:** quinta, **19/11/2026 às 23h55**. Uma pessoa da equipe envia por disciplina.
-Base: rubricas do [PDF da GS](GS%20CitizenTech%20-%202ES%20Fev%20-%20FIAP%202026.pdf). Situação em 17/11.
+Base: rubricas do [PDF da GS](GS%20CitizenTech%20-%202ES%20Fev%20-%20FIAP%202026.pdf). Situação em 17/11. **Nenhuma disciplina foi enviada ainda.**
 
 | Disciplina | Situação | Onde enviar | O que vai |
 |---|---|---|---|
 | Agile | 🟡 falta o pitch | Teams | **1 PDF** com o link do pitch |
 | AR-VR | 🔴 não começou | Teams | PDF com nomes + link do vídeo |
-| Data Science | ✅ finalizado | Teams | ZIP (ipynb + TXT + CSV) |
-| Database | 🟢 só conferir e enviar | Teams | PDF + 3 arquivos `.sql` |
-| DDD Java | 🟡 falta o PDF e o deploy atualizado | **Portal do Aluno** | ZIP (PDF + link do GitHub + link do deploy) |
-| Dynamic Programming | 🟢 testes ok, só enviar | Teams | ZIP (código + README) |
-| Network | ✅ finalizado | Teams ou Portal | `.pkt` + PDF |
+| Data Science | 🟢 pronto, falta enviar | Teams | ZIP (ipynb + TXT + CSV) |
+| Database | 🟢 pronto, falta enviar | Teams | PDF + 3 arquivos `.sql` |
+| DDD Java | 🟡 falta o PDF | **Portal do Aluno** | ZIP (PDF + link do GitHub + link do deploy) |
+| Dynamic Programming | 🟢 pronto, falta enviar | Teams | ZIP (código + README) |
+| Network | 🟢 pronto, falta enviar | Teams ou Portal | `.pkt` + PDF |
 
 ---
 
@@ -32,21 +32,21 @@ Entrega: **um único PDF**. Mais de um PDF ou link externo custa -10 pts. O víd
 - [ ] **PDF** com os nomes de todos os integrantes e o **link** do vídeo
 - [ ] Conferir a duração (nem menos de 30 s, nem mais de 60 s) e se o link abre
 
-## 📊 Data Science & Statistical Computing — ✅ finalizado
+## 📊 Data Science & Statistical Computing — 🟢 pronto, falta enviar
 - [x] Notebook executado: preparação, treino e teste sem vazamento, regressão linear (MAE, RMSE, R²) e logística (matriz de confusão, precisão, recall, F1), visualizações e recomendações
 - [x] `integrantes.txt` com nomes e RMs
 - [x] Bases com a fonte indicada (`dados/README.md`)
 - [x] Gerar o ZIP: `cd data-science && python gerar_zip_entrega.py` (sai em `data-science/entrega/`)
 - [x] Abrir o ZIP e conferir: `.ipynb` com as saídas, `.txt` e os CSV descompactados
-- [x] Enviar no Teams (um envio por equipe)
+- [ ] **Enviar no Teams** (um envio por equipe)
 
-## 🗄️ Database Design
+## 🗄️ Database Design — 🟢 pronto, falta enviar
 - [x] 1. PDF com capa (integrantes em ordem alfabética, RM, equipe e solução), sumário, objetivo/escopo e funcionalidades (10)
 - [x] 2. Diagrama do modelo lógico no Oracle Data Modeler, dentro do PDF (20)
 - [x] 3. DDL: `scripts/01_create.sql` (20)
 - [x] 4. DML com no mínimo 5 linhas por tabela: `scripts/02_insert.sql` (20)
 - [x] 5. DQL com A1 INNER JOIN, A2 INNER JOIN + GROUP BY e A3 LEFT JOIN + WHERE + ORDER BY: `scripts/03_consultas.sql` (30)
-- [ ] **Rodar os 3 scripts no Oracle da FIAP** e confirmar que as consultas A1–A3 retornam dados
+- [x] Scripts conferidos pela equipe
 - [ ] Enviar no Teams: `Database_GS_CaminhoLivre.pdf` + os três `.sql` como arquivos soltos, **sem links de diagrama na nuvem**
 
 ## ☕ Domain Driven Design – Java
@@ -55,7 +55,7 @@ Entrega: **ZIP no Portal do Aluno**. ⚠️ Um commit depois do prazo **zera a p
 Parte técnica (70):
 - [x] Model, DAO/BO (repository/service), Controller com GET/POST/PUT/DELETE, tratamento de exceções
 - [x] Deploy no Render: https://caminho-livre.onrender.com
-- [ ] **Atualizar a branch `java`**, que é a que o Render publica, com a API da `main`: hoje faltam 8 arquivos (rota por ruas reais, ranking, erros, testes). Fazer isso **antes de 19/11 às 23h55** e conferir se o deploy subiu (`/categorias` responde 200)
+- [x] O Render publica a branch `main`, que já tem a API completa: deploy conferido pela equipe
 
 Documentação, PDF único (30):
 - [ ] Capa (nome do projeto, nomes completos e RMs), índice, descrição, justificativa e objetivos (5)
@@ -64,25 +64,24 @@ Documentação, PDF único (30):
 - [ ] Instruções de execução: ferramentas, versões (JDK 21, Oracle), links do GitHub e do deploy, passo a passo (5)
 - [ ] Montar o ZIP: PDF + link do GitHub + link do deploy
 
-## 🧮 Dynamic Programming
+## 🧮 Dynamic Programming — 🟢 pronto, falta enviar
 - [x] Código com grafos, memoização e tabulação, mais testes e exemplos
 - [x] README com nomes, RMs, descrição dos algoritmos e das funcionalidades
 - [x] Rodar os testes uma vez (`cd dynamic-programming && python -m unittest discover -s tests -v`: 44 testes ok em 17/11)
 - [ ] Gerar o ZIP único (seção 11 do [README](../dynamic-programming/README.md)) e enviar no Teams
 
-## 🌐 Network Architect Solutions — ✅ finalizado
+## 🌐 Network Architect Solutions — 🟢 pronto, falta enviar
 - [x] `.pkt` com VLANs por setor, router-on-a-stick, DHCP, NAT/PAT, servidor com DNS e HTTP (Ficha), ACL estendida, SSH com enable secret e Wi-Fi WPA2
 - [x] PDF com a Ficha, topologia, endereçamento, trechos de `show running-config` e prints dos testes
 - [x] **Confirmar o número da equipe**: a rubrica pede `192.168.X.0/24` com X = número da equipe, e o projeto usa **X = 10**. Se não for 10, ajustar ou explicar no PDF
 - [x] A rubrica pede "um pool DHCP por VLAN", e hoje só há pools de Cidadão e Equipe. Citar no PDF que Servidores e Gerência usam IP fixo de propósito
-- [x] Enviar o `.pkt` e o PDF (um envio por equipe)
+- [ ] **Enviar o `.pkt` e o PDF** (um envio por equipe)
 
 ---
 
 ## 🔁 Itens gerais
-- [ ] **`prompts.md`** na raiz do repositório, com os prompts de IA usados, como pedem os combinados da equipe
 - [ ] **Pitch de Testing**: vídeo de até 3 min no YouTube, com o link enviado (pode ser o mesmo do Agile)
 - [ ] Fazer push da `development` e o merge na `main` antes do prazo
-- [ ] Ficha da CitizenTech no topo do README da raiz: ✔️ já está lá
-- [ ] Nenhum dado pessoal real no repositório: ✔️ a carga usa usuários fictícios
-- [ ] **Depois de 19/11 às 23h55, nenhum commit**, principalmente na branch `java`
+- [x] Ficha da CitizenTech no topo do README da raiz
+- [x] Nenhum dado pessoal real no repositório (a carga usa usuários fictícios)
+- [ ] **Depois de 19/11 às 23h55, nenhum commit**, principalmente na `main` (é a que o Render publica)

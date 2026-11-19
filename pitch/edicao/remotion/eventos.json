@@ -1,0 +1,626 @@
+{
+ "c01": [
+  [
+   29,
+   "entrada forte",
+   "círculo da Marta nasce com onda"
+  ],
+  [
+   48,
+   "texto digitado",
+   "nome se escreve"
+  ]
+ ],
+ "c02": [
+  [
+   79,
+   "câmera",
+   "recuo lento revela casa e posto"
+  ],
+  [
+   97,
+   "pop leve",
+   "pílula 68 anos"
+  ],
+  [
+   135,
+   "pop leve",
+   "pílula andador"
+  ],
+  [
+   156,
+   "risco",
+   "linha tracejada se desenha"
+  ],
+  [
+   174,
+   "número",
+   "600 m conta"
+  ],
+  [
+   196,
+   "acende",
+   "posto acende"
+  ]
+ ],
+ "c03": [
+  [
+   233,
+   "entrada",
+   "frase Parece perto."
+  ],
+  [
+   244,
+   "punch",
+   "perto"
+  ]
+ ],
+ "c04": [
+  [
+   298,
+   "movimento",
+   "ponto começa a andar"
+  ],
+  [
+   356,
+   "impacto",
+   "guia alta sobe e o ponto bate"
+  ],
+  [
+   381,
+   "risco",
+   "rampa riscada"
+  ],
+  [
+   406,
+   "movimento",
+   "ponto volta, linha fica cinza"
+  ],
+  [
+   437,
+   "troca",
+   "whip lateral"
+  ]
+ ],
+ "c05": [
+  [
+   447,
+   "chegada",
+   "card chega do whip"
+  ],
+  [
+   483,
+   "pop leve",
+   "filha acende"
+  ],
+  [
+   538,
+   "risco",
+   "data riscada"
+  ],
+  [
+   548,
+   "virada",
+   "card vira"
+  ],
+  [
+   559,
+   "troca",
+   "forma verde varre"
+  ]
+ ],
+ "c06": [
+  [
+   577,
+   "entrada",
+   "mapa entra (vindo da forma que varreu)"
+  ],
+  [
+   641,
+   "pino",
+   "pino do GPS cai e rota se desenha"
+  ],
+  [
+   704,
+   "carimbo",
+   "selo cidade perfeita"
+  ],
+  [
+   739,
+   "check",
+   "✓ calçada livre"
+  ],
+  [
+   773,
+   "check",
+   "✓ rua segura"
+  ],
+  [
+   815,
+   "check",
+   "✓ qualquer hora"
+  ]
+ ],
+ "c07": [
+  [
+   839,
+   "corte",
+   "corte com assentamento, mapa mais perto"
+  ],
+  [
+   887,
+   "queda",
+   "alerta calçada quebrada cai"
+  ],
+  [
+   931,
+   "queda",
+   "alerta alagamento cai"
+  ],
+  [
+   990,
+   "queda",
+   "alerta poste apagado cai"
+  ]
+ ],
+ "c08": [
+  [
+   1026,
+   "corte",
+   "corte seco, frase entra"
+  ],
+  [
+   1076,
+   "marca-texto",
+   "sabe destacado"
+  ],
+  [
+   1095,
+   "troca",
+   "forma verde varre"
+  ]
+ ],
+ "c09": [
+  [
+   1115,
+   "entrada",
+   "frase entra"
+  ],
+  [
+   1150,
+   "pino",
+   "pino com + cai, registrar acende"
+  ],
+  [
+   1236,
+   "troca",
+   "speed ramp para cima"
+  ]
+ ],
+ "c10": [
+  [
+   1260,
+   "chegada",
+   "logo chega do speed ramp"
+  ],
+  [
+   1321,
+   "texto digitado",
+   "Caminho Livre se escreve"
+  ],
+  [
+   1383,
+   "pop leve",
+   "pinos azuis (cascata)"
+  ],
+  [
+   1412,
+   "pop leve",
+   "pinos vermelhos (cascata)"
+  ],
+  [
+   1422,
+   "troca",
+   "câmera empurra para dentro"
+  ]
+ ],
+ "c11": [
+  [
+   1437,
+   "chegada",
+   "mapa chega com o zoom"
+  ],
+  [
+   1468,
+   "risco",
+   "rota verde desvia"
+  ]
+ ],
+ "c12": [
+  [
+   1503,
+   "corte",
+   "corte com assentamento, frase"
+  ],
+  [
+   1514,
+   "entrada",
+   "celular entra girando"
+  ],
+  [
+   1568,
+   "marca-texto",
+   "não vê destacado"
+  ],
+  [
+   1569,
+   "troca",
+   "forma verde varre"
+  ]
+ ],
+ "c13": [
+  [
+   1587,
+   "entrada",
+   "celular sobe (vindo da forma que varreu)"
+  ],
+  [
+   1698,
+   "câmera",
+   "zoom no Entrar com Google"
+  ],
+  [
+   1734,
+   "risco",
+   "chip senha riscado"
+  ],
+  [
+   1755,
+   "risco",
+   "chip cadastro riscado"
+  ]
+ ],
+ "c14": [
+  [
+   1773,
+   "corte",
+   "corte seco"
+  ],
+  [
+   1785,
+   "pop",
+   "buraco"
+  ],
+  [
+   1803,
+   "pop",
+   "degrau"
+  ],
+  [
+   1824,
+   "pop",
+   "rua escura"
+  ]
+ ],
+ "c15": [
+  [
+   1845,
+   "corte",
+   "corte com assentamento"
+  ],
+  [
+   1860,
+   "entrada",
+   "contador 4 toques"
+  ],
+  [
+   1929,
+   "clique",
+   "toque 1"
+  ],
+  [
+   1953,
+   "clique",
+   "toque 2: Buraco"
+  ],
+  [
+   1995,
+   "clique",
+   "toque 3: local"
+  ],
+  [
+   2013,
+   "clique",
+   "toque 4: Enviar → alerta enviado"
+  ]
+ ],
+ "c16": [
+  [
+   2037,
+   "corte",
+   "corte seco, pino cai"
+  ],
+  [
+   2121,
+   "chegada",
+   "moradores chegam (cascata)"
+  ],
+  [
+   2136,
+   "check",
+   "check no pino"
+  ]
+ ],
+ "c17": [
+  [
+   2169,
+   "corte",
+   "corte com assentamento + zoom no card"
+  ],
+  [
+   2178,
+   "número",
+   "Ainda está lá conta até 3"
+  ],
+  [
+   2262,
+   "carimbo",
+   "selo Confirmada"
+  ]
+ ],
+ "c18": [
+  [
+   2286,
+   "câmera",
+   "desliza para Já foi resolvido"
+  ],
+  [
+   2295,
+   "número",
+   "Já foi resolvido conta até 3"
+  ],
+  [
+   2355,
+   "saída",
+   "saiu do mapa"
+  ]
+ ],
+ "c19": [
+  [
+   2376,
+   "corte",
+   "corte seco"
+  ],
+  [
+   2415,
+   "número",
+   "15 dias conta"
+  ],
+  [
+   2442,
+   "apaga",
+   "pino desbota"
+  ],
+  [
+   2474,
+   "entrada",
+   "frase O mapa nunca fica velho"
+  ],
+  [
+   2490,
+   "marca-texto",
+   "nunca"
+  ]
+ ],
+ "c20": [
+  [
+   2529,
+   "corte",
+   "corte com assentamento, celular"
+  ],
+  [
+   2577,
+   "câmera",
+   "zoom na comparação"
+  ],
+  [
+   2664,
+   "troca",
+   "forma verde varre"
+  ]
+ ],
+ "c21": [
+  [
+   2682,
+   "entrada",
+   "mapa noturno"
+  ],
+  [
+   2700,
+   "pop",
+   "Júlia"
+  ],
+  [
+   2745,
+   "pop",
+   "23h"
+  ],
+  [
+   2712,
+   "risco",
+   "rotas se desenham"
+  ],
+  [
+   2790,
+   "número",
+   "+130 m conta"
+  ],
+  [
+   2847,
+   "alerta",
+   "rua escura acende vermelho"
+  ]
+ ],
+ "c22": [
+  [
+   2865,
+   "corte",
+   "corte com assentamento, mapa de dia"
+  ],
+  [
+   2928,
+   "queda",
+   "degrau cai no trecho"
+  ],
+  [
+   2940,
+   "bloqueio",
+   "trecho bloqueado (X)"
+  ],
+  [
+   3009,
+   "risco",
+   "novo caminho se desenha"
+  ],
+  [
+   3027,
+   "troca",
+   "forma verde varre"
+  ]
+ ],
+ "c23": [
+  [
+   3041,
+   "entrada",
+   "frase e celular (vindo da forma que varreu)"
+  ],
+  [
+   3138,
+   "check",
+   "letra grande"
+  ],
+  [
+   3168,
+   "check",
+   "alto contraste"
+  ],
+  [
+   3210,
+   "check",
+   "poucos passos"
+  ]
+ ],
+ "c24": [
+  [
+   3234,
+   "corte",
+   "corte seco, Seu Antônio"
+  ],
+  [
+   3279,
+   "texto digitado",
+   "nome"
+  ],
+  [
+   3321,
+   "pop",
+   "tela de senha"
+  ],
+  [
+   3347,
+   "queda",
+   "tela de senha cai"
+  ],
+  [
+   3408,
+   "pop",
+   "botão Entrar com Google"
+  ]
+ ],
+ "c25": [
+  [
+   3426,
+   "corte",
+   "corte com assentamento"
+  ],
+  [
+   3453,
+   "pop",
+   "nó cidadão"
+  ],
+  [
+   3519,
+   "pulso",
+   "pulso no trilho, nó dados"
+  ],
+  [
+   3537,
+   "pop",
+   "nó zeladoria"
+  ],
+  [
+   3567,
+   "pop",
+   "nó iluminação"
+  ],
+  [
+   3618,
+   "destaque",
+   "onde agir primeiro"
+  ],
+  [
+   3615,
+   "troca",
+   "speed ramp para cima"
+  ]
+ ],
+ "c26": [
+  [
+   3639,
+   "chegada",
+   "mundo do gancho volta"
+  ],
+  [
+   3675,
+   "movimento",
+   "Marta anda pela rota verde"
+  ],
+  [
+   3735,
+   "chegada",
+   "Marta chega ao posto"
+  ],
+  [
+   3771,
+   "acende",
+   "posto acende + Ela vai sozinha"
+  ],
+  [
+   3801,
+   "check",
+   "check de segurança"
+  ],
+  [
+   3804,
+   "troca",
+   "forma verde varre"
+  ]
+ ],
+ "c27": [
+  [
+   3834,
+   "logo",
+   "logo monta"
+  ],
+  [
+   3870,
+   "entrada",
+   "Grupo Octoflow"
+  ],
+  [
+   3880,
+   "entrada",
+   "Global Solution FIAP 2026.2"
+  ]
+ ]
+}

@@ -1,6 +1,5 @@
 {
   "0": "Casos de uso e atores",
-  "1": "Contrato REST da API",
   "7": "Briefing da GS CitizenTech",
   "9": "Ficha CitizenTech e rede",
   "10": "Front: telas e sessão",
@@ -15,7 +14,6 @@
   "21": "Camadas DAO sem JPA",
   "22": "Deploy e MVP da API",
   "23": "Erro padrão",
-  "24": "Vídeo 3D",
   "25": "Entregável AR-VR",
   "26": "Entregável Data Science",
   "27": "Entregável Dynamic Programming",

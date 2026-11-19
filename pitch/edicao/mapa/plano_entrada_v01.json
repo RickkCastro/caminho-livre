@@ -1,0 +1,68 @@
+{
+ "trechos": [
+  {"id": "gancho", "inicio": 0.0, "fim": 19.22},
+  {"id": "problema", "inicio": 19.22, "fim": 42.01},
+  {"id": "solucao", "inicio": 42.01, "fim": 52.9},
+  {"id": "demo", "inicio": 52.9, "fim": 101.36},
+  {"id": "diferencial", "inicio": 101.36, "fim": 121.29},
+  {"id": "fechamento", "inicio": 121.29, "fim": 132.6}
+ ],
+ "cenas": [
+  {"id": "c01", "inicio": 0.0, "fim": 2.64, "tipo": "board", "descricao": "fundo verde-escuro; círculo verde-água com ícone de andador nasce no centro; nome 'Dona Marta' escreve ao lado",
+   "gatilhos": [["Imagina", 0.96, "círculo nasce"], ["Dona", 1.6, "nome escreve"]], "troca": "câmera recua sem corte (mesmo mundo)", "aprovada": true,
+   "storyboard": {"camadas": "fundo verde-escuro + formas flutuando; meio: círculo Marta; frente: nome", "camera": "parada com deriva; recua no fim", "vida": "formas de fundo flutuando"}},
+  {"id": "c02", "inicio": 2.64, "fim": 7.7, "tipo": "board", "descricao": "recuo revela casa (esq.) e posto (dir.); pílulas 68 anos e andador; linha tracejada casa→posto; 600 m conta",
+   "gatilhos": [["68", 3.24, "pílula 68 anos"], ["andador", 4.5, "pílula andador"], ["mora", 5.2, "linha se desenha"], ["seiscentos", 5.8, "600 m conta"], ["posto", 6.54, "posto acende"]], "troca": "contínua", "aprovada": true,
+   "storyboard": {"camadas": "fundo escuro; meio: casa, linha, posto; frente: pílulas e número", "camera": "recuo lento power2.out + deriva", "heroi": "600 m", "vida": "deriva"}},
+  {"id": "c03", "inicio": 7.7, "fim": 8.95, "tipo": "board", "descricao": "câmera recua mais, caminho parece curto; frase 'Parece perto.' no alto",
+   "gatilhos": [["Parece", 7.76, "frase entra"], ["perto", 8.14, "punch leve"]], "troca": "frase sai rápida, câmera reaproxima (mesmo mundo)", "aprovada": true,
+   "storyboard": {"camera": "recuo emendado ao da c02, depois reaproxima"}},
+  {"id": "c04", "inicio": 8.95, "fim": 14.9, "tipo": "board", "descricao": "HERÓI DO GANCHO: ponto anda pela linha; guia alta (degrau azul #1f5fad) sobe; rampa tracejada riscada; ponto bate, para e volta; linha à frente fica cinza",
+   "gatilhos": [["tentou", 9.94, "ponto anda devagar"], ["guia", 11.88, "degrau sobe + câmera aproxima 1.0→1.4"], ["sem", 12.42, "rampa tracejada aparece e é riscada"], ["voltar", 13.54, "ponto volta, linha fica cinza"]], "troca": "whip lateral", "aprovada": true,
+   "storyboard": {"camadas": "fundo escuro; meio: linha, ponto, degrau; frente: rampa riscada", "camera": "aproximação no degrau power2.inOut ~20 f + deriva", "heroi": "degrau subindo", "vida": "deriva; ponto tremendo de leve ao bater"}},
+  {"id": "c05", "inicio": 14.9, "fim": 19.22, "tipo": "board", "descricao": "fundo claro; card 'Consulta · Posto de saúde · qui 14h'; ícone da filha acende e apaga; data riscada e card vira para outra data",
+   "gatilhos": [["Hoje", 15.24, "card entra"], ["filha", 16.1, "ícone pessoa acende/apaga"], ["remarca", 17.92, "data riscada, card vira"]], "troca": "forma verde varrendo", "aprovada": true,
+   "storyboard": {"camadas": "fundo #e8f4ef; meio: card; frente: ícone filha", "camera": "deriva lenta", "vida": "deriva"}},
+
+  {"id": "c06", "inicio": 19.22, "fim": 27.95, "tipo": "diagrama", "descricao": "mapa genérico com rota reta do GPS; checklist ✓ ao lado", "gatilhos": [["GPS", 21.38, "pino GPS"], ["perfeita", 23.46, "selo"], ["calçada", 24.62, "✓ calçada livre"], ["rua", 25.78, "✓ rua segura"], ["hora", 27.18, "✓ qualquer hora"]], "troca": "corte com assentamento"},
+  {"id": "c07", "inicio": 27.95, "fim": 34.2, "tipo": "diagrama", "descricao": "mesmo mapa; três ícones caem sobre a rota", "gatilhos": [["quebrada", 29.56, "calçada quebrada"], ["alaga", 31.04, "alagamento"], ["apagado", 33.0, "poste apagado"]], "troca": "corte seco"},
+  {"id": "c08", "inicio": 34.2, "fim": 37.1, "tipo": "board", "descricao": "fundo claro; frase 'Quem passa ali sabe.'", "gatilhos": [["sabe", 35.88, "'sabe' em verde-água"]], "troca": "forma varrendo"},
+  {"id": "c09", "inicio": 37.1, "fim": 42.01, "tipo": "board", "descricao": "fundo escuro; frase 'Faltava um lugar pra registrar' + pino com '+'", "gatilhos": [["registrar", 38.34, "palavra destacada + pino"]], "troca": "speed ramp"},
+  {"id": "c10", "inicio": 42.01, "fim": 47.9, "tipo": "board", "descricao": "logo monta; pinos de alerta surgem em volta", "gatilhos": [["Caminho", 44.02, "logo monta"], ["obstáculos", 46.1, "pinos azuis"], ["inseguros", 47.08, "pinos vermelhos"]], "troca": "contínua"},
+  {"id": "c11", "inicio": 47.9, "fim": 50.1, "tipo": "diagrama", "descricao": "volta o mapa da c07: rota reta vira rota verde contornando os ícones", "gatilhos": [["desviando", 48.92, "rota verde desvia"]], "troca": "corte com assentamento"},
+  {"id": "c12", "inicio": 50.1, "fim": 52.9, "tipo": "app", "descricao": "frase 'O mapa que mostra o que o GPS não vê' + celular girado com 03-mapa", "gatilhos": [["mapa", 50.46, "celular entra"], ["não", 52.26, "'não vê' destacado"]], "troca": "forma varrendo", "arquivo": "assets/prints/03-mapa.png"},
+
+  {"id": "c13", "inicio": 52.9, "fim": 59.1, "tipo": "app", "descricao": "01-login; zoom em 'Entrar com Google'; chips 'sem senha' e 'sem cadastro' riscados ao lado", "gatilhos": [["Google", 56.76, "zoom no botão"], ["senha", 57.82, "chip sem senha"], ["cadastro", 58.46, "chip sem cadastro"]], "troca": "corte seco", "arquivo": "assets/prints/01-login.png"},
+  {"id": "c14", "inicio": 59.1, "fim": 61.5, "tipo": "board", "descricao": "fundo claro; ícones buraco, degrau, rua escura", "gatilhos": [["buraco", 59.52, "buraco"], ["degrau", 60.08, "degrau"], ["rua", 60.8, "rua escura"]], "troca": "corte com assentamento"},
+  {"id": "c15", "inicio": 61.5, "fim": 67.9, "tipo": "app", "descricao": "04→05→06 com contador de toques 1–4 desenhado por cima (sem tela de foto: só o toque)", "gatilhos": [["quatro", 61.98, "contador 4 aparece"], ["foto", 64.34, "toque 1"], ["tipo", 65.06, "toque 2: Buraco (05)"], ["local", 66.48, "toque 3"], ["envia", 67.1, "toque 4 → 06 Alerta enviado"]], "troca": "corte seco", "arquivo": "assets/prints/04-avisar-vazio.png, 05-avisar-preenchido.png, 06-avisar-enviado.png"},
+  {"id": "c16", "inicio": 67.9, "fim": 72.3, "tipo": "diagrama", "descricao": "pino no centro; moradores (avatares) chegam", "gatilhos": [["moradores", 70.66, "avatares chegam"], ["validam", 71.16, "check no pino"]], "troca": "corte com assentamento"},
+  {"id": "c17", "inicio": 72.3, "fim": 76.2, "tipo": "app", "descricao": "07-detalhe; zoom no contador 'Ainda está lá' 1→3; selo Confirmada", "gatilhos": [["três", 72.56, "conta 1→3"], ["confirmado", 75.44, "selo Confirmada"]], "troca": "câmera desliza (mesmo print)", "arquivo": "assets/prints/07-detalhe.png"},
+  {"id": "c18", "inicio": 76.2, "fim": 79.2, "tipo": "app", "descricao": "07-detalhe; câmera em 'Já foi resolvido' 0→3; alerta sai", "gatilhos": [["três", 76.48, "conta 0→3"], ["sai", 78.5, "alerta sai"]], "troca": "corte seco", "arquivo": "assets/prints/07-detalhe.png"},
+  {"id": "c19", "inicio": 79.2, "fim": 84.3, "tipo": "board", "descricao": "'15 dias' conta; pino desbota; frase 'O mapa nunca fica velho.'", "gatilhos": [["15", 80.5, "conta 15 dias"], ["expira", 81.36, "pino desbota"], ["nunca", 82.98, "frase"]], "troca": "corte com assentamento"},
+  {"id": "c20", "inicio": 84.3, "fim": 89.4, "tipo": "app", "descricao": "09-rota-resultado; zoom na comparação 610 m × 480 m", "gatilhos": [["compara", 85.92, "zoom na lista"]], "troca": "forma varrendo", "arquivo": "assets/prints/09-rota-resultado.png"},
+  {"id": "c21", "inicio": 89.4, "fim": 95.5, "tipo": "diagrama", "descricao": "mapa noturno; Júlia; rota comum passa na rua escura, Caminho Livre contorna; +130 m", "gatilhos": [["Júlia", 89.96, "ponto Júlia"], ["23h", 91.52, "pílula 23h"], ["130", 92.96, "+130 m conta"], ["rua", 94.88, "rua escura acende vermelho"]], "troca": "corte com assentamento"},
+  {"id": "c22", "inicio": 95.5, "fim": 101.36, "tipo": "diagrama", "descricao": "mapa de dia; degrau bloqueia trecho; novo caminho se desenha", "gatilhos": [["degrau", 97.6, "ícone degrau"], ["bloqueia", 97.98, "trecho X"], ["outro", 100.26, "nova rota"]], "troca": "forma varrendo"},
+
+  {"id": "c23", "inicio": 101.36, "fim": 107.8, "tipo": "app", "descricao": "frase + celular (01-login); checklist dos três selos", "gatilhos": [["Letra", 104.62, "letra grande"], ["contraste", 105.6, "alto contraste"], ["poucos", 106.96, "poucos passos"]], "troca": "corte seco", "arquivo": "assets/prints/01-login.png"},
+  {"id": "c24", "inicio": 107.8, "fim": 114.2, "tipo": "board", "descricao": "Seu Antônio; tela de senha '••••' cai; um botão Google aparece", "gatilhos": [["Antônio", 109.34, "nome"], ["desiste", 110.66, "tela de senha cai"], ["sozinhas", 113.6, "botão Google"]], "troca": "corte com assentamento"},
+  {"id": "c25", "inicio": 114.2, "fim": 121.29, "tipo": "diagrama", "descricao": "cidadão → dados → zeladoria e iluminação; destaque em agir primeiro (sem ODS)", "gatilhos": [["cidadão", 115.12, "nó cidadão"], ["dados", 117.26, "pulso no trilho"], ["zeladoria", 117.88, "nó zeladoria"], ["iluminação", 118.94, "nó iluminação"], ["agir", 120.62, "destaque"]], "troca": "speed ramp"},
+
+  {"id": "c26", "inicio": 121.29, "fim": 127.4, "tipo": "board", "descricao": "retorno do gancho: mesmo mundo da c04; guia alta lá, rota verde desvia; Marta chega ao posto", "gatilhos": [["Marta", 122.48, "ponto"], ["posto", 124.52, "chega ao posto"], ["sozinha", 125.9, "posto acende"], ["segurança", 126.72, "check"]], "troca": "forma varrendo"},
+  {"id": "c27", "inicio": 127.4, "fim": 132.6, "tipo": "board", "descricao": "logo Caminho Livre + 'Grupo Octoflow' + Global Solution FIAP 2026.2 (cauda ~3 s)", "gatilhos": [["Caminho", 127.76, "logo"], ["Octoflow", 129.02, "Grupo Octoflow"]], "troca": "fim"}
+ ],
+ "assets": [
+  {"id": "a01", "tipo": "logo", "busca": "route", "obs": "símbolo da tela de login do app"},
+  {"id": "a02", "tipo": "fonte", "busca": "Inter"},
+  {"id": "a03", "tipo": "ícone", "busca": "walker"},
+  {"id": "a04", "tipo": "ícone", "busca": "hospital"},
+  {"id": "a05", "tipo": "ícone", "busca": "house"},
+  {"id": "a06", "tipo": "ícone", "busca": "pothole"},
+  {"id": "a07", "tipo": "ícone", "busca": "stairs"},
+  {"id": "a08", "tipo": "ícone", "busca": "droplet"},
+  {"id": "a09", "tipo": "ícone", "busca": "streetlight"},
+  {"id": "a10", "tipo": "ícone", "busca": "calendar"},
+  {"id": "a11", "tipo": "ícone", "busca": "user"},
+  {"id": "a12", "tipo": "ícone", "busca": "lock"},
+  {"id": "a13", "tipo": "print", "busca": "assets/prints (já existem)", "obs": "01, 03, 04, 05, 06, 07, 09"}
+ ]
+}

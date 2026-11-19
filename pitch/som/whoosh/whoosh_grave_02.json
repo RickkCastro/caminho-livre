@@ -1,0 +1,8 @@
+{
+ "tipo": "efeito",
+ "prompt": "deep slow whoosh, wide soft swell, motion graphics scene transition",
+ "model_id": "eleven_text_to_sound_v3",
+ "duration_seconds": 1.2,
+ "loop": false,
+ "prompt_influence": 0.5
+}
