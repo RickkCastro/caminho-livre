@@ -1,0 +1,648 @@
+{
+ "fps": 30,
+ "duracao_f": 3978,
+ "narracao": "narracao.wav",
+ "cenas": [
+  {
+   "id": "c01",
+   "inicio_f": 0,
+   "fim_f": 79,
+   "tipo": "board",
+   "descricao": "fundo verde-escuro; círculo verde-água com ícone de andador nasce no centro; nome 'Dona Marta' escreve ao lado",
+   "gatilhos": [
+    {
+     "palavra": "Imagina",
+     "f": 29,
+     "o_que": "círculo nasce"
+    },
+    {
+     "palavra": "Dona",
+     "f": 48,
+     "o_que": "nome escreve"
+    }
+   ]
+  },
+  {
+   "id": "c02",
+   "inicio_f": 79,
+   "fim_f": 231,
+   "tipo": "board",
+   "descricao": "recuo revela casa (esq.) e posto (dir.); pílulas 68 anos e andador; linha tracejada casa→posto; 600 m conta",
+   "gatilhos": [
+    {
+     "palavra": "68",
+     "f": 18,
+     "o_que": "pílula 68 anos"
+    },
+    {
+     "palavra": "andador",
+     "f": 56,
+     "o_que": "pílula andador"
+    },
+    {
+     "palavra": "mora",
+     "f": 77,
+     "o_que": "linha se desenha"
+    },
+    {
+     "palavra": "seiscentos",
+     "f": 95,
+     "o_que": "600 m conta"
+    },
+    {
+     "palavra": "posto",
+     "f": 117,
+     "o_que": "posto acende"
+    }
+   ]
+  },
+  {
+   "id": "c03",
+   "inicio_f": 231,
+   "fim_f": 268,
+   "tipo": "board",
+   "descricao": "câmera recua mais, caminho parece curto; frase 'Parece perto.' no alto",
+   "gatilhos": [
+    {
+     "palavra": "Parece",
+     "f": 2,
+     "o_que": "frase entra"
+    },
+    {
+     "palavra": "perto",
+     "f": 13,
+     "o_que": "punch leve"
+    }
+   ]
+  },
+  {
+   "id": "c04",
+   "inicio_f": 268,
+   "fim_f": 447,
+   "tipo": "board",
+   "descricao": "HERÓI DO GANCHO: ponto anda pela linha; guia alta (degrau azul #1f5fad) sobe; rampa tracejada riscada; ponto bate, para e volta; linha à frente fica cinza",
+   "gatilhos": [
+    {
+     "palavra": "tentou",
+     "f": 30,
+     "o_que": "ponto anda devagar"
+    },
+    {
+     "palavra": "guia",
+     "f": 88,
+     "o_que": "degrau sobe + câmera aproxima 1.0→1.4"
+    },
+    {
+     "palavra": "sem",
+     "f": 105,
+     "o_que": "rampa tracejada aparece e é riscada"
+    },
+    {
+     "palavra": "voltar",
+     "f": 138,
+     "o_que": "ponto volta, linha fica cinza"
+    }
+   ]
+  },
+  {
+   "id": "c05",
+   "inicio_f": 447,
+   "fim_f": 577,
+   "tipo": "board",
+   "descricao": "fundo claro; card 'Consulta · Posto de saúde · qui 14h'; ícone da filha acende e apaga; data riscada e card vira para outra data",
+   "gatilhos": [
+    {
+     "palavra": "Hoje",
+     "f": 10,
+     "o_que": "card entra"
+    },
+    {
+     "palavra": "filha",
+     "f": 36,
+     "o_que": "ícone pessoa acende/apaga"
+    },
+    {
+     "palavra": "remarca",
+     "f": 91,
+     "o_que": "data riscada, card vira"
+    }
+   ]
+  },
+  {
+   "id": "c06",
+   "inicio_f": 577,
+   "fim_f": 838,
+   "tipo": "diagrama",
+   "descricao": "mapa genérico com rota reta do GPS; checklist ✓ ao lado",
+   "gatilhos": [
+    {
+     "palavra": "GPS",
+     "f": 64,
+     "o_que": "pino GPS"
+    },
+    {
+     "palavra": "perfeita",
+     "f": 127,
+     "o_que": "selo"
+    },
+    {
+     "palavra": "calçada",
+     "f": 162,
+     "o_que": "✓ calçada livre"
+    },
+    {
+     "palavra": "rua",
+     "f": 196,
+     "o_que": "✓ rua segura"
+    },
+    {
+     "palavra": "hora",
+     "f": 238,
+     "o_que": "✓ qualquer hora"
+    }
+   ]
+  },
+  {
+   "id": "c07",
+   "inicio_f": 838,
+   "fim_f": 1026,
+   "tipo": "diagrama",
+   "descricao": "mesmo mapa; três ícones caem sobre a rota",
+   "gatilhos": [
+    {
+     "palavra": "quebrada",
+     "f": 49,
+     "o_que": "calçada quebrada"
+    },
+    {
+     "palavra": "alaga",
+     "f": 93,
+     "o_que": "alagamento"
+    },
+    {
+     "palavra": "apagado",
+     "f": 152,
+     "o_que": "poste apagado"
+    }
+   ]
+  },
+  {
+   "id": "c08",
+   "inicio_f": 1026,
+   "fim_f": 1113,
+   "tipo": "board",
+   "descricao": "fundo claro; frase 'Quem passa ali sabe.'",
+   "gatilhos": [
+    {
+     "palavra": "sabe",
+     "f": 50,
+     "o_que": "'sabe' em verde-água"
+    }
+   ]
+  },
+  {
+   "id": "c09",
+   "inicio_f": 1113,
+   "fim_f": 1260,
+   "tipo": "board",
+   "descricao": "fundo escuro; frase 'Faltava um lugar pra registrar' + pino com '+'",
+   "gatilhos": [
+    {
+     "palavra": "registrar",
+     "f": 37,
+     "o_que": "palavra destacada + pino"
+    }
+   ]
+  },
+  {
+   "id": "c10",
+   "inicio_f": 1260,
+   "fim_f": 1437,
+   "tipo": "board",
+   "descricao": "logo monta; pinos de alerta surgem em volta",
+   "gatilhos": [
+    {
+     "palavra": "Caminho",
+     "f": 61,
+     "o_que": "logo monta"
+    },
+    {
+     "palavra": "obstáculos",
+     "f": 123,
+     "o_que": "pinos azuis"
+    },
+    {
+     "palavra": "inseguros",
+     "f": 152,
+     "o_que": "pinos vermelhos"
+    }
+   ]
+  },
+  {
+   "id": "c11",
+   "inicio_f": 1437,
+   "fim_f": 1503,
+   "tipo": "diagrama",
+   "descricao": "volta o mapa da c07: rota reta vira rota verde contornando os ícones",
+   "gatilhos": [
+    {
+     "palavra": "desviando",
+     "f": 31,
+     "o_que": "rota verde desvia"
+    }
+   ]
+  },
+  {
+   "id": "c12",
+   "inicio_f": 1503,
+   "fim_f": 1587,
+   "tipo": "app",
+   "descricao": "frase 'O mapa que mostra o que o GPS não vê' + celular girado com 03-mapa",
+   "gatilhos": [
+    {
+     "palavra": "mapa",
+     "f": 11,
+     "o_que": "celular entra"
+    },
+    {
+     "palavra": "não",
+     "f": 65,
+     "o_que": "'não vê' destacado"
+    }
+   ]
+  },
+  {
+   "id": "c13",
+   "inicio_f": 1587,
+   "fim_f": 1773,
+   "tipo": "app",
+   "descricao": "01-login; zoom em 'Entrar com Google'; chips 'sem senha' e 'sem cadastro' riscados ao lado",
+   "gatilhos": [
+    {
+     "palavra": "Google",
+     "f": 116,
+     "o_que": "zoom no botão"
+    },
+    {
+     "palavra": "senha",
+     "f": 148,
+     "o_que": "chip sem senha"
+    },
+    {
+     "palavra": "cadastro",
+     "f": 167,
+     "o_que": "chip sem cadastro"
+    }
+   ]
+  },
+  {
+   "id": "c14",
+   "inicio_f": 1773,
+   "fim_f": 1845,
+   "tipo": "board",
+   "descricao": "fundo claro; ícones buraco, degrau, rua escura",
+   "gatilhos": [
+    {
+     "palavra": "buraco",
+     "f": 13,
+     "o_que": "buraco"
+    },
+    {
+     "palavra": "degrau",
+     "f": 29,
+     "o_que": "degrau"
+    },
+    {
+     "palavra": "rua",
+     "f": 51,
+     "o_que": "rua escura"
+    }
+   ]
+  },
+  {
+   "id": "c15",
+   "inicio_f": 1845,
+   "fim_f": 2037,
+   "tipo": "app",
+   "descricao": "04→05→06 com contador de toques 1–4 desenhado por cima (sem tela de foto: só o toque)",
+   "gatilhos": [
+    {
+     "palavra": "quatro",
+     "f": 14,
+     "o_que": "contador 4 aparece"
+    },
+    {
+     "palavra": "foto",
+     "f": 85,
+     "o_que": "toque 1"
+    },
+    {
+     "palavra": "tipo",
+     "f": 107,
+     "o_que": "toque 2: Buraco (05)"
+    },
+    {
+     "palavra": "local",
+     "f": 149,
+     "o_que": "toque 3"
+    },
+    {
+     "palavra": "envia",
+     "f": 168,
+     "o_que": "toque 4 → 06 Alerta enviado"
+    }
+   ]
+  },
+  {
+   "id": "c16",
+   "inicio_f": 2037,
+   "fim_f": 2169,
+   "tipo": "diagrama",
+   "descricao": "pino no centro; moradores (avatares) chegam",
+   "gatilhos": [
+    {
+     "palavra": "moradores",
+     "f": 83,
+     "o_que": "avatares chegam"
+    },
+    {
+     "palavra": "validam",
+     "f": 98,
+     "o_que": "check no pino"
+    }
+   ]
+  },
+  {
+   "id": "c17",
+   "inicio_f": 2169,
+   "fim_f": 2286,
+   "tipo": "app",
+   "descricao": "07-detalhe; zoom no contador 'Ainda está lá' 1→3; selo Confirmada",
+   "gatilhos": [
+    {
+     "palavra": "três",
+     "f": 8,
+     "o_que": "conta 1→3"
+    },
+    {
+     "palavra": "confirmado",
+     "f": 94,
+     "o_que": "selo Confirmada"
+    }
+   ]
+  },
+  {
+   "id": "c18",
+   "inicio_f": 2286,
+   "fim_f": 2376,
+   "tipo": "app",
+   "descricao": "07-detalhe; câmera em 'Já foi resolvido' 0→3; alerta sai",
+   "gatilhos": [
+    {
+     "palavra": "três",
+     "f": 8,
+     "o_que": "conta 0→3"
+    },
+    {
+     "palavra": "sai",
+     "f": 69,
+     "o_que": "alerta sai"
+    }
+   ]
+  },
+  {
+   "id": "c19",
+   "inicio_f": 2376,
+   "fim_f": 2529,
+   "tipo": "board",
+   "descricao": "'15 dias' conta; pino desbota; frase 'O mapa nunca fica velho.'",
+   "gatilhos": [
+    {
+     "palavra": "15",
+     "f": 39,
+     "o_que": "conta 15 dias"
+    },
+    {
+     "palavra": "expira",
+     "f": 65,
+     "o_que": "pino desbota"
+    },
+    {
+     "palavra": "nunca",
+     "f": 113,
+     "o_que": "frase"
+    }
+   ]
+  },
+  {
+   "id": "c20",
+   "inicio_f": 2529,
+   "fim_f": 2682,
+   "tipo": "app",
+   "descricao": "09-rota-resultado; zoom na comparação 610 m × 480 m",
+   "gatilhos": [
+    {
+     "palavra": "compara",
+     "f": 49,
+     "o_que": "zoom na lista"
+    }
+   ]
+  },
+  {
+   "id": "c21",
+   "inicio_f": 2682,
+   "fim_f": 2865,
+   "tipo": "diagrama",
+   "descricao": "mapa noturno; Júlia; rota comum passa na rua escura, Caminho Livre contorna; +130 m",
+   "gatilhos": [
+    {
+     "palavra": "Júlia",
+     "f": 17,
+     "o_que": "ponto Júlia"
+    },
+    {
+     "palavra": "23h",
+     "f": 64,
+     "o_que": "pílula 23h"
+    },
+    {
+     "palavra": "130",
+     "f": 107,
+     "o_que": "+130 m conta"
+    },
+    {
+     "palavra": "rua",
+     "f": 164,
+     "o_que": "rua escura acende vermelho"
+    }
+   ]
+  },
+  {
+   "id": "c22",
+   "inicio_f": 2865,
+   "fim_f": 3041,
+   "tipo": "diagrama",
+   "descricao": "mapa de dia; degrau bloqueia trecho; novo caminho se desenha",
+   "gatilhos": [
+    {
+     "palavra": "degrau",
+     "f": 63,
+     "o_que": "ícone degrau"
+    },
+    {
+     "palavra": "bloqueia",
+     "f": 74,
+     "o_que": "trecho X"
+    },
+    {
+     "palavra": "outro",
+     "f": 143,
+     "o_que": "nova rota"
+    }
+   ]
+  },
+  {
+   "id": "c23",
+   "inicio_f": 3041,
+   "fim_f": 3234,
+   "tipo": "app",
+   "descricao": "frase + celular (01-login); checklist dos três selos",
+   "gatilhos": [
+    {
+     "palavra": "Letra",
+     "f": 98,
+     "o_que": "letra grande"
+    },
+    {
+     "palavra": "contraste",
+     "f": 127,
+     "o_que": "alto contraste"
+    },
+    {
+     "palavra": "poucos",
+     "f": 168,
+     "o_que": "poucos passos"
+    }
+   ]
+  },
+  {
+   "id": "c24",
+   "inicio_f": 3234,
+   "fim_f": 3426,
+   "tipo": "board",
+   "descricao": "Seu Antônio; tela de senha '••••' cai; um botão Google aparece",
+   "gatilhos": [
+    {
+     "palavra": "Antônio",
+     "f": 46,
+     "o_que": "nome"
+    },
+    {
+     "palavra": "desiste",
+     "f": 86,
+     "o_que": "tela de senha cai"
+    },
+    {
+     "palavra": "sozinhas",
+     "f": 174,
+     "o_que": "botão Google"
+    }
+   ]
+  },
+  {
+   "id": "c25",
+   "inicio_f": 3426,
+   "fim_f": 3639,
+   "tipo": "diagrama",
+   "descricao": "cidadão → dados → zeladoria e iluminação; destaque em agir primeiro (sem ODS)",
+   "gatilhos": [
+    {
+     "palavra": "cidadão",
+     "f": 28,
+     "o_que": "nó cidadão"
+    },
+    {
+     "palavra": "dados",
+     "f": 92,
+     "o_que": "pulso no trilho"
+    },
+    {
+     "palavra": "zeladoria",
+     "f": 110,
+     "o_que": "nó zeladoria"
+    },
+    {
+     "palavra": "iluminação",
+     "f": 142,
+     "o_que": "nó iluminação"
+    },
+    {
+     "palavra": "agir",
+     "f": 193,
+     "o_que": "destaque"
+    }
+   ]
+  },
+  {
+   "id": "c26",
+   "inicio_f": 3639,
+   "fim_f": 3822,
+   "tipo": "board",
+   "descricao": "retorno do gancho: mesmo mundo da c04; guia alta lá, rota verde desvia; Marta chega ao posto",
+   "gatilhos": [
+    {
+     "palavra": "Marta",
+     "f": 35,
+     "o_que": "ponto"
+    },
+    {
+     "palavra": "posto",
+     "f": 97,
+     "o_que": "chega ao posto"
+    },
+    {
+     "palavra": "sozinha",
+     "f": 138,
+     "o_que": "posto acende"
+    },
+    {
+     "palavra": "segurança",
+     "f": 163,
+     "o_que": "check"
+    }
+   ]
+  },
+  {
+   "id": "c27",
+   "inicio_f": 3822,
+   "fim_f": 3978,
+   "tipo": "board",
+   "descricao": "logo Caminho Livre + 'Grupo Octoflow' + Global Solution FIAP 2026.2 (cauda ~3 s)",
+   "gatilhos": [
+    {
+     "palavra": "Caminho",
+     "f": 11,
+     "o_que": "logo"
+    },
+    {
+     "palavra": "Octoflow",
+     "f": 49,
+     "o_que": "Grupo Octoflow"
+    }
+   ]
+  }
+ ],
+ "icones": {
+  "a01": "<svg width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M9 5h8.5a1 1 0 0 1 0 7h-11a1 1 0 0 0 0 7H15\"/><circle cx=\"18\" cy=\"19\" r=\"3\"/><circle cx=\"6\" cy=\"5\" r=\"3\"/></g></svg>",
+  "a03": "<svg width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path fill=\"currentColor\" d=\"m13 21l.85-8.275q-1.425-.375-2.15-.987T10.25 10.4l-2.375 2.35L10 14.875V21H8v-5.25l-.775-.7l.175 1.35l-3.675 4.725L2.15 19.9l3.15-4.05l-1.425-2.8q-.2-.425-.225-1.062t.425-1.088l3.35-3.3q.3-.3.662-.45T8.825 7q.6 0 .95.225t.475.35l2 1.975q.675.675 1.65 1.062T16 11h1.65q.575 0 1 .387t.475.963l.65 6.35q.325.2.525.538t.2.762q0 .625-.438 1.063T19 21.5t-1.075-.437t-.45-1.063q0-.425.2-.763t.55-.537l-.125-1.2h-3.25L14.5 21zm-.5-13.5q-.825 0-1.412-.587T10.5 5.5t.588-1.412T12.5 3.5t1.413.588T14.5 5.5t-.587 1.413T12.5 7.5M15 16h2.95l-.35-3.5h-2.225z\"/></svg>",
+  "a04": "<svg width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M12 7v4m2 10v-3a2 2 0 0 0-4 0v3m4-12h-4\"/><path d=\"M18 11h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2h2\"/><path d=\"M18 21V5a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16\"/></g></svg>",
+  "a05": "<svg width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8\"/><path d=\"M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"/></g></svg>",
+  "a06": "<svg width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><rect width=\"20\" height=\"8\" x=\"2\" y=\"6\" rx=\"1\"/><path d=\"M17 14v7M7 14v7M17 3v3M7 3v3m3 8L2.3 6.3M14 6l7.7 7.7M8 6l8 8\"/></g></svg>",
+  "a07": "<svg width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\"><path fill=\"currentColor\" d=\"M200 24H56a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V40a16 16 0 0 0-16-16m-48 120h48v24h-88v-24Zm8-16v-24h40v24Zm40-88v48h-48a8 8 0 0 0-8 8v32h-40a8 8 0 0 0-8 8v32H56V40Zm0 176H56v-32h144z\"/></svg>",
+  "a08": "<svg width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5S5 13 5 15a7 7 0 0 0 7 7\"/></svg>",
+  "a09": "<svg width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M16.8 11.2c.8-.9 1.2-2 1.2-3.2a6 6 0 0 0-9.3-5M2 2l20 20M6.3 6.3a4.67 4.67 0 0 0 1.2 5.2c.7.7 1.3 1.5 1.5 2.5m0 4h6m-5 4h4\"/></svg>",
+  "a10": "<svg width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M8 2v3m8-3v3\"/><rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\"/><path d=\"M3 9h18\"/></g></svg>",
+  "a11": "<svg width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><circle cx=\"12\" cy=\"8\" r=\"5\"/><path d=\"M20 21a8 8 0 0 0-16 0\"/></g></svg>",
+  "a12": "<svg width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><rect width=\"18\" height=\"11\" x=\"3\" y=\"11\" rx=\"2\" ry=\"2\"/><path d=\"M7 11V7a5 5 0 0 1 10 0v4\"/></g></svg>"
+ }
+}

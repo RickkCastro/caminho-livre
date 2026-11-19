@@ -1,0 +1,8 @@
+{
+ "tipo": "efeito",
+ "prompt": "gentle bright ding, positive confirmation chime, UI success",
+ "model_id": "eleven_text_to_sound_v3",
+ "duration_seconds": 0.8,
+ "loop": false,
+ "prompt_influence": 0.5
+}

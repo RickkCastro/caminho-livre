@@ -1,0 +1,210 @@
+{
+ "a01": [
+  {
+   "n": 1,
+   "icone": "lucide:route",
+   "arquivo": "edicao/assets/_opcoes/a01_1_lucide-route.svg",
+   "licenca": "ISC"
+  }
+ ],
+ "a03": [
+  {
+   "n": 1,
+   "icone": "material-symbols:assist-walker",
+   "arquivo": "edicao/assets/_opcoes/a03_1_material-symbols-assist-walker.svg",
+   "licenca": "Apache 2.0"
+  },
+  {
+   "n": 2,
+   "icone": "mdi:human-walker",
+   "arquivo": "edicao/assets/_opcoes/a03_2_mdi-human-walker.svg",
+   "licenca": "Apache 2.0"
+  },
+  {
+   "n": 3,
+   "icone": "lucide:person-standing",
+   "arquivo": "edicao/assets/_opcoes/a03_3_lucide-person-standing.svg",
+   "licenca": "ISC"
+  }
+ ],
+ "a04": [
+  {
+   "n": 1,
+   "icone": "lucide:hospital",
+   "arquivo": "edicao/assets/_opcoes/a04_1_lucide-hospital.svg",
+   "licenca": "ISC"
+  },
+  {
+   "n": 2,
+   "icone": "ph:hospital",
+   "arquivo": "edicao/assets/_opcoes/a04_2_ph-hospital.svg",
+   "licenca": "MIT"
+  },
+  {
+   "n": 3,
+   "icone": "tabler:hospital",
+   "arquivo": "edicao/assets/_opcoes/a04_3_tabler-hospital.svg",
+   "licenca": "MIT"
+  }
+ ],
+ "a05": [
+  {
+   "n": 1,
+   "icone": "lucide:house",
+   "arquivo": "edicao/assets/_opcoes/a05_1_lucide-house.svg",
+   "licenca": "ISC"
+  },
+  {
+   "n": 2,
+   "icone": "ph:house",
+   "arquivo": "edicao/assets/_opcoes/a05_2_ph-house.svg",
+   "licenca": "MIT"
+  },
+  {
+   "n": 3,
+   "icone": "tabler:home",
+   "arquivo": "edicao/assets/_opcoes/a05_3_tabler-home.svg",
+   "licenca": "MIT"
+  }
+ ],
+ "a06": [
+  {
+   "n": 1,
+   "icone": "lucide:construction",
+   "arquivo": "edicao/assets/_opcoes/a06_1_lucide-construction.svg",
+   "licenca": "ISC"
+  },
+  {
+   "n": 2,
+   "icone": "lucide:traffic-cone",
+   "arquivo": "edicao/assets/_opcoes/a06_2_lucide-traffic-cone.svg",
+   "licenca": "ISC"
+  },
+  {
+   "n": 3,
+   "icone": "lucide:cone",
+   "arquivo": "edicao/assets/_opcoes/a06_3_lucide-cone.svg",
+   "licenca": "ISC"
+  }
+ ],
+ "a07": [
+  {
+   "n": 1,
+   "icone": "ph:stairs",
+   "arquivo": "edicao/assets/_opcoes/a07_1_ph-stairs.svg",
+   "licenca": "MIT"
+  },
+  {
+   "n": 2,
+   "icone": "tabler:stairs",
+   "arquivo": "edicao/assets/_opcoes/a07_2_tabler-stairs.svg",
+   "licenca": "MIT"
+  },
+  {
+   "n": 3,
+   "icone": "material-symbols:stairs",
+   "arquivo": "edicao/assets/_opcoes/a07_3_material-symbols-stairs.svg",
+   "licenca": "Apache 2.0"
+  }
+ ],
+ "a08": [
+  {
+   "n": 1,
+   "icone": "lucide:droplet",
+   "arquivo": "edicao/assets/_opcoes/a08_1_lucide-droplet.svg",
+   "licenca": "ISC"
+  },
+  {
+   "n": 2,
+   "icone": "ph:drop",
+   "arquivo": "edicao/assets/_opcoes/a08_2_ph-drop.svg",
+   "licenca": "MIT"
+  },
+  {
+   "n": 3,
+   "icone": "tabler:droplet",
+   "arquivo": "edicao/assets/_opcoes/a08_3_tabler-droplet.svg",
+   "licenca": "MIT"
+  }
+ ],
+ "a09": [
+  {
+   "n": 1,
+   "icone": "lucide:lightbulb-off",
+   "arquivo": "edicao/assets/_opcoes/a09_1_lucide-lightbulb-off.svg",
+   "licenca": "ISC"
+  },
+  {
+   "n": 2,
+   "icone": "lucide:lamp-wall-down",
+   "arquivo": "edicao/assets/_opcoes/a09_2_lucide-lamp-wall-down.svg",
+   "licenca": "ISC"
+  },
+  {
+   "n": 3,
+   "icone": "tabler:bulb-off",
+   "arquivo": "edicao/assets/_opcoes/a09_3_tabler-bulb-off.svg",
+   "licenca": "MIT"
+  }
+ ],
+ "a10": [
+  {
+   "n": 1,
+   "icone": "lucide:calendar",
+   "arquivo": "edicao/assets/_opcoes/a10_1_lucide-calendar.svg",
+   "licenca": "ISC"
+  },
+  {
+   "n": 2,
+   "icone": "ph:calendar",
+   "arquivo": "edicao/assets/_opcoes/a10_2_ph-calendar.svg",
+   "licenca": "MIT"
+  },
+  {
+   "n": 3,
+   "icone": "tabler:calendar",
+   "arquivo": "edicao/assets/_opcoes/a10_3_tabler-calendar.svg",
+   "licenca": "MIT"
+  }
+ ],
+ "a11": [
+  {
+   "n": 1,
+   "icone": "lucide:user-round",
+   "arquivo": "edicao/assets/_opcoes/a11_1_lucide-user-round.svg",
+   "licenca": "ISC"
+  },
+  {
+   "n": 2,
+   "icone": "lucide:user",
+   "arquivo": "edicao/assets/_opcoes/a11_2_lucide-user.svg",
+   "licenca": "ISC"
+  },
+  {
+   "n": 3,
+   "icone": "ph:user",
+   "arquivo": "edicao/assets/_opcoes/a11_3_ph-user.svg",
+   "licenca": "MIT"
+  }
+ ],
+ "a12": [
+  {
+   "n": 1,
+   "icone": "lucide:lock",
+   "arquivo": "edicao/assets/_opcoes/a12_1_lucide-lock.svg",
+   "licenca": "ISC"
+  },
+  {
+   "n": 2,
+   "icone": "ph:lock",
+   "arquivo": "edicao/assets/_opcoes/a12_2_ph-lock.svg",
+   "licenca": "MIT"
+  },
+  {
+   "n": 3,
+   "icone": "tabler:lock",
+   "arquivo": "edicao/assets/_opcoes/a12_3_tabler-lock.svg",
+   "licenca": "MIT"
+  }
+ ]
+}

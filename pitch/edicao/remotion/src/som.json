@@ -1,0 +1,1388 @@
+{
+ "efeitos": [
+  {
+   "id": "sfx01",
+   "arquivo": "sons/pop/pop_01.mp3",
+   "from": 29,
+   "dur_f": 15,
+   "db": -24.9,
+   "camada": "principal",
+   "evento": 29,
+   "cena": "c01",
+   "o_que": "círculo da Marta nasce com onda"
+  },
+  {
+   "id": "sfx02",
+   "arquivo": "sons/interface/digitar_01.mp3",
+   "from": 47,
+   "dur_f": 31,
+   "db": -9.5,
+   "camada": "principal",
+   "evento": 48,
+   "cena": "c01",
+   "o_que": "nome se escreve"
+  },
+  {
+   "id": "sfx03",
+   "arquivo": "sons/pop/pop_02.mp3",
+   "from": 97,
+   "dur_f": 15,
+   "db": -24.8,
+   "camada": "principal",
+   "evento": 97,
+   "cena": "c02",
+   "o_que": "pílula 68 anos"
+  },
+  {
+   "id": "sfx04",
+   "arquivo": "sons/pop/pop_03.mp3",
+   "from": 134,
+   "dur_f": 15,
+   "db": -10.0,
+   "camada": "principal",
+   "evento": 135,
+   "cena": "c02",
+   "o_que": "pílula andador"
+  },
+  {
+   "id": "sfx05",
+   "arquivo": "sons/interface/rota_01.mp3",
+   "from": 155,
+   "dur_f": 31,
+   "db": 1.4,
+   "camada": "principal",
+   "evento": 156,
+   "cena": "c02",
+   "o_que": "linha tracejada se desenha"
+  },
+  {
+   "id": "sfx06",
+   "arquivo": "sons/interface/contagem_01.mp3",
+   "from": 173,
+   "dur_f": 25,
+   "db": -15.3,
+   "camada": "principal",
+   "evento": 174,
+   "cena": "c02",
+   "o_que": "600 m conta"
+  },
+  {
+   "id": "sfx07",
+   "arquivo": "sons/ding/ding_01.mp3",
+   "from": 196,
+   "dur_f": 25,
+   "db": -25.8,
+   "camada": "principal",
+   "evento": 196,
+   "cena": "c02",
+   "o_que": "posto acende"
+  },
+  {
+   "id": "sfx08",
+   "arquivo": "sons/pop/pop_01.mp3",
+   "from": 233,
+   "dur_f": 15,
+   "db": -24.9,
+   "camada": "principal",
+   "evento": 233,
+   "cena": "c03",
+   "o_que": "frase Parece perto."
+  },
+  {
+   "id": "sfx09",
+   "arquivo": "sons/impacto/impacto_01.mp3",
+   "from": 353,
+   "dur_f": 19,
+   "db": -19.3,
+   "camada": "principal",
+   "evento": 356,
+   "cena": "c04",
+   "o_que": "guia alta sobe e o ponto bate"
+  },
+  {
+   "id": "sfx10",
+   "arquivo": "sons/riser/riser_01.mp3",
+   "from": 312,
+   "dur_f": 45,
+   "db": -14.1,
+   "camada": "apoio",
+   "evento": 356,
+   "cena": "c04",
+   "o_que": "riser até a guia alta"
+  },
+  {
+   "id": "sfx11",
+   "arquivo": "sons/interface/risco_01.mp3",
+   "from": 380,
+   "dur_f": 19,
+   "db": -20.0,
+   "camada": "principal",
+   "evento": 381,
+   "cena": "c04",
+   "o_que": "rampa riscada"
+  },
+  {
+   "id": "sfx12",
+   "arquivo": "sons/whoosh/whip_01.mp3",
+   "from": 432,
+   "dur_f": 19,
+   "db": -12.1,
+   "camada": "principal",
+   "evento": 437,
+   "cena": "c04",
+   "o_que": "whip lateral"
+  },
+  {
+   "id": "sfx13",
+   "arquivo": "sons/pop/pop_02.mp3",
+   "from": 483,
+   "dur_f": 15,
+   "db": -24.8,
+   "camada": "principal",
+   "evento": 483,
+   "cena": "c05",
+   "o_que": "filha acende"
+  },
+  {
+   "id": "sfx14",
+   "arquivo": "sons/interface/risco_02.mp3",
+   "from": 538,
+   "dur_f": 19,
+   "db": -20.5,
+   "camada": "principal",
+   "evento": 538,
+   "cena": "c05",
+   "o_que": "data riscada"
+  },
+  {
+   "id": "sfx15",
+   "arquivo": "sons/whoosh/whoosh_grave_01.mp3",
+   "from": 545,
+   "dur_f": 37,
+   "db": -12.2,
+   "camada": "principal",
+   "evento": 559,
+   "cena": "c05",
+   "o_que": "forma verde varre"
+  },
+  {
+   "id": "sfx16",
+   "arquivo": "sons/impacto/queda_01.mp3",
+   "from": 638,
+   "dur_f": 15,
+   "db": -6.0,
+   "camada": "principal",
+   "evento": 641,
+   "cena": "c06",
+   "o_que": "pino do GPS cai e rota se desenha"
+  },
+  {
+   "id": "sfx17",
+   "arquivo": "sons/impacto/carimbo_01.mp3",
+   "from": 704,
+   "dur_f": 15,
+   "db": -19.8,
+   "camada": "principal",
+   "evento": 704,
+   "cena": "c06",
+   "o_que": "selo cidade perfeita"
+  },
+  {
+   "id": "sfx18",
+   "arquivo": "sons/ding/ding_02.mp3",
+   "from": 739,
+   "dur_f": 25,
+   "db": -23.2,
+   "camada": "principal",
+   "evento": 739,
+   "cena": "c06",
+   "o_que": "✓ calçada livre"
+  },
+  {
+   "id": "sfx19",
+   "arquivo": "sons/ding/ding_01.mp3",
+   "from": 773,
+   "dur_f": 25,
+   "db": -25.8,
+   "camada": "principal",
+   "evento": 773,
+   "cena": "c06",
+   "o_que": "✓ rua segura"
+  },
+  {
+   "id": "sfx20",
+   "arquivo": "sons/ding/ding_02.mp3",
+   "from": 815,
+   "dur_f": 25,
+   "db": -23.2,
+   "camada": "principal",
+   "evento": 815,
+   "cena": "c06",
+   "o_que": "✓ qualquer hora"
+  },
+  {
+   "id": "sfx21",
+   "arquivo": "sons/impacto/queda_02.mp3",
+   "from": 887,
+   "dur_f": 15,
+   "db": -6.9,
+   "camada": "principal",
+   "evento": 887,
+   "cena": "c07",
+   "o_que": "alerta calçada quebrada cai"
+  },
+  {
+   "id": "sfx22",
+   "arquivo": "sons/impacto/queda_01.mp3",
+   "from": 928,
+   "dur_f": 15,
+   "db": -6.0,
+   "camada": "principal",
+   "evento": 931,
+   "cena": "c07",
+   "o_que": "alerta alagamento cai"
+  },
+  {
+   "id": "sfx23",
+   "arquivo": "sons/impacto/queda_02.mp3",
+   "from": 990,
+   "dur_f": 15,
+   "db": -6.9,
+   "camada": "principal",
+   "evento": 990,
+   "cena": "c07",
+   "o_que": "alerta poste apagado cai"
+  },
+  {
+   "id": "sfx24",
+   "arquivo": "sons/pop/pop_03.mp3",
+   "from": 1075,
+   "dur_f": 15,
+   "db": -10.0,
+   "camada": "principal",
+   "evento": 1076,
+   "cena": "c08",
+   "o_que": "sabe destacado"
+  },
+  {
+   "id": "sfx25",
+   "arquivo": "sons/whoosh/whoosh_grave_02.mp3",
+   "from": 1083,
+   "dur_f": 37,
+   "db": -18.2,
+   "camada": "principal",
+   "evento": 1095,
+   "cena": "c08",
+   "o_que": "forma verde varre"
+  },
+  {
+   "id": "sfx26",
+   "arquivo": "sons/pop/pop_03.mp3",
+   "from": 1114,
+   "dur_f": 15,
+   "db": -10.0,
+   "camada": "principal",
+   "evento": 1115,
+   "cena": "c09",
+   "o_que": "frase entra"
+  },
+  {
+   "id": "sfx27",
+   "arquivo": "sons/impacto/queda_01.mp3",
+   "from": 1147,
+   "dur_f": 15,
+   "db": -6.0,
+   "camada": "principal",
+   "evento": 1150,
+   "cena": "c09",
+   "o_que": "pino com + cai, registrar acende"
+  },
+  {
+   "id": "sfx28",
+   "arquivo": "sons/whoosh/whoosh_leve_02.mp3",
+   "from": 1230,
+   "dur_f": 25,
+   "db": -14.4,
+   "camada": "principal",
+   "evento": 1236,
+   "cena": "c09",
+   "o_que": "speed ramp para cima"
+  },
+  {
+   "id": "sfx29",
+   "arquivo": "sons/whoosh/whoosh_leve_03.mp3",
+   "from": 1250,
+   "dur_f": 25,
+   "db": -16.7,
+   "camada": "principal",
+   "evento": 1260,
+   "cena": "c10",
+   "o_que": "logo chega do speed ramp"
+  },
+  {
+   "id": "sfx30",
+   "arquivo": "sons/interface/digitar_01.mp3",
+   "from": 1320,
+   "dur_f": 31,
+   "db": -9.5,
+   "camada": "principal",
+   "evento": 1321,
+   "cena": "c10",
+   "o_que": "Caminho Livre se escreve"
+  },
+  {
+   "id": "sfx31",
+   "arquivo": "sons/riser/riser_02.mp3",
+   "from": 1277,
+   "dur_f": 45,
+   "db": -21.7,
+   "camada": "apoio",
+   "evento": 1321,
+   "cena": "c10",
+   "o_que": "riser até o logo"
+  },
+  {
+   "id": "sfx32",
+   "arquivo": "sons/whoosh/whoosh_grave_02.mp3",
+   "from": 1309,
+   "dur_f": 37,
+   "db": -18.2,
+   "camada": "grave",
+   "evento": 1321,
+   "cena": "c10",
+   "o_que": "grave na revelação"
+  },
+  {
+   "id": "sfx33",
+   "arquivo": "sons/pop/pop_01.mp3",
+   "from": 1383,
+   "dur_f": 15,
+   "db": -24.9,
+   "camada": "principal",
+   "evento": 1383,
+   "cena": "c10",
+   "o_que": "pinos azuis (cascata)"
+  },
+  {
+   "id": "sfx34",
+   "arquivo": "sons/whoosh/whoosh_leve_01.mp3",
+   "from": 1416,
+   "dur_f": 25,
+   "db": -9.8,
+   "camada": "principal",
+   "evento": 1422,
+   "cena": "c10",
+   "o_que": "câmera empurra para dentro"
+  },
+  {
+   "id": "sfx35",
+   "arquivo": "sons/whoosh/whoosh_leve_02.mp3",
+   "from": 1431,
+   "dur_f": 25,
+   "db": -14.4,
+   "camada": "principal",
+   "evento": 1437,
+   "cena": "c11",
+   "o_que": "mapa chega com o zoom"
+  },
+  {
+   "id": "sfx36",
+   "arquivo": "sons/interface/rota_02.mp3",
+   "from": 1466,
+   "dur_f": 31,
+   "db": -3.3,
+   "camada": "principal",
+   "evento": 1468,
+   "cena": "c11",
+   "o_que": "rota verde desvia"
+  },
+  {
+   "id": "sfx37",
+   "arquivo": "sons/pop/pop_03.mp3",
+   "from": 1513,
+   "dur_f": 15,
+   "db": -10.0,
+   "camada": "principal",
+   "evento": 1514,
+   "cena": "c12",
+   "o_que": "celular entra girando"
+  },
+  {
+   "id": "sfx38",
+   "arquivo": "sons/whoosh/whoosh_grave_01.mp3",
+   "from": 1555,
+   "dur_f": 37,
+   "db": -12.2,
+   "camada": "principal",
+   "evento": 1569,
+   "cena": "c12",
+   "o_que": "forma verde varre"
+  },
+  {
+   "id": "sfx39",
+   "arquivo": "sons/interface/risco_01.mp3",
+   "from": 1733,
+   "dur_f": 19,
+   "db": -20.0,
+   "camada": "principal",
+   "evento": 1734,
+   "cena": "c13",
+   "o_que": "chip senha riscado"
+  },
+  {
+   "id": "sfx40",
+   "arquivo": "sons/interface/risco_02.mp3",
+   "from": 1755,
+   "dur_f": 19,
+   "db": -20.5,
+   "camada": "principal",
+   "evento": 1755,
+   "cena": "c13",
+   "o_que": "chip cadastro riscado"
+  },
+  {
+   "id": "sfx41",
+   "arquivo": "sons/pop/pop_01.mp3",
+   "from": 1785,
+   "dur_f": 15,
+   "db": -24.9,
+   "camada": "principal",
+   "evento": 1785,
+   "cena": "c14",
+   "o_que": "buraco"
+  },
+  {
+   "id": "sfx42",
+   "arquivo": "sons/pop/pop_02.mp3",
+   "from": 1803,
+   "dur_f": 15,
+   "db": -24.8,
+   "camada": "principal",
+   "evento": 1803,
+   "cena": "c14",
+   "o_que": "degrau"
+  },
+  {
+   "id": "sfx43",
+   "arquivo": "sons/pop/pop_03.mp3",
+   "from": 1823,
+   "dur_f": 15,
+   "db": -10.0,
+   "camada": "principal",
+   "evento": 1824,
+   "cena": "c14",
+   "o_que": "rua escura"
+  },
+  {
+   "id": "sfx44",
+   "arquivo": "sons/pop/pop_01.mp3",
+   "from": 1860,
+   "dur_f": 15,
+   "db": -24.9,
+   "camada": "principal",
+   "evento": 1860,
+   "cena": "c15",
+   "o_que": "contador 4 toques"
+  },
+  {
+   "id": "sfx45",
+   "arquivo": "sons/clique/clique_01.mp3",
+   "from": 1929,
+   "dur_f": 15,
+   "db": -24.7,
+   "camada": "principal",
+   "evento": 1929,
+   "cena": "c15",
+   "o_que": "toque 1"
+  },
+  {
+   "id": "sfx46",
+   "arquivo": "sons/clique/clique_02.mp3",
+   "from": 1953,
+   "dur_f": 15,
+   "db": -18.6,
+   "camada": "principal",
+   "evento": 1953,
+   "cena": "c15",
+   "o_que": "toque 2: Buraco"
+  },
+  {
+   "id": "sfx47",
+   "arquivo": "sons/clique/clique_01.mp3",
+   "from": 1995,
+   "dur_f": 15,
+   "db": -24.7,
+   "camada": "principal",
+   "evento": 1995,
+   "cena": "c15",
+   "o_que": "toque 3: local"
+  },
+  {
+   "id": "sfx48",
+   "arquivo": "sons/clique/clique_02.mp3",
+   "from": 2013,
+   "dur_f": 15,
+   "db": -18.6,
+   "camada": "principal",
+   "evento": 2013,
+   "cena": "c15",
+   "o_que": "toque 4: Enviar → alerta enviado"
+  },
+  {
+   "id": "sfx49",
+   "arquivo": "sons/whoosh/whoosh_leve_03.mp3",
+   "from": 2111,
+   "dur_f": 25,
+   "db": -16.7,
+   "camada": "principal",
+   "evento": 2121,
+   "cena": "c16",
+   "o_que": "moradores chegam (cascata)"
+  },
+  {
+   "id": "sfx50",
+   "arquivo": "sons/ding/ding_01.mp3",
+   "from": 2136,
+   "dur_f": 25,
+   "db": -25.8,
+   "camada": "principal",
+   "evento": 2136,
+   "cena": "c16",
+   "o_que": "check no pino"
+  },
+  {
+   "id": "sfx51",
+   "arquivo": "sons/interface/contagem_01.mp3",
+   "from": 2177,
+   "dur_f": 25,
+   "db": -15.3,
+   "camada": "principal",
+   "evento": 2178,
+   "cena": "c17",
+   "o_que": "Ainda está lá conta até 3"
+  },
+  {
+   "id": "sfx52",
+   "arquivo": "sons/impacto/carimbo_01.mp3",
+   "from": 2262,
+   "dur_f": 15,
+   "db": -19.8,
+   "camada": "principal",
+   "evento": 2262,
+   "cena": "c17",
+   "o_que": "selo Confirmada"
+  },
+  {
+   "id": "sfx53",
+   "arquivo": "sons/interface/contagem_01.mp3",
+   "from": 2294,
+   "dur_f": 25,
+   "db": -15.3,
+   "camada": "principal",
+   "evento": 2295,
+   "cena": "c18",
+   "o_que": "Já foi resolvido conta até 3"
+  },
+  {
+   "id": "sfx54",
+   "arquivo": "sons/pop/pop_03.mp3",
+   "from": 2354,
+   "dur_f": 15,
+   "db": -10.0,
+   "camada": "principal",
+   "evento": 2355,
+   "cena": "c18",
+   "o_que": "saiu do mapa"
+  },
+  {
+   "id": "sfx55",
+   "arquivo": "sons/interface/contagem_01.mp3",
+   "from": 2414,
+   "dur_f": 25,
+   "db": -15.3,
+   "camada": "principal",
+   "evento": 2415,
+   "cena": "c19",
+   "o_que": "15 dias conta"
+  },
+  {
+   "id": "sfx56",
+   "arquivo": "sons/pop/pop_02.mp3",
+   "from": 2474,
+   "dur_f": 15,
+   "db": -24.8,
+   "camada": "principal",
+   "evento": 2474,
+   "cena": "c19",
+   "o_que": "frase O mapa nunca fica velho"
+  },
+  {
+   "id": "sfx57",
+   "arquivo": "sons/pop/pop_03.mp3",
+   "from": 2489,
+   "dur_f": 15,
+   "db": -10.0,
+   "camada": "principal",
+   "evento": 2490,
+   "cena": "c19",
+   "o_que": "nunca"
+  },
+  {
+   "id": "sfx58",
+   "arquivo": "sons/whoosh/whoosh_grave_02.mp3",
+   "from": 2652,
+   "dur_f": 37,
+   "db": -18.2,
+   "camada": "principal",
+   "evento": 2664,
+   "cena": "c20",
+   "o_que": "forma verde varre"
+  },
+  {
+   "id": "sfx59",
+   "arquivo": "sons/pop/pop_03.mp3",
+   "from": 2681,
+   "dur_f": 15,
+   "db": -10.0,
+   "camada": "principal",
+   "evento": 2682,
+   "cena": "c21",
+   "o_que": "mapa noturno"
+  },
+  {
+   "id": "sfx60",
+   "arquivo": "sons/pop/pop_01.mp3",
+   "from": 2700,
+   "dur_f": 15,
+   "db": -24.9,
+   "camada": "principal",
+   "evento": 2700,
+   "cena": "c21",
+   "o_que": "Júlia"
+  },
+  {
+   "id": "sfx61",
+   "arquivo": "sons/interface/rota_01.mp3",
+   "from": 2711,
+   "dur_f": 31,
+   "db": 1.4,
+   "camada": "principal",
+   "evento": 2712,
+   "cena": "c21",
+   "o_que": "rotas se desenham"
+  },
+  {
+   "id": "sfx62",
+   "arquivo": "sons/pop/pop_02.mp3",
+   "from": 2745,
+   "dur_f": 15,
+   "db": -24.8,
+   "camada": "principal",
+   "evento": 2745,
+   "cena": "c21",
+   "o_que": "23h"
+  },
+  {
+   "id": "sfx63",
+   "arquivo": "sons/interface/contagem_01.mp3",
+   "from": 2789,
+   "dur_f": 25,
+   "db": -15.3,
+   "camada": "principal",
+   "evento": 2790,
+   "cena": "c21",
+   "o_que": "+130 m conta"
+  },
+  {
+   "id": "sfx64",
+   "arquivo": "sons/impacto/impacto_01.mp3",
+   "from": 2844,
+   "dur_f": 19,
+   "db": -19.3,
+   "camada": "principal",
+   "evento": 2847,
+   "cena": "c21",
+   "o_que": "rua escura acende vermelho"
+  },
+  {
+   "id": "sfx65",
+   "arquivo": "sons/impacto/queda_02.mp3",
+   "from": 2928,
+   "dur_f": 15,
+   "db": -6.9,
+   "camada": "principal",
+   "evento": 2928,
+   "cena": "c22",
+   "o_que": "degrau cai no trecho"
+  },
+  {
+   "id": "sfx66",
+   "arquivo": "sons/impacto/carimbo_01.mp3",
+   "from": 2940,
+   "dur_f": 15,
+   "db": -19.8,
+   "camada": "principal",
+   "evento": 2940,
+   "cena": "c22",
+   "o_que": "trecho bloqueado (X)"
+  },
+  {
+   "id": "sfx67",
+   "arquivo": "sons/interface/rota_02.mp3",
+   "from": 3007,
+   "dur_f": 31,
+   "db": -3.3,
+   "camada": "principal",
+   "evento": 3009,
+   "cena": "c22",
+   "o_que": "novo caminho se desenha"
+  },
+  {
+   "id": "sfx68",
+   "arquivo": "sons/whoosh/whoosh_grave_01.mp3",
+   "from": 3013,
+   "dur_f": 37,
+   "db": -12.2,
+   "camada": "principal",
+   "evento": 3027,
+   "cena": "c22",
+   "o_que": "forma verde varre"
+  },
+  {
+   "id": "sfx69",
+   "arquivo": "sons/ding/ding_02.mp3",
+   "from": 3138,
+   "dur_f": 25,
+   "db": -23.2,
+   "camada": "principal",
+   "evento": 3138,
+   "cena": "c23",
+   "o_que": "letra grande"
+  },
+  {
+   "id": "sfx70",
+   "arquivo": "sons/ding/ding_01.mp3",
+   "from": 3168,
+   "dur_f": 25,
+   "db": -25.8,
+   "camada": "principal",
+   "evento": 3168,
+   "cena": "c23",
+   "o_que": "alto contraste"
+  },
+  {
+   "id": "sfx71",
+   "arquivo": "sons/ding/ding_02.mp3",
+   "from": 3210,
+   "dur_f": 25,
+   "db": -23.2,
+   "camada": "principal",
+   "evento": 3210,
+   "cena": "c23",
+   "o_que": "poucos passos"
+  },
+  {
+   "id": "sfx72",
+   "arquivo": "sons/interface/digitar_01.mp3",
+   "from": 3278,
+   "dur_f": 31,
+   "db": -9.5,
+   "camada": "principal",
+   "evento": 3279,
+   "cena": "c24",
+   "o_que": "nome"
+  },
+  {
+   "id": "sfx73",
+   "arquivo": "sons/pop/pop_03.mp3",
+   "from": 3320,
+   "dur_f": 15,
+   "db": -10.0,
+   "camada": "principal",
+   "evento": 3321,
+   "cena": "c24",
+   "o_que": "tela de senha"
+  },
+  {
+   "id": "sfx74",
+   "arquivo": "sons/impacto/queda_01.mp3",
+   "from": 3344,
+   "dur_f": 15,
+   "db": -6.0,
+   "camada": "principal",
+   "evento": 3347,
+   "cena": "c24",
+   "o_que": "tela de senha cai"
+  },
+  {
+   "id": "sfx75",
+   "arquivo": "sons/pop/pop_01.mp3",
+   "from": 3408,
+   "dur_f": 15,
+   "db": -24.9,
+   "camada": "principal",
+   "evento": 3408,
+   "cena": "c24",
+   "o_que": "botão Entrar com Google"
+  },
+  {
+   "id": "sfx76",
+   "arquivo": "sons/pop/pop_02.mp3",
+   "from": 3453,
+   "dur_f": 15,
+   "db": -24.8,
+   "camada": "principal",
+   "evento": 3453,
+   "cena": "c25",
+   "o_que": "nó cidadão"
+  },
+  {
+   "id": "sfx77",
+   "arquivo": "sons/pop/pop_03.mp3",
+   "from": 3536,
+   "dur_f": 15,
+   "db": -10.0,
+   "camada": "principal",
+   "evento": 3537,
+   "cena": "c25",
+   "o_que": "nó zeladoria"
+  },
+  {
+   "id": "sfx78",
+   "arquivo": "sons/pop/pop_01.mp3",
+   "from": 3567,
+   "dur_f": 15,
+   "db": -24.9,
+   "camada": "principal",
+   "evento": 3567,
+   "cena": "c25",
+   "o_que": "nó iluminação"
+  },
+  {
+   "id": "sfx79",
+   "arquivo": "sons/whoosh/whoosh_leve_01.mp3",
+   "from": 3609,
+   "dur_f": 25,
+   "db": -9.8,
+   "camada": "principal",
+   "evento": 3615,
+   "cena": "c25",
+   "o_que": "speed ramp para cima"
+  },
+  {
+   "id": "sfx80",
+   "arquivo": "sons/ding/ding_02.mp3",
+   "from": 3771,
+   "dur_f": 25,
+   "db": -23.2,
+   "camada": "principal",
+   "evento": 3771,
+   "cena": "c26",
+   "o_que": "posto acende + Ela vai sozinha"
+  },
+  {
+   "id": "sfx81",
+   "arquivo": "sons/whoosh/whoosh_grave_02.mp3",
+   "from": 3792,
+   "dur_f": 37,
+   "db": -18.2,
+   "camada": "principal",
+   "evento": 3804,
+   "cena": "c26",
+   "o_que": "forma verde varre"
+  },
+  {
+   "id": "sfx82",
+   "arquivo": "sons/ding/ding_02.mp3",
+   "from": 3834,
+   "dur_f": 25,
+   "db": -23.2,
+   "camada": "principal",
+   "evento": 3834,
+   "cena": "c27",
+   "o_que": "logo monta"
+  },
+  {
+   "id": "sfx83",
+   "arquivo": "sons/pop/pop_02.mp3",
+   "from": 3870,
+   "dur_f": 15,
+   "db": -24.8,
+   "camada": "principal",
+   "evento": 3870,
+   "cena": "c27",
+   "o_que": "Grupo Octoflow"
+  }
+ ],
+ "musica": {
+  "arquivo": "sons/musica/musica_loop_01.mp3",
+  "loop_f": 900,
+  "db": -0.1,
+  "chaves": [
+   [
+    0,
+    -60.0
+   ],
+   [
+    15,
+    0.0
+   ],
+   [
+    20,
+    0.0
+   ],
+   [
+    29,
+    -9.0
+   ],
+   [
+    64,
+    -9.0
+   ],
+   [
+    73,
+    0.0
+   ],
+   [
+    74,
+    0.0
+   ],
+   [
+    79,
+    -9.0
+   ],
+   [
+    218,
+    -9.0
+   ],
+   [
+    227,
+    0.0
+   ],
+   [
+    228,
+    0.0
+   ],
+   [
+    233,
+    -9.0
+   ],
+   [
+    258,
+    -9.0
+   ],
+   [
+    267,
+    0.0
+   ],
+   [
+    268,
+    0.0
+   ],
+   [
+    270,
+    -9.0
+   ],
+   [
+    322,
+    -9.0
+   ],
+   [
+    331,
+    0.0
+   ],
+   [
+    332,
+    0.0
+   ],
+   [
+    334,
+    -9.0
+   ],
+   [
+    436,
+    -9.0
+   ],
+   [
+    445,
+    0.0
+   ],
+   [
+    448,
+    0.0
+   ],
+   [
+    457,
+    -9.0
+   ],
+   [
+    564,
+    -9.0
+   ],
+   [
+    573,
+    0.0
+   ],
+   [
+    580,
+    0.0
+   ],
+   [
+    589,
+    -9.0
+   ],
+   [
+    718,
+    -9.0
+   ],
+   [
+    727,
+    0.0
+   ],
+   [
+    728,
+    0.0
+   ],
+   [
+    732,
+    -9.0
+   ],
+   [
+    789,
+    -9.0
+   ],
+   [
+    798,
+    0.0
+   ],
+   [
+    799,
+    0.0
+   ],
+   [
+    803,
+    -9.0
+   ],
+   [
+    900,
+    -9.0
+   ],
+   [
+    909,
+    0.0
+   ],
+   [
+    910,
+    0.0
+   ],
+   [
+    911,
+    -9.0
+   ],
+   [
+    959,
+    -9.0
+   ],
+   [
+    968,
+    0.0
+   ],
+   [
+    969,
+    0.0
+   ],
+   [
+    971,
+    -9.0
+   ],
+   [
+    1020,
+    -9.0
+   ],
+   [
+    1029,
+    0.0
+   ],
+   [
+    1030,
+    0.0
+   ],
+   [
+    1031,
+    -9.0
+   ],
+   [
+    1064,
+    -9.0
+   ],
+   [
+    1073,
+    0.0
+   ],
+   [
+    1074,
+    0.0
+   ],
+   [
+    1076,
+    -9.0
+   ],
+   [
+    1104,
+    -9.0
+   ],
+   [
+    1113,
+    0.0
+   ],
+   [
+    1114,
+    0.0
+   ],
+   [
+    1117,
+    -9.0
+   ],
+   [
+    1252,
+    -9.0
+   ],
+   [
+    1261,
+    0.0
+   ],
+   [
+    1262,
+    0.0
+   ],
+   [
+    1268,
+    -9.0
+   ],
+   [
+    1427,
+    -9.0
+   ],
+   [
+    1436,
+    0.0
+   ],
+   [
+    1437,
+    0.0
+   ],
+   [
+    1439,
+    -9.0
+   ],
+   [
+    1492,
+    -9.0
+   ],
+   [
+    1501,
+    0.0
+   ],
+   [
+    1502,
+    0.0
+   ],
+   [
+    1508,
+    -9.0
+   ],
+   [
+    1578,
+    -9.0
+   ],
+   [
+    1587,
+    0.0
+   ],
+   [
+    1588,
+    0.0
+   ],
+   [
+    1596,
+    -9.0
+   ],
+   [
+    1614,
+    -9.0
+   ],
+   [
+    1623,
+    0.0
+   ],
+   [
+    1624,
+    0.0
+   ],
+   [
+    1629,
+    -9.0
+   ],
+   [
+    1768,
+    -9.0
+   ],
+   [
+    1777,
+    0.0
+   ],
+   [
+    1778,
+    0.0
+   ],
+   [
+    1780,
+    -9.0
+   ],
+   [
+    1973,
+    -9.0
+   ],
+   [
+    1982,
+    0.0
+   ],
+   [
+    1983,
+    0.0
+   ],
+   [
+    1987,
+    -9.0
+   ],
+   [
+    2027,
+    -9.0
+   ],
+   [
+    2036,
+    0.0
+   ],
+   [
+    2037,
+    0.0
+   ],
+   [
+    2041,
+    -9.0
+   ],
+   [
+    2279,
+    -9.0
+   ],
+   [
+    2288,
+    0.0
+   ],
+   [
+    2289,
+    0.0
+   ],
+   [
+    2290,
+    -9.0
+   ],
+   [
+    2512,
+    -9.0
+   ],
+   [
+    2521,
+    0.0
+   ],
+   [
+    2524,
+    0.0
+   ],
+   [
+    2533,
+    -9.0
+   ],
+   [
+    2672,
+    -9.0
+   ],
+   [
+    2681,
+    0.0
+   ],
+   [
+    2682,
+    0.0
+   ],
+   [
+    2686,
+    -9.0
+   ],
+   [
+    3476,
+    -9.0
+   ],
+   [
+    3485,
+    0.0
+   ],
+   [
+    3486,
+    0.0
+   ],
+   [
+    3488,
+    -9.0
+   ],
+   [
+    3757,
+    -9.0
+   ],
+   [
+    3766,
+    0.0
+   ],
+   [
+    3767,
+    0.0
+   ],
+   [
+    3768,
+    -9.0
+   ],
+   [
+    3818,
+    -9.0
+   ],
+   [
+    3827,
+    0.0
+   ],
+   [
+    3828,
+    0.0
+   ],
+   [
+    3833,
+    -9.0
+   ],
+   [
+    3888,
+    -9.0
+   ],
+   [
+    3897,
+    0.0
+   ],
+   [
+    3918,
+    0.0
+   ],
+   [
+    3978,
+    -60.0
+   ]
+  ]
+ }
+}

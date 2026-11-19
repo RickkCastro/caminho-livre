@@ -1,0 +1,672 @@
+{
+ "efeitos": [
+  {
+   "evento": 29,
+   "som": "pop/pop_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c01",
+   "o_que": "círculo da Marta nasce com onda"
+  },
+  {
+   "evento": 48,
+   "som": "interface/digitar_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c01",
+   "o_que": "nome se escreve"
+  },
+  {
+   "evento": 97,
+   "som": "pop/pop_02.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c02",
+   "o_que": "pílula 68 anos"
+  },
+  {
+   "evento": 135,
+   "som": "pop/pop_03.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c02",
+   "o_que": "pílula andador"
+  },
+  {
+   "evento": 156,
+   "som": "interface/rota_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c02",
+   "o_que": "linha tracejada se desenha"
+  },
+  {
+   "evento": 174,
+   "som": "interface/contagem_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c02",
+   "o_que": "600 m conta"
+  },
+  {
+   "evento": 196,
+   "som": "ding/ding_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c02",
+   "o_que": "posto acende"
+  },
+  {
+   "evento": 233,
+   "som": "pop/pop_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c03",
+   "o_que": "frase Parece perto."
+  },
+  {
+   "evento": 356,
+   "som": "impacto/impacto_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c04",
+   "o_que": "guia alta sobe e o ponto bate"
+  },
+  {
+   "evento": 381,
+   "som": "interface/risco_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c04",
+   "o_que": "rampa riscada"
+  },
+  {
+   "evento": 437,
+   "som": "whoosh/whip_01.mp3",
+   "camada": "principal",
+   "alinha": "pico",
+   "cena": "c04",
+   "o_que": "whip lateral"
+  },
+  {
+   "evento": 483,
+   "som": "pop/pop_02.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c05",
+   "o_que": "filha acende"
+  },
+  {
+   "evento": 538,
+   "som": "interface/risco_02.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c05",
+   "o_que": "data riscada"
+  },
+  {
+   "evento": 559,
+   "som": "whoosh/whoosh_grave_01.mp3",
+   "camada": "principal",
+   "alinha": "pico",
+   "cena": "c05",
+   "o_que": "forma verde varre"
+  },
+  {
+   "evento": 641,
+   "som": "impacto/queda_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c06",
+   "o_que": "pino do GPS cai e rota se desenha"
+  },
+  {
+   "evento": 704,
+   "som": "impacto/carimbo_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c06",
+   "o_que": "selo cidade perfeita"
+  },
+  {
+   "evento": 739,
+   "som": "ding/ding_02.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c06",
+   "o_que": "✓ calçada livre"
+  },
+  {
+   "evento": 773,
+   "som": "ding/ding_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c06",
+   "o_que": "✓ rua segura"
+  },
+  {
+   "evento": 815,
+   "som": "ding/ding_02.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c06",
+   "o_que": "✓ qualquer hora"
+  },
+  {
+   "evento": 887,
+   "som": "impacto/queda_02.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c07",
+   "o_que": "alerta calçada quebrada cai"
+  },
+  {
+   "evento": 931,
+   "som": "impacto/queda_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c07",
+   "o_que": "alerta alagamento cai"
+  },
+  {
+   "evento": 990,
+   "som": "impacto/queda_02.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c07",
+   "o_que": "alerta poste apagado cai"
+  },
+  {
+   "evento": 1076,
+   "som": "pop/pop_03.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c08",
+   "o_que": "sabe destacado"
+  },
+  {
+   "evento": 1095,
+   "som": "whoosh/whoosh_grave_02.mp3",
+   "camada": "principal",
+   "alinha": "pico",
+   "cena": "c08",
+   "o_que": "forma verde varre"
+  },
+  {
+   "evento": 1115,
+   "som": "pop/pop_03.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c09",
+   "o_que": "frase entra"
+  },
+  {
+   "evento": 1150,
+   "som": "impacto/queda_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c09",
+   "o_que": "pino com + cai, registrar acende"
+  },
+  {
+   "evento": 1236,
+   "som": "whoosh/whoosh_leve_02.mp3",
+   "camada": "principal",
+   "alinha": "pico",
+   "cena": "c09",
+   "o_que": "speed ramp para cima"
+  },
+  {
+   "evento": 1260,
+   "som": "whoosh/whoosh_leve_03.mp3",
+   "camada": "principal",
+   "alinha": "pico",
+   "cena": "c10",
+   "o_que": "logo chega do speed ramp"
+  },
+  {
+   "evento": 1321,
+   "som": "interface/digitar_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c10",
+   "o_que": "Caminho Livre se escreve"
+  },
+  {
+   "evento": 1383,
+   "som": "pop/pop_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c10",
+   "o_que": "pinos azuis (cascata)"
+  },
+  {
+   "evento": 1422,
+   "som": "whoosh/whoosh_leve_01.mp3",
+   "camada": "principal",
+   "alinha": "pico",
+   "cena": "c10",
+   "o_que": "câmera empurra para dentro"
+  },
+  {
+   "evento": 1437,
+   "som": "whoosh/whoosh_leve_02.mp3",
+   "camada": "principal",
+   "alinha": "pico",
+   "cena": "c11",
+   "o_que": "mapa chega com o zoom"
+  },
+  {
+   "evento": 1468,
+   "som": "interface/rota_02.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c11",
+   "o_que": "rota verde desvia"
+  },
+  {
+   "evento": 1514,
+   "som": "pop/pop_03.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c12",
+   "o_que": "celular entra girando"
+  },
+  {
+   "evento": 1569,
+   "som": "whoosh/whoosh_grave_01.mp3",
+   "camada": "principal",
+   "alinha": "pico",
+   "cena": "c12",
+   "o_que": "forma verde varre"
+  },
+  {
+   "evento": 1734,
+   "som": "interface/risco_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c13",
+   "o_que": "chip senha riscado"
+  },
+  {
+   "evento": 1755,
+   "som": "interface/risco_02.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c13",
+   "o_que": "chip cadastro riscado"
+  },
+  {
+   "evento": 1785,
+   "som": "pop/pop_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c14",
+   "o_que": "buraco"
+  },
+  {
+   "evento": 1803,
+   "som": "pop/pop_02.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c14",
+   "o_que": "degrau"
+  },
+  {
+   "evento": 1824,
+   "som": "pop/pop_03.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c14",
+   "o_que": "rua escura"
+  },
+  {
+   "evento": 1860,
+   "som": "pop/pop_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c15",
+   "o_que": "contador 4 toques"
+  },
+  {
+   "evento": 1929,
+   "som": "clique/clique_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c15",
+   "o_que": "toque 1"
+  },
+  {
+   "evento": 1953,
+   "som": "clique/clique_02.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c15",
+   "o_que": "toque 2: Buraco"
+  },
+  {
+   "evento": 1995,
+   "som": "clique/clique_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c15",
+   "o_que": "toque 3: local"
+  },
+  {
+   "evento": 2013,
+   "som": "clique/clique_02.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c15",
+   "o_que": "toque 4: Enviar → alerta enviado"
+  },
+  {
+   "evento": 2121,
+   "som": "whoosh/whoosh_leve_03.mp3",
+   "camada": "principal",
+   "alinha": "pico",
+   "cena": "c16",
+   "o_que": "moradores chegam (cascata)"
+  },
+  {
+   "evento": 2136,
+   "som": "ding/ding_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c16",
+   "o_que": "check no pino"
+  },
+  {
+   "evento": 2178,
+   "som": "interface/contagem_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c17",
+   "o_que": "Ainda está lá conta até 3"
+  },
+  {
+   "evento": 2262,
+   "som": "impacto/carimbo_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c17",
+   "o_que": "selo Confirmada"
+  },
+  {
+   "evento": 2295,
+   "som": "interface/contagem_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c18",
+   "o_que": "Já foi resolvido conta até 3"
+  },
+  {
+   "evento": 2355,
+   "som": "pop/pop_03.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c18",
+   "o_que": "saiu do mapa"
+  },
+  {
+   "evento": 2415,
+   "som": "interface/contagem_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c19",
+   "o_que": "15 dias conta"
+  },
+  {
+   "evento": 2474,
+   "som": "pop/pop_02.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c19",
+   "o_que": "frase O mapa nunca fica velho"
+  },
+  {
+   "evento": 2490,
+   "som": "pop/pop_03.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c19",
+   "o_que": "nunca"
+  },
+  {
+   "evento": 2664,
+   "som": "whoosh/whoosh_grave_02.mp3",
+   "camada": "principal",
+   "alinha": "pico",
+   "cena": "c20",
+   "o_que": "forma verde varre"
+  },
+  {
+   "evento": 2682,
+   "som": "pop/pop_03.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c21",
+   "o_que": "mapa noturno"
+  },
+  {
+   "evento": 2700,
+   "som": "pop/pop_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c21",
+   "o_que": "Júlia"
+  },
+  {
+   "evento": 2712,
+   "som": "interface/rota_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c21",
+   "o_que": "rotas se desenham"
+  },
+  {
+   "evento": 2745,
+   "som": "pop/pop_02.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c21",
+   "o_que": "23h"
+  },
+  {
+   "evento": 2790,
+   "som": "interface/contagem_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c21",
+   "o_que": "+130 m conta"
+  },
+  {
+   "evento": 2847,
+   "som": "impacto/impacto_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c21",
+   "o_que": "rua escura acende vermelho"
+  },
+  {
+   "evento": 2928,
+   "som": "impacto/queda_02.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c22",
+   "o_que": "degrau cai no trecho"
+  },
+  {
+   "evento": 2940,
+   "som": "impacto/carimbo_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c22",
+   "o_que": "trecho bloqueado (X)"
+  },
+  {
+   "evento": 3009,
+   "som": "interface/rota_02.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c22",
+   "o_que": "novo caminho se desenha"
+  },
+  {
+   "evento": 3027,
+   "som": "whoosh/whoosh_grave_01.mp3",
+   "camada": "principal",
+   "alinha": "pico",
+   "cena": "c22",
+   "o_que": "forma verde varre"
+  },
+  {
+   "evento": 3138,
+   "som": "ding/ding_02.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c23",
+   "o_que": "letra grande"
+  },
+  {
+   "evento": 3168,
+   "som": "ding/ding_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c23",
+   "o_que": "alto contraste"
+  },
+  {
+   "evento": 3210,
+   "som": "ding/ding_02.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c23",
+   "o_que": "poucos passos"
+  },
+  {
+   "evento": 3279,
+   "som": "interface/digitar_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c24",
+   "o_que": "nome"
+  },
+  {
+   "evento": 3321,
+   "som": "pop/pop_03.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c24",
+   "o_que": "tela de senha"
+  },
+  {
+   "evento": 3347,
+   "som": "impacto/queda_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c24",
+   "o_que": "tela de senha cai"
+  },
+  {
+   "evento": 3408,
+   "som": "pop/pop_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c24",
+   "o_que": "botão Entrar com Google"
+  },
+  {
+   "evento": 3453,
+   "som": "pop/pop_02.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c25",
+   "o_que": "nó cidadão"
+  },
+  {
+   "evento": 3537,
+   "som": "pop/pop_03.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c25",
+   "o_que": "nó zeladoria"
+  },
+  {
+   "evento": 3567,
+   "som": "pop/pop_01.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c25",
+   "o_que": "nó iluminação"
+  },
+  {
+   "evento": 3615,
+   "som": "whoosh/whoosh_leve_01.mp3",
+   "camada": "principal",
+   "alinha": "pico",
+   "cena": "c25",
+   "o_que": "speed ramp para cima"
+  },
+  {
+   "evento": 3771,
+   "som": "ding/ding_02.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c26",
+   "o_que": "posto acende + Ela vai sozinha"
+  },
+  {
+   "evento": 3804,
+   "som": "whoosh/whoosh_grave_02.mp3",
+   "camada": "principal",
+   "alinha": "pico",
+   "cena": "c26",
+   "o_que": "forma verde varre"
+  },
+  {
+   "evento": 3834,
+   "som": "ding/ding_02.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c27",
+   "o_que": "logo monta"
+  },
+  {
+   "evento": 3870,
+   "som": "pop/pop_02.mp3",
+   "camada": "principal",
+   "alinha": "inicio",
+   "cena": "c27",
+   "o_que": "Grupo Octoflow"
+  },
+  {
+   "evento": 356,
+   "som": "riser/riser_01.mp3",
+   "camada": "apoio",
+   "alinha": "fim",
+   "cena": "c04",
+   "o_que": "riser até a guia alta"
+  },
+  {
+   "evento": 1321,
+   "som": "riser/riser_02.mp3",
+   "camada": "apoio",
+   "alinha": "fim",
+   "cena": "c10",
+   "o_que": "riser até o logo"
+  },
+  {
+   "evento": 1321,
+   "som": "whoosh/whoosh_grave_02.mp3",
+   "camada": "grave",
+   "alinha": "pico",
+   "cena": "c10",
+   "o_que": "grave na revelação"
+  }
+ ],
+ "musica": {
+  "som": "musica/musica_loop_01.mp3",
+  "loop": true
+ }
+}

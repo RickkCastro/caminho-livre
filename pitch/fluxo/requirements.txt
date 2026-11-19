@@ -1,0 +1,5 @@
+elevenlabs
+python-dotenv
+opencv-python
+scenedetect
+yt-dlp

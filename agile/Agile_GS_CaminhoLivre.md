@@ -68,6 +68,7 @@ _FIAP — Faculdade de Informática e Administração Paulista_
 - [5. Protótipo](#5-protótipo)
   - [5.1 Decisões gerais de UX e UI](#51-decisões-gerais-de-ux-e-ui)
   - [5.2 Telas](#52-telas)
+- [6. Vídeo Pitch](#6-vídeo-pitch)
 
 <div style="page-break-after: always;"></div>
 
@@ -546,6 +547,10 @@ As personas definem o público: **Dona Marta** (68 anos, andador), **Júlia** (2
 
 </div>
 </div>
+
+## 6. Vídeo Pitch
+
+https://www.youtube.com/watch?v=fmkAiuyiqP0
 
 <br>
 

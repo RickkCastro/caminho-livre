@@ -1,0 +1,8 @@
+{
+ "tipo": "efeito",
+ "prompt": "deep slow whoosh, large soft shape sweeping across screen, warm low swoosh",
+ "model_id": "eleven_text_to_sound_v3",
+ "duration_seconds": 1.2,
+ "loop": false,
+ "prompt_influence": 0.5
+}

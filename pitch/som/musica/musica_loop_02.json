@@ -1,0 +1,8 @@
+{
+ "tipo": "efeito",
+ "prompt": "seamless background music loop, warm hopeful minimal instrumental, light piano melody, soft synth pads, gentle plucks, 100 bpm, major key, no vocals",
+ "model_id": "eleven_text_to_sound_v3",
+ "duration_seconds": 30.0,
+ "loop": true,
+ "prompt_influence": 0.5
+}
