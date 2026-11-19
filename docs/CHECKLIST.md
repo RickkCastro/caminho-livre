@@ -5,7 +5,7 @@ Base: rubricas do [PDF da GS](GS%20CitizenTech%20-%202ES%20Fev%20-%20FIAP%202026
 
 | Disciplina | Situação | Onde enviar | O que vai |
 |---|---|---|---|
-| Agile | 🟡 falta o pitch | Teams | **1 PDF** com o link do pitch |
+| Agile | 🟢 pronto, falta enviar | Teams | **1 PDF** com o link do pitch |
 | AR-VR | 🔴 não começou | Teams | PDF com nomes + link do vídeo |
 | Data Science | 🟢 pronto, falta enviar | Teams | ZIP (ipynb + TXT + CSV) |
 | Database | 🟢 pronto, falta enviar | Teams | PDF + 3 arquivos `.sql` |
@@ -23,8 +23,8 @@ Entrega: **um único PDF**. Mais de um PDF ou link externo custa -10 pts. O víd
 - [x] 3. Diagrama de casos de uso, exportado como imagem (20)
 - [x] 4. Backlog com MoSCoW, story points (Planning Poker) e MVP destacado (20)
 - [x] **5. Protótipo de no mínimo 3 telas, com comentários de UX (20)**: seção 5 do PDF, com 6 telas do front real (`agile/prototipo/`): prints das telas do `front-next/` (login/onboarding, mapa, enviar alerta, rota) e, para cada tela, a intenção e a adequação da UX (contraste, fonte grande, poucos toques, linguagem simples)
-- [ ] **6. Vídeo pitch de até 3 min (20)**: narrado pela equipe, no YouTube como **não listado**, com o link no PDF. O mesmo vídeo serve para Testing
-- [ ] Acrescentar a seção "Pitch" (o Protótipo já está) em `agile/Agile_GS_CaminhoLivre.md` e gerar o PDF de novo (`cd agile/pdf && node build.js`)
+- [x] **6. Vídeo pitch de até 3 min (20)**: https://www.youtube.com/watch?v=fmkAiuyiqP0 (narrado pela equipe, no YouTube como **não listado**, com o link no PDF. O mesmo vídeo serve para Testing)
+- [x] Seção "6. Vídeo Pitch" com o link em `agile/Agile_GS_CaminhoLivre.md` e gerar o PDF de novo (`cd agile/pdf && node build.js`)
 - [ ] Conferir se o PDF tem todos os integrantes e se o link do vídeo abre numa aba anônima
 
 ## 🥽 AR-VR Modelling And Simulation
@@ -80,7 +80,7 @@ Documentação, PDF único (30):
 ---
 
 ## 🔁 Itens gerais
-- [ ] **Pitch de Testing**: vídeo de até 3 min no YouTube, com o link enviado (pode ser o mesmo do Agile)
+- [ ] **Pitch de Testing** (enviar o mesmo link: https://www.youtube.com/watch?v=fmkAiuyiqP0): vídeo de até 3 min no YouTube, com o link enviado (pode ser o mesmo do Agile)
 - [ ] Fazer push da `development` e o merge na `main` antes do prazo
 - [x] Ficha da CitizenTech no topo do README da raiz
 - [x] Nenhum dado pessoal real no repositório (a carga usa usuários fictícios)

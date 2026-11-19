@@ -13,7 +13,7 @@ Documentação completa do design da solução Caminho Livre, aplicando as técn
 | 3 | Diagrama de casos de uso (escopo total, todos os atores) | 20 | [ ] |
 | 4 | Backlog do produto: histórias, MoSCoW, story points (Planning Poker), MVP destacado | 20 | [ ] |
 | 5 | Protótipo de **no mínimo 3 telas**, com comentários de UX | 20 | [x] seção 5 (6 telas em `prototipo/`) |
-| 6 | Vídeo pitch de até 3 min, narrado pelo grupo (YouTube **não listado**) | 20 | [ ] |
+| 6 | Vídeo pitch de até 3 min, narrado pelo grupo (YouTube **não listado**) | 20 | [x] https://www.youtube.com/watch?v=fmkAiuyiqP0 |
 
 > ⚠️ Mais de um PDF ou entrega por link externo (Google Docs etc.) custa **-10 pontos**. Vídeo inacessível vale zero no item.
 > A **coerência entre os entregáveis** também é avaliada.
